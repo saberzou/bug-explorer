@@ -59,6 +59,13 @@ export async function loadBugs(): Promise<Bug[]> {
   ]);
   const parsed = JSON.parse(rawBugs) as Bug[];
   const merged = parsed.map((b) => {
+    // Prefer photos already embedded in bugs.json (the curated source of truth).
+    // Fall back to the fetcher's bug_photos.json scratch file only when a slug
+    // has no inline photos yet, so Atticus / Saber can hand-edit bugs.json
+    // without the loader silently clobbering their picks.
+    if (Array.isArray(b.photos) && b.photos.length > 0) {
+      return b;
+    }
     const photos = photoMap[b.slug];
     return photos && photos.length > 0 ? { ...b, photos } : b;
   });
