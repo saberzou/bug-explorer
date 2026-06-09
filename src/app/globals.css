@@ -21,6 +21,6 @@ body {
 }
 
 body {
-  overflow: hidden;
+  background: var(--background);
   overscroll-behavior: none;
 }

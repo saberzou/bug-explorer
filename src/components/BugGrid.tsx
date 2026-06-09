@@ -23,11 +23,13 @@ const RARITY_RING: Record<Rarity, string> = {
 // Canvas dimensions are computed at runtime based on the viewport.
 // HEX_SIZE is the axial-coord scaling factor. With the standard pointy-top
 // formula, adjacent cells along the q-axis are sqrt(3)*HEX_SIZE pixels apart,
-// and adjacent rows are 1.5*HEX_SIZE pixels apart. BUG_SIZE should be a
-// touch less than the smaller spacing so circles can sit nicely without
-// overlapping at full scale.
-const HEX_SIZE = 54;
-const BUG_SIZE = 78;
+// and adjacent rows are 1.5*HEX_SIZE pixels apart. BUG_SIZE is the pixel
+// diameter of each bug circle at full scale; intentionally close to (and
+// slightly less than) the hex spacing so circles nearly kiss for a dense
+// cluster look. The outer rings happily extend beyond the viewport — users
+// drag to roam, exactly like the Apple Watch home screen.
+const HEX_SIZE = 72;
+const BUG_SIZE = 112;
 
 // Pre-computed sqrt(3) and PI/2 for inner loop speed.
 const SQRT3 = Math.sqrt(3);
@@ -89,7 +91,7 @@ function modokiTransform(
   offset: { x: number; y: number },
   canvasW: number,
   canvasH: number,
-  curveRadius = 220,
+  curveRadius = 320,
 ) {
   const items: { x: number; y: number; scale: number }[] = [];
   const halfW = canvasW / 2;
@@ -181,11 +183,10 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
     const update = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // Take ~90% of viewport, capped so the cluster doesn't get absurd on
-      // huge screens. Keep aspect close to Modoki's 9:10 phone-y feel.
-      const w = Math.min(820, Math.floor(vw * 0.9));
-      const h = Math.min(900, Math.floor(vh * 0.9));
-      setCanvasSize({ w, h });
+      // Take the full viewport so the cluster naturally extends past the
+      // visible area. Users drag to roam toward the edges, fisheye reveals
+      // them — same as Apple Watch.
+      setCanvasSize({ w: vw, h: vh });
     };
     update();
     window.addEventListener("resize", update);

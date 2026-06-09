@@ -11,9 +11,9 @@ export default async function Home() {
   return (
     <main className="relative h-dvh w-dvw overflow-hidden bg-[#0e0d0b] text-zinc-100">
       <BugGrid bugs={bugs} latestSlug={latestSlug} />
-      <header className="pointer-events-none absolute left-0 top-0 z-10 w-full p-4 sm:p-6">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-lg font-serif italic tracking-wide text-amber-100/90">
+      <header className="pointer-events-none absolute left-0 top-0 z-10 w-full p-4 text-center sm:p-6">
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="font-serif text-2xl text-amber-100 sm:text-3xl">
             Bug Explorer
           </h1>
           <p className="text-xs text-zinc-400">
@@ -21,7 +21,7 @@ export default async function Home() {
           </p>
         </div>
       </header>
-      <footer className="pointer-events-none absolute bottom-3 right-4 z-10 text-[10px] uppercase tracking-widest text-zinc-600">
+      <footer className="pointer-events-none absolute bottom-3 left-1/2 z-10 -translate-x-1/2 text-[10px] uppercase tracking-widest text-zinc-600">
         a curio cabinet · {new Date().getUTCFullYear()}
       </footer>
     </main>
