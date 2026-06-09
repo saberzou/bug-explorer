@@ -1,21 +1,12 @@
 // Deterministic slug → axial hex coordinates.
-// Stable: a slug always maps to the same (q, r) — never reflows when new bugs land.
-// We use a fast 32-bit string hash (FNV-1a) and Halton-like spiral packing,
-// then verify uniqueness against an occupied set so collisions resolve gracefully.
+// Stable: a slug, once assigned, NEVER changes position. New bugs always grow
+// the cluster outward in chronological order, so older bugs sit closer to
+// the center and recent additions ring around them like growth rings on a
+// tree. Forward-only assignment guarantees the no-reflow contract.
 
 export interface AxialCoord {
   q: number;
   r: number;
-}
-
-/** FNV-1a 32-bit hash, deterministic across machines. */
-function fnv1a(input: string): number {
-  let hash = 0x811c9dc5;
-  for (let i = 0; i < input.length; i += 1) {
-    hash ^= input.charCodeAt(i);
-    hash = Math.imul(hash, 0x01000193);
-  }
-  return hash >>> 0;
 }
 
 /** Walk an outward spiral on the axial hex grid, ring by ring. */
@@ -59,22 +50,18 @@ function spiralCoord(index: number): AxialCoord {
  * Assign stable axial coords to a list of bugs.
  *
  * Stability contract: a slug, once assigned, NEVER changes position. New bugs
- * always claim the next free slot beyond all existing ones. This is the
- * "discovery cabinet" invariant — once a bug is in the wild it stays put.
+ * always claim the next outer slot beyond all existing ones — the cluster
+ * grows outward chronologically, like growth rings on a tree.
  *
  * Algorithm:
- *   1. Sort bugs by `discoveredOn` ascending, then by slug for tie-breaks.
- *      Oldest bug resolves first → claims its hash-determined slot.
- *   2. For each bug in chronological order, pick a starting spiral slot from
- *      its hash (`% 61` packs the first ~30 bugs into rings 0–4 = a tight
- *      cluster visible without panning).
- *   3. If the slot is occupied by an older bug, probe forward (slot+1, +2 …)
- *      until free. Forward-only probing + chronological resolution means
- *      older slots are never reassigned.
+ *   1. Sort by `discoveredOn` ascending, then by slug (deterministic tie-break
+ *      for same-day cohorts).
+ *   2. Walk the spiral from slot 0 outward, assigning each bug in order. The
+ *      Nth-oldest bug gets the Nth spiral slot.
  *
- * Tradeoff: a new bug that hashes to an occupied region just walks outward
- * to the next empty slot. Over time the cluster grows organically outward,
- * preserving every historical position.
+ * Result: dense hex pack with zero gaps, oldest at center, no reflow ever.
+ * 30 bugs fill rings 0–3 (37 slots, 7 leftover empty at the outer edge).
+ * 100 bugs fill rings 0–6. 1000 bugs reach ring 19.
  */
 export interface BugEntry {
   slug: string;
@@ -85,7 +72,7 @@ export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
   const map = new Map<string, AxialCoord>();
   if (bugs.length === 0) return map;
 
-  // Resolve oldest first so new bugs can never bump older ones out of a slot.
+  // Resolve oldest first so new bugs always claim the next outer slot.
   const sorted = [...bugs].sort((a, b) => {
     if (a.discoveredOn !== b.discoveredOn) {
       return a.discoveredOn < b.discoveredOn ? -1 : 1;
@@ -94,18 +81,14 @@ export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
     // resolves in a fixed order across machines.
     return a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0;
   });
-  const occupied = new Set<string>();
 
-  for (const { slug } of sorted) {
-    let probe = fnv1a(slug) % 61;
-    let coord = spiralCoord(probe);
-    let key = `${coord.q},${coord.r}`;
-    while (occupied.has(key)) {
-      probe += 1;
-      coord = spiralCoord(probe);
-      key = `${coord.q},${coord.r}`;
-    }
-    occupied.add(key);
+  for (let index = 0; index < sorted.length; index++) {
+    const { slug } = sorted[index];
+    // Assign sequentially to spiral slots 0, 1, 2, ... Older bugs land in
+    // central slots; new bugs grow the cluster outward like rings of a tree.
+    // This guarantees a dense pack regardless of cohort size, and no existing
+    // bug ever shifts because we resolve in chronological order.
+    const coord = spiralCoord(index);
     map.set(slug, coord);
   }
 
