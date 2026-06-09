@@ -233,12 +233,70 @@ def pick_photos_for_bug(bug, want=2, max_probes=14):
         s = score_photo(f, latin, genus, info)
         if s < 0:
             continue
-        scored.append((s, f, info))
-        if len(scored) >= want * 3:
+        meta = extract_meta(info, f)
+        artist_key = (meta.get("credit") or "").strip().lower()
+        scored.append((s, f, info, meta, artist_key))
+        if len(scored) >= want * 4:
             break
 
+    # If the top-of-list is dominated by one prolific photographer and we
+    # never reached a second artist within the initial probe window, widen
+    # the scan once so we can pull in at least one alternative photographer
+    # before falling back to same-artist dups. Caps total work at ~60 probes.
+    distinct_artists = {ak for _s, _f, _info, _meta, ak in scored if ak}
+    if len(distinct_artists) < want and len(pre) >= max_probes:
+        already = {f for _s, f in pre}
+        extra = []
+        for f in files:
+            if f in already:
+                continue
+            s = cheap_filename_score(f, latin, genus)
+            if s > 0:
+                extra.append((s, f))
+        extra.sort(key=lambda x: x[0], reverse=True)
+        for _s, f in extra[: max_probes * 3]:
+            info = commons_image_info(f)
+            time.sleep(0.1)
+            if not info or not is_photo_candidate(f, info):
+                continue
+            s = score_photo(f, latin, genus, info)
+            if s < 0:
+                continue
+            meta = extract_meta(info, f)
+            artist_key = (meta.get("credit") or "").strip().lower()
+            scored.append((s, f, info, meta, artist_key))
+            distinct_artists = {ak for _s, _f, _info, _meta, ak in scored if ak}
+            if len(distinct_artists) >= want:
+                break
+
     scored.sort(key=lambda x: x[0], reverse=True)
-    return [extract_meta(info, f) for (_s, f, info) in scored[:want]]
+
+    # Pick top-scoring photo first, then prefer a different photographer for
+    # subsequent picks. Same photographer often means same shoot / angle,
+    # which defeats the point of showing two photos. Falls back to top score
+    # when no different-photographer candidate exists.
+    picks = []
+    used_artists = set()
+    # Pass 1: greedy, skip artists we already picked.
+    for s, f, info, meta, artist_key in scored:
+        if len(picks) >= want:
+            break
+        if artist_key and artist_key in used_artists:
+            continue
+        picks.append(meta)
+        if artist_key:
+            used_artists.add(artist_key)
+    # Pass 2: fill remaining slots from the top of the score list, even if
+    # that means a same-photographer dup — better than no second photo.
+    if len(picks) < want:
+        already = {p.get("fileTitle") for p in picks}
+        for s, f, info, meta, _ak in scored:
+            if len(picks) >= want:
+                break
+            if meta.get("fileTitle") in already:
+                continue
+            picks.append(meta)
+    return picks
 
 
 def main():
