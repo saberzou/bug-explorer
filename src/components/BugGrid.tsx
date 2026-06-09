@@ -23,7 +23,8 @@ const RARITY_RING: Record<Rarity, string> = {
 // Canvas dimensions for the bug cluster are computed at runtime based on
 // the viewport. CELL_RADIUS controls hex cell spacing (center→center
 // adjacency). BUG_SIZE controls each circle's pixel diameter at full scale.
-const CELL_RADIUS = 64;
+// Keep CELL_RADIUS ≥ BUG_SIZE so circles don't visually overlap when packed.
+const CELL_RADIUS = 92;
 const BUG_SIZE = 84;
 
 // Pre-computed sqrt(3) and PI/2 for inner loop speed.
@@ -86,7 +87,7 @@ function modokiTransform(
   offset: { x: number; y: number },
   canvasW: number,
   canvasH: number,
-  curveRadius = 180,
+  curveRadius = 230,
 ) {
   const items: { x: number; y: number; scale: number }[] = [];
   const halfW = canvasW / 2;
@@ -178,10 +179,10 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
     const update = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // Take ~85% of viewport, capped so the cluster doesn't get absurd on
+      // Take ~90% of viewport, capped so the cluster doesn't get absurd on
       // huge screens. Keep aspect close to Modoki's 9:10 phone-y feel.
-      const w = Math.min(680, Math.floor(vw * 0.85));
-      const h = Math.min(760, Math.floor(vh * 0.85));
+      const w = Math.min(820, Math.floor(vw * 0.9));
+      const h = Math.min(900, Math.floor(vh * 0.9));
       setCanvasSize({ w, h });
     };
     update();
