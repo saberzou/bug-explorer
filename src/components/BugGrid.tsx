@@ -28,8 +28,8 @@ const RARITY_RING: Record<Rarity, string> = {
 // slightly less than) the hex spacing so circles nearly kiss for a dense
 // cluster look. The outer rings happily extend beyond the viewport — users
 // drag to roam, exactly like the Apple Watch home screen.
-const HEX_SIZE = 72;
-const BUG_SIZE = 112;
+const HEX_SIZE = 80;
+const BUG_SIZE = 132;
 
 // Pre-computed sqrt(3) and PI/2 for inner loop speed.
 const SQRT3 = Math.sqrt(3);
