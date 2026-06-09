@@ -20,12 +20,14 @@ const RARITY_RING: Record<Rarity, string> = {
     "ring-2 ring-amber-300/85 shadow-[0_0_30px_rgba(252,211,77,0.55)]",
 };
 
-// Canvas dimensions for the bug cluster are computed at runtime based on
-// the viewport. CELL_RADIUS controls hex cell spacing (center→center
-// adjacency). BUG_SIZE controls each circle's pixel diameter at full scale.
-// Keep CELL_RADIUS ≥ BUG_SIZE so circles don't visually overlap when packed.
-const CELL_RADIUS = 92;
-const BUG_SIZE = 84;
+// Canvas dimensions are computed at runtime based on the viewport.
+// HEX_SIZE is the axial-coord scaling factor. With the standard pointy-top
+// formula, adjacent cells along the q-axis are sqrt(3)*HEX_SIZE pixels apart,
+// and adjacent rows are 1.5*HEX_SIZE pixels apart. BUG_SIZE should be a
+// touch less than the smaller spacing so circles can sit nicely without
+// overlapping at full scale.
+const HEX_SIZE = 54;
+const BUG_SIZE = 78;
 
 // Pre-computed sqrt(3) and PI/2 for inner loop speed.
 const SQRT3 = Math.sqrt(3);
@@ -87,7 +89,7 @@ function modokiTransform(
   offset: { x: number; y: number },
   canvasW: number,
   canvasH: number,
-  curveRadius = 230,
+  curveRadius = 220,
 ) {
   const items: { x: number; y: number; scale: number }[] = [];
   const halfW = canvasW / 2;
@@ -198,8 +200,9 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
     return bugs.map((bug) => {
       const coord = coords.get(bug.slug) ?? { q: 0, r: 0 };
       // Pointy-top hex layout, slightly compressed Y to match Modoki rhythm.
-      const baseX = (coord.q + coord.r / 2) * CELL_RADIUS;
-      const baseY = (SQRT3 / 2) * coord.q * CELL_RADIUS;
+      // Pointy-top axial → pixel (standard hex math).
+      const baseX = HEX_SIZE * SQRT3 * (coord.q + coord.r / 2);
+      const baseY = HEX_SIZE * 1.5 * coord.r;
       return { bug, baseX, baseY };
     });
   }, [bugs]);
