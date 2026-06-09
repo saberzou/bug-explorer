@@ -20,14 +20,11 @@ const RARITY_RING: Record<Rarity, string> = {
     "ring-2 ring-amber-300/85 shadow-[0_0_30px_rgba(252,211,77,0.55)]",
 };
 
-// Canvas dimensions for the bug cluster. Apple Watch Modoki uses 360x400;
-// we go a bit bigger so bugs read on a phone with their own canvas.
-const CANVAS_W = 380;
-const CANVAS_H = 420;
-
-// Hex cell radius (center→center distance for adjacent cells along q-axis is
-// CELL_RADIUS * sqrt(3), so cells overlap nicely with this value).
-const CELL_RADIUS = 58;
+// Canvas dimensions for the bug cluster are computed at runtime based on
+// the viewport. CELL_RADIUS controls hex cell spacing (center→center
+// adjacency). BUG_SIZE controls each circle's pixel diameter at full scale.
+const CELL_RADIUS = 64;
+const BUG_SIZE = 84;
 
 // Pre-computed sqrt(3) and PI/2 for inner loop speed.
 const SQRT3 = Math.sqrt(3);
@@ -87,12 +84,14 @@ function toCartesian(radius: number, radian: number) {
 function modokiTransform(
   baseCells: { baseX: number; baseY: number }[],
   offset: { x: number; y: number },
-  curveRadius = 150,
+  canvasW: number,
+  canvasH: number,
+  curveRadius = 180,
 ) {
   const items: { x: number; y: number; scale: number }[] = [];
-  const halfW = CANVAS_W / 2;
-  const halfH = CANVAS_H / 2;
-  const cellPad = 28; // edge buffer; bugs inside this margin shrink
+  const halfW = canvasW / 2;
+  const halfH = canvasH / 2;
+  const cellPad = 32; // edge buffer; bugs inside this margin shrink
 
   for (let i = 0; i < baseCells.length; i++) {
     const baseX = baseCells[i].baseX + offset.x;
@@ -172,6 +171,24 @@ function modokiTransform(
 }
 
 export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
+  // Cluster canvas sized responsively: bigger on desktop, fits phone screens.
+  const [canvasSize, setCanvasSize] = useState({ w: 380, h: 420 });
+
+  useEffect(() => {
+    const update = () => {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // Take ~85% of viewport, capped so the cluster doesn't get absurd on
+      // huge screens. Keep aspect close to Modoki's 9:10 phone-y feel.
+      const w = Math.min(680, Math.floor(vw * 0.85));
+      const h = Math.min(760, Math.floor(vh * 0.85));
+      setCanvasSize({ w, h });
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   // Pre-compute hex base positions for each bug (deterministic, never reflows).
   const positioned = useMemo(() => {
     const coords = assignCoords(
@@ -218,7 +235,12 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
         baseX: p.baseX,
         baseY: p.baseY,
       }));
-      const layout = modokiTransform(baseCells, renderOffset.current);
+      const layout = modokiTransform(
+        baseCells,
+        renderOffset.current,
+        canvasSize.w,
+        canvasSize.h,
+      );
 
       // Write directly to DOM (avoid React re-render every frame).
       for (let i = 0; i < layout.length; i++) {
@@ -231,7 +253,7 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [positioned]);
+  }, [positioned, canvasSize]);
 
   // Pointer handlers — drag updates the TARGET offset; RAF loop animates.
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -254,8 +276,8 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
     targetOffset.current.y = dragState.current.offsetStartY + dy;
 
     // Bound the offset so the user can't fling the cluster into the void.
-    const maxX = CANVAS_W * 1.3;
-    const maxY = CANVAS_H * 1.3;
+    const maxX = canvasSize.w * 1.3;
+    const maxY = canvasSize.h * 1.3;
     targetOffset.current.x = Math.max(-maxX, Math.min(maxX, targetOffset.current.x));
     targetOffset.current.y = Math.max(-maxY, Math.min(maxY, targetOffset.current.y));
 
@@ -276,10 +298,10 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
       <div
         className="absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing"
         style={{
-          width: CANVAS_W,
-          height: CANVAS_H,
-          marginLeft: -CANVAS_W / 2,
-          marginTop: -CANVAS_H / 2,
+          width: canvasSize.w,
+          height: canvasSize.h,
+          marginLeft: -canvasSize.w / 2,
+          marginTop: -canvasSize.h / 2,
         }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -296,10 +318,10 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
             style={{
               left: "50%",
               top: "50%",
-              width: 70,
-              height: 70,
-              marginLeft: -35,
-              marginTop: -35,
+              width: BUG_SIZE,
+              height: BUG_SIZE,
+              marginLeft: -BUG_SIZE / 2,
+              marginTop: -BUG_SIZE / 2,
               transform: mounted ? undefined : "scale(0)",
               willChange: "transform",
               transformOrigin: "center center",
