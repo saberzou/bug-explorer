@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "atlas-moth",
+    "commonName": "Atlas Moth",
+    "latinName": "Attacus atlas",
+    "habitat": "Southeast Asian rainforests",
+    "sizeMm": 240,
+    "weirdFact": "Adults have no functioning mouth — they emerge, mate, and die within two weeks, living entirely on stored fat.",
+    "whyItsCool": "The wing tips evolved to mimic snake heads. A predator looking close sees fangs instead of a meal.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "legendary"
+  },
+  {
+    "slug": "jewel-beetle",
+    "commonName": "Jewel Beetle",
+    "latinName": "Chrysochroa fulgidissima",
+    "habitat": "Japanese broadleaf forests",
+    "sizeMm": 35,
+    "weirdFact": "Its iridescence is structural, not pigment-based, and stays vivid for centuries after the beetle dies.",
+    "whyItsCool": "8th-century Japanese craftsmen pressed thousands of wings into the Tamamushi Shrine. Still glittering today.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "rare"
+  },
+  {
+    "slug": "leaf-insect",
+    "commonName": "Walking Leaf",
+    "latinName": "Phyllium giganteum",
+    "habitat": "Malaysian and Indonesian forests",
+    "sizeMm": 110,
+    "weirdFact": "Sways when it walks to imitate a leaf in the breeze. Some have fake bite marks on their bodies.",
+    "whyItsCool": "Evolved camouflage so committed that even other leaf insects sometimes try to eat them.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "uncommon"
+  },
+  {
+    "slug": "thorn-bug",
+    "commonName": "Thorn Bug",
+    "latinName": "Umbonia crassicornis",
+    "habitat": "Central and South American shrubs",
+    "sizeMm": 12,
+    "weirdFact": "Looks identical to the thorns on its host plant — including the ones right next to it.",
+    "whyItsCool": "Mothers guard their nymphs and 'sing' vibration warnings through the stem when predators approach.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "common"
+  },
+  {
+    "slug": "orchid-mantis",
+    "commonName": "Orchid Mantis",
+    "latinName": "Hymenopus coronatus",
+    "habitat": "Southeast Asian rainforests",
+    "sizeMm": 70,
+    "weirdFact": "Doesn't just hide on orchids — it lures pollinators in better than real flowers do.",
+    "whyItsCool": "First known animal to mimic a flower well enough to attract its prey instead of just hiding from predators.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "rare"
+  },
+  {
+    "slug": "hercules-beetle",
+    "commonName": "Hercules Beetle",
+    "latinName": "Dynastes hercules",
+    "habitat": "Central American rainforests",
+    "sizeMm": 180,
+    "weirdFact": "Can carry 850 times its body weight — proportionally stronger than any vertebrate.",
+    "whyItsCool": "Males change color with humidity. Wet morning: black. Dry afternoon: olive yellow.",
+    "discoveredOn": "2026-06-09",
+    "rarity": "uncommon"
+  }
+]
