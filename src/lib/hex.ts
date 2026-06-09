@@ -9,20 +9,27 @@ export interface AxialCoord {
   r: number;
 }
 
-/** Walk an outward spiral on the axial hex grid, ring by ring. */
+/**
+ * Walk an outward spiral on the axial hex grid, ring by ring.
+ *
+ * Slot 0 is origin. Slots 1..6 fill ring 1. Slots 7..18 fill ring 2. Etc.
+ * Within each ring, we start at the top-left corner (direction 4 = (-1, 0))
+ * and walk clockwise around the ring, taking `ring` steps along each of the
+ * six edge directions in turn.
+ */
 function spiralCoord(index: number): AxialCoord {
   if (index === 0) return { q: 0, r: 0 };
+
+  // Find which ring this index belongs to. Ring N starts at slot 1 + 6*(N-1)*N/2.
   let ring = 1;
-  let cumulative = 1;
-  while (cumulative + 6 * ring <= index) {
-    cumulative += 6 * ring;
+  let ringStart = 1;
+  while (ringStart + 6 * ring <= index) {
+    ringStart += 6 * ring;
     ring += 1;
   }
-  const positionInRing = index - cumulative; // 0..(6*ring - 1)
-  const edge = Math.floor(positionInRing / ring); // 0..5
-  const step = positionInRing % ring; // 0..ring-1
+  const positionInRing = index - ringStart; // 0..(6*ring - 1)
 
-  // Axial directions around the ring (pointy-top hex layout).
+  // Six axial directions (pointy-top hex).
   const directions: AxialCoord[] = [
     { q: 1, r: -1 },
     { q: 1, r: 0 },
@@ -31,18 +38,20 @@ function spiralCoord(index: number): AxialCoord {
     { q: -1, r: 0 },
     { q: 0, r: -1 },
   ];
-  // Start of ring: walk `ring` steps along directions[4] from origin.
-  const startDir = directions[4];
-  let q = startDir.q * ring;
-  let r = startDir.r * ring;
-  // Walk edge steps along directions[edge], then step steps along directions[(edge+1)%6].
-  for (let i = 0; i < edge; i += 1) {
-    q += directions[i].q * ring;
-    r += directions[i].r * ring;
+
+  // Start at the ring's anchor corner: `ring` steps in direction 4.
+  let q = directions[4].q * ring;
+  let r = directions[4].r * ring;
+
+  // Walk clockwise: each edge takes `ring` steps along directions[edge].
+  let stepsRemaining = positionInRing;
+  for (let edge = 0; edge < 6 && stepsRemaining > 0; edge++) {
+    const stepsOnThisEdge = Math.min(ring, stepsRemaining);
+    q += directions[edge].q * stepsOnThisEdge;
+    r += directions[edge].r * stepsOnThisEdge;
+    stepsRemaining -= stepsOnThisEdge;
   }
-  const next = directions[(edge + 1) % 6];
-  q += next.q * step;
-  r += next.r * step;
+
   return { q, r };
 }
 
