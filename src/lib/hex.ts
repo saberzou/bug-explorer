@@ -56,27 +56,48 @@ function spiralCoord(index: number): AxialCoord {
 }
 
 /**
- * Assign stable axial coords to a list of slugs.
- * Order-independent: sorts slugs by hash before mapping into spiral slots,
- * so adding new bugs later never disturbs existing positions of older slugs
- * that hash lower.
+ * Assign stable axial coords to a list of bugs.
  *
- * Tradeoff: a *new* slug whose hash falls between two existing slugs will
- * NOT push them. We instead append new high-hash slugs to the next spiral
- * slot beyond the current max. This keeps the grid stable for end users.
+ * Stability contract: a slug, once assigned, NEVER changes position. New bugs
+ * always claim the next free slot beyond all existing ones. This is the
+ * "discovery cabinet" invariant — once a bug is in the wild it stays put.
+ *
+ * Algorithm:
+ *   1. Sort bugs by `discoveredOn` ascending, then by slug for tie-breaks.
+ *      Oldest bug resolves first → claims its hash-determined slot.
+ *   2. For each bug in chronological order, pick a starting spiral slot from
+ *      its hash (`% 61` packs the first ~30 bugs into rings 0–4 = a tight
+ *      cluster visible without panning).
+ *   3. If the slot is occupied by an older bug, probe forward (slot+1, +2 …)
+ *      until free. Forward-only probing + chronological resolution means
+ *      older slots are never reassigned.
+ *
+ * Tradeoff: a new bug that hashes to an occupied region just walks outward
+ * to the next empty slot. Over time the cluster grows organically outward,
+ * preserving every historical position.
  */
-export function assignCoords(slugs: string[]): Map<string, AxialCoord> {
+export interface BugEntry {
+  slug: string;
+  discoveredOn: string; // ISO date
+}
+
+export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
   const map = new Map<string, AxialCoord>();
-  if (slugs.length === 0) return map;
+  if (bugs.length === 0) return map;
 
-  // Sort by hash so legendary/rare don't all cluster.
-  const sorted = [...slugs].sort((a, b) => fnv1a(a) - fnv1a(b));
+  // Resolve oldest first so new bugs can never bump older ones out of a slot.
+  const sorted = [...bugs].sort((a, b) => {
+    if (a.discoveredOn !== b.discoveredOn) {
+      return a.discoveredOn < b.discoveredOn ? -1 : 1;
+    }
+    // Tie-break by slug (stable, deterministic) so a batch of same-day bugs
+    // resolves in a fixed order across machines.
+    return a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0;
+  });
   const occupied = new Set<string>();
-  let nextIndex = 0;
 
-  for (const slug of sorted) {
-    // Map slug hash → starting spiral index, then probe forward on collision.
-    let probe = fnv1a(slug) % 2048;
+  for (const { slug } of sorted) {
+    let probe = fnv1a(slug) % 61;
     let coord = spiralCoord(probe);
     let key = `${coord.q},${coord.r}`;
     while (occupied.has(key)) {
@@ -86,7 +107,6 @@ export function assignCoords(slugs: string[]): Map<string, AxialCoord> {
     }
     occupied.add(key);
     map.set(slug, coord);
-    nextIndex = Math.max(nextIndex, probe + 1);
   }
 
   return map;

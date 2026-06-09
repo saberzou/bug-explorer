@@ -36,8 +36,9 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
   });
 
   const positioned = useMemo(() => {
-    const slugs = bugs.map((b) => b.slug);
-    const coords = assignCoords(slugs);
+    const coords = assignCoords(
+      bugs.map((b) => ({ slug: b.slug, discoveredOn: b.discoveredOn })),
+    );
     return bugs.map((bug) => {
       const coord = coords.get(bug.slug) ?? { q: 0, r: 0 };
       const pixel = axialToPixel(coord, HEX_SIZE);
