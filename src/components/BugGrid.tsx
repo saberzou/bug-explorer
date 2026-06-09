@@ -121,10 +121,18 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
                 marginTop: -(HEX_SIZE * 0.8),
               }}
             >
-              <Link
+            <Link
                 href={`/bug/${bug.slug}`}
                 aria-label={`${bug.commonName}, ${bug.rarity}`}
-                className={`group block h-full w-full rounded-full bg-zinc-900 ${RARITY_RING[bug.rarity]} transition-transform duration-200 hover:scale-110 active:scale-95 overflow-hidden`}
+                className={`group relative block h-full w-full rounded-full bg-zinc-900 ${RARITY_RING[bug.rarity]} transition-transform duration-200 hover:scale-110 active:scale-95 overflow-hidden`}
+                style={
+                  bug.colorPalette
+                    ? ({
+                        // Subtle ambient backdrop tinted by the bug's palette.
+                        backgroundColor: bug.colorPalette[0],
+                      } as React.CSSProperties)
+                    : undefined
+                }
                 onClick={(e) => {
                   if (isPanning) e.preventDefault();
                 }}

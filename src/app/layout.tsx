@@ -15,6 +15,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bug-explorer.vercel.app"),
   title: "Bug Explorer — a curio cabinet of rare insects",
   description:
     "Explore a slowly-growing grid of weird, wonderful, real-world bugs. New specimen added daily.",

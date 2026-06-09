@@ -84,10 +84,21 @@ export default async function BugPage({ params }: PageProps) {
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-zinc-500">
-                  Size
+                  {bug.sizeKind === "wingspan" ? "Wingspan" : "Body length"}
                 </dt>
                 <dd className="mt-1 text-zinc-200">{bug.sizeMm} mm</dd>
               </div>
+              {bug.order && (
+                <div className="col-span-2">
+                  <dt className="text-[10px] uppercase tracking-widest text-zinc-500">
+                    Order
+                  </dt>
+                  <dd className="mt-1 text-zinc-200">
+                    {bug.order}
+                    {bug.family ? ` · ${bug.family}` : ""}
+                  </dd>
+                </div>
+              )}
               <div className="col-span-2">
                 <dt className="text-[10px] uppercase tracking-widest text-zinc-500">
                   Discovered
