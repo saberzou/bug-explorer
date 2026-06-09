@@ -31,4 +31,21 @@ export interface Bug {
   family?: string;
   /** Optional. 3 hex codes; drives ambient hover glow under the circle. */
   colorPalette?: [string, string, string];
+  /** Optional. Real photos sourced from Wikimedia Commons, with attribution. */
+  photos?: BugPhoto[];
+}
+
+export interface BugPhoto {
+  /** Local URL under /bugs/photos/<slug>/<n>.jpg. */
+  src: string;
+  /** Human-readable attribution (artist / uploader). */
+  credit: string;
+  /** Short license code, e.g. "CC BY-SA 4.0". */
+  license: string;
+  /** Permanent URL to the license text. */
+  licenseUrl?: string;
+  /** Commons file description page; used for the "source" link. */
+  sourceUrl?: string;
+  /** Optional caption from Commons file description. */
+  caption?: string;
 }

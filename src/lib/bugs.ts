@@ -1,17 +1,68 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { Bug } from "./types";
+import type { Bug, BugPhoto } from "./types";
 
 const DATA_PATH = path.join(process.cwd(), "data", "bugs.json");
+const PHOTOS_PATH = path.join(process.cwd(), "data", "bug_photos.json");
 
 let cache: Bug[] | null = null;
+
+/**
+ * Raw entry shape in data/bug_photos.json (written by scripts/fetch_bug_photos.py).
+ * `localPath` is the file on disk under /public; we map it onto BugPhoto.src so
+ * the UI gets a stable local URL. `descriptionUrl` is the Commons page; we expose
+ * it as BugPhoto.sourceUrl so the gallery can render a "source" link.
+ */
+interface RawPhotoEntry {
+  localPath: string;
+  credit: string;
+  license: string;
+  licenseUrl?: string;
+  descriptionUrl?: string;
+  caption?: string;
+}
+
+async function loadPhotoMap(): Promise<Record<string, BugPhoto[]>> {
+  let raw: string;
+  try {
+    raw = await fs.readFile(PHOTOS_PATH, "utf-8");
+  } catch {
+    return {};
+  }
+  const parsed = JSON.parse(raw) as Record<string, RawPhotoEntry[]>;
+  const out: Record<string, BugPhoto[]> = {};
+  for (const [slug, entries] of Object.entries(parsed)) {
+    if (!Array.isArray(entries)) continue;
+    const mapped: BugPhoto[] = entries
+      .filter((e) => typeof e?.localPath === "string" && e.localPath.length > 0)
+      .map((e) => ({
+        src: e.localPath,
+        credit: e.credit || "Wikimedia Commons",
+        license: e.license || "see source",
+        licenseUrl: e.licenseUrl || undefined,
+        sourceUrl: e.descriptionUrl || undefined,
+        caption: e.caption || undefined,
+      }));
+    if (mapped.length > 0) {
+      out[slug] = mapped;
+    }
+  }
+  return out;
+}
 
 /** Load every bug entry from disk. Cached at module level for the build. */
 export async function loadBugs(): Promise<Bug[]> {
   if (cache) return cache;
-  const raw = await fs.readFile(DATA_PATH, "utf-8");
-  const parsed = JSON.parse(raw) as Bug[];
-  cache = parsed.sort((a, b) => a.slug.localeCompare(b.slug));
+  const [rawBugs, photoMap] = await Promise.all([
+    fs.readFile(DATA_PATH, "utf-8"),
+    loadPhotoMap(),
+  ]);
+  const parsed = JSON.parse(rawBugs) as Bug[];
+  const merged = parsed.map((b) => {
+    const photos = photoMap[b.slug];
+    return photos && photos.length > 0 ? { ...b, photos } : b;
+  });
+  cache = merged.sort((a, b) => a.slug.localeCompare(b.slug));
   return cache;
 }
 

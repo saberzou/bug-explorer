@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import BugImage from "@/components/BugImage";
+import BugPhotos from "@/components/BugPhotos";
 import { getBug, loadBugs } from "@/lib/bugs";
 
 interface PageProps {
@@ -99,12 +100,6 @@ export default async function BugPage({ params }: PageProps) {
                   </dd>
                 </div>
               )}
-              <div className="col-span-2">
-                <dt className="text-[10px] uppercase tracking-widest text-zinc-500">
-                  Discovered
-                </dt>
-                <dd className="mt-1 text-zinc-200">{bug.discoveredOn}</dd>
-              </div>
             </dl>
 
             <section>
@@ -126,6 +121,10 @@ export default async function BugPage({ params }: PageProps) {
             </section>
           </div>
         </div>
+
+        {bug.photos && bug.photos.length > 0 && (
+          <BugPhotos photos={bug.photos} commonName={bug.commonName} />
+        )}
       </div>
     </main>
   );
