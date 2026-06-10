@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import BugImage from "@/components/BugImage";
@@ -38,47 +38,24 @@ export default function BugDetailHero({
 }: BugDetailHeroProps) {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
-  // Per Axel QA: default visible. The reduced-motion path and the
-  // plain-mount (no-handoff) path both should show the hero immediately
-  // on first paint. Only the FLIP-with-handoff path needs to start hidden
-  // so we can position before revealing — and in that path, we synchronously
-  // flip to false in useLayoutEffect (below) before the browser paints.
-  const [ready, setReady] = useState(true);
 
-  // useLayoutEffect runs synchronously after DOM mutation but before browser
-  // paint, so we can detect the FLIP-with-handoff case and hide the hero
-  // BEFORE the browser commits the first frame. For reduced-motion and
-  // plain-mount, we never hide it — first paint shows the hero immediately,
-  // no flash. SSR-safe: useLayoutEffect doesn't run on server, and the
-  // useState(true) default means SSR markup renders visible too.
+  // useLayoutEffect runs synchronously after DOM commit but before browser
+  // paint. We use it for the FLIP path so the hero is snapped to its source
+  // rect BEFORE the first paint — the user never sees the hero at its
+  // destination position before the morph starts.
+  //
+  // For reduced-motion and plain-mount paths, we do nothing: the hero is
+  // already rendered at opacity:1 in its laid-out position, no flash.
   useLayoutEffect(() => {
     const node = heroRef.current;
     if (!node) return;
-
-    if (prefersReducedMotion()) {
-      // Already visible from useState(true). Nothing else to do.
-      return;
-    }
+    if (prefersReducedMotion()) return;
 
     const handoff = readHandoff(slug);
+    if (!handoff) return;
 
-    if (!handoff) {
-      // Plain mount path (deep link, refresh): hero is already visible from
-      // initial render (useState(true)). No GSAP fade — a fade here would
-      // first hide the hero (autoAlpha:0) and then fade in, which produces
-      // exactly the blank-circle flash Axel measured. The hero just appears.
-      return;
-    }
-
-    // FLIP-with-handoff path: hide the hero immediately so the snap-to-source
-    // rect doesn't cause a positioning flash. setReady(false) here is fine
-    // because GSAP's gsap.set() below will paint the hero at the source
-    // rect within the same frame; the autoAlpha:1 makes it visible from
-    // that snapped position.
-    setReady(false);
-
-    // FLIP: snap the hero from its laid-out rect to the source rect, then
-    // tween back to the laid-out position.
+    // FLIP-with-handoff path: snap hero to source rect synchronously (pre-paint),
+    // then tween back to laid-out position.
     const target = node.getBoundingClientRect();
     const srcCx = handoff.rect.x + handoff.rect.w / 2;
     const srcCy = handoff.rect.y + handoff.rect.h / 2;
@@ -93,7 +70,6 @@ export default function BugDetailHero({
       y: dy,
       scale,
       transformOrigin: "center center",
-      autoAlpha: 1,
     });
 
     // Per Axel: easeInOutCubic (power3.inOut) matches the modoki grid's
@@ -103,7 +79,6 @@ export default function BugDetailHero({
       defaults: { ease: "power3.inOut" },
       onComplete: () => {
         clearHandoff();
-        setReady(true);
       },
     });
     tl.to(node, {
@@ -163,9 +138,6 @@ export default function BugDetailHero({
         ref={heroRef}
         className="aspect-square w-full max-w-xs flex-none overflow-hidden rounded-full bg-zinc-900 ring-1 ring-zinc-700/50"
         style={{
-          // Start invisible; the effect above tweens autoAlpha to 1. This
-          // prevents a flash of mis-positioned hero before GSAP runs.
-          opacity: ready ? 1 : 0,
           backgroundColor: fallbackBg,
         }}
       >

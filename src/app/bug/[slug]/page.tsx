@@ -59,7 +59,7 @@ export default async function BugPage({ params }: PageProps) {
 
         <div
           data-detail-fade-row
-          className="flex flex-col gap-8 sm:flex-row sm:items-start"
+          className="flex flex-col items-center gap-8 sm:flex-row sm:items-start"
         >
           <BugDetailHero
             slug={bug.slug}
