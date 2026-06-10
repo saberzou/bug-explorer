@@ -14,11 +14,12 @@ interface BugGridProps {
 }
 
 const RARITY_RING: Record<Rarity, string> = {
-  common: "ring-1 ring-zinc-700/50",
-  uncommon: "ring-2 ring-emerald-500/60",
-  rare: "ring-2 ring-sky-400/70 shadow-[0_0_22px_rgba(56,189,248,0.35)]",
-  legendary:
-    "ring-2 ring-amber-300/85 shadow-[0_0_30px_rgba(252,211,77,0.55)]",
+  // Saber: removed all rings + glow halos per design feedback. Rarity is
+  // still signalled by the detail-page rarity badge text, not the grid ring.
+  common: "",
+  uncommon: "",
+  rare: "",
+  legendary: "",
 };
 
 // Canvas dimensions are computed at runtime based on the viewport.
@@ -176,7 +177,7 @@ function modokiTransform(
   return items;
 }
 
-export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
+export default function BugGrid({ bugs }: BugGridProps) {
   // Cluster canvas sized responsively: bigger on desktop, fits phone screens.
   const [canvasSize, setCanvasSize] = useState({ w: 380, h: 420 });
 
@@ -375,9 +376,7 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
                 className="h-full w-full object-cover pointer-events-none"
                 fallbackText={bug.commonName.slice(0, 2)}
               />
-              {bug.slug === latestSlug && (
-                <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-amber-200 animate-pulse" />
-              )}
+              {/* Saber: removed latest-bug pulse halo per design feedback */}
             </Link>
           </div>
         ))}
