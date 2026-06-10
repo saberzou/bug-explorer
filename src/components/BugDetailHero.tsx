@@ -82,8 +82,11 @@ export default function BugDetailHero({
       autoAlpha: 1,
     });
 
+    // Per Axel: easeInOutCubic (power3.inOut) matches the modoki grid's
+    // depth curve and avoids the jolt-at-start that comes from morphing
+    // FROM a bug that's itself in fisheye motion.
     const tl = gsap.timeline({
-      defaults: { ease: "power3.out" },
+      defaults: { ease: "power3.inOut" },
       onComplete: () => {
         clearHandoff();
         setReady(true);
@@ -93,7 +96,7 @@ export default function BugDetailHero({
       x: 0,
       y: 0,
       scale: 1,
-      duration: 0.85,
+      duration: 0.5, // Axel spec: 450-550ms
     });
 
     return () => {
@@ -117,17 +120,20 @@ export default function BugDetailHero({
       ts: Date.now(),
     });
 
+    // Reverse direction: bug returns to the grid (which is also in motion).
+    // Symmetric inOut ease keeps continuity with the same depth curve as the
+    // forward transition.
     gsap.to(node, {
       scale: 0.4,
       autoAlpha: 0,
       duration: 0.45,
-      ease: "power2.in",
+      ease: "power3.inOut",
     });
     gsap.to("[data-detail-fade]", {
       autoAlpha: 0,
       y: 12,
       duration: 0.35,
-      ease: "power2.in",
+      ease: "power3.inOut",
       stagger: 0.04,
       onComplete: () => router.push("/"),
     });
