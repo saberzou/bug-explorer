@@ -288,7 +288,13 @@ export default function BugGrid({ bugs }: BugGridProps) {
     targetOffset.current.x = Math.max(-maxX, Math.min(maxX, targetOffset.current.x));
     targetOffset.current.y = Math.max(-maxY, Math.min(maxY, targetOffset.current.y));
 
-    dragState.current.movedSquared += dx * dx + dy * dy;
+    // Total squared distance from pointer-start. Use ASSIGNMENT, not
+    // accumulation: dx/dy are already start→now deltas, so accumulating
+    // them on every pointermove inflates movedSquared into the drag-threshold
+    // range from natural mouse jitter during a click (bug seen on desktop:
+    // a 4-5 px hand-tremor click registered as a drag and preventDefault'd
+    // the Link navigation). Single-frame assignment is the correct math.
+    dragState.current.movedSquared = dx * dx + dy * dy;
   };
 
   const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
