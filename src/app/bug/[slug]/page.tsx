@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import BugImage from "@/components/BugImage";
+import BugDetailHero from "@/components/BugDetailHero";
 import BugPhotos from "@/components/BugPhotos";
+import DetailContentFade from "@/components/DetailContentFade";
 import { getBug, loadBugs } from "@/lib/bugs";
 
 interface PageProps {
@@ -43,26 +44,31 @@ export default async function BugPage({ params }: PageProps) {
 
   return (
     <main className="min-h-dvh bg-[#0e0d0b] text-zinc-100">
-      <div className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-10 sm:py-16">
+      <DetailContentFade
+        slug={bug.slug}
+        className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-10 sm:py-16"
+      >
         <Link
           href="/"
+          data-bug-back
+          data-detail-fade
           className="self-start text-xs uppercase tracking-widest text-zinc-400 hover:text-amber-200"
         >
           ← back to grid
         </Link>
 
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
-          <div className="aspect-square w-full max-w-xs flex-none overflow-hidden rounded-full bg-zinc-900 ring-1 ring-zinc-700/50">
-            <BugImage
-              src={`/bugs/${bug.slug}.png`}
-              alt={bug.commonName}
-              className="h-full w-full object-cover"
-              fallbackText="image pending"
-            />
-          </div>
+        <div
+          data-detail-fade-row
+          className="flex flex-col gap-8 sm:flex-row sm:items-start"
+        >
+          <BugDetailHero
+            slug={bug.slug}
+            commonName={bug.commonName}
+            fallbackBg={bug.colorPalette?.[0]}
+          />
 
           <div className="flex flex-1 flex-col gap-4">
-            <header>
+            <header data-detail-fade>
               <p
                 className={`text-[10px] uppercase tracking-[0.3em] ${RARITY_BADGE[bug.rarity] ?? "text-zinc-400"}`}
               >
@@ -76,7 +82,7 @@ export default async function BugPage({ params }: PageProps) {
               </p>
             </header>
 
-            <dl className="grid grid-cols-2 gap-4 text-sm">
+            <dl data-detail-fade className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-zinc-500">
                   Habitat
@@ -102,7 +108,7 @@ export default async function BugPage({ params }: PageProps) {
               )}
             </dl>
 
-            <section>
+            <section data-detail-fade>
               <h2 className="text-[10px] uppercase tracking-widest text-zinc-500">
                 Weird but real
               </h2>
@@ -111,7 +117,7 @@ export default async function BugPage({ params }: PageProps) {
               </p>
             </section>
 
-            <section>
+            <section data-detail-fade>
               <h2 className="text-[10px] uppercase tracking-widest text-zinc-500">
                 Why it&apos;s cool
               </h2>
@@ -123,9 +129,11 @@ export default async function BugPage({ params }: PageProps) {
         </div>
 
         {bug.photos && bug.photos.length > 0 && (
-          <BugPhotos photos={bug.photos} commonName={bug.commonName} />
+          <div data-detail-fade>
+            <BugPhotos photos={bug.photos} commonName={bug.commonName} />
+          </div>
         )}
-      </div>
+      </DetailContentFade>
     </main>
   );
 }

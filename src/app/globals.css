@@ -24,3 +24,16 @@ body {
   background: var(--background);
   overscroll-behavior: none;
 }
+
+/*
+ * Bug detail content starts invisible *only* when the user hasn't opted out
+ * of motion. GSAP (DetailContentFade) tweens these in on mount. Reduced-
+ * motion users see everything immediately. Same for the hero — but the
+ * hero element handles its own opacity via inline style so this rule keeps
+ * to data-detail-fade text/photo blocks.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-detail-fade] {
+    opacity: 0;
+  }
+}

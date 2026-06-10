@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import BugImage from "@/components/BugImage";
 import { assignCoords } from "@/lib/hex";
+import { prefersReducedMotion, storeHandoff } from "@/lib/transition";
 import type { Bug, Rarity } from "@/lib/types";
 
 interface BugGridProps {
@@ -344,7 +345,27 @@ export default function BugGrid({ bugs, latestSlug }: BugGridProps) {
                   : undefined
               }
               onClick={(ev) => {
-                if (wasDrag()) ev.preventDefault();
+                if (wasDrag()) {
+                  ev.preventDefault();
+                  return;
+                }
+                // Stash the source rect for GSAP FLIP into the detail page.
+                if (!prefersReducedMotion()) {
+                  const rect = (
+                    ev.currentTarget as HTMLAnchorElement
+                  ).getBoundingClientRect();
+                  storeHandoff({
+                    slug: bug.slug,
+                    rect: {
+                      x: rect.x,
+                      y: rect.y,
+                      w: rect.width,
+                      h: rect.height,
+                    },
+                    bg: bug.colorPalette?.[0],
+                    ts: Date.now(),
+                  });
+                }
               }}
               draggable={false}
             >
