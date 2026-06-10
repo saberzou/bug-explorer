@@ -136,7 +136,7 @@ export default function BugDetailHero({
           accept that the link is part of this client wrapper. */}
       <div
         ref={heroRef}
-        className="aspect-square w-full max-w-xs flex-none overflow-hidden rounded-full bg-zinc-900 ring-1 ring-zinc-700/50"
+        className="aspect-square w-full max-w-xs flex-none overflow-hidden rounded-full bg-zinc-900"
         style={{
           backgroundColor: fallbackBg,
         }}
