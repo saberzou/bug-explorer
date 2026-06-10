@@ -249,12 +249,22 @@ export default function BugGrid({ bugs }: BugGridProps) {
         canvasSize.h,
       );
 
+      // Per-viewport zoom: cluster reads as too small on desktop because
+      // HEX_SIZE is tuned for phones. Multiply both translate (spread) and
+      // scale (cell size) by a single zoom factor, ramping with viewport
+      // width from 1.0x at ≤900px up to 1.55x at ≥1600px. Mobile is
+      // unchanged; desktop fills the canvas properly.
+      const zoom = Math.min(
+        1.55,
+        Math.max(1.0, 1.0 + (canvasSize.w - 900) / 1273),
+      );
+
       // Write directly to DOM (avoid React re-render every frame).
       for (let i = 0; i < layout.length; i++) {
         const el = itemRefs.current[i];
         if (!el) continue;
         const { x, y, scale } = layout[i];
-        el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+        el.style.transform = `translate(${x * zoom}px, ${y * zoom}px) scale(${scale * zoom})`;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -263,6 +273,14 @@ export default function BugGrid({ bugs }: BugGridProps) {
   }, [positioned, canvasSize]);
 
   // Pointer handlers — drag updates the TARGET offset; RAF loop animates.
+  //
+  // IMPORTANT: do NOT call setPointerCapture on the parent canvas in
+  // onPointerDown. Pointer capture for a MOUSE pointer also retargets
+  // mouseup and the synthesized click event to the capture target. With
+  // capture on the parent, click never reaches the Link child and
+  // navigation silently fails on desktop. The parent canvas covers the
+  // full viewport (canvasSize = viewport size), so the pointer naturally
+  // stays "inside" during a drag without explicit capture.
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     dragState.current = {
       dragging: true,
@@ -272,7 +290,6 @@ export default function BugGrid({ bugs }: BugGridProps) {
       offsetStartY: targetOffset.current.y,
       movedSquared: 0,
     };
-    (e.currentTarget as Element).setPointerCapture?.(e.pointerId);
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -297,9 +314,8 @@ export default function BugGrid({ bugs }: BugGridProps) {
     dragState.current.movedSquared = dx * dx + dy * dy;
   };
 
-  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+  const onPointerUp = (_e: React.PointerEvent<HTMLDivElement>) => {
     dragState.current.dragging = false;
-    (e.currentTarget as Element).releasePointerCapture?.(e.pointerId);
   };
 
   // Suppress link click after a non-trivial drag.
