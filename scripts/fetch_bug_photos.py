@@ -31,17 +31,30 @@ SKIP_TOKENS = (
 )
 
 
+def _open_with_retries(req, timeout, attempts=4, label=""):
+    last_exc = None
+    for i in range(attempts):
+        try:
+            return urllib.request.urlopen(req, timeout=timeout).read()
+        except Exception as exc:
+            last_exc = exc
+            wait = 1.5 * (i + 1)
+            if i + 1 < attempts:
+                print(f"   ~ retry {i+1}/{attempts-1} after {wait:.1f}s ({label}: {type(exc).__name__})")
+                time.sleep(wait)
+    raise last_exc
+
+
 def http_get_json(url, params):
     full = f"{url}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(full, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    raw = _open_with_retries(req, timeout=30, label=url[-60:])
+    return json.loads(raw.decode("utf-8"))
 
 
 def http_get_bytes(url):
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read()
+    return _open_with_retries(req, timeout=60, label=url[-60:])
 
 
 def list_category_files(category, limit=300):
