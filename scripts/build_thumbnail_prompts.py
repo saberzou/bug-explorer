@@ -51,6 +51,11 @@ ANATOMY = {
     "picture-winged-fly": "small fly with transparent wings marked with bold black patterns resembling spider-leg silhouettes, slender body, dark thorax",
     "sunset-moth": "diurnal moth with iridescent rainbow wings showing bands of blue, green, gold, magenta, and crimson, long tails on hindwings, looks more like a butterfly",
     "bee-fly": "fluffy round bumblebee-mimicking fly, golden-orange and black fuzzy body, very long needle-like proboscis extending forward, large clear wings, hovering posture",
+    "blue-morpho": "large butterfly with wings spread flat, upper wing surfaces brilliant iridescent metallic electric blue with thin black borders, slender dark body, antennae like fine clubbed wires, wings catch light with structural shimmer",
+    "queen-alexandras-birdwing": "enormous butterfly with wings spread flat, broad rounded forewings velvet black with cream and golden-yellow zigzag bands, hindwings rich green with gold central patches, plump cream-yellow body, the wingspan dominates the frame",
+    "goliath-birdwing": "large male butterfly with wings spread flat, deep velvet black wings with brilliant neon yellow-green wedge patches on hindwings and forewing centers, golden-yellow body, broad muscular thorax",
+    "apollo-butterfly": "medium butterfly with wings spread flat, translucent porcelain-white wings with smoky-gray veining, four prominent crimson-red eyespots ringed in black on the hindwings, white fluffy body, alpine elegance",
+    "sylphina-angel": "small delicate butterfly with wings spread flat, forewings nearly transparent crystal-clear with dark veins, hindwings carry two slim ribbon-like crimson tail streamers trailing below, tiny dark body, ethereal almost weightless appearance",
 }
 
 STYLE_HEADER = "A hand-drawn naturalist scientific illustration of a"
@@ -78,10 +83,14 @@ def build_prompt(slug: str, common: str, latin: str) -> str:
 
 def main():
     bugs = json.loads(BUGS_PATH.read_text())
-    new_bugs = [b for b in bugs if b.get("discoveredOn", "") >= "2026-06-10"]
+    # Select only bugs that don't have a thumbnail yet (newly added)
+    import sys
+    public_bugs_dir = ROOT / "public" / "bugs"
+    new_bugs = [b for b in bugs if not (public_bugs_dir / f"{b['slug']}.png").exists()]
 
-    if len(new_bugs) != 30:
-        print(f"⚠️  Expected 30 new bugs, got {len(new_bugs)}")
+    if not new_bugs:
+        print("All bugs already have thumbnails.")
+        return
 
     output = []
     for b in new_bugs:

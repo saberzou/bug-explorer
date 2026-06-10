@@ -1665,5 +1665,145 @@
       "height": 1366,
       "localPath": "/bugs/photos/sunset-moth/2.jpg"
     }
+  ],
+  "blue-morpho": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Morpho_menelaus_with_closed_wings.jpg/1280px-Morpho_menelaus_with_closed_wings.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Morpho_menelaus_with_closed_wings.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Morpho_menelaus_with_closed_wings.jpg",
+      "credit": "p.gibellini",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Menelaus blue morpho, with closed wings. Oasi di Sant'Alessio (PV, Italy), 7 September 2019",
+      "fileTitle": "File:Morpho menelaus with closed wings.jpg",
+      "width": 3120,
+      "height": 4160,
+      "localPath": "/bugs/photos/blue-morpho/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Morpho_menelaus_didius.jpg/1280px-Morpho_menelaus_didius.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Morpho_menelaus_didius.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Morpho_menelaus_didius.jpg",
+      "credit": "Kristof Zyskowski & Yulia Bereshpolova",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Peru: Madre de Dios, Amazonia Lodge",
+      "fileTitle": "File:Morpho menelaus didius.jpg",
+      "width": 2200,
+      "height": 1467,
+      "localPath": "/bugs/photos/blue-morpho/2.jpg"
+    }
+  ],
+  "queen-alexandras-birdwing": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/013602428_Ornithoptera_alexandrae_dorsal_male.jpg/1280px-013602428_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/013602428_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:013602428_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "credit": "Peter Wing",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "A dorsal photograph of the Queen Alexandra Birdwing Butterfly- Ornithoptera alexandrae Rothschild, 1907. A non-type male.",
+      "fileTitle": "File:013602428 Ornithoptera alexandrae dorsal male.jpg",
+      "width": 8688,
+      "height": 5792,
+      "localPath": "/bugs/photos/queen-alexandras-birdwing/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/010361534_Ornithoptera_alexandrae_dorsal_male.jpg/1280px-010361534_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/010361534_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:010361534_Ornithoptera_alexandrae_dorsal_male.jpg",
+      "credit": "Peter_Wing",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "A dorsal image of The Alexandra Birdwing Butterfly, Ornithoptera alexandrae, Rothschild, 1907. A non-type male.",
+      "fileTitle": "File:010361534 Ornithoptera alexandrae dorsal male.jpg",
+      "width": 2160,
+      "height": 1440,
+      "localPath": "/bugs/photos/queen-alexandras-birdwing/2.jpg"
+    }
+  ],
+  "goliath-birdwing": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/013605276_Ornithoptera_goliath_procus_dorsal_pupa.jpg/1280px-013605276_Ornithoptera_goliath_procus_dorsal_pupa.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/013605276_Ornithoptera_goliath_procus_dorsal_pupa.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:013605276_Ornithoptera_goliath_procus_dorsal_pupa.jpg",
+      "credit": "Peter Wing",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "A dorsal photograph of the Goliath Birdwing Butterfly- Ornithoptera goliath procus Rothschild, 1914. A pupa.",
+      "fileTitle": "File:013605276 Ornithoptera goliath procus dorsal pupa.jpg",
+      "width": 8688,
+      "height": 5792,
+      "localPath": "/bugs/photos/goliath-birdwing/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ornithoptera_goliath_samson_f._joiceyi_Noakes_%26_Talbot%2C_1915.jpg/1280px-Ornithoptera_goliath_samson_f._joiceyi_Noakes_%26_Talbot%2C_1915.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Ornithoptera_goliath_samson_f._joiceyi_Noakes_%26_Talbot%2C_1915.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ornithoptera_goliath_samson_f._joiceyi_Noakes_%26_Talbot,_1915.jpg",
+      "credit": "Natural History Museum",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Joicey Collection butterfly now in the Natural History Museum",
+      "fileTitle": "File:Ornithoptera goliath samson f. joiceyi Noakes & Talbot, 1915.jpg",
+      "width": 2160,
+      "height": 1440,
+      "localPath": "/bugs/photos/goliath-birdwing/2.jpg"
+    }
+  ],
+  "apollo-butterfly": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Apollo_-_Parnassius_apollo_%2814380769256%29.jpg/1280px-Apollo_-_Parnassius_apollo_%2814380769256%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Apollo_-_Parnassius_apollo_%2814380769256%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Apollo_-_Parnassius_apollo_(14380769256).jpg",
+      "credit": "Björn S...",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Apollo - Parnassius apollo",
+      "fileTitle": "File:Apollo - Parnassius apollo (14380769256).jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/apollo-butterfly/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Papilionidae_-_Parnassius_apollo.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Papilionidae_-_Parnassius_apollo.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Papilionidae_-_Parnassius_apollo.jpg",
+      "credit": "Hectonichus",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Papilionidae - Parnassius apollo",
+      "fileTitle": "File:Papilionidae - Parnassius apollo.jpg",
+      "width": 1024,
+      "height": 670,
+      "localPath": "/bugs/photos/apollo-butterfly/2.jpg"
+    }
+  ],
+  "sylphina-angel": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Chorinea_sylphina_2.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Chorinea_sylphina_2.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Chorinea_sylphina_2.jpg",
+      "credit": "Ssola",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Chorinea sylphina near w:Machu Picchu.",
+      "fileTitle": "File:Chorinea sylphina 2.jpg",
+      "width": 1093,
+      "height": 991,
+      "localPath": "/bugs/photos/sylphina-angel/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Chorinea_sylphina.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Chorinea_sylphina.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Chorinea_sylphina.jpg",
+      "credit": "Mercedes Lisón Martín",
+      "license": "GPL",
+      "licenseUrl": "http://www.gnu.org/licenses/gpl.html",
+      "caption": "Chorinea sylphina",
+      "fileTitle": "File:Chorinea sylphina.jpg",
+      "width": 640,
+      "height": 480,
+      "localPath": "/bugs/photos/sylphina-angel/2.jpg"
+    }
   ]
 }

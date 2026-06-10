@@ -1,5 +1,100 @@
 [
   {
+    "slug": "blue-morpho",
+    "commonName": "Blue Morpho",
+    "latinName": "Morpho menelaus",
+    "habitat": "Rainforests of Central & South America (Mexico to Brazil)",
+    "sizeMm": 150,
+    "sizeKind": "wingspan",
+    "weirdFact": "The dazzling blue isn't pigment — it's nanostructure. Microscopic scales on the wings refract light, so the color shifts with viewing angle and can flash bright enough to be visible from a low-flying aircraft.",
+    "whyItsCool": "Pure physics-as-color. No dye, no paint, just architecture that bends light into electric blue.",
+    "rarity": "rare",
+    "discoveredOn": "2026-05-06",
+    "order": "Lepidoptera",
+    "family": "Nymphalidae",
+    "colorPalette": [
+      "#1B4F8C",
+      "#0A1A3D",
+      "#5A89C7"
+    ]
+  },
+  {
+    "slug": "queen-alexandras-birdwing",
+    "commonName": "Queen Alexandra's Birdwing",
+    "latinName": "Ornithoptera alexandrae",
+    "habitat": "Tropical rainforests of Oro Province, Papua New Guinea (single endemic population)",
+    "sizeMm": 280,
+    "sizeKind": "wingspan",
+    "weirdFact": "The world's largest butterfly. Females can have a wingspan wider than a dinner plate — over 28 cm. So big that early collectors brought down specimens with shotguns.",
+    "whyItsCool": "Endangered, glacially slow-flying, and structurally improbable. Looks more like a small bird gliding through the canopy than an insect.",
+    "rarity": "legendary",
+    "discoveredOn": "2026-05-07",
+    "order": "Lepidoptera",
+    "family": "Papilionidae",
+    "colorPalette": [
+      "#2D5F3F",
+      "#1A1A1A",
+      "#D4A017"
+    ]
+  },
+  {
+    "slug": "goliath-birdwing",
+    "commonName": "Goliath Birdwing",
+    "latinName": "Ornithoptera goliath",
+    "habitat": "Rainforests of New Guinea and surrounding Indonesian islands",
+    "sizeMm": 220,
+    "sizeKind": "wingspan",
+    "weirdFact": "Second-largest butterfly on Earth. Males flash neon-green wing patches against velvet-black bodies; females are larger but soberly patterned in browns and creams. They drink from canopy flowers most humans never see.",
+    "whyItsCool": "Looks like a stained-glass window came to life and decided to fly. Sexual dimorphism so extreme that males and females were originally described as separate species.",
+    "rarity": "rare",
+    "discoveredOn": "2026-05-08",
+    "order": "Lepidoptera",
+    "family": "Papilionidae",
+    "colorPalette": [
+      "#0D2818",
+      "#3DB54A",
+      "#F2C744"
+    ]
+  },
+  {
+    "slug": "apollo-butterfly",
+    "commonName": "Apollo Butterfly",
+    "latinName": "Parnassius apollo",
+    "habitat": "High-altitude alpine meadows across Europe and Central Asia, 400–2300m elevation",
+    "sizeMm": 85,
+    "sizeKind": "wingspan",
+    "weirdFact": "Translucent white wings dotted with red eyespots ringed in black. Lives only on rocky alpine slopes where its caterpillar food plant (stonecrop) grows. Climate change is pushing it higher up mountains until there's nowhere left to climb.",
+    "whyItsCool": "A butterfly built for thin air and cold stone. The red eyespots are warning signals — its body holds toxins absorbed from stonecrop, making it foul to birds.",
+    "rarity": "rare",
+    "discoveredOn": "2026-05-09",
+    "order": "Lepidoptera",
+    "family": "Papilionidae",
+    "colorPalette": [
+      "#F4F0E8",
+      "#C8202E",
+      "#2A2A2A"
+    ]
+  },
+  {
+    "slug": "sylphina-angel",
+    "commonName": "Sylphina Angel",
+    "latinName": "Chorinea sylphina",
+    "habitat": "Cloud forests of the Andes (Peru, Bolivia, Ecuador), 1500–2500m elevation",
+    "sizeMm": 32,
+    "sizeKind": "wingspan",
+    "weirdFact": "Forewings are crystal-clear, hindwings carry slim ribbon-like red tails that flutter behind the body in flight. The transparency comes from naked wing membrane — no scales at all in those patches.",
+    "whyItsCool": "Looks more like origami made of cellophane than a living animal. The trailing red ribbons make it move through forest light like a tiny kite.",
+    "rarity": "legendary",
+    "discoveredOn": "2026-05-10",
+    "order": "Lepidoptera",
+    "family": "Riodinidae",
+    "colorPalette": [
+      "#E8E5DA",
+      "#C8202E",
+      "#3A2E2A"
+    ]
+  },
+  {
     "slug": "helmeted-treehopper",
     "commonName": "Helmeted Treehopper",
     "latinName": "Cyphonia clavata",
