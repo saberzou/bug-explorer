@@ -39,11 +39,26 @@ export default function BugImage({
   }, []);
 
   if (errored) {
+    // Graceful image-failure fallback: let the parent's colorPalette
+    // background show through (no opaque bg here), and render the bug's
+    // commonName as a centered label with a soft text-shadow so it stays
+    // readable on any palette color. This makes "illustration pending"
+    // cells feel intentional, like a specimen card waiting on its plate.
     return (
       <div
-        className={`flex h-full w-full items-center justify-center bg-zinc-900 text-zinc-500 text-xs uppercase tracking-widest ${className ?? ""}`}
+        className={`flex h-full w-full items-center justify-center px-2 ${className ?? ""}`}
       >
-        {fallbackText ?? "pending"}
+        <span
+          className="text-[10px] font-medium uppercase tracking-wider text-white text-center leading-tight"
+          style={{
+            textShadow:
+              "0 0 6px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45)",
+            textWrap: "balance",
+            maxWidth: "94%",
+          }}
+        >
+          {fallbackText ?? "pending"}
+        </span>
       </div>
     );
   }

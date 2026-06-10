@@ -374,7 +374,7 @@ export default function BugGrid({ bugs }: BugGridProps) {
                 src={`/bugs/${bug.slug}.png`}
                 alt={bug.commonName}
                 className="h-full w-full object-cover pointer-events-none"
-                fallbackText={bug.commonName.slice(0, 2)}
+                fallbackText={bug.commonName}
               />
               {/* Saber: removed latest-bug pulse halo per design feedback */}
             </Link>
