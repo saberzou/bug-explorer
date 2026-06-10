@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import BugImage from "@/components/BugImage";
@@ -38,30 +38,44 @@ export default function BugDetailHero({
 }: BugDetailHeroProps) {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
-  const [ready, setReady] = useState(false);
+  // Per Axel QA: default visible. The reduced-motion path and the
+  // plain-mount (no-handoff) path both should show the hero immediately
+  // on first paint. Only the FLIP-with-handoff path needs to start hidden
+  // so we can position before revealing — and in that path, we synchronously
+  // flip to false in useLayoutEffect (below) before the browser paints.
+  const [ready, setReady] = useState(true);
 
-  useEffect(() => {
+  // useLayoutEffect runs synchronously after DOM mutation but before browser
+  // paint, so we can detect the FLIP-with-handoff case and hide the hero
+  // BEFORE the browser commits the first frame. For reduced-motion and
+  // plain-mount, we never hide it — first paint shows the hero immediately,
+  // no flash. SSR-safe: useLayoutEffect doesn't run on server, and the
+  // useState(true) default means SSR markup renders visible too.
+  useLayoutEffect(() => {
     const node = heroRef.current;
     if (!node) return;
 
     if (prefersReducedMotion()) {
-      setReady(true);
+      // Already visible from useState(true). Nothing else to do.
       return;
     }
 
     const handoff = readHandoff(slug);
 
     if (!handoff) {
-      // Plain mount fade — content is laid out instantly, but a tiny opacity
-      // ramp keeps the swap from feeling jarring.
-      gsap.fromTo(
-        node,
-        { autoAlpha: 0, scale: 0.96 },
-        { autoAlpha: 1, scale: 1, duration: 0.45, ease: "power2.out" },
-      );
-      setReady(true);
+      // Plain mount path (deep link, refresh): hero is already visible from
+      // initial render (useState(true)). No GSAP fade — a fade here would
+      // first hide the hero (autoAlpha:0) and then fade in, which produces
+      // exactly the blank-circle flash Axel measured. The hero just appears.
       return;
     }
+
+    // FLIP-with-handoff path: hide the hero immediately so the snap-to-source
+    // rect doesn't cause a positioning flash. setReady(false) here is fine
+    // because GSAP's gsap.set() below will paint the hero at the source
+    // rect within the same frame; the autoAlpha:1 makes it visible from
+    // that snapped position.
+    setReady(false);
 
     // FLIP: snap the hero from its laid-out rect to the source rect, then
     // tween back to the laid-out position.
