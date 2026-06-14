@@ -1,4 +1,5 @@
 import BugGrid from "@/components/BugGrid";
+import ViewToggle from "@/components/ViewToggle";
 import { loadBugs } from "@/lib/bugs";
 
 export default async function Home() {
@@ -21,8 +22,11 @@ export default async function Home() {
           </p>
         </div>
       </header>
-      <footer className="pointer-events-none absolute bottom-0 left-0 z-10 w-full bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent pb-3 pt-10 text-center text-[10px] uppercase tracking-widest text-zinc-600">
-        a curio cabinet · {new Date().getUTCFullYear()}
+      <footer className="pointer-events-none absolute bottom-0 left-0 z-10 flex w-full flex-col items-center gap-3 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent pb-5 pt-12">
+        <ViewToggle />
+        <p className="text-[10px] uppercase tracking-widest text-zinc-600">
+          a curio cabinet · {new Date().getUTCFullYear()}
+        </p>
       </footer>
     </main>
   );
