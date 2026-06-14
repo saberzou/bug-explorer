@@ -56,6 +56,22 @@ ANATOMY = {
     "goliath-birdwing": "large male butterfly with wings spread flat, deep velvet black wings with brilliant neon yellow-green wedge patches on hindwings and forewing centers, golden-yellow body, broad muscular thorax",
     "apollo-butterfly": "medium butterfly with wings spread flat, translucent porcelain-white wings with smoky-gray veining, four prominent crimson-red eyespots ringed in black on the hindwings, white fluffy body, alpine elegance",
     "sylphina-angel": "small delicate butterfly with wings spread flat, forewings nearly transparent crystal-clear with dark veins, hindwings carry two slim ribbon-like crimson tail streamers trailing below, tiny dark body, ethereal almost weightless appearance",
+    # --- legacy backlog: re-generated under the circular safe-zone footer ---
+    "hercules-beetle": "large rhinoceros beetle, glossy olive-yellow elytra flecked with black, two enormous curved horns forming a pincer (one curving down from the thorax, one up from the head), robust black legs, the long horn is the dominant feature but posed to stay within the circle",
+    "glasswing-butterfly": "butterfly with wings spread, wing membranes almost completely transparent like clear glass with opaque dark brown borders edged in faint orange, slender dark body, the see-through panes are the defining feature",
+    "european-hornet": "large social wasp, reddish-brown head and thorax, yellow abdomen marked with brown teardrop bands, two pairs of amber wings folded along the body, long legs, robust build",
+    "rosy-maple-moth": "small fluffy saturniid moth at rest with wings spread, candy coloring of bright pink wing margins and creamy lemon-yellow bands, woolly yellow body, feathery antennae, fuzzy legs, wings posed compactly",
+    "orchid-mantis": "praying mantis mimicking a flower, white blushed with pink, flattened lobed petal-like legs, raised spiny forelegs, triangular head, delicate blossom appearance, limbs gathered inward",
+    "giant-prickly-stick-insect": "bulky thorny stick insect, body and legs studded with spines, curled abdomen held scorpion-like over the back, mottled brown camouflage, heavy-bodied, coiled compactly rather than splayed",
+    "jewel-caterpillar": "translucent gelatinous caterpillar covered in glassy gel-like spiky tubercles, faint orange-yellow body glowing through the clear spines, looks like a living cluster of gummy beads",
+    "picasso-bug": "shield bug with a rounded domed back brightly patterned with concentric rings and dots in green, orange, black and cream like abstract art, small head, six short legs tucked in",
+    "stalk-eyed-fly": "small slender fly whose eyes sit on the ends of two long thin horizontal eyestalks spreading sideways from the head, dark narrow body, clear wings; pose the eyestalks angled slightly so the whole span stays inside the circle",
+    "spiny-flower-mantis": "small mantis, white-and-green body with a bold swirl eyespot on each forewing, spiny thorax and legs, raised raptorial forelegs, flower-mimic posture, limbs drawn inward",
+    "monarch-butterfly": "butterfly with wings spread flat, bright orange wings veined and bordered in black with rows of white dots along the margins, slender black body, classic showy pattern, wingtips kept clear of the edge",
+    "european-mantis": "praying mantis, slender green body, elongated thorax, triangular head with large eyes, raised spiny raptorial forelegs, a bullseye spot on the inner foreleg, posture compact",
+    "periodical-cicada": "stout cicada, black body with vivid red-orange eyes, translucent wings with orange veins held roof-like over the body, six orange legs",
+    "bombardier-beetle": "ground beetle with blue-black iridescent elytra and a reddish-orange head, thorax and legs, oval body, long antennae, all limbs and antennae curved inward",
+    "cuckoo-wasp": "small jewel-like wasp with a brilliant metallic emerald-green and sapphire-blue body and a coarsely pitted surface, short wings, compact rounded abdomen, legs tucked beneath",
 }
 
 STYLE_HEADER = "A hand-drawn naturalist scientific illustration of a"
@@ -88,25 +104,58 @@ def build_prompt(slug: str, common: str, latin: str) -> str:
 
 
 def main():
-    bugs = json.loads(BUGS_PATH.read_text())
-    # Select only bugs that don't have a thumbnail yet (newly added)
+    import argparse
     import sys
-    public_bugs_dir = ROOT / "public" / "bugs"
-    new_bugs = [b for b in bugs if not (public_bugs_dir / f"{b['slug']}.png").exists()]
 
-    if not new_bugs:
-        print("All bugs already have thumbnails.")
+    ap = argparse.ArgumentParser(
+        description="Emit per-species thumbnail generation prompts."
+    )
+    ap.add_argument(
+        "slugs", nargs="*",
+        help="explicit slugs to (re)generate prompts for, even if a PNG already "
+             "exists (e.g. backlog re-gen). Default: bugs with no PNG yet.",
+    )
+    args = ap.parse_args()
+
+    bugs = json.loads(BUGS_PATH.read_text())
+    by_slug = {b["slug"]: b for b in bugs}
+    public_bugs_dir = ROOT / "public" / "bugs"
+
+    if args.slugs:
+        # Explicit regen list: take the given slugs regardless of existing PNG.
+        unknown = [s for s in args.slugs if s not in by_slug]
+        if unknown:
+            sys.exit(f"unknown slug(s) not in bugs.json: {unknown}")
+        targets = [by_slug[s] for s in args.slugs]
+    else:
+        # Default: only bugs that don't have a thumbnail yet (newly added).
+        targets = [b for b in bugs
+                   if not (public_bugs_dir / f"{b['slug']}.png").exists()]
+
+    if not targets:
+        print("Nothing to do — all selected bugs already have thumbnails.")
         return
 
     output = []
-    for b in new_bugs:
-        prompt = build_prompt(b["slug"], b["commonName"], b["latinName"])
+    missing_anatomy = []
+    for b in targets:
+        try:
+            prompt = build_prompt(b["slug"], b["commonName"], b["latinName"])
+        except KeyError:
+            missing_anatomy.append(b["slug"])
+            continue
         output.append({
             "slug": b["slug"],
             "commonName": b["commonName"],
             "latinName": b["latinName"],
             "prompt": prompt,
         })
+
+    if missing_anatomy:
+        sys.exit(
+            "no ANATOMY entry for: " + ", ".join(missing_anatomy)
+            + "\nAdd descriptions to the ANATOMY dict before generating."
+        )
 
     out_path = ROOT / "data" / "thumbnail_prompts.json"
     out_path.write_text(json.dumps(output, indent=2))
