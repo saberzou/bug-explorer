@@ -90,56 +90,96 @@ type LandGeo = {
   features: { geometry: { type: string; coordinates: number[][][][] | number[][][] } }[];
 };
 
-function makeGlobeTexture(land: LandGeo | null): THREE.CanvasTexture {
-  const W = 2048;
-  const H = 1024;
-  const c = document.createElement("canvas");
-  c.width = W;
-  c.height = H;
-  const ctx = c.getContext("2d")!;
-  ctx.fillStyle = "#e7dabd";
-  ctx.fillRect(0, 0, W, H);
-  for (let i = 0; i < 9000; i++) {
-    const a = Math.random() * 0.06;
-    ctx.fillStyle = Math.random() > 0.5 ? `rgba(90,70,40,${a})` : `rgba(255,250,235,${a})`;
-    ctx.fillRect(Math.random() * W, Math.random() * H, 1.5, 1.5);
+// --- low-poly faceted globe geometry ----------------------------------------
+const GLOBE_DETAIL = 3; // icosphere subdivision: low enough to read as faceted
+
+function vecToLatLng(x: number, y: number, z: number): [number, number] {
+  const lat = 90 - (Math.acos(Math.max(-1, Math.min(1, y))) * 180) / Math.PI;
+  let lng = (Math.atan2(z, -x) * 180) / Math.PI - 180;
+  if (lng < -180) lng += 360;
+  return [lat, lng];
+}
+
+function pointInRing(x: number, y: number, ring: number[][]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0];
+    const yi = ring[i][1];
+    const xj = ring[j][0];
+    const yj = ring[j][1];
+    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
   }
-  if (land?.features?.length) {
-    const project = (lng: number, lat: number): [number, number] => [
-      ((lng + 180) / 360) * W,
-      ((90 - lat) / 180) * H,
-    ];
-    const drawRing = (ring: number[][]) => {
-      ctx.beginPath();
-      ring.forEach(([lng, lat], i) => {
-        const [x, y] = project(lng, lat);
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      });
-      ctx.closePath();
-    };
-    ctx.fillStyle = "#cdb98c";
-    ctx.strokeStyle = "rgba(80,62,35,0.55)";
-    ctx.lineWidth = 1.5;
-    for (const f of land.features) {
-      const g = f.geometry;
-      const polys =
-        g.type === "MultiPolygon"
-          ? (g.coordinates as number[][][][])
-          : [g.coordinates as number[][][]];
-      for (const poly of polys) {
-        for (const ring of poly) {
-          drawRing(ring);
-          ctx.fill();
-          ctx.stroke();
+  return inside;
+}
+
+function isLand(lng: number, lat: number, land: LandGeo): boolean {
+  for (const f of land.features) {
+    const g = f.geometry;
+    const polys =
+      g.type === "MultiPolygon"
+        ? (g.coordinates as number[][][][])
+        : [g.coordinates as number[][][]];
+    for (const poly of polys) {
+      if (poly.length === 0) continue;
+      if (pointInRing(lng, lat, poly[0])) {
+        let hole = false;
+        for (let k = 1; k < poly.length; k++) {
+          if (pointInRing(lng, lat, poly[k])) {
+            hole = true;
+            break;
+          }
         }
+        if (!hole) return true;
       }
     }
   }
-  const tex = new THREE.CanvasTexture(c);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  tex.anisotropy = 4;
-  return tex;
+  return false;
+}
+
+/** Deterministic [0,1) PRNG so the paper mottle is stable across renders. */
+function rand01(seed: number): number {
+  let t = (seed + 0x6d2b79f5) | 0;
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
+
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+
+/**
+ * Build a low-poly icosphere with flat per-face colors: ocean = warm cream,
+ * land = deeper tan (classified by testing each face centroid against the land
+ * polygons). A small per-face brightness jitter gives a paper-grain mottle that
+ * suits the faceted style. flatShading makes each triangle read as a facet.
+ */
+function buildLowPolyGlobe(land: LandGeo | null): THREE.BufferGeometry {
+  const geo = new THREE.IcosahedronGeometry(GLOBE_RADIUS, GLOBE_DETAIL).toNonIndexed();
+  const pos = geo.attributes.position;
+  const n = pos.count;
+  const colors = new Float32Array(n * 3);
+  const ocean: [number, number, number] = [0.905, 0.847, 0.741]; // ~#e7d8bd
+  const landC: [number, number, number] = [0.74, 0.63, 0.43]; // ~#bda06e
+  for (let f = 0; f < n; f += 3) {
+    let cx = 0;
+    let cy = 0;
+    let cz = 0;
+    for (let k = 0; k < 3; k++) {
+      cx += pos.getX(f + k);
+      cy += pos.getY(f + k);
+      cz += pos.getZ(f + k);
+    }
+    const len = Math.hypot(cx, cy, cz) || 1;
+    const [lat, lng] = vecToLatLng(cx / len, cy / len, cz / len);
+    const base = land && isLand(lng, lat, land) ? landC : ocean;
+    const mottle = (rand01(f) * 2 - 1) * 0.05; // ±5% paper grain
+    for (let k = 0; k < 3; k++) {
+      colors[(f + k) * 3] = clamp01(base[0] + mottle);
+      colors[(f + k) * 3 + 1] = clamp01(base[1] + mottle);
+      colors[(f + k) * 3 + 2] = clamp01(base[2] + mottle);
+    }
+  }
+  geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  return geo;
 }
 
 function makeCountTexture(n: number): THREE.CanvasTexture {
@@ -177,11 +217,10 @@ function Globe() {
       alive = false;
     };
   }, []);
-  const texture = useMemo(() => makeGlobeTexture(land), [land]);
+  const geometry = useMemo(() => buildLowPolyGlobe(land), [land]);
   return (
-    <mesh>
-      <sphereGeometry args={[GLOBE_RADIUS, 36, 24]} />
-      <meshStandardMaterial map={texture} roughness={1} metalness={0} flatShading />
+    <mesh geometry={geometry}>
+      <meshStandardMaterial vertexColors flatShading roughness={1} metalness={0} />
     </mesh>
   );
 }
