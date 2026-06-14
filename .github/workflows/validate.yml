@@ -1,0 +1,51 @@
+name: validate-specimens
+
+# Layer 3 of the daily-curation workflow (see docs/DAILY_CURATION.md): the
+# enforcement gate. Re-runs scripts/validate_bug.py on every change to the bug
+# data or thumbnails, so a duplicate or circle-cropped specimen cannot merge to
+# main / reach production — regardless of how the specimen was authored.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/bugs.json"
+      - "public/bugs/**"
+      - "scripts/validate_bug.py"
+  pull_request:
+    paths:
+      - "data/bugs.json"
+      - "public/bugs/**"
+      - "scripts/validate_bug.py"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Scope: 'cohort' (latest day) or 'all' (full audit)"
+        default: "cohort"
+        type: choice
+        options: [cohort, all]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: python -m pip install --upgrade pip pillow
+
+      # Default (push/PR) validates the latest discoveredOn cohort — i.e. the
+      # specimen(s) being added today. This gates new content without tripping
+      # on the pre-existing legacy thumbnails that overflow the crop (run a
+      # full `--all` audit manually via workflow_dispatch to triage those).
+      - name: Validate new specimen(s) (dedup + schema + circle-safety)
+        run: |
+          if [ "${{ github.event.inputs.mode }}" = "all" ]; then
+            python3 scripts/validate_bug.py --all
+          else
+            python3 scripts/validate_bug.py
+          fi
