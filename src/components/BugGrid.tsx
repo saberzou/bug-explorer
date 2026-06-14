@@ -13,13 +13,23 @@ interface BugGridProps {
   latestSlug: string | null;
 }
 
+// Rarity rim treatment on the grid circles. Drawn with Tailwind `ring`
+// utilities (outset box-shadow) so the rim sits just outside the clipped
+// circle and is never cut by the image's `overflow-hidden`.
+//
+//  - common    → no rim (the quiet majority of the grid)
+//  - uncommon  → thin gold rim
+//  - rare      → cool sky-blue rim, so it reads distinctly from the golds
+//  - legendary → bolder gold rim + a soft gold glow, the apex treatment
+//
+// Gold (amber) intentionally spans uncommon + legendary; legendary earns the
+// extra weight and halo so it still reads as the top tier at a glance.
 const RARITY_RING: Record<Rarity, string> = {
-  // Saber: removed all rings + glow halos per design feedback. Rarity is
-  // still signalled by the detail-page rarity badge text, not the grid ring.
   common: "",
-  uncommon: "",
-  rare: "",
-  legendary: "",
+  uncommon: "ring-1 ring-amber-300/70",
+  rare: "ring-1 ring-sky-300/70",
+  legendary:
+    "ring-2 ring-amber-300 shadow-[0_0_14px_3px_rgba(251,191,36,0.45)]",
 };
 
 // Canvas dimensions are computed at runtime based on the viewport.
@@ -228,35 +238,60 @@ export default function BugGrid({ bugs }: BugGridProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  // Lets pointer handlers (and resize/data effects) wake the RAF loop after
+  // it has parked itself. Stable identity; the live implementation is swapped
+  // in by the effect below so it always closes over the current layout inputs.
+  const ensureRunning = useRef<() => void>(() => {});
+
   // requestAnimationFrame loop: lerp render → target, then layout items.
+  //
+  // The loop is NOT a perpetual 60fps spinner. It parks itself (stops
+  // scheduling frames) once the render offset has converged on the target and
+  // no drag is in flight — there's nothing left to animate when the cluster is
+  // settled, so burning a frame every 16ms just drains battery/CPU. Pointer
+  // activity (and layout-input changes) call ensureRunning() to wake it again.
   useEffect(() => {
     let raf = 0;
-    const tick = () => {
-      // Smooth inertia: render position eases toward target at 12% per frame.
-      renderOffset.current.x +=
-        (targetOffset.current.x - renderOffset.current.x) * 0.12;
-      renderOffset.current.y +=
-        (targetOffset.current.y - renderOffset.current.y) * 0.12;
+    let running = false;
 
-      const baseCells = positioned.map((p) => ({
-        baseX: p.baseX,
-        baseY: p.baseY,
-      }));
+    // Pre-compute the viewport zoom once per loop activation; it only depends
+    // on canvasSize, which is fixed for the lifetime of this effect.
+    const zoom = Math.min(
+      1.55,
+      Math.max(1.0, 1.0 + (canvasSize.w - 900) / 1273),
+    );
+
+    // Reused scratch buffer so we don't allocate 65 objects every frame.
+    const baseCells = positioned.map((p) => ({
+      baseX: p.baseX,
+      baseY: p.baseY,
+    }));
+
+    const tick = () => {
+      const dx = targetOffset.current.x - renderOffset.current.x;
+      const dy = targetOffset.current.y - renderOffset.current.y;
+      // Settled = caught up to the target AND the user isn't actively dragging.
+      // Sub-pixel threshold so we don't park mid-motion or chase float noise.
+      const settled =
+        !dragState.current.dragging &&
+        Math.abs(dx) < 0.1 &&
+        Math.abs(dy) < 0.1;
+
+      if (settled) {
+        // Snap to exact target for a crisp final frame, then park.
+        renderOffset.current.x = targetOffset.current.x;
+        renderOffset.current.y = targetOffset.current.y;
+      } else {
+        // Smooth inertia: render position eases toward target at 12%/frame.
+        renderOffset.current.x += dx * 0.12;
+        renderOffset.current.y += dy * 0.12;
+      }
+
       const layout = modokiTransform(
         baseCells,
         renderOffset.current,
         canvasSize.w,
         canvasSize.h,
-      );
-
-      // Per-viewport zoom: cluster reads as too small on desktop because
-      // HEX_SIZE is tuned for phones. Multiply both translate (spread) and
-      // scale (cell size) by a single zoom factor, ramping with viewport
-      // width from 1.0x at ≤900px up to 1.55x at ≥1600px. Mobile is
-      // unchanged; desktop fills the canvas properly.
-      const zoom = Math.min(
-        1.55,
-        Math.max(1.0, 1.0 + (canvasSize.w - 900) / 1273),
       );
 
       // Write directly to DOM (avoid React re-render every frame).
@@ -266,10 +301,31 @@ export default function BugGrid({ bugs }: BugGridProps) {
         const { x, y, scale } = layout[i];
         el.style.transform = `translate(${x * zoom}px, ${y * zoom}px) scale(${scale * zoom})`;
       }
+
+      if (settled) {
+        // Nothing left to animate — stop scheduling frames until woken.
+        running = false;
+        return;
+      }
       raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+
+    const start = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(tick);
+    };
+    ensureRunning.current = start;
+
+    // Kick once on mount / whenever layout inputs change so the cluster paints
+    // its initial (or re-measured) position, then parks on the next frame.
+    start();
+
+    return () => {
+      cancelAnimationFrame(raf);
+      running = false;
+      ensureRunning.current = () => {};
+    };
   }, [positioned, canvasSize]);
 
   // Pointer handlers — drag updates the TARGET offset; RAF loop animates.
@@ -290,6 +346,8 @@ export default function BugGrid({ bugs }: BugGridProps) {
       offsetStartY: targetOffset.current.y,
       movedSquared: 0,
     };
+    // Wake the RAF loop if it has parked since the last interaction.
+    ensureRunning.current();
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
