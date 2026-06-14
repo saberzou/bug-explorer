@@ -65,7 +65,32 @@ The grid and detail hero render the square PNG inside a **circle** (`object-cove
 - Keep the established plate style: hand-drawn naturalist illustration, warm
   cream background, soft drop shadow, no text/labels of any kind.
 
-### 4. Run the gate (must pass)
+### 4. Fetch real photos (every specimen gets them)
+
+The illustration is the grid thumbnail; the **detail page also shows a
+`PHOTOGRAPHS` section** with 2 real, CC-licensed photos of the actual animal
+(see Blue Morpho). A new specimen is **not complete without real photos** — the
+detail page looks half-finished with an empty photo block.
+
+```bash
+python3 scripts/fetch_bug_photos.py <slug>
+```
+
+- Pulls up to 2 photos from the species' Wikimedia Commons category (falls back
+  to the genus category), preferring **two different photographers**, and skips
+  drawings/maps/diagrams so you get real photographs.
+- Writes files to `public/bugs/photos/<slug>/{1,2}.jpg` and an entry to
+  `data/bug_photos.json` with full attribution (credit, license, license URL,
+  Commons source link, caption). The site (`src/lib/bugs.ts`) merges these onto
+  the bug automatically when `bugs.json` has no inline `photos`.
+- **Verify before moving on:** the slug now has 2 files under
+  `public/bugs/photos/<slug>/` and a `data/bug_photos.json` entry with sane
+  `credit` + `license`. If the fetcher finds nothing (obscure species, no
+  Commons category), either pick a better-documented species or hand-curate a
+  CC-licensed photo with correct attribution into the manifest — don't ship a
+  specimen with zero photos.
+
+### 5. Run the gate (must pass)
 
 ```bash
 pip install pillow        # once; the image checks need it
@@ -89,11 +114,14 @@ green. Do not relax the thresholds to force a pass.
 A skipped image check (Pillow missing) counts as a **failure** for the job —
 install Pillow and re-run.
 
-### 5. Commit only on green
+### 6. Commit only on green
+
+Commit the data row, the illustration, **and** the real photos together:
 
 ```bash
 python3 scripts/validate_bug.py --frontier && \
-  git add data/bugs.json public/bugs/<slug>.png && \
+  git add data/bugs.json public/bugs/<slug>.png \
+          data/bug_photos.json public/bugs/photos/<slug>/ && \
   git commit -m "Add <Common Name> (<Latin name>) — daily specimen <YYYY-MM-DD>"
 ```
 
@@ -102,9 +130,11 @@ specimen to be dated strictly after the latest existing bug (the forward-only
 invariant). Plain `validate_bug.py` / CI `--all` deliberately omit `--frontier`
 so legacy mid-timeline rows and backfills still validate.
 
-End the commit body with the session link per repo convention.
+End the commit body with the session link per repo convention. (Photos may be a
+separate follow-up commit if fetched after the data/illustration, but the
+intent is one specimen = data row + illustration + 2 real photos.)
 
-### 6. Ship
+### 7. Ship
 
 Per `README.md`, pushes to `main` auto-deploy to production via Vercel. Push to
 `main` (or open a PR if review is wanted) — the new circle appears after the
