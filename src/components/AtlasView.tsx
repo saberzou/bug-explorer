@@ -20,16 +20,18 @@ export default function AtlasView({ pins, count }: { pins: AtlasPin[]; count: nu
     <main className="relative h-dvh w-dvw overflow-hidden bg-[#0e0d0b] text-zinc-100">
       <AtlasGlobe pins={pins} />
 
-      <header className="pointer-events-none absolute left-0 top-0 z-10 flex w-full flex-col items-center gap-3 bg-gradient-to-b from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent p-4 pb-12 text-center sm:p-6">
+      <header className="pointer-events-none absolute left-0 top-0 z-10 flex w-full flex-col items-center gap-1 bg-gradient-to-b from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent p-4 pb-12 text-center sm:p-6">
         <h1 className="font-serif text-2xl text-amber-100 sm:text-3xl">Bug Explorer</h1>
         <p className="text-xs text-zinc-400">
           {count} specimens · drag to spin · open a cluster · tap to inspect
         </p>
-        <ViewToggle />
       </header>
 
-      <footer className="pointer-events-none absolute bottom-0 left-0 z-10 w-full bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent pb-3 pt-10 text-center text-[10px] uppercase tracking-widest text-zinc-600">
-        the field atlas · {new Date().getUTCFullYear()}
+      <footer className="pointer-events-none absolute bottom-0 left-0 z-10 flex w-full flex-col items-center gap-3 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent pb-5 pt-12">
+        <ViewToggle />
+        <p className="text-[10px] uppercase tracking-widest text-zinc-600">
+          the field atlas · {new Date().getUTCFullYear()}
+        </p>
       </footer>
     </main>
   );

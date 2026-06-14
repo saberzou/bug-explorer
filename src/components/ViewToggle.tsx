@@ -12,12 +12,12 @@ export default function ViewToggle() {
   const onAtlas = pathname?.startsWith("/atlas");
 
   const base =
-    "px-3 py-1 text-[10px] uppercase tracking-[0.25em] transition-colors";
+    "rounded-full px-5 py-2 text-[11px] uppercase tracking-[0.25em] transition-colors";
   const active = "text-amber-100";
   const idle = "text-zinc-500 hover:text-zinc-300";
 
   return (
-    <nav className="pointer-events-auto flex items-center gap-1 rounded-full bg-black/30 p-1 ring-1 ring-zinc-700/40 backdrop-blur-sm">
+    <nav className="pointer-events-auto flex items-center gap-1.5 rounded-full bg-black/30 p-1.5 ring-1 ring-zinc-700/40 backdrop-blur-sm">
       <Link href="/" className={`${base} ${onAtlas ? idle : active}`}>
         Cabinet
       </Link>
