@@ -49,7 +49,7 @@ Append one object to `data/bugs.json` matching the schema in `types.ts`:
 - `sizeMm` + `sizeKind` (`"wingspan"` for moths/butterflies, else `"body"`).
 - `weirdFact` (≤140 chars ideal), `whyItsCool` (≤160 chars ideal, voice/opinion).
 - `rarity` ∈ `common | uncommon | rare | legendary`.
-- `discoveredOn` — today's date, ISO `YYYY-MM-DD`.
+- `discoveredOn` — **frontier date**, ISO `YYYY-MM-DD`: `max(today, latest discoveredOn in the collection + 1 day)`. A new specimen always lands at the frontier (strictly after every existing bug) so the grid stays forward-only; never stamp it mid-timeline. The queue may run ahead of the wall-clock day — that's expected for a slowly-growing cabinet. (Backfilling an *older* species is a separate, deliberate act — don't use `--frontier` for it.)
 - Optional: `order`, `family`, `colorPalette` (exactly 3 `#rrggbb`), `photos`.
 
 ### 3. Generate the thumbnail (circular-safe)
@@ -92,10 +92,15 @@ install Pillow and re-run.
 ### 5. Commit only on green
 
 ```bash
-python3 scripts/validate_bug.py && \
+python3 scripts/validate_bug.py --frontier && \
   git add data/bugs.json public/bugs/<slug>.png && \
   git commit -m "Add <Common Name> (<Latin name>) — daily specimen <YYYY-MM-DD>"
 ```
+
+The daily commit gate uses `--frontier`, which additionally requires the new
+specimen to be dated strictly after the latest existing bug (the forward-only
+invariant). Plain `validate_bug.py` / CI `--all` deliberately omit `--frontier`
+so legacy mid-timeline rows and backfills still validate.
 
 End the commit body with the session link per repo convention.
 
@@ -103,8 +108,11 @@ End the commit body with the session link per repo convention.
 
 Per `README.md`, pushes to `main` auto-deploy to production via Vercel. Push to
 `main` (or open a PR if review is wanted) — the new circle appears after the
-build. Hex positions never reflow: the new bug claims the next outer spiral
-slot, older bugs stay put.
+build. Layout is forward-only **as long as you add at the frontier**: the new
+bug claims the next outer spiral slot and existing bugs stay put. Note that
+`src/lib/hex.ts` assigns slots by sorting on `discoveredOn` (slug as tie-break),
+so a specimen stamped *mid-timeline* would shove every later-dated bug one slot
+outward — which is exactly what the `--frontier` gate prevents.
 
 ---
 
@@ -112,6 +120,7 @@ slot, older bugs stay put.
 
 ```bash
 python3 scripts/validate_bug.py                 # latest discoveredOn cohort (default)
+python3 scripts/validate_bug.py --frontier      # daily add: cohort + frontier-date gate
 python3 scripts/validate_bug.py --slug <slug>   # one specimen
 python3 scripts/validate_bug.py --date 2026-06-14
 python3 scripts/validate_bug.py --all           # full sweep (CI / backlog audit)
@@ -122,7 +131,10 @@ Exit `0` = safe to commit. Exit `1` = do not commit; read the FAIL lines.
 
 Tunables live at the top of `scripts/validate_bug.py` (`SAFE_RADIUS_FRAC`,
 `BG_DIST_THRESH`, coverage band, plate-detection thresholds). Change them
-deliberately, with Atticus — they define "in the circle."
+deliberately, with Atticus — they define "in the circle." The `--frontier` flag
+(daily add only) additionally enforces the forward-only date invariant; CI and
+`--all`/`--date`/`--slug` runs intentionally omit it so legacy mid-timeline rows
+and deliberate backfills still validate.
 
 ---
 
@@ -130,8 +142,11 @@ deliberately, with Atticus — they define "in the circle."
 
 - **Gate is the source of truth.** As long as the job won't commit on a red
   gate, the collection can't drift into dupes or cropped art.
-- **Forward-only layout.** `src/lib/hex.ts` assigns coords by `discoveredOn`;
-  new specimens grow outward and never move existing ones.
+- **Forward-only layout (when you add at the frontier).** `src/lib/hex.ts`
+  assigns coords by `discoveredOn` (sorted ascending, slug tie-break), so a
+  frontier add grows the spiral outward and never moves existing bugs. A
+  mid-timeline date would reflow every later bug — the `--frontier` gate on the
+  daily add blocks that.
 - **Plate style is fixed** in one place (`build_thumbnail_prompts.py`), so the
   look stays consistent as the catalog grows.
 - **Atomic runs.** Data row + image are committed together, only after the gate.

@@ -22,6 +22,7 @@ Usage:
     python3 scripts/validate_bug.py --date 2026-06-14
     python3 scripts/validate_bug.py --all           # full sweep (CI / backfill)
     python3 scripts/validate_bug.py --all --no-image  # schema/dedup only
+    python3 scripts/validate_bug.py --frontier        # daily add: also require frontier date
 
 Image checks need Pillow:  pip install pillow
 (If Pillow is missing the image checks are skipped with a loud warning; the
@@ -181,6 +182,39 @@ def validate_dedup(bug: dict, others: list[dict], rep: Report) -> None:
 
 
 # ---------------------------------------------------------------------------
+# frontier gate (opt-in)
+# ---------------------------------------------------------------------------
+def validate_frontier(bug: dict, others: list[dict], rep: Report) -> None:
+    """Enforce the forward-only invariant for a *new* daily specimen: its
+    ``discoveredOn`` must land at the frontier, i.e. strictly after the latest
+    date already in the collection. This turns the runbook's
+    ``discoveredOn = max(today, latest + 1 day)`` rule into a hard gate so a new
+    bug can never be stamped mid-timeline.
+
+    Opt-in via --frontier. It is intentionally NOT applied to --all sweeps,
+    --date spot-checks, backfills of older species, or the CI push/PR gate (all
+    of which legitimately validate non-frontier rows — e.g. same-day cohorts or
+    legacy dates); only the daily-add commit step passes --frontier.
+    """
+    dates = [o.get("discoveredOn", "") for o in others]
+    dates = [d for d in dates if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d or "")]
+    if not dates:
+        return  # first ever specimen — nothing to be ahead of
+    latest = max(dates)
+    mine = bug.get("discoveredOn", "")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", mine or ""):
+        return  # schema check already flagged the bad date
+    if mine <= latest:
+        rep.err(
+            f"discoveredOn {mine!r} is not at the frontier: the collection "
+            f"already reaches {latest!r}. A new specimen must land strictly after "
+            f"the latest date (set discoveredOn = max(today, {latest} + 1 day)). "
+            f"This keeps the grid forward-only; re-date the new bug, don't "
+            f"insert it mid-timeline."
+        )
+
+
+# ---------------------------------------------------------------------------
 # image gate
 # ---------------------------------------------------------------------------
 def validate_image(slug: str, rep: Report) -> None:
@@ -298,7 +332,15 @@ def main() -> int:
     ap.add_argument("--date", help="validate the cohort with this discoveredOn (YYYY-MM-DD)")
     ap.add_argument("--all", action="store_true", help="validate every bug")
     ap.add_argument("--no-image", action="store_true", help="skip image checks")
+    ap.add_argument("--frontier", action="store_true",
+                    help="also require the validated specimen(s) to be dated at "
+                         "the frontier (strictly after the latest existing bug); "
+                         "use for the daily-add commit step")
     args = ap.parse_args()
+
+    if args.frontier and args.all:
+        sys.exit("--frontier is for new daily specimens, not --all sweeps "
+                 "(existing bugs are legitimately not at the frontier)")
 
     bugs = json.loads(BUGS_PATH.read_text())
     targets = select_targets(bugs, args)
@@ -310,6 +352,8 @@ def main() -> int:
         others = [b for b in bugs if b is not bug]
         validate_schema(bug, rep)
         validate_dedup(bug, others, rep)
+        if args.frontier:
+            validate_frontier(bug, others, rep)
         if not args.no_image:
             validate_image(slug, rep)
         reports.append(rep)

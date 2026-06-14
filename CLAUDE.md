@@ -34,8 +34,11 @@ a duplicate or cropped specimen cannot reach production.
 ## Stable invariants — don't break these
 
 - `slug` is **permanent** — it drives the URL, image path, and hex coordinates.
-- Hex layout is forward-only (`src/lib/hex.ts`): new bugs grow the spiral
-  outward by `discoveredOn`; existing bugs never move. Don't reorder or reflow.
+- Hex layout is forward-only (`src/lib/hex.ts`) **when bugs are added at the
+  frontier**: it sorts by `discoveredOn` (slug tie-break) and walks the spiral,
+  so a new frontier-dated bug grows the cluster outward and existing bugs never
+  move. A mid-timeline date reflows every later bug — the daily add guards
+  against this with `validate_bug.py --frontier`. Don't reorder or reflow.
 - A run is atomic: commit the data row **and** its image together, only after a
   green gate. Never commit a half specimen.
 
