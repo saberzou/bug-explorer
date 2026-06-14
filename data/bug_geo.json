@@ -1,0 +1,392 @@
+{
+  "blue-morpho": {
+    "lat": -14.727,
+    "lng": -48.582,
+    "region": "Brazil",
+    "rangeKind": "regional"
+  },
+  "queen-alexandras-birdwing": {
+    "lat": -5.306,
+    "lng": 146.453,
+    "region": "Papua New Guinea",
+    "rangeKind": "point"
+  },
+  "goliath-birdwing": {
+    "lat": -4.965,
+    "lng": 143.418,
+    "region": "New Guinea",
+    "rangeKind": "regional"
+  },
+  "apollo-butterfly": {
+    "lat": 41.72,
+    "lng": 70.453,
+    "region": "Central Asia",
+    "rangeKind": "regional"
+  },
+  "sylphina-angel": {
+    "lat": -10.422,
+    "lng": -75.518,
+    "region": "The Andes",
+    "rangeKind": "regional"
+  },
+  "helmeted-treehopper": {
+    "lat": -8.731,
+    "lng": -56.1,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "hercules-beetle": {
+    "lat": -7.441,
+    "lng": -58.182,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "glasswing-butterfly": {
+    "lat": -4.01,
+    "lng": -63.335,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "european-hornet": {
+    "lat": 42.951,
+    "lng": -80.9,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "honey-bee": {
+    "lat": 50.014,
+    "lng": 9.347,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "rosy-maple-moth": {
+    "lat": 37.982,
+    "lng": -84.465,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "orchid-mantis": {
+    "lat": 2.592,
+    "lng": 109.029,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "eastern-tiger-swallowtail": {
+    "lat": 37.049,
+    "lng": -83.441,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "giant-prickly-stick-insect": {
+    "lat": -25.433,
+    "lng": 136.665,
+    "region": "Australia",
+    "rangeKind": "regional"
+  },
+  "common-eastern-firefly": {
+    "lat": 36.527,
+    "lng": -77.088,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "jewel-caterpillar": {
+    "lat": 9.165,
+    "lng": -84.594,
+    "region": "Central America",
+    "rangeKind": "regional"
+  },
+  "velvet-ant": {
+    "lat": 32.184,
+    "lng": -87.224,
+    "region": "SE North America",
+    "rangeKind": "regional"
+  },
+  "picasso-bug": {
+    "lat": -0.414,
+    "lng": 16.888,
+    "region": "Sub-Saharan Africa",
+    "rangeKind": "regional"
+  },
+  "stalk-eyed-fly": {
+    "lat": 6.737,
+    "lng": 109.1,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "peacock-spider": {
+    "lat": -27.876,
+    "lng": 137.9,
+    "region": "Australia",
+    "rangeKind": "regional"
+  },
+  "zebra-jumping-spider": {
+    "lat": 49.88,
+    "lng": 24.429,
+    "region": "Northern Hemisphere",
+    "rangeKind": "regional"
+  },
+  "spiny-flower-mantis": {
+    "lat": -0.116,
+    "lng": 18.112,
+    "region": "Africa",
+    "rangeKind": "regional"
+  },
+  "monarch-butterfly": {
+    "lat": 40.029,
+    "lng": -99.888,
+    "region": "North America",
+    "rangeKind": "regional"
+  },
+  "goliath-beetle": {
+    "lat": 2.849,
+    "lng": 22.135,
+    "region": "Africa",
+    "rangeKind": "regional"
+  },
+  "deaths-head-hawkmoth": {
+    "lat": 49.575,
+    "lng": 10.688,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "luna-moth": {
+    "lat": 41.606,
+    "lng": -80.229,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "atlas-moth": {
+    "lat": 1.851,
+    "lng": 106.524,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "broad-bodied-chaser": {
+    "lat": 52.539,
+    "lng": 11.394,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "european-mantis": {
+    "lat": 36.927,
+    "lng": -98.759,
+    "region": "North America",
+    "rangeKind": "regional"
+  },
+  "european-stag-beetle": {
+    "lat": 50.425,
+    "lng": 14.253,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "periodical-cicada": {
+    "lat": 37.68,
+    "lng": -81.782,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "bombardier-beetle": {
+    "lat": 21.606,
+    "lng": 15.935,
+    "region": "Worldwide",
+    "rangeKind": "cosmopolitan"
+  },
+  "devils-flower-mantis": {
+    "lat": 5.155,
+    "lng": 22.382,
+    "region": "Africa",
+    "rangeKind": "regional"
+  },
+  "cuckoo-wasp": {
+    "lat": 21.249,
+    "lng": 17.206,
+    "region": "Worldwide",
+    "rangeKind": "cosmopolitan"
+  },
+  "seven-spot-ladybug": {
+    "lat": 52.759,
+    "lng": 9.735,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "giant-water-bug": {
+    "lat": 38.053,
+    "lng": -100.135,
+    "region": "North America",
+    "rangeKind": "regional"
+  },
+  "eastern-dobsonfly": {
+    "lat": 41.386,
+    "lng": -79.771,
+    "region": "Eastern North America",
+    "rangeKind": "regional"
+  },
+  "water-strider": {
+    "lat": 17.571,
+    "lng": 14.206,
+    "region": "Worldwide",
+    "rangeKind": "cosmopolitan"
+  },
+  "mayfly": {
+    "lat": 50.892,
+    "lng": 12.171,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "diving-beetle": {
+    "lat": 47.982,
+    "lng": 61.5,
+    "region": "Eurasia",
+    "rangeKind": "regional"
+  },
+  "fairyfly": {
+    "lat": -0.288,
+    "lng": 13.324,
+    "region": "Tropics",
+    "rangeKind": "regional"
+  },
+  "springtail": {
+    "lat": 19.053,
+    "lng": 15.653,
+    "region": "Worldwide",
+    "rangeKind": "cosmopolitan"
+  },
+  "brazilian-treehopper": {
+    "lat": -15.139,
+    "lng": -54.371,
+    "region": "Brazil",
+    "rangeKind": "regional"
+  },
+  "mantis-lacewing": {
+    "lat": 42.543,
+    "lng": 70.065,
+    "region": "Central Asia",
+    "rangeKind": "regional"
+  },
+  "mole-cricket": {
+    "lat": 50.947,
+    "lng": 13.865,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "antlion": {
+    "lat": 51.061,
+    "lng": 20.476,
+    "region": "Northern Hemisphere",
+    "rangeKind": "regional"
+  },
+  "common-glow-worm": {
+    "lat": 49.986,
+    "lng": 11.571,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "new-zealand-glowworm": {
+    "lat": -41.788,
+    "lng": 173.506,
+    "region": "New Zealand",
+    "rangeKind": "point"
+  },
+  "lantern-bug": {
+    "lat": 7.588,
+    "lng": 107.194,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "giraffe-weevil": {
+    "lat": -17.504,
+    "lng": 47.353,
+    "region": "Madagascar",
+    "rangeKind": "point"
+  },
+  "harlequin-beetle": {
+    "lat": -8.457,
+    "lng": -56.312,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "frog-legged-leaf-beetle": {
+    "lat": 2.894,
+    "lng": 110.582,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "comet-moth": {
+    "lat": -19.233,
+    "lng": 48.306,
+    "region": "Madagascar",
+    "rangeKind": "point"
+  },
+  "leafcutter-ant": {
+    "lat": -6.892,
+    "lng": -57.265,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "weaver-ant": {
+    "lat": 2.592,
+    "lng": 107.159,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "honeypot-ant": {
+    "lat": 38.488,
+    "lng": -110.382,
+    "region": "Western North America",
+    "rangeKind": "regional"
+  },
+  "bullet-ant": {
+    "lat": -2.775,
+    "lng": -55.641,
+    "region": "Central & South America",
+    "rangeKind": "regional"
+  },
+  "termite-queen": {
+    "lat": 1.888,
+    "lng": 21.641,
+    "region": "Africa",
+    "rangeKind": "regional"
+  },
+  "titan-beetle": {
+    "lat": -11.41,
+    "lng": -72.976,
+    "region": "The Andes",
+    "rangeKind": "regional"
+  },
+  "lubber-grasshopper": {
+    "lat": 34.765,
+    "lng": -85.776,
+    "region": "SE North America",
+    "rangeKind": "regional"
+  },
+  "vampire-moth": {
+    "lat": 47.159,
+    "lng": 6.665,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "asian-giant-hornet": {
+    "lat": 7.424,
+    "lng": 110.9,
+    "region": "Southeast Asia",
+    "rangeKind": "regional"
+  },
+  "picture-winged-fly": {
+    "lat": 47.022,
+    "lng": 12.1,
+    "region": "Europe",
+    "rangeKind": "regional"
+  },
+  "sunset-moth": {
+    "lat": -17.833,
+    "lng": 43.965,
+    "region": "Madagascar",
+    "rangeKind": "point"
+  },
+  "bee-fly": {
+    "lat": 41.1,
+    "lng": -94.629,
+    "region": "North America",
+    "rangeKind": "regional"
+  }
+}
