@@ -1233,5 +1233,24 @@
       "#D4A574",
       "#F4E4C1"
     ]
+  },
+  {
+    "slug": "common-earwig",
+    "commonName": "Common Earwig",
+    "latinName": "Forficula auricularia",
+    "habitat": "Gardens, leaf litter, and crevices across Europe and North America",
+    "sizeMm": 14,
+    "sizeKind": "body",
+    "weirdFact": "Folds its fan-like flight wings into intricate origami packets ten times under those tail forceps, yet rarely bothers to fly. The ear-crawling legend is pure myth.",
+    "whyItsCool": "One of the very few insects that mothers her young, guarding the eggs, licking off mould, and feeding the hatchlings. Tender parenting from a bug everyone fears.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-14",
+    "order": "Dermaptera",
+    "family": "Forficulidae",
+    "colorPalette": [
+      "#5C3A21",
+      "#8B5E3C",
+      "#C89B6F"
+    ]
   }
 ]
