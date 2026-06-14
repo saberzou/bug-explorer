@@ -1805,5 +1805,33 @@
       "height": 480,
       "localPath": "/bugs/photos/sylphina-angel/2.jpg"
     }
+  ],
+  "common-earwig": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/%28MHNT%29_Forficula_auricularia_%28female%29.jpg/1280px-%28MHNT%29_Forficula_auricularia_%28female%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/%28MHNT%29_Forficula_auricularia_%28female%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Forficula_auricularia_(female).jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "en:Forficula auricularia - (European earwig) Locality : Fronton, Haute-Garonne France.",
+      "fileTitle": "File:(MHNT) Forficula auricularia (female).jpg",
+      "width": 6925,
+      "height": 4832,
+      "localPath": "/bugs/photos/common-earwig/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Common_earwig%2C_Forficula_auricularia_9124.jpg/1280px-Common_earwig%2C_Forficula_auricularia_9124.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/Common_earwig%2C_Forficula_auricularia_9124.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Common_earwig,_Forficula_auricularia_9124.jpg",
+      "credit": "ImagePerson",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Taken in eastern Ontario",
+      "fileTitle": "File:Common earwig, Forficula auricularia 9124.jpg",
+      "width": 3888,
+      "height": 2592,
+      "localPath": "/bugs/photos/common-earwig/2.jpg"
+    }
   ]
 }
