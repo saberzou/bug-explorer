@@ -155,6 +155,19 @@ def font(sz):
     return ImageFont.load_default()
 
 
+def spread(clat, clng, i, n):
+    """Sunflower-spread member i of n around a region centroid (degrees)."""
+    if n <= 1:
+        return clat, clng
+    golden = 2.399963229728653
+    step = 5.4
+    r = step * math.sqrt(i + 0.5)
+    a = i * golden
+    d_lat = r * math.sin(a)
+    d_lng = (r * math.cos(a)) / max(0.35, math.cos(math.radians(clat)))
+    return max(-85, min(85, clat + d_lat)), clng + d_lng
+
+
 def main():
     img = Image.new("RGB", (W, H), (14, 13, 11))
     d = ImageDraw.Draw(img, "RGBA")
@@ -179,35 +192,55 @@ def main():
     for _, pts, col in drawn:
         d.polygon(pts, fill=col, outline=col)
 
-    # pins
-    placed = []
+    # group by region, spread members, collect labels
+    from collections import defaultdict
+    regions = defaultdict(list)
     for b in BUGS:
         hit = geo.locate(b["habitat"]) or (0.0, 0.0, "Unknown", "regional")
-        dlat, dlng = geo.jitter(b["slug"])
-        lat, lng = hit[0] + dlat, hit[1] + dlng
-        sx, sy, z = project(lat, lng, rad=1.07)
-        ssx, ssy, _ = project(lat, lng, rad=1.0)
-        placed.append((z, b, sx, sy, ssx, ssy))
+        regions[(hit[2], hit[0], hit[1])].append(b)
+
+    placed = []
+    labels = []
+    for (region, clat, clng), members in regions.items():
+        n = len(members)
+        for i, b in enumerate(members):
+            lat, lng = spread(clat, clng, i, n)
+            sx, sy, z = project(lat, lng, rad=1.07)
+            ssx, ssy, _ = project(lat, lng, rad=1.0)
+            placed.append((z, b, sx, sy, ssx, ssy))
+        llat = min(88, clat + 5.4 * math.sqrt(n) + 6)
+        lx, ly, lz = project(llat, clng, rad=1.05)
+        labels.append((lz, region, lx, ly))
     placed.sort(key=lambda t: t[0])
 
     for z, b, sx, sy, ssx, ssy in placed:
         if z <= 0.02:
             continue
-        d.line((ssx, ssy, sx, sy), fill=(184, 146, 74, 230), width=2)
-        size = int(40 + 10 * z)
-        rim = RIM.get(b["rarity"])
-        if rim:
-            d.ellipse((sx - size / 2 - 3, sy - size / 2 - 3, sx + size / 2 + 3, sy + size / 2 + 3),
-                      fill=rim + (255,))
+        d.line((ssx, ssy, sx, sy), fill=(184, 146, 74, 220), width=2)
+        size = int(38 + 12 * z)
         png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
         if png.exists():
             thumb = circle_thumb(png, size)
             img.paste(thumb, (int(sx - size / 2), int(sy - size / 2)), thumb)
+        rim = RIM.get(b["rarity"])
+        if rim:  # hairline rim
+            d.ellipse((sx - size / 2, sy - size / 2, sx + size / 2, sy + size / 2),
+                      outline=rim + (255,), width=2)
+
+    # region labels
+    lf = font(19)
+    for lz, region, lx, ly in labels:
+        if lz <= 0.05:
+            continue
+        txt = region.upper()
+        for ox, oy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            d.text((lx + ox, ly + oy), txt, font=lf, fill=(14, 13, 11, 235), anchor="mm")
+        d.text((lx, ly), txt, font=lf, fill=(239, 226, 196, 255), anchor="mm")
 
     # header
     d2 = ImageDraw.Draw(img, "RGBA")
     d2.text((CX, 56), "Bug Explorer", font=font(46), fill=(254, 243, 199), anchor="mm")
-    d2.text((CX, 96), f"{len(BUGS)} specimens · drag to spin · open a cluster · tap to inspect",
+    d2.text((CX, 96), f"{len(BUGS)} specimens · drag to spin · pinch to zoom · tap to inspect",
             font=font(20), fill=(161, 161, 170), anchor="mm")
     d2.rounded_rectangle((CX - 95, 120, CX + 95, 150), radius=15, fill=(0, 0, 0, 110),
                          outline=(82, 82, 91, 120))

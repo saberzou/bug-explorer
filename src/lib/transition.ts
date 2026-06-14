@@ -59,3 +59,29 @@ export function prefersReducedMotion(): boolean {
   if (typeof window === "undefined" || !window.matchMedia) return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
+
+/**
+ * One-shot flag for the Cabinet↔Atlas fade. The toggle sets it and fades to
+ * black before navigating; the destination view consumes it on mount and fades
+ * back in from black. Absent on deep links / refreshes, so those just render.
+ */
+const VIEW_FADE_KEY = "bug-view-fade";
+
+export function setViewFade(): void {
+  try {
+    sessionStorage.setItem(VIEW_FADE_KEY, String(Date.now()));
+  } catch {
+    // ignore
+  }
+}
+
+export function consumeViewFade(): boolean {
+  try {
+    const v = sessionStorage.getItem(VIEW_FADE_KEY);
+    if (!v) return false;
+    sessionStorage.removeItem(VIEW_FADE_KEY);
+    return Date.now() - Number(v) < 4000;
+  } catch {
+    return false;
+  }
+}

@@ -21,10 +21,11 @@ export interface AtlasPin {
 }
 
 const GLOBE_RADIUS = 2;
-const STALK = 0.22;
-const CLUSTER_MIN = 4; // a region with at least this many bugs collapses to a badge
+const STALK = 0.14;
+const DISC = 0.12;
+const RIM = 0.008; // hairline rarity rim
 
-const RIM: Record<Rarity, string | null> = {
+const RIM_COLOR: Record<Rarity, string | null> = {
   common: null,
   uncommon: "#fcd34d",
   rare: "#7dd3fc",
@@ -42,12 +43,7 @@ function latLngToVec3(lat: number, lng: number, radius: number): THREE.Vector3 {
   );
 }
 
-// --- textures ----------------------------------------------------------------
-/**
- * Load each bug's full-size thumbnail and downscale it to a 128px canvas
- * texture on the client. Uses /bugs/<slug>.png directly (which every specimen
- * has), so a newly added bug needs no pre-generated pin asset — it just works.
- */
+// --- pin textures (downscaled from /bugs/<slug>.png, no pre-gen asset) -------
 function usePinTextures(slugs: string[]): Record<string, THREE.Texture> | null {
   const key = slugs.join(",");
   const [textures, setTextures] = useState<Record<string, THREE.Texture> | null>(null);
@@ -67,9 +63,9 @@ function usePinTextures(slugs: string[]): Record<string, THREE.Texture> | null {
       const img = new Image();
       img.onload = () => {
         const c = document.createElement("canvas");
-        c.width = 128;
-        c.height = 128;
-        c.getContext("2d")!.drawImage(img, 0, 0, 128, 128);
+        c.width = 160;
+        c.height = 160;
+        c.getContext("2d")!.drawImage(img, 0, 0, 160, 160);
         const t = new THREE.CanvasTexture(c);
         t.colorSpace = THREE.SRGBColorSpace;
         out[slug] = t;
@@ -86,12 +82,44 @@ function usePinTextures(slugs: string[]): Record<string, THREE.Texture> | null {
   return textures;
 }
 
+// --- region name labels (canvas texture, no external font) -------------------
+const labelCache = new Map<string, { tex: THREE.CanvasTexture; aspect: number }>();
+function getLabel(text: string) {
+  const hit = labelCache.get(text);
+  if (hit) return hit;
+  const fontPx = 46;
+  const pad = 14;
+  const measure = document.createElement("canvas").getContext("2d")!;
+  measure.font = `600 ${fontPx}px Georgia, serif`;
+  const label = text.toUpperCase();
+  const w = Math.ceil(measure.measureText(label).width) + pad * 2;
+  const h = fontPx + pad * 2;
+  const c = document.createElement("canvas");
+  c.width = w;
+  c.height = h;
+  const ctx = c.getContext("2d")!;
+  ctx.font = `600 ${fontPx}px Georgia, serif`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.lineJoin = "round";
+  ctx.lineWidth = 7;
+  ctx.strokeStyle = "rgba(14,13,11,0.92)";
+  ctx.strokeText(label, w / 2, h / 2);
+  ctx.fillStyle = "#efe2c4";
+  ctx.fillText(label, w / 2, h / 2);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const out = { tex, aspect: w / h };
+  labelCache.set(text, out);
+  return out;
+}
+
 type LandGeo = {
   features: { geometry: { type: string; coordinates: number[][][][] | number[][][] } }[];
 };
 
 // --- low-poly faceted globe geometry ----------------------------------------
-const GLOBE_DETAIL = 3; // icosphere subdivision: low enough to read as faceted
+const GLOBE_DETAIL = 3;
 
 function vecToLatLng(x: number, y: number, z: number): [number, number] {
   const lat = 90 - (Math.acos(Math.max(-1, Math.min(1, y))) * 180) / Math.PI;
@@ -136,7 +164,6 @@ function isLand(lng: number, lat: number, land: LandGeo): boolean {
   return false;
 }
 
-/** Deterministic [0,1) PRNG so the paper mottle is stable across renders. */
 function rand01(seed: number): number {
   let t = (seed + 0x6d2b79f5) | 0;
   t = Math.imul(t ^ (t >>> 15), t | 1);
@@ -146,19 +173,13 @@ function rand01(seed: number): number {
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
-/**
- * Build a low-poly icosphere with flat per-face colors: ocean = warm cream,
- * land = deeper tan (classified by testing each face centroid against the land
- * polygons). A small per-face brightness jitter gives a paper-grain mottle that
- * suits the faceted style. flatShading makes each triangle read as a facet.
- */
 function buildLowPolyGlobe(land: LandGeo | null): THREE.BufferGeometry {
   const geo = new THREE.IcosahedronGeometry(GLOBE_RADIUS, GLOBE_DETAIL).toNonIndexed();
   const pos = geo.attributes.position;
   const n = pos.count;
   const colors = new Float32Array(n * 3);
-  const ocean: [number, number, number] = [0.905, 0.847, 0.741]; // ~#e7d8bd
-  const landC: [number, number, number] = [0.74, 0.63, 0.43]; // ~#bda06e
+  const ocean: [number, number, number] = [0.905, 0.847, 0.741];
+  const landC: [number, number, number] = [0.74, 0.63, 0.43];
   for (let f = 0; f < n; f += 3) {
     let cx = 0;
     let cy = 0;
@@ -171,7 +192,7 @@ function buildLowPolyGlobe(land: LandGeo | null): THREE.BufferGeometry {
     const len = Math.hypot(cx, cy, cz) || 1;
     const [lat, lng] = vecToLatLng(cx / len, cy / len, cz / len);
     const base = land && isLand(lng, lat, land) ? landC : ocean;
-    const mottle = (rand01(f) * 2 - 1) * 0.05; // ±5% paper grain
+    const mottle = (rand01(f) * 2 - 1) * 0.05;
     for (let k = 0; k < 3; k++) {
       colors[(f + k) * 3] = clamp01(base[0] + mottle);
       colors[(f + k) * 3 + 1] = clamp01(base[1] + mottle);
@@ -182,29 +203,6 @@ function buildLowPolyGlobe(land: LandGeo | null): THREE.BufferGeometry {
   return geo;
 }
 
-function makeCountTexture(n: number): THREE.CanvasTexture {
-  const c = document.createElement("canvas");
-  c.width = 128;
-  c.height = 128;
-  const ctx = c.getContext("2d")!;
-  ctx.beginPath();
-  ctx.arc(64, 64, 58, 0, Math.PI * 2);
-  ctx.fillStyle = "#1a1712";
-  ctx.fill();
-  ctx.lineWidth = 7;
-  ctx.strokeStyle = "#fbbf24";
-  ctx.stroke();
-  ctx.fillStyle = "#f5e6c0";
-  ctx.font = "bold 54px Georgia, serif";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(String(n), 64, 70);
-  const t = new THREE.CanvasTexture(c);
-  t.colorSpace = THREE.SRGBColorSpace;
-  return t;
-}
-
-// --- globe -------------------------------------------------------------------
 function Globe() {
   const [land, setLand] = useState<LandGeo | null>(null);
   useEffect(() => {
@@ -225,51 +223,37 @@ function Globe() {
   );
 }
 
-// --- camera fly-to -----------------------------------------------------------
-function CameraController({ target, reduced }: { target: THREE.Vector3 | null; reduced: boolean }) {
-  const camera = useThree((s) => s.camera);
-  // drei OrbitControls (makeDefault) registers itself here.
-  const controls = useThree((s) => s.controls) as { enabled: boolean; update: () => void } | null;
+// --- responsive camera: fit the whole globe in any viewport ------------------
+function FitCamera() {
+  const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
+  const size = useThree((s) => s.size);
+  const controls = useThree((s) => s.controls) as { update: () => void } | null;
   useEffect(() => {
-    if (!target) return;
-    const dist = Math.min(Math.max(camera.position.length() || 6, 3.6), 5.5);
-    const dir = target.clone().normalize().multiplyScalar(dist);
-    if (reduced) {
-      camera.position.copy(dir);
-      camera.lookAt(0, 0, 0);
-      controls?.update();
-      return;
-    }
-    if (controls) controls.enabled = false;
-    const tw = gsap.to(camera.position, {
-      x: dir.x,
-      y: dir.y,
-      z: dir.z,
-      duration: 1.0,
-      ease: "power3.inOut",
-      onUpdate: () => camera.lookAt(0, 0, 0),
-      onComplete: () => {
-        if (controls) {
-          controls.enabled = true;
-          controls.update();
-        }
-      },
-    });
-    return () => {
-      tw.kill();
-    };
-  }, [target, reduced, camera, controls]);
+    const vfov = (camera.fov * Math.PI) / 180;
+    const aspect = size.width / size.height;
+    const distV = GLOBE_RADIUS / Math.tan(vfov / 2);
+    const hfov = 2 * Math.atan(Math.tan(vfov / 2) * aspect);
+    const distH = GLOBE_RADIUS / Math.tan(hfov / 2);
+    const dist = Math.max(distV, distH) * 1.2; // margin so it never touches edges
+    camera.position.setLength(dist);
+    camera.updateProjectionMatrix();
+    controls?.update();
+  }, [size.width, size.height, camera, controls]);
   return null;
 }
 
-// --- single pinned specimen --------------------------------------------------
+// --- a single pinned specimen ------------------------------------------------
 function Pin({
   pin,
+  lat,
+  lng,
   texture,
   index,
   reduced,
 }: {
   pin: AtlasPin;
+  lat: number;
+  lng: number;
   texture?: THREE.Texture;
   index: number;
   reduced: boolean;
@@ -278,13 +262,13 @@ function Pin({
   const groupRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
 
-  const surface = useMemo(() => latLngToVec3(pin.lat, pin.lng, GLOBE_RADIUS), [pin.lat, pin.lng]);
-  const tip = useMemo(() => latLngToVec3(pin.lat, pin.lng, GLOBE_RADIUS + STALK), [pin.lat, pin.lng]);
+  const surface = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS), [lat, lng]);
+  const tip = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS + STALK), [lat, lng]);
   const stalkGeom = useMemo(
     () => new THREE.BufferGeometry().setFromPoints([surface, tip]),
     [surface, tip],
   );
-  const rim = RIM[pin.rarity];
+  const rim = RIM_COLOR[pin.rarity];
 
   useEffect(() => {
     const g = groupRef.current;
@@ -300,7 +284,7 @@ function Pin({
       z: 1,
       duration: 0.5,
       ease: "back.out(1.7)",
-      delay: 0.1 + index * 0.01,
+      delay: 0.1 + index * 0.008,
     });
     return () => {
       tw.kill();
@@ -318,14 +302,14 @@ function Pin({
     <group>
       <line>
         <primitive object={stalkGeom} attach="geometry" />
-        <lineBasicMaterial color="#b8924a" transparent opacity={0.75} />
+        <lineBasicMaterial color="#b8924a" transparent opacity={0.7} />
       </line>
       <group ref={groupRef} position={tip}>
         <Billboard>
           {rim && (
-            <mesh position={[0, 0, -0.001]} scale={hovered ? 1.35 : 1}>
-              <circleGeometry args={[0.15, 32]} />
-              <meshBasicMaterial color={rim} />
+            <mesh scale={hovered ? 1.3 : 1}>
+              <ringGeometry args={[DISC, DISC + RIM, 40]} />
+              <meshBasicMaterial color={rim} toneMapped={false} />
             </mesh>
           )}
           {texture && (
@@ -341,7 +325,7 @@ function Pin({
                 router.push(`/bug/${pin.slug}`);
               }}
             >
-              <circleGeometry args={[0.13, 32]} />
+              <circleGeometry args={[DISC, 40]} />
               <meshBasicMaterial map={texture} toneMapped={false} />
             </mesh>
           )}
@@ -351,78 +335,21 @@ function Pin({
   );
 }
 
-// --- collapsed region badge --------------------------------------------------
-function ClusterBadge({
-  group,
-  onClick,
-  index,
-  reduced,
-}: {
-  group: RegionGroup;
-  onClick: () => void;
-  index: number;
-  reduced: boolean;
-}) {
-  const groupRef = useRef<THREE.Group>(null);
-  const [hovered, setHovered] = useState(false);
-  const tip = useMemo(
-    () => latLngToVec3(group.lat, group.lng, GLOBE_RADIUS + STALK),
-    [group.lat, group.lng],
-  );
-  const tex = useMemo(() => makeCountTexture(group.members.length), [group.members.length]);
-
-  useEffect(() => {
-    const g = groupRef.current;
-    if (!g) return;
-    if (reduced) {
-      g.scale.setScalar(1);
-      return;
-    }
-    g.scale.setScalar(0);
-    const tw = gsap.to(g.scale, {
-      x: 1,
-      y: 1,
-      z: 1,
-      duration: 0.5,
-      ease: "back.out(1.7)",
-      delay: 0.1 + index * 0.03,
-    });
-    return () => {
-      tw.kill();
-    };
-  }, [index, reduced]);
-
-  useEffect(() => {
-    document.body.style.cursor = hovered ? "pointer" : "";
-    return () => {
-      document.body.style.cursor = "";
-    };
-  }, [hovered]);
-
+function RegionLabel({ text, lat, lng }: { text: string; lat: number; lng: number }) {
+  const { tex, aspect } = useMemo(() => getLabel(text), [text]);
+  const pos = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS + 0.04), [lat, lng]);
+  const h = 0.13;
   return (
-    <group ref={groupRef} position={tip}>
-      <Billboard>
-        <mesh
-          scale={hovered ? 1.18 : 1}
-          onPointerOver={(e) => {
-            e.stopPropagation();
-            setHovered(true);
-          }}
-          onPointerOut={() => setHovered(false)}
-          onClick={(e) => {
-            e.stopPropagation();
-            onClick();
-          }}
-        >
-          <circleGeometry args={[0.22, 40]} />
-          <meshBasicMaterial map={tex} transparent toneMapped={false} />
-        </mesh>
-      </Billboard>
-    </group>
+    <Billboard position={pos}>
+      <mesh>
+        <planeGeometry args={[h * aspect, h]} />
+        <meshBasicMaterial map={tex} transparent toneMapped={false} depthWrite={false} />
+      </mesh>
+    </Billboard>
   );
 }
 
-// --- region grouping ---------------------------------------------------------
+// --- region grouping + spreading --------------------------------------------
 interface RegionGroup {
   region: string;
   members: AtlasPin[];
@@ -445,60 +372,64 @@ function buildGroups(pins: AtlasPin[]): RegionGroup[] {
   }));
 }
 
-// --- scene -------------------------------------------------------------------
+/** Sunflower-spread member i of n around a region centroid (degrees). */
+function spread(clat: number, clng: number, i: number, n: number): [number, number] {
+  if (n <= 1) return [clat, clng];
+  const golden = 2.399963229728653;
+  const step = 5.4;
+  const r = step * Math.sqrt(i + 0.5);
+  const a = i * golden;
+  const dLat = r * Math.sin(a);
+  const dLng = (r * Math.cos(a)) / Math.max(0.35, Math.cos((clat * Math.PI) / 180));
+  return [Math.max(-85, Math.min(85, clat + dLat)), clng + dLng];
+}
+
 export default function AtlasGlobe({ pins }: { pins: AtlasPin[] }) {
   const reduced = typeof window !== "undefined" && prefersReducedMotion();
   const slugs = useMemo(() => pins.map((p) => p.slug), [pins]);
   const textures = usePinTextures(slugs);
   const groups = useMemo(() => buildGroups(pins), [pins]);
-  const [expanded, setExpanded] = useState<string | null>(null);
-
-  const flyTarget = useMemo(() => {
-    if (!expanded) return null;
-    const g = groups.find((x) => x.region === expanded);
-    return g ? latLngToVec3(g.lat, g.lng, GLOBE_RADIUS) : null;
-  }, [expanded, groups]);
 
   return (
-    <Canvas
-      dpr={[1, 1.5]}
-      camera={{ position: [0, 0.6, 6], fov: 45 }}
-      className="!absolute inset-0"
-      onPointerMissed={() => setExpanded(null)}
-    >
+    <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0.5, 6], fov: 45 }} className="!absolute inset-0">
       <color attach="background" args={["#0e0d0b"]} />
       <ambientLight intensity={0.85} />
       <directionalLight position={[5, 3, 5]} intensity={1.1} />
 
       <Globe />
-      <CameraController target={flyTarget} reduced={reduced} />
+      <FitCamera />
 
-      {groups.map((g, gi) => {
-        const collapse = g.members.length >= CLUSTER_MIN && expanded !== g.region;
-        if (collapse) {
-          return (
-            <ClusterBadge
-              key={g.region}
-              group={g}
-              index={gi}
-              reduced={reduced}
-              onClick={() => setExpanded(g.region)}
-            />
-          );
-        }
-        return g.members.map((pin, i) => (
-          <Pin key={pin.slug} pin={pin} texture={textures?.[pin.slug]} index={i} reduced={reduced} />
-        ));
+      {groups.map((g) => {
+        const labelLat = Math.min(88, g.lat + 5.4 * Math.sqrt(g.members.length) + 6);
+        return (
+          <group key={g.region}>
+            <RegionLabel text={g.region} lat={labelLat} lng={g.lng} />
+            {g.members.map((pin, i) => {
+              const [lat, lng] = spread(g.lat, g.lng, i, g.members.length);
+              return (
+                <Pin
+                  key={pin.slug}
+                  pin={pin}
+                  lat={lat}
+                  lng={lng}
+                  texture={textures?.[pin.slug]}
+                  index={i}
+                  reduced={reduced}
+                />
+              );
+            })}
+          </group>
+        );
       })}
 
       <OrbitControls
         makeDefault
         enablePan={false}
         enableDamping
-        minDistance={3.2}
-        maxDistance={9}
-        autoRotate={!expanded && !reduced}
-        autoRotateSpeed={0.45}
+        minDistance={2.6}
+        maxDistance={16}
+        autoRotate={!reduced}
+        autoRotateSpeed={0.4}
       />
     </Canvas>
   );

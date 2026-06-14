@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import ViewToggle from "@/components/ViewToggle";
+import ViewReveal from "@/components/ViewReveal";
 import type { AtlasPin } from "@/components/AtlasGlobe";
 
 // three.js is heavy — load the globe only on the client, only on this route,
@@ -18,12 +19,13 @@ const AtlasGlobe = dynamic(() => import("@/components/AtlasGlobe"), {
 export default function AtlasView({ pins, count }: { pins: AtlasPin[]; count: number }) {
   return (
     <main className="relative h-dvh w-dvw overflow-hidden bg-[#0e0d0b] text-zinc-100">
+      <ViewReveal />
       <AtlasGlobe pins={pins} />
 
       <header className="pointer-events-none absolute left-0 top-0 z-10 flex w-full flex-col items-center gap-1 bg-gradient-to-b from-[#0e0d0b] via-[#0e0d0b]/70 to-transparent p-4 pb-12 text-center sm:p-6">
         <h1 className="font-serif text-2xl text-amber-100 sm:text-3xl">Bug Explorer</h1>
         <p className="text-xs text-zinc-400">
-          {count} specimens · drag to spin · open a cluster · tap to inspect
+          {count} specimens · drag to spin · pinch to zoom · tap to inspect
         </p>
       </header>
 
