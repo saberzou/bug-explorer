@@ -1889,5 +1889,33 @@
       "height": 3008,
       "localPath": "/bugs/photos/helicopter-damselfly/2.jpg"
     }
+  ],
+  "corpse-carrying-assassin-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Acanthaspis_petax_nymph.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Acanthaspis_petax_nymph.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Acanthaspis_petax_nymph.jpg",
+      "credit": "Orionmystery",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Acanthaspis petax nymph with ant prey in its proboscis, and ant carcasses on its back",
+      "fileTitle": "File:Acanthaspis petax nymph.jpg",
+      "width": 1023,
+      "height": 682,
+      "localPath": "/bugs/photos/corpse-carrying-assassin-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Assassin_Bug_%28Acanthaspis_sp.%29_%2831484960604%29.jpg/1280px-Assassin_Bug_%28Acanthaspis_sp.%29_%2831484960604%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Assassin_Bug_%28Acanthaspis_sp.%29_%2831484960604%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Assassin_Bug_(Acanthaspis_sp.)_(31484960604).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Mpila Camp, iMfolozi Game Reserve, Hluhluwe-iMfolozi Park, Kwazulu-Natal, SOUTH AFRICA",
+      "fileTitle": "File:Assassin Bug (Acanthaspis sp.) (31484960604).jpg",
+      "width": 4355,
+      "height": 3037,
+      "localPath": "/bugs/photos/corpse-carrying-assassin-bug/2.jpg"
+    }
   ]
 }

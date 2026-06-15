@@ -1290,5 +1290,24 @@
       "#2E6FB7",
       "#0E1410"
     ]
+  },
+  {
+    "slug": "corpse-carrying-assassin-bug",
+    "commonName": "Corpse-carrying Assassin Bug",
+    "latinName": "Acanthaspis petax",
+    "habitat": "Dry tropical scrub and forest floors of East Africa and Malaysia",
+    "sizeMm": 12,
+    "sizeKind": "body",
+    "weirdFact": "The nymph glues the drained husks of the ants it kills onto its own back, building a wobbling corpse-pile up to 20 bodies tall.",
+    "whyItsCool": "It wears its victims as a backpack of armour and disguise — a tiny serial killer cloaked in the dead, fooling spiders and rival assassins alike.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-28",
+    "order": "Hemiptera",
+    "family": "Reduviidae",
+    "colorPalette": [
+      "#3A2A1E",
+      "#7A5C3E",
+      "#C7B299"
+    ]
   }
 ]
