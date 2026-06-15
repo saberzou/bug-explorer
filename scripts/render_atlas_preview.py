@@ -233,9 +233,9 @@ def main():
         _z, b, sx, sy, _ssx, _ssy = max(front, key=lambda t: t[3])  # rightmost front bug
         region = (geo.locate(b["habitat"]) or (0, 0, "Unknown", "r"))[2]
         name, reg = b["commonName"], region.upper()
-        nf, rf = font(24), font(14)
+        nf, rf = font(24), font(23)
         textw = max(nf.getbbox(name)[2], rf.getbbox(reg)[2])
-        imgd, pad, gap, info = 64, 7, 12, 34
+        imgd, pad, gap, info = 84, 9, 14, 38
         pillh = imgd + 14
         pillw = pad + imgd + gap + textw + 14 + info + pad
         y0 = sy - pillh / 2
@@ -260,16 +260,16 @@ def main():
             d.rounded_rectangle((x0, y0, x1, y0 + pillh), radius=pillh / 2,
                                 fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
             info_icon(x0 + pad + info / 2)
-            d.text((x0 + pad + info + 14, sy - 16), name, font=nf, fill=(254, 243, 199))
-            d.text((x0 + pad + info + 14, sy + 9), reg, font=rf, fill=(161, 161, 170))
+            d.text((x0 + pad + info + 14, sy - 24), name, font=nf, fill=(254, 243, 199))
+            d.text((x0 + pad + info + 14, sy + 4), reg, font=rf, fill=(161, 161, 170))
             place_img(x1 - pad - imgd)
         else:
             x0 = sx - imgd / 2 - pad
             d.rounded_rectangle((x0, y0, x0 + pillw, y0 + pillh), radius=pillh / 2,
                                 fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
             place_img(x0 + pad)
-            d.text((x0 + pad + imgd + gap, sy - 16), name, font=nf, fill=(254, 243, 199))
-            d.text((x0 + pad + imgd + gap, sy + 9), reg, font=rf, fill=(161, 161, 170))
+            d.text((x0 + pad + imgd + gap, sy - 24), name, font=nf, fill=(254, 243, 199))
+            d.text((x0 + pad + imgd + gap, sy + 4), reg, font=rf, fill=(161, 161, 170))
             info_icon(x0 + pillw - pad - info / 2)
 
     # header
