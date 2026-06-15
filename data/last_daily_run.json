@@ -1,0 +1,10 @@
+{
+  "status": "bootstrap",
+  "date": null,
+  "slug": null,
+  "commonName": null,
+  "discoveredOn": null,
+  "ranAtUtc": null,
+  "note": "Initial bootstrap before first scheduled daily-add run. The daily-add cron (Axel) overwrites this after each run so Atticus's watchdog has a machine-readable signal. status is one of: ok | blocked | error | bootstrap.",
+  "bugCount": 66
+}
