@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Billboard, Html, OrbitControls } from "@react-three/drei";
 import { useRouter } from "next/navigation";
@@ -170,18 +170,13 @@ function buildLowPolyGlobe(land: LandGeo | null): THREE.BufferGeometry {
   return geo;
 }
 
-function Globe({ meshRef }: { meshRef: React.RefObject<THREE.Mesh | null> }) {
-  const [land, setLand] = useState<LandGeo | null>(null);
-  useEffect(() => {
-    let alive = true;
-    fetch("/atlas/land.geo.json")
-      .then((r) => r.json())
-      .then((d) => alive && setLand(d))
-      .catch(() => {});
-    return () => {
-      alive = false;
-    };
-  }, []);
+function Globe({
+  land,
+  meshRef,
+}: {
+  land: LandGeo | null;
+  meshRef: React.RefObject<THREE.Mesh | null>;
+}) {
   const geometry = useMemo(() => buildLowPolyGlobe(land), [land]);
   return (
     <mesh ref={meshRef} geometry={geometry}>
@@ -361,11 +356,35 @@ function Scene({ pins, reduced }: { pins: AtlasPin[]; reduced: boolean }) {
   const groups = useMemo(() => buildGroups(pins), [pins]);
   const globeRef = useRef<THREE.Mesh | null>(null);
   const sceneRef = useRef<THREE.Group>(null);
+  const played = useRef(false);
 
-  // Spin into view from a dot.
+  const [land, setLand] = useState<LandGeo | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetch("/atlas/land.geo.json")
+      .then((r) => r.json())
+      .then((d) => alive && setLand(d))
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  // Both the continents AND the pin images must be loaded before we reveal —
+  // otherwise the user briefly sees a blank globe with empty pin rings.
+  const ready = land !== null && textures !== null;
+
+  // Hide the scene (a dot) before first paint so nothing un-textured flashes.
+  useLayoutEffect(() => {
+    const g = sceneRef.current;
+    if (g && !played.current) g.scale.setScalar(0);
+  }, []);
+
+  // Once ready, grow + spin into view from the dot.
   useEffect(() => {
     const g = sceneRef.current;
-    if (!g) return;
+    if (!g || !ready || played.current) return;
+    played.current = true;
     if (reduced) {
       g.scale.setScalar(1);
       return;
@@ -377,20 +396,15 @@ function Scene({ pins, reduced }: { pins: AtlasPin[]; reduced: boolean }) {
       { x: 1, y: 1, z: 1, duration: 1.1, ease: "power3.out" },
       0,
     );
-    tl.fromTo(
-      g.rotation,
-      { y: -Math.PI * 1.25 },
-      { y: 0, duration: 1.4, ease: "power3.out" },
-      0,
-    );
+    tl.fromTo(g.rotation, { y: -Math.PI * 1.25 }, { y: 0, duration: 1.4, ease: "power3.out" }, 0);
     return () => {
       tl.kill();
     };
-  }, [reduced]);
+  }, [ready, reduced]);
 
   return (
     <group ref={sceneRef}>
-      <Globe meshRef={globeRef} />
+      <Globe land={land} meshRef={globeRef} />
       {groups.map((g) => {
         const labelLat = Math.min(88, g.lat + 8.5 * Math.sqrt(g.members.length) + 7);
         return (
