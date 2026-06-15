@@ -11,7 +11,9 @@ const API_KEY =
   process.env.GEMINI_API_KEY ||
   process.env.GOOGLE_API_KEY ||
   process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
-  process.env.GEMINI_KEY;
+  process.env.GEMINI_KEY ||
+  process.env.Gemini ||
+  process.env.GEMINI;
 
 // Best-effort per-instance rate limit (serverless instances are ephemeral, so
 // this is a soft guard against accidental hammering, not airtight abuse control).
