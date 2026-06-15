@@ -1271,5 +1271,24 @@
       "#E8772E",
       "#1F2A1A"
     ]
+  },
+  {
+    "slug": "helicopter-damselfly",
+    "commonName": "Helicopter Damselfly",
+    "latinName": "Megaloprepus caerulatus",
+    "habitat": "Rainforest canopy gaps of Central and South America",
+    "sizeMm": 190,
+    "sizeKind": "wingspan",
+    "weirdFact": "Hovers like a tiny helicopter to pluck orb-weaver spiders straight out of their webs, then breeds only in rainwater pooled in tree holes.",
+    "whyItsCool": "The largest damselfly alive, a 19cm sliver with wand-tipped wings of blue. It rules tree-hole ponds no bigger than a teacup as apex predator.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-27",
+    "order": "Odonata",
+    "family": "Pseudostigmatidae",
+    "colorPalette": [
+      "#1B2A4A",
+      "#2E6FB7",
+      "#0E1410"
+    ]
   }
 ]

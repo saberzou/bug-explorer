@@ -1861,5 +1861,33 @@
       "height": 1918,
       "localPath": "/bugs/photos/hickory-horned-devil/2.jpg"
     }
+  ],
+  "helicopter-damselfly": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Iz_-_Megaloprepus_caerulatus_-_1.jpg/1280px-Iz_-_Megaloprepus_caerulatus_-_1.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Iz_-_Megaloprepus_caerulatus_-_1.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Iz_-_Megaloprepus_caerulatus_-_1.jpg",
+      "credit": "Emőke Dénes",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Megaloprepus caerulatus at the Cambridge University Museum of Zoology, England.",
+      "fileTitle": "File:Iz - Megaloprepus caerulatus - 1.jpg",
+      "width": 3485,
+      "height": 2323,
+      "localPath": "/bugs/photos/helicopter-damselfly/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Megaloprepus.JPG/1280px-Megaloprepus.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Megaloprepus.JPG",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Megaloprepus.JPG",
+      "credit": "Steven G. Johnson",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Female helicopter damselfly (Megaloprepus caerulatus) in the Osa Peninsula, Costa Rica. (Males have an additional white patch on the wings adjacent to the black stripe, on the side closer to the body",
+      "fileTitle": "File:Megaloprepus.JPG",
+      "width": 2000,
+      "height": 3008,
+      "localPath": "/bugs/photos/helicopter-damselfly/2.jpg"
+    }
   ]
 }

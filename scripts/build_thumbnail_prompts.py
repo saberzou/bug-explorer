@@ -72,6 +72,7 @@ ANATOMY = {
     "periodical-cicada": "stout cicada, black body with vivid red-orange eyes, translucent wings with orange veins held roof-like over the body, six orange legs",
     "bombardier-beetle": "ground beetle with blue-black iridescent elytra and a reddish-orange head, thorax and legs, oval body, long antennae, all limbs and antennae curved inward",
     "cuckoo-wasp": "small jewel-like wasp with a brilliant metallic emerald-green and sapphire-blue body and a coarsely pitted surface, short wings, compact rounded abdomen, legs tucked beneath",
+    "helicopter-damselfly": "very large slender damselfly with an extremely long thin dark blue-black abdomen gently curved into a relaxed C so it never reaches the edge, four narrow clear wings each tipped with a bold band of white and metallic blue, the two wing pairs swept and angled inward rather than fully outstretched, large widely-set eyes, delicate thread-like legs folded compactly beneath the thorax; pose the whole insect coiled and breathing-room-padded so wings, wingtip bands, and the long tail all sit well inside the circle",
 }
 
 STYLE_HEADER = "A hand-drawn naturalist scientific illustration of a"
