@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Billboard, Html, OrbitControls } from "@react-three/drei";
 import { useRouter } from "next/navigation";
@@ -22,8 +22,9 @@ export interface AtlasPin {
 
 const GLOBE_RADIUS = 2;
 const STALK = 0.13;
-const DISC = 0.085; // smaller pins so they read as spaced, and zoom enlarges them
-const RIM = 0.006; // hairline rarity rim
+const DISC = 0.085;
+const RIM = 0.006;
+const SELECT_SCALE = 2.1;
 
 const RIM_COLOR: Record<Rarity, string | null> = {
   common: null,
@@ -196,7 +197,7 @@ function FitCamera() {
     const distV = GLOBE_RADIUS / Math.tan(vfov / 2);
     const hfov = 2 * Math.atan(Math.tan(vfov / 2) * aspect);
     const distH = GLOBE_RADIUS / Math.tan(hfov / 2);
-    const dist = Math.max(distV, distH) * 1.3; // margin so it never touches edges
+    const dist = Math.max(distV, distH) * 1.3;
     camera.position.set(0, 0.25 * dist, dist);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
@@ -211,14 +212,23 @@ function Pin({
   lat,
   lng,
   texture,
+  selected,
+  reduced,
+  onSelect,
+  globeRef,
 }: {
   pin: AtlasPin;
   lat: number;
   lng: number;
   texture?: THREE.Texture;
+  selected: boolean;
+  reduced: boolean;
+  onSelect: () => void;
+  globeRef: React.RefObject<THREE.Mesh | null>;
 }) {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
+  const discRef = useRef<THREE.Group>(null);
 
   const surface = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS), [lat, lng]);
   const tip = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS + STALK), [lat, lng]);
@@ -228,6 +238,21 @@ function Pin({
   );
   const rim = RIM_COLOR[pin.rarity];
 
+  // Smoothly zoom the disc when it becomes the highlighted bug.
+  useEffect(() => {
+    const g = discRef.current;
+    if (!g) return;
+    const target = selected ? SELECT_SCALE : 1;
+    if (reduced) {
+      g.scale.setScalar(target);
+      return;
+    }
+    const tw = gsap.to(g.scale, { x: target, y: target, z: target, duration: 0.4, ease: "power3.out" });
+    return () => {
+      tw.kill();
+    };
+  }, [selected, reduced]);
+
   useEffect(() => {
     document.body.style.cursor = hovered ? "pointer" : "";
     return () => {
@@ -235,7 +260,7 @@ function Pin({
     };
   }, [hovered]);
 
-  const open = () => {
+  const openDetail = () => {
     setBugOrigin("/atlas");
     router.push(`/bug/${pin.slug}`);
   };
@@ -246,72 +271,66 @@ function Pin({
         <primitive object={stalkGeom} attach="geometry" />
         <lineBasicMaterial color="#b8924a" transparent opacity={0.7} />
       </line>
-      <group position={tip}>
+      <group position={tip} renderOrder={selected ? 10 : 0}>
         <Billboard>
-          {rim && (
-            <mesh scale={hovered ? 1.35 : 1}>
-              <ringGeometry args={[DISC, DISC + RIM, 40]} />
-              <meshBasicMaterial color={rim} toneMapped={false} />
-            </mesh>
-          )}
-          {texture && (
-            <mesh
-              scale={hovered ? 1.35 : 1}
-              onPointerOver={(e) => {
-                e.stopPropagation();
-                setHovered(true);
-              }}
-              onPointerOut={() => setHovered(false)}
-              onClick={(e) => {
-                e.stopPropagation();
-                open();
-              }}
-            >
-              <circleGeometry args={[DISC, 40]} />
-              <meshBasicMaterial map={texture} toneMapped={false} />
-            </mesh>
-          )}
+          <group ref={discRef}>
+            {rim && (
+              <mesh>
+                <ringGeometry args={[DISC, DISC + RIM, 40]} />
+                <meshBasicMaterial color={rim} toneMapped={false} />
+              </mesh>
+            )}
+            {texture && (
+              <mesh
+                onPointerOver={(e) => {
+                  e.stopPropagation();
+                  setHovered(true);
+                }}
+                onPointerOut={() => setHovered(false)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelect();
+                }}
+              >
+                <circleGeometry args={[DISC, 40]} />
+                <meshBasicMaterial map={texture} toneMapped={false} />
+              </mesh>
+            )}
+          </group>
         </Billboard>
-        {hovered && (
-          <Html center distanceFactor={6} position={[0, DISC + 0.06, 0]} pointerEvents="none">
-            <div className="whitespace-nowrap rounded-full bg-black/80 px-2 py-1 text-[11px] text-amber-100 ring-1 ring-amber-200/30">
-              {pin.commonName}
+
+        {selected && (
+          <Html
+            center
+            position={[0, DISC * SELECT_SCALE + 0.05, 0]}
+            occlude={[globeRef as React.RefObject<THREE.Object3D>]}
+            zIndexRange={[40, 0]}
+          >
+            <div className="pointer-events-auto flex items-center gap-2.5 rounded-xl bg-black/85 px-3 py-2 shadow-xl ring-1 ring-amber-200/25 backdrop-blur-sm">
+              <div className="leading-tight">
+                <div className="whitespace-nowrap font-serif text-[13px] text-amber-100">
+                  {pin.commonName}
+                </div>
+                <div className="whitespace-nowrap text-[10px] uppercase tracking-wider text-zinc-400">
+                  {pin.region}
+                </div>
+              </div>
+              <button
+                onClick={openDetail}
+                aria-label={`View ${pin.commonName} details`}
+                className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-amber-100 ring-1 ring-amber-200/40 transition-colors hover:bg-amber-200/15"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="11" x2="12" y2="16" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+              </button>
             </div>
           </Html>
         )}
       </group>
     </group>
-  );
-}
-
-// --- crisp HTML region label (occluded by the globe) -------------------------
-function RegionLabel({
-  text,
-  lat,
-  lng,
-  globeRef,
-}: {
-  text: string;
-  lat: number;
-  lng: number;
-  globeRef: React.RefObject<THREE.Mesh | null>;
-}) {
-  const pos = useMemo(() => latLngToVec3(lat, lng, GLOBE_RADIUS + 0.03), [lat, lng]);
-  return (
-    <Html
-      position={pos}
-      center
-      occlude={[globeRef as React.RefObject<THREE.Object3D>]}
-      pointerEvents="none"
-      zIndexRange={[20, 0]}
-    >
-      <div
-        className="select-none whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.18em] text-amber-50/95"
-        style={{ textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 2px rgba(0,0,0,0.9)" }}
-      >
-        {text}
-      </div>
-    </Html>
   );
 }
 
@@ -338,7 +357,6 @@ function buildGroups(pins: AtlasPin[]): RegionGroup[] {
   }));
 }
 
-/** Sunflower-spread member i of n around a region centroid (degrees). */
 function spread(clat: number, clng: number, i: number, n: number): [number, number] {
   if (n <= 1) return [clat, clng];
   const golden = 2.399963229728653;
@@ -350,13 +368,46 @@ function spread(clat: number, clng: number, i: number, n: number): [number, numb
   return [Math.max(-85, Math.min(85, clat + dLat)), clng + dLng];
 }
 
-function Scene({ pins, reduced }: { pins: AtlasPin[]; reduced: boolean }) {
+interface Placed {
+  pin: AtlasPin;
+  lat: number;
+  lng: number;
+  dir: THREE.Vector3;
+}
+
+function Scene({
+  pins,
+  reduced,
+  selected,
+  select,
+  lastManual,
+}: {
+  pins: AtlasPin[];
+  reduced: boolean;
+  selected: string | null;
+  select: (slug: string | null, manual?: boolean) => void;
+  lastManual: React.RefObject<number>;
+}) {
+  const camera = useThree((s) => s.camera);
   const slugs = useMemo(() => pins.map((p) => p.slug), [pins]);
   const textures = usePinTextures(slugs);
-  const groups = useMemo(() => buildGroups(pins), [pins]);
+  const placed = useMemo<Placed[]>(() => {
+    const groups = buildGroups(pins);
+    const out: Placed[] = [];
+    for (const g of groups) {
+      g.members.forEach((pin, i) => {
+        const [lat, lng] = spread(g.lat, g.lng, i, g.members.length);
+        out.push({ pin, lat, lng, dir: latLngToVec3(lat, lng, 1).normalize() });
+      });
+    }
+    return out;
+  }, [pins]);
+
   const globeRef = useRef<THREE.Mesh | null>(null);
   const sceneRef = useRef<THREE.Group>(null);
   const played = useRef(false);
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
 
   const [land, setLand] = useState<LandGeo | null>(null);
   useEffect(() => {
@@ -370,17 +421,14 @@ function Scene({ pins, reduced }: { pins: AtlasPin[]; reduced: boolean }) {
     };
   }, []);
 
-  // Both the continents AND the pin images must be loaded before we reveal —
-  // otherwise the user briefly sees a blank globe with empty pin rings.
   const ready = land !== null && textures !== null;
 
-  // Hide the scene (a dot) before first paint so nothing un-textured flashes.
   useLayoutEffect(() => {
     const g = sceneRef.current;
     if (g && !played.current) g.scale.setScalar(0);
   }, []);
 
-  // Once ready, grow + spin into view from the dot.
+  // Spin into view from a dot once everything is loaded.
   useEffect(() => {
     const g = sceneRef.current;
     if (!g || !ready || played.current) return;
@@ -390,47 +438,88 @@ function Scene({ pins, reduced }: { pins: AtlasPin[]; reduced: boolean }) {
       return;
     }
     const tl = gsap.timeline();
-    tl.fromTo(
-      g.scale,
-      { x: 0.001, y: 0.001, z: 0.001 },
-      { x: 1, y: 1, z: 1, duration: 1.1, ease: "power3.out" },
-      0,
-    );
+    tl.fromTo(g.scale, { x: 0.001, y: 0.001, z: 0.001 }, { x: 1, y: 1, z: 1, duration: 1.1, ease: "power3.out" }, 0);
     tl.fromTo(g.rotation, { y: -Math.PI * 1.25 }, { y: 0, duration: 1.4, ease: "power3.out" }, 0);
     return () => {
       tl.kill();
     };
   }, [ready, reduced]);
 
+  // Auto-spotlight: periodically highlight a random front-facing bug as the
+  // globe spins. Pauses for a beat after any manual tap.
+  useEffect(() => {
+    if (!ready) return;
+    const tick = () => {
+      if (Date.now() - lastManual.current < 6000) return;
+      const camDir = camera.position.clone().normalize();
+      const front = placed.filter(
+        (p) => p.dir.dot(camDir) > 0.55 && p.pin.slug !== selectedRef.current,
+      );
+      const pool = front.length ? front : placed;
+      if (!pool.length) return;
+      select(pool[Math.floor(Math.random() * pool.length)].pin.slug, false);
+    };
+    const start = window.setTimeout(tick, 1900);
+    const interval = window.setInterval(tick, 3600);
+    return () => {
+      clearTimeout(start);
+      clearInterval(interval);
+    };
+  }, [ready, placed, camera, select, lastManual]);
+
   return (
     <group ref={sceneRef}>
       <Globe land={land} meshRef={globeRef} />
-      {groups.map((g) => {
-        const labelLat = Math.min(88, g.lat + 8.5 * Math.sqrt(g.members.length) + 7);
-        return (
-          <group key={g.region}>
-            <RegionLabel text={g.region} lat={labelLat} lng={g.lng} globeRef={globeRef} />
-            {g.members.map((pin, i) => {
-              const [lat, lng] = spread(g.lat, g.lng, i, g.members.length);
-              return <Pin key={pin.slug} pin={pin} lat={lat} lng={lng} texture={textures?.[pin.slug]} />;
-            })}
-          </group>
-        );
-      })}
+      {placed.map(({ pin, lat, lng }) => (
+        <Pin
+          key={pin.slug}
+          pin={pin}
+          lat={lat}
+          lng={lng}
+          texture={textures?.[pin.slug]}
+          selected={selected === pin.slug}
+          reduced={reduced}
+          onSelect={() => select(pin.slug, true)}
+          globeRef={globeRef}
+        />
+      ))}
     </group>
   );
 }
 
 export default function AtlasGlobe({ pins }: { pins: AtlasPin[] }) {
   const reduced = typeof window !== "undefined" && prefersReducedMotion();
+  const [selected, setSelected] = useState<string | null>(null);
+  const [paused, setPaused] = useState(false);
+  const lastManual = useRef(0);
+  const pauseTimer = useRef<number | undefined>(undefined);
+
+  const select = useCallback((slug: string | null, manual = false) => {
+    setSelected(slug);
+    if (manual) {
+      lastManual.current = Date.now();
+      setPaused(true);
+      if (pauseTimer.current) clearTimeout(pauseTimer.current);
+      pauseTimer.current = window.setTimeout(() => setPaused(false), 6000);
+    }
+  }, []);
+
   return (
-    <Canvas dpr={[1, 1.5]} camera={{ position: [0, 2, 8], fov: 45 }} className="!absolute inset-0">
+    <Canvas
+      dpr={[1, 1.5]}
+      camera={{ position: [0, 2, 8], fov: 45 }}
+      className="!absolute inset-0"
+      onPointerMissed={() => {
+        setSelected(null);
+        setPaused(false);
+      }}
+    >
       <color attach="background" args={["#0e0d0b"]} />
       <ambientLight intensity={0.85} />
       <directionalLight position={[5, 3, 5]} intensity={1.1} />
 
       <FitCamera />
-      <Scene pins={pins} reduced={reduced} />
+      <Scene pins={pins} reduced={reduced} selected={selected} select={select} lastManual={lastManual} />
 
       <OrbitControls
         makeDefault
@@ -438,7 +527,7 @@ export default function AtlasGlobe({ pins }: { pins: AtlasPin[] }) {
         enableDamping
         minDistance={2.6}
         maxDistance={16}
-        autoRotate={!reduced}
+        autoRotate={!reduced && !paused}
         autoRotateSpeed={0.4}
       />
     </Canvas>

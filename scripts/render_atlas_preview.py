@@ -227,15 +227,35 @@ def main():
             d.ellipse((sx - size / 2, sy - size / 2, sx + size / 2, sy + size / 2),
                       outline=rim + (255,), width=2)
 
-    # region labels
-    lf = font(19)
-    for lz, region, lx, ly in labels:
-        if lz <= 0.05:
-            continue
-        txt = region.upper()
-        for ox, oy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            d.text((lx + ox, ly + oy), txt, font=lf, fill=(14, 13, 11, 235), anchor="mm")
-        d.text((lx, ly), txt, font=lf, fill=(239, 226, 196, 255), anchor="mm")
+    # spotlight popup on the front-most bug (mirrors the live auto-highlight)
+    front = [t for t in placed if t[0] > 0.35]
+    if front:
+        _z, b, sx, sy, _ssx, _ssy = max(front, key=lambda t: t[0])
+        region = (geo.locate(b["habitat"]) or (0, 0, "Unknown", "r"))[2]
+        big = 84
+        png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
+        if png.exists():
+            thumb = circle_thumb(png, big)
+            img.paste(thumb, (int(sx - big / 2), int(sy - big / 2)), thumb)
+        rim = RIM.get(b["rarity"])
+        if rim:
+            d.ellipse((sx - big / 2, sy - big / 2, sx + big / 2, sy + big / 2),
+                      outline=rim + (255,), width=3)
+        name, reg = b["commonName"], region.upper()
+        nf, rf = font(26), font(15)
+        nw = nf.getbbox(name)[2]
+        rw = rf.getbbox(reg)[2]
+        cardw = max(nw, rw) + 34 + 40
+        cardh = 60
+        cx0 = sx - cardw / 2
+        cy0 = sy - big / 2 - cardh - 14
+        d.rounded_rectangle((cx0, cy0, cx0 + cardw, cy0 + cardh), radius=14,
+                            fill=(10, 9, 8, 235), outline=(251, 191, 36, 90))
+        d.text((cx0 + 16, cy0 + 15), name, font=nf, fill=(254, 243, 199))
+        d.text((cx0 + 16, cy0 + 39), reg, font=rf, fill=(161, 161, 170))
+        icx, icy = cx0 + cardw - 25, cy0 + cardh / 2
+        d.ellipse((icx - 13, icy - 13, icx + 13, icy + 13), outline=(251, 191, 36, 200), width=2)
+        d.text((icx, icy), "i", font=font(17), fill=(254, 243, 199), anchor="mm")
 
     # header
     d2 = ImageDraw.Draw(img, "RGBA")
