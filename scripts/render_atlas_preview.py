@@ -227,37 +227,50 @@ def main():
             d.ellipse((sx - size / 2, sy - size / 2, sx + size / 2, sy + size / 2),
                       outline=rim + (255,), width=2)
 
-    # spotlight pill on the front-most bug: image on the LEFT, text to the right
-    front = [t for t in placed if t[0] > 0.35]
+    # spotlight pill — edge-aware: right-half bugs open LEFT (image on right).
+    front = [t for t in placed if t[0] > 0.15]
     if front:
-        _z, b, sx, sy, _ssx, _ssy = max(front, key=lambda t: t[0])
+        _z, b, sx, sy, _ssx, _ssy = max(front, key=lambda t: t[3])  # rightmost front bug
         region = (geo.locate(b["habitat"]) or (0, 0, "Unknown", "r"))[2]
         name, reg = b["commonName"], region.upper()
         nf, rf = font(24), font(14)
-        nw = nf.getbbox(name)[2]
-        rw = rf.getbbox(reg)[2]
+        textw = max(nf.getbbox(name)[2], rf.getbbox(reg)[2])
         imgd, pad, gap, info = 64, 7, 12, 34
-        textw = max(nw, rw)
         pillh = imgd + 14
         pillw = pad + imgd + gap + textw + 14 + info + pad
-        x0 = sx - imgd / 2 - pad
         y0 = sy - pillh / 2
-        d.rounded_rectangle((x0, y0, x0 + pillw, y0 + pillh), radius=pillh / 2,
-                            fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
-        png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
-        if png.exists():
-            thumb = circle_thumb(png, imgd)
-            img.paste(thumb, (int(x0 + pad), int(sy - imgd / 2)), thumb)
         rim = RIM.get(b["rarity"])
-        if rim:
-            d.ellipse((x0 + pad, sy - imgd / 2, x0 + pad + imgd, sy + imgd / 2),
-                      outline=rim + (255,), width=2)
-        tx = x0 + pad + imgd + gap
-        d.text((tx, sy - 16), name, font=nf, fill=(254, 243, 199))
-        d.text((tx, sy + 9), reg, font=rf, fill=(161, 161, 170))
-        icx, icy = x0 + pillw - pad - info / 2, sy
-        d.ellipse((icx - 15, icy - 15, icx + 15, icy + 15), outline=(251, 191, 36, 210), width=2)
-        d.text((icx, icy), "i", font=font(17), fill=(254, 243, 199), anchor="mm")
+        png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
+        thumb = circle_thumb(png, imgd) if png.exists() else None
+        flip = sx > W * 0.52  # open to the left
+
+        def info_icon(icx):
+            d.ellipse((icx - 15, sy - 15, icx + 15, sy + 15), outline=(251, 191, 36, 210), width=2)
+            d.text((icx, sy), "i", font=font(17), fill=(254, 243, 199), anchor="mm")
+
+        def place_img(imgx):
+            if thumb:
+                img.paste(thumb, (int(imgx), int(sy - imgd / 2)), thumb)
+            if rim:
+                d.ellipse((imgx, sy - imgd / 2, imgx + imgd, sy + imgd / 2), outline=rim + (255,), width=2)
+
+        if flip:
+            x1 = sx + imgd / 2 + pad
+            x0 = x1 - pillw
+            d.rounded_rectangle((x0, y0, x1, y0 + pillh), radius=pillh / 2,
+                                fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
+            info_icon(x0 + pad + info / 2)
+            d.text((x0 + pad + info + 14, sy - 16), name, font=nf, fill=(254, 243, 199))
+            d.text((x0 + pad + info + 14, sy + 9), reg, font=rf, fill=(161, 161, 170))
+            place_img(x1 - pad - imgd)
+        else:
+            x0 = sx - imgd / 2 - pad
+            d.rounded_rectangle((x0, y0, x0 + pillw, y0 + pillh), radius=pillh / 2,
+                                fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
+            place_img(x0 + pad)
+            d.text((x0 + pad + imgd + gap, sy - 16), name, font=nf, fill=(254, 243, 199))
+            d.text((x0 + pad + imgd + gap, sy + 9), reg, font=rf, fill=(161, 161, 170))
+            info_icon(x0 + pillw - pad - info / 2)
 
     # header
     d2 = ImageDraw.Draw(img, "RGBA")

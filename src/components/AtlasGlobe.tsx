@@ -349,19 +349,22 @@ function PillProjector({
   target,
   overlayRef,
 }: {
-  target: { lat: number; lng: number } | null;
+  target: { lat: number; lng: number; slug: string } | null;
   overlayRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const camera = useThree((s) => s.camera);
   const size = useThree((s) => s.size);
   const tRef = useRef(target);
   tRef.current = target;
+  const lastSlug = useRef<string | null>(null);
+  const dir = useRef<"l" | "r">("l");
   useFrame(() => {
     const el = overlayRef.current;
     if (!el) return;
     const t = tRef.current;
     if (!t) {
       el.style.display = "none";
+      lastSlug.current = null;
       return;
     }
     const world = latLngToVec3(t.lat, t.lng, GLOBE_RADIUS + STALK);
@@ -373,9 +376,27 @@ function PillProjector({
     const ndc = world.clone().project(camera);
     const x = (ndc.x * 0.5 + 0.5) * size.width;
     const y = (-ndc.y * 0.5 + 0.5) * size.height;
+
+    // Decide expand direction ONCE per selection (avoids flip-flop while spinning):
+    // right-half bugs open left (image on the right), left-half open right.
+    if (t.slug !== lastSlug.current) {
+      lastSlug.current = t.slug;
+      dir.current = x > size.width * 0.52 ? "r" : "l";
+      const pill = el.firstElementChild as HTMLElement | null;
+      if (pill) {
+        pill.style.flexDirection = dir.current === "r" ? "row-reverse" : "row";
+        pill.style.paddingLeft = dir.current === "r" ? "0.75rem" : "0.25rem";
+        pill.style.paddingRight = dir.current === "r" ? "0.25rem" : "0.75rem";
+      }
+    }
+
     el.style.display = "block";
-    // anchor the pill's left image (~24px in) on the pin point
-    el.style.transform = `translate(${x - 24}px, ${y}px) translate(0, -50%)`;
+    // Anchor the image's center on the pin; for "r" the right edge is pinned so
+    // the pill grows leftward into the viewport.
+    el.style.transform =
+      dir.current === "r"
+        ? `translate(${x + 24}px, ${y}px) translate(-100%, -50%)`
+        : `translate(${x - 24}px, ${y}px) translate(0%, -50%)`;
   });
   return null;
 }
@@ -572,7 +593,9 @@ export default function AtlasGlobe({ pins }: { pins: AtlasPin[] }) {
   }, []);
 
   const selectedPlaced = placed.find((p) => p.pin.slug === selected) ?? null;
-  const target = selectedPlaced ? { lat: selectedPlaced.lat, lng: selectedPlaced.lng } : null;
+  const target = selectedPlaced
+    ? { lat: selectedPlaced.lat, lng: selectedPlaced.lng, slug: selectedPlaced.pin.slug }
+    : null;
 
   const openDetail = () => {
     if (!selected) return;
