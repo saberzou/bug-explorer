@@ -193,7 +193,9 @@ function FitCamera() {
     const distV = GLOBE_RADIUS / Math.tan(vfov / 2);
     const hfov = 2 * Math.atan(Math.tan(vfov / 2) * aspect);
     const distH = GLOBE_RADIUS / Math.tan(hfov / 2);
-    const dist = Math.max(distV, distH) * 1.3;
+    // Tighter margin on portrait/mobile so the globe fills more of the screen.
+    const margin = aspect < 1 ? 1.08 : 1.3;
+    const dist = Math.max(distV, distH) * margin;
     camera.position.set(0, 0.25 * dist, dist);
     camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
