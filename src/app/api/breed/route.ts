@@ -4,8 +4,16 @@ import { getBug } from "@/lib/bugs";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Gemini image model — override via env if a different id is provisioned.
-const MODEL = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image";
+// Candidate Gemini image models, tried in order until one works. Set
+// GEMINI_IMAGE_MODEL to pin a specific id (it's tried first).
+const MODELS = [
+  process.env.GEMINI_IMAGE_MODEL,
+  "gemini-2.5-flash-image",
+  "gemini-2.5-flash-image-preview",
+  "gemini-2.0-flash-preview-image-generation",
+  "gemini-3.1-flash-image-preview",
+].filter((m): m is string => Boolean(m));
+const UNIQUE_MODELS = [...new Set(MODELS)];
 // Accept the common Gemini/Google key names so whichever you set in Vercel works.
 const API_KEY =
   process.env.GEMINI_API_KEY ||
@@ -77,34 +85,44 @@ export async function POST(req: Request) {
     `nothing touches the edges or corners. Illustrated, not photorealistic. ABSOLUTELY NO TEXT, ` +
     `LABELS, OR TYPOGRAPHY anywhere in the image.`;
 
-  try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
-    const r = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseModalities: ["TEXT", "IMAGE"] },
-      }),
-    });
-    if (!r.ok) {
-      console.error("gemini breed failed", r.status, (await r.text()).slice(0, 400));
-      return NextResponse.json({ error: "The cross fizzled — generation failed." }, { status: 502 });
+  let detail = "no model attempted";
+  for (const model of UNIQUE_MODELS) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
+      const r = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseModalities: ["TEXT", "IMAGE"] },
+        }),
+      });
+      if (!r.ok) {
+        detail = `${model}: ${r.status} ${(await r.text()).replace(/\s+/g, " ").slice(0, 150)}`;
+        console.error("gemini breed failed", detail);
+        continue; // try the next model id
+      }
+      const data = await r.json();
+      const parts = data?.candidates?.[0]?.content?.parts ?? [];
+      const img = parts.find((p: { inlineData?: { data?: string } }) => p.inlineData?.data);
+      if (!img?.inlineData?.data) {
+        detail = `${model}: response had no image`;
+        continue;
+      }
+      const mime = img.inlineData.mimeType || "image/png";
+      return NextResponse.json({
+        image: `data:${mime};base64,${img.inlineData.data}`,
+        name: hybridName(bugA.commonName, bugB.commonName),
+        parents: [bugA.commonName, bugB.commonName],
+      });
+    } catch (e) {
+      detail = `${model}: ${String(e).slice(0, 150)}`;
+      console.error("breed route error", detail);
     }
-    const data = await r.json();
-    const parts = data?.candidates?.[0]?.content?.parts ?? [];
-    const img = parts.find((p: { inlineData?: { data?: string; mimeType?: string } }) => p.inlineData?.data);
-    if (!img?.inlineData?.data) {
-      return NextResponse.json({ error: "Nothing viable hatched. Try another pair." }, { status: 502 });
-    }
-    const mime = img.inlineData.mimeType || "image/png";
-    return NextResponse.json({
-      image: `data:${mime};base64,${img.inlineData.data}`,
-      name: hybridName(bugA.commonName, bugB.commonName),
-      parents: [bugA.commonName, bugB.commonName],
-    });
-  } catch (e) {
-    console.error("breed route error", e);
-    return NextResponse.json({ error: "The lab is unreachable right now." }, { status: 502 });
   }
+  // All models failed — surface the real reason so it can be diagnosed on-screen.
+  return NextResponse.json(
+    { error: "The cross fizzled — generation failed.", detail },
+    { status: 502 },
+  );
 }

@@ -112,7 +112,9 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       });
       const [res] = await Promise.all([reqP, minAnim]);
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Something went wrong.");
+      if (!res.ok) {
+        throw new Error(data?.detail ? `${data.error} [${data.detail}]` : data?.error || "Something went wrong.");
+      }
       setResult(data as Result);
       setPhase("done");
     } catch (e) {
