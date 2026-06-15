@@ -227,34 +227,36 @@ def main():
             d.ellipse((sx - size / 2, sy - size / 2, sx + size / 2, sy + size / 2),
                       outline=rim + (255,), width=2)
 
-    # spotlight popup on the front-most bug (mirrors the live auto-highlight)
+    # spotlight pill on the front-most bug: image on the LEFT, text to the right
     front = [t for t in placed if t[0] > 0.35]
     if front:
         _z, b, sx, sy, _ssx, _ssy = max(front, key=lambda t: t[0])
         region = (geo.locate(b["habitat"]) or (0, 0, "Unknown", "r"))[2]
-        big = 84
-        png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
-        if png.exists():
-            thumb = circle_thumb(png, big)
-            img.paste(thumb, (int(sx - big / 2), int(sy - big / 2)), thumb)
-        rim = RIM.get(b["rarity"])
-        if rim:
-            d.ellipse((sx - big / 2, sy - big / 2, sx + big / 2, sy + big / 2),
-                      outline=rim + (255,), width=3)
         name, reg = b["commonName"], region.upper()
-        nf, rf = font(26), font(15)
+        nf, rf = font(24), font(14)
         nw = nf.getbbox(name)[2]
         rw = rf.getbbox(reg)[2]
-        cardw = max(nw, rw) + 34 + 40
-        cardh = 60
-        cx0 = sx - cardw / 2
-        cy0 = sy - big / 2 - cardh - 14
-        d.rounded_rectangle((cx0, cy0, cx0 + cardw, cy0 + cardh), radius=14,
-                            fill=(10, 9, 8, 235), outline=(251, 191, 36, 90))
-        d.text((cx0 + 16, cy0 + 15), name, font=nf, fill=(254, 243, 199))
-        d.text((cx0 + 16, cy0 + 39), reg, font=rf, fill=(161, 161, 170))
-        icx, icy = cx0 + cardw - 25, cy0 + cardh / 2
-        d.ellipse((icx - 13, icy - 13, icx + 13, icy + 13), outline=(251, 191, 36, 200), width=2)
+        imgd, pad, gap, info = 64, 7, 12, 34
+        textw = max(nw, rw)
+        pillh = imgd + 14
+        pillw = pad + imgd + gap + textw + 14 + info + pad
+        x0 = sx - imgd / 2 - pad
+        y0 = sy - pillh / 2
+        d.rounded_rectangle((x0, y0, x0 + pillw, y0 + pillh), radius=pillh / 2,
+                            fill=(10, 9, 8, 230), outline=(251, 191, 36, 110), width=2)
+        png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
+        if png.exists():
+            thumb = circle_thumb(png, imgd)
+            img.paste(thumb, (int(x0 + pad), int(sy - imgd / 2)), thumb)
+        rim = RIM.get(b["rarity"])
+        if rim:
+            d.ellipse((x0 + pad, sy - imgd / 2, x0 + pad + imgd, sy + imgd / 2),
+                      outline=rim + (255,), width=2)
+        tx = x0 + pad + imgd + gap
+        d.text((tx, sy - 16), name, font=nf, fill=(254, 243, 199))
+        d.text((tx, sy + 9), reg, font=rf, fill=(161, 161, 170))
+        icx, icy = x0 + pillw - pad - info / 2, sy
+        d.ellipse((icx - 15, icy - 15, icx + 15, icy + 15), outline=(251, 191, 36, 210), width=2)
         d.text((icx, icy), "i", font=font(17), fill=(254, 243, 199), anchor="mm")
 
     # header
