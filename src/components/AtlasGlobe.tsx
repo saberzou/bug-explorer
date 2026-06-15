@@ -385,18 +385,18 @@ function PillProjector({
       const pill = el.firstElementChild as HTMLElement | null;
       if (pill) {
         pill.style.flexDirection = dir.current === "r" ? "row-reverse" : "row";
-        pill.style.paddingLeft = dir.current === "r" ? "1rem" : "0.5rem";
-        pill.style.paddingRight = dir.current === "r" ? "0.5rem" : "1rem";
+        pill.style.paddingLeft = dir.current === "r" ? "0.75rem" : "0.25rem";
+        pill.style.paddingRight = dir.current === "r" ? "0.25rem" : "0.75rem";
       }
     }
 
     el.style.display = "block";
-    // Anchor the image's center (~36px in) on the pin; for "r" the right edge is
+    // Anchor the image's center (~24px in) on the pin; for "r" the right edge is
     // pinned so the pill grows leftward into the viewport.
     el.style.transform =
       dir.current === "r"
-        ? `translate(${x + 36}px, ${y}px) translate(-100%, -50%)`
-        : `translate(${x - 36}px, ${y}px) translate(0%, -50%)`;
+        ? `translate(${x + 24}px, ${y}px) translate(-100%, -50%)`
+        : `translate(${x - 24}px, ${y}px) translate(0%, -50%)`;
   });
   return null;
 }
@@ -425,7 +425,7 @@ function BugPill({
     }
     const full = el.scrollWidth;
     const tl = gsap.timeline();
-    tl.fromTo(el, { width: 72, scale: 0.55 }, { width: full, scale: 1, duration: 0.42, ease: "back.out(1.5)" }, 0);
+    tl.fromTo(el, { width: 48, scale: 0.55 }, { width: full, scale: 1, duration: 0.42, ease: "back.out(1.5)" }, 0);
     if (tx) tl.fromTo(tx, { autoAlpha: 0, x: -8 }, { autoAlpha: 1, x: 0, duration: 0.3 }, 0.14);
     tl.set(el, { width: "auto" });
     return () => {
@@ -436,27 +436,31 @@ function BugPill({
   return (
     <div
       ref={ref}
-      className="pointer-events-auto flex items-center gap-3 overflow-hidden rounded-3xl bg-black/85 p-2 pr-4 shadow-xl ring-1 ring-amber-200/25 backdrop-blur-sm"
-      style={{ width: 72 }}
+      className="pointer-events-auto flex items-center gap-2.5 overflow-hidden rounded-full bg-black/85 p-1 pr-3 shadow-xl ring-1 ring-amber-200/25 backdrop-blur-sm"
+      style={{ width: 48 }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/bugs/${pin.slug}.png`}
         alt={pin.commonName}
         draggable={false}
-        className="h-14 w-14 shrink-0 rounded-full object-cover"
+        className="h-10 w-10 shrink-0 rounded-full object-cover"
         style={rim ? { boxShadow: `0 0 0 2px ${rim}` } : undefined}
       />
-      <div ref={textRef} className="max-w-[160px] leading-snug">
-        <div className="font-serif text-[14px] text-amber-100">{pin.commonName}</div>
-        <div className="text-[13px] uppercase tracking-wider text-zinc-400">{pin.region}</div>
+      <div ref={textRef} className="leading-tight">
+        <div className="whitespace-nowrap font-serif text-[13px] text-amber-100">
+          {pin.commonName}
+        </div>
+        <div className="whitespace-nowrap text-[10px] uppercase tracking-wider text-zinc-400">
+          {pin.region}
+        </div>
       </div>
       <button
         onClick={onInfo}
         aria-label={`View ${pin.commonName} details`}
-        className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-amber-100 ring-1 ring-amber-200/40 transition-colors hover:bg-amber-200/15"
+        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-amber-100 ring-1 ring-amber-200/40 transition-colors hover:bg-amber-200/15"
       >
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
           <line x1="12" y1="11" x2="12" y2="16" />
           <line x1="12" y1="8" x2="12.01" y2="8" />
