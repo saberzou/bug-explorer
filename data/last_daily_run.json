@@ -1,10 +1,10 @@
 {
-  "status": "bootstrap",
-  "date": null,
-  "slug": null,
-  "commonName": null,
-  "discoveredOn": null,
-  "ranAtUtc": null,
-  "note": "Initial bootstrap before first scheduled daily-add run. The daily-add cron (Axel) overwrites this after each run so Atticus's watchdog has a machine-readable signal. status is one of: ok | blocked | error | bootstrap.",
-  "bugCount": 66
+  "status": "ok",
+  "date": "2026-06-15",
+  "slug": "hickory-horned-devil",
+  "commonName": "Hickory Horned Devil",
+  "discoveredOn": "2026-06-26",
+  "ranAtUtc": "2026-06-15T12:54:24Z",
+  "note": null,
+  "bugCount": 67
 }
