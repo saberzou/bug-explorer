@@ -1833,5 +1833,33 @@
       "height": 2592,
       "localPath": "/bugs/photos/common-earwig/2.jpg"
     }
+  ],
+  "hickory-horned-devil": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/-_7706_%E2%80%93_Citheronia_regalis_%E2%80%93_Regal_Moth_%2848043874151%29.jpg/1280px--_7706_%E2%80%93_Citheronia_regalis_%E2%80%93_Regal_Moth_%2848043874151%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/-_7706_%E2%80%93_Citheronia_regalis_%E2%80%93_Regal_Moth_%2848043874151%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:-_7706_%E2%80%93_Citheronia_regalis_%E2%80%93_Regal_Moth_(48043874151).jpg",
+      "credit": "Andy Reago & Chrissy McClarren",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Third time mothing at Hawn State Park in Ste. Genevieve, Missouri 6/9/19",
+      "fileTitle": "File:- 7706 – Citheronia regalis – Regal Moth (48043874151).jpg",
+      "width": 6000,
+      "height": 4000,
+      "localPath": "/bugs/photos/hickory-horned-devil/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Citheronia_regalis_closed_claspers%2C_MM.jpg/1280px-Citheronia_regalis_closed_claspers%2C_MM.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Citheronia_regalis_closed_claspers%2C_MM.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Citheronia_regalis_closed_claspers,_MM.jpg",
+      "credit": "Megan McCarty",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Male Regal Moth (Citheronia regalis) showing closed claspers.",
+      "fileTitle": "File:Citheronia regalis closed claspers, MM.jpg",
+      "width": 2206,
+      "height": 1918,
+      "localPath": "/bugs/photos/hickory-horned-devil/2.jpg"
+    }
   ]
 }

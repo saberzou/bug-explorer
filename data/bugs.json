@@ -1252,5 +1252,24 @@
       "#8B5E3C",
       "#C89B6F"
     ]
+  },
+  {
+    "slug": "hickory-horned-devil",
+    "commonName": "Hickory Horned Devil",
+    "latinName": "Citheronia regalis",
+    "habitat": "Deciduous forests of the eastern United States",
+    "sizeMm": 140,
+    "sizeKind": "body",
+    "weirdFact": "North America's largest caterpillar wears menacing black-tipped orange horns, yet they're rubbery and completely harmless.",
+    "whyItsCool": "A 14cm dragon cosplaying as a threat. Pure bluff: all spikes, zero sting, then it becomes a giant regal moth.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-26",
+    "order": "Lepidoptera",
+    "family": "Saturniidae",
+    "colorPalette": [
+      "#3DA35D",
+      "#E8772E",
+      "#1F2A1A"
+    ]
   }
 ]
