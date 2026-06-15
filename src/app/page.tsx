@@ -1,6 +1,5 @@
 import BugGrid from "@/components/BugGrid";
 import ViewToggle from "@/components/ViewToggle";
-import ViewReveal from "@/components/ViewReveal";
 import { loadBugs } from "@/lib/bugs";
 
 export default async function Home() {
@@ -12,7 +11,6 @@ export default async function Home() {
 
   return (
     <main className="relative h-dvh w-dvw overflow-hidden bg-[#0e0d0b] text-zinc-100">
-      <ViewReveal />
       <BugGrid bugs={bugs} latestSlug={latestSlug} />
       <header className="pointer-events-none absolute left-0 top-0 z-10 w-full bg-gradient-to-b from-[#0e0d0b] via-[#0e0d0b]/85 to-transparent p-4 pb-10 text-center sm:p-6 sm:pb-12">
         <div className="flex flex-col items-center gap-1">

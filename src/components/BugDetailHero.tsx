@@ -6,6 +6,7 @@ import gsap from "gsap";
 import BugImage from "@/components/BugImage";
 import {
   clearHandoff,
+  getBugOrigin,
   prefersReducedMotion,
   readHandoff,
   storeHandoff,
@@ -118,13 +119,14 @@ export default function BugDetailHero({
       duration: 0.45,
       ease: "power3.inOut",
     });
+    const dest = getBugOrigin() ?? "/";
     gsap.to("[data-detail-fade]", {
       autoAlpha: 0,
       y: 12,
       duration: 0.35,
       ease: "power3.inOut",
       stagger: 0.04,
-      onComplete: () => router.push("/"),
+      onComplete: () => router.push(dest),
     });
   };
 

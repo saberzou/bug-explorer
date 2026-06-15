@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import BugDetailHero from "@/components/BugDetailHero";
+import BugBackLink from "@/components/BugBackLink";
 import BugPhotos from "@/components/BugPhotos";
 import DetailContentFade from "@/components/DetailContentFade";
 import { getBug, loadBugs } from "@/lib/bugs";
@@ -48,14 +48,7 @@ export default async function BugPage({ params }: PageProps) {
         slug={bug.slug}
         className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-10 sm:py-16"
       >
-        <Link
-          href="/"
-          data-bug-back
-          data-detail-fade
-          className="self-start text-xs uppercase tracking-widest text-zinc-400 hover:text-amber-200"
-        >
-          ← back to grid
-        </Link>
+        <BugBackLink />
 
         <div
           data-detail-fade-row

@@ -160,7 +160,7 @@ def spread(clat, clng, i, n):
     if n <= 1:
         return clat, clng
     golden = 2.399963229728653
-    step = 5.4
+    step = 8.5
     r = step * math.sqrt(i + 0.5)
     a = i * golden
     d_lat = r * math.sin(a)
@@ -208,7 +208,7 @@ def main():
             sx, sy, z = project(lat, lng, rad=1.07)
             ssx, ssy, _ = project(lat, lng, rad=1.0)
             placed.append((z, b, sx, sy, ssx, ssy))
-        llat = min(88, clat + 5.4 * math.sqrt(n) + 6)
+        llat = min(88, clat + 8.5 * math.sqrt(n) + 7)
         lx, ly, lz = project(llat, clng, rad=1.05)
         labels.append((lz, region, lx, ly))
     placed.sort(key=lambda t: t[0])
@@ -217,7 +217,7 @@ def main():
         if z <= 0.02:
             continue
         d.line((ssx, ssy, sx, sy), fill=(184, 146, 74, 220), width=2)
-        size = int(38 + 12 * z)
+        size = int(24 + 10 * z)
         png = ROOT / "public" / "bugs" / f"{b['slug']}.png"
         if png.exists():
             thumb = circle_thumb(png, size)

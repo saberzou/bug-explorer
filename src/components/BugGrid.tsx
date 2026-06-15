@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import BugImage from "@/components/BugImage";
 import { assignCoords } from "@/lib/hex";
-import { prefersReducedMotion, storeHandoff } from "@/lib/transition";
+import { prefersReducedMotion, setBugOrigin, storeHandoff } from "@/lib/transition";
 import type { Bug, Rarity } from "@/lib/types";
 
 interface BugGridProps {
@@ -430,6 +430,7 @@ export default function BugGrid({ bugs }: BugGridProps) {
                   ev.preventDefault();
                   return;
                 }
+                setBugOrigin("/");
                 // Stash the source rect for GSAP FLIP into the detail page.
                 if (!prefersReducedMotion()) {
                   const rect = (

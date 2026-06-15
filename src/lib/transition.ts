@@ -61,27 +61,24 @@ export function prefersReducedMotion(): boolean {
 }
 
 /**
- * One-shot flag for the Cabinet↔Atlas fade. The toggle sets it and fades to
- * black before navigating; the destination view consumes it on mount and fades
- * back in from black. Absent on deep links / refreshes, so those just render.
+ * Where the user opened a bug detail page FROM ("/" grid or "/atlas" globe), so
+ * the detail page's back link returns to the right view instead of always the
+ * grid. Set on the source click; read on the detail page.
  */
-const VIEW_FADE_KEY = "bug-view-fade";
+const ORIGIN_KEY = "bug-origin";
 
-export function setViewFade(): void {
+export function setBugOrigin(path: string): void {
   try {
-    sessionStorage.setItem(VIEW_FADE_KEY, String(Date.now()));
+    sessionStorage.setItem(ORIGIN_KEY, path);
   } catch {
     // ignore
   }
 }
 
-export function consumeViewFade(): boolean {
+export function getBugOrigin(): string | null {
   try {
-    const v = sessionStorage.getItem(VIEW_FADE_KEY);
-    if (!v) return false;
-    sessionStorage.removeItem(VIEW_FADE_KEY);
-    return Date.now() - Number(v) < 4000;
+    return sessionStorage.getItem(ORIGIN_KEY);
   } catch {
-    return false;
+    return null;
   }
 }
