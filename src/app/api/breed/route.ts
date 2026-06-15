@@ -15,13 +15,15 @@ const MODELS = [
 ].filter((m): m is string => Boolean(m));
 const UNIQUE_MODELS = [...new Set(MODELS)];
 // Accept the common Gemini/Google key names so whichever you set in Vercel works.
-const API_KEY =
+const API_KEY = (
   process.env.GEMINI_API_KEY ||
   process.env.GOOGLE_API_KEY ||
   process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
   process.env.GEMINI_KEY ||
   process.env.Gemini ||
-  process.env.GEMINI;
+  process.env.GEMINI ||
+  ""
+).trim();
 
 // Best-effort per-instance rate limit (serverless instances are ephemeral, so
 // this is a soft guard against accidental hammering, not airtight abuse control).
