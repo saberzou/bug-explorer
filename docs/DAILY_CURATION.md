@@ -26,6 +26,57 @@ That script is the contract — everything below exists to get a clean pass.
 
 ---
 
+## Automation & watchdog
+
+Two crons run this system. They are intentionally **independent** — separate
+agents, separate schedules, ~9.5h apart — so a failure in one can't mask a
+failure in the other. Both are gated behind Saber's review and stay **disabled**
+until he enables them.
+
+| Role | Cron id | Agent | Schedule (CST) | What it does |
+|------|---------|-------|----------------|--------------|
+| **Add** | `2cbd39b0-8396-4f98-b0ab-d2fc361bde20` | `axel` | `30 2 * * *` (02:30) | Runs the daily procedure below. On every exit path writes `data/last_daily_run.json` via `scripts/write_run_status.py`. |
+| **Watchdog** | `d77c069e-5dc8-444c-8a45-1df726bd73b8` | `main` (Atticus) | `0 12 * * *` (12:00) | Thin caller of `scripts/watchdog_check.py`. Reads the status file off `origin/main`, routes purely on the script's exit code. Never writes to the repo, never re-runs curation. |
+
+**Status file is the only heartbeat.** `data/last_daily_run.json` (no leading
+dot) is the single machine-readable signal. The add job overwrites it at the end
+of *every* run — success or failure — with `status ∈ ok | blocked | error` (and
+the committed seed value `bootstrap`). `discoveredOn` in `data/bugs.json` runs
+~10 days ahead of the wall clock and is **informational only** — never a gate. A
+today-dated row in `bugs.json` would false-alarm every healthy night for ~10
+days, so the watchdog ignores it entirely.
+
+**The judgment lives in one versioned place.** `scripts/watchdog_check.py` is the
+sole source of truth for "what counts as broken." The watchdog cron is dumb
+routing; it execs the script and acts on the exit code + the one-line `detail`
+sentence on stdout. Keep the definition here, in the repo, next to the curation
+logic — not duplicated in cron payloads (that's how the path/enum drift bugs
+happen).
+
+**Exit-code routing** (`scripts/watchdog_check.py`):
+
+| Exit | Verdict | Trigger | Watchdog action |
+|------|---------|---------|-----------------|
+| `0` | healthy | `status:ok`, dated today | silent |
+| `1` | silent_failure | no fresh today-dated run (stale / missing / corrupt status file) | **DM Saber** |
+| `2` | content_failure | `status:blocked` or `status:error`, dated today | ping the Bug Explorer group (content is Axel's domain) |
+| `3` | seed | `status:bootstrap` | silent (not yet armed) |
+
+stdout is one-line JSON: `{verdict, date, expected_date, status, slug, commit, detail}`.
+
+**Severity split (why the routing is correct).** A *caught* failure (baseline
+gate red, image geo-block, fetch failure, exception) writes a today-dated
+`error`/`blocked` status → exit 2 → a low-noise group ping; the system is alive,
+it just shipped nothing. A *hard cron timeout* (the add job aborts before its
+error handler runs) writes nothing → the status stays stale → exit 1 → Saber
+DM. That's the intended escalation: a genuine silent failure is the one thing
+that warrants Saber's direct attention.
+
+**Re-enable.** When Saber approves, flip both jobs on (one-line cron update
+each). Nothing in this collection changes until he does.
+
+---
+
 ## The daily procedure
 
 ### 1. Pick a species (rare, weird, real — and new)
