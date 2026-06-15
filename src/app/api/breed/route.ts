@@ -6,7 +6,12 @@ export const dynamic = "force-dynamic";
 
 // Gemini image model — override via env if a different id is provisioned.
 const MODEL = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image";
-const API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+// Accept the common Gemini/Google key names so whichever you set in Vercel works.
+const API_KEY =
+  process.env.GEMINI_API_KEY ||
+  process.env.GOOGLE_API_KEY ||
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
+  process.env.GEMINI_KEY;
 
 // Best-effort per-instance rate limit (serverless instances are ephemeral, so
 // this is a soft guard against accidental hammering, not airtight abuse control).
