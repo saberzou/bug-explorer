@@ -14,6 +14,15 @@ export interface LabBug {
 
 type Phase = "idle" | "breeding" | "done" | "error";
 
+// Carousel arc tuning. ARC_DEPTH = how far (px) the edge items dip below the
+// centre ones. Smaller = gentler arc. TOP_PAD keeps the flat centre items off
+// the top edge; the container is sized to fit TOP_PAD + item + ARC_DEPTH so the
+// dipped items at the sides never get clipped at the bottom.
+const ARC_DEPTH = 34;
+const TOP_PAD = 8;
+const ITEM = 56; // h-14 / w-14
+const CAROUSEL_H = TOP_PAD + ITEM + ARC_DEPTH + 12; // + bottom breathing room
+
 interface Result {
   image: string;
   name: string;
@@ -47,31 +56,61 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     setParents((p) => (i === 0 ? [null, p[1]] : [p[0], null]));
   }
 
-  // --- curved carousel: items ride the top arc of a big circle ---------------
-  // A continuous rAF loop reads scrollLeft every frame (iOS fires the `scroll`
-  // event too coarsely during momentum, which caused the jitter).
+  // --- curved carousel: items ride a gentle arc -----------------------------
+  // Two fixes for the flicker: (1) we never read layout (offsetLeft/Width) in
+  // the rAF loop — those force a synchronous reflow every frame and, mixed with
+  // the transform writes, cause read/write layout thrashing. Instead we cache
+  // each item's center once and recompute only on resize. (2) we bail out when
+  // scrollLeft hasn't moved, so momentum frames don't repaint needlessly.
+  const centersRef = useRef<number[]>([]);
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
     let raf = 0;
     let alive = true;
+    let lastSl = -1;
+    let lastW = -1;
+
+    const measure = () => {
+      const kids = el.children as HTMLCollectionOf<HTMLElement>;
+      const c: number[] = [];
+      for (let i = 0; i < kids.length; i++) {
+        c[i] = kids[i].offsetLeft + kids[i].offsetWidth / 2;
+      }
+      centersRef.current = c;
+      lastW = el.clientWidth;
+      lastSl = -1; // force a re-layout pass after measuring
+    };
+
     const loop = () => {
       if (!alive) return;
-      const half = el.clientWidth / 2 || 1;
-      const R = Math.max(220, el.clientWidth * 0.72); // big-circle radius
+      if (el.clientWidth !== lastW) measure();
       const sl = el.scrollLeft;
-      for (const child of Array.from(el.children) as HTMLElement[]) {
-        const x = child.offsetLeft + child.offsetWidth / 2 - sl - half; // px from center
-        const ax = Math.min(Math.abs(x), R);
-        const y = R - Math.sqrt(R * R - ax * ax); // circle: 0 at center, grows to the sides
-        child.style.transform = `translateY(${10 + y}px)`;
+      if (sl !== lastSl) {
+        lastSl = sl;
+        const half = el.clientWidth / 2 || 1;
+        // Half the carousel width is where items reach the deepest dip.
+        const span = Math.max(half, 1);
+        const centers = centersRef.current;
+        const kids = el.children as HTMLCollectionOf<HTMLElement>;
+        for (let i = 0; i < kids.length; i++) {
+          const x = centers[i] - sl - half; // px from viewport center
+          const t = Math.min(Math.abs(x) / span, 1); // 0 at center → 1 at edges
+          const y = ARC_DEPTH * t * t; // ease so the centre stays flat, edges dip
+          kids[i].style.transform = `translate3d(0, ${y}px, 0)`;
+        }
       }
       raf = requestAnimationFrame(loop);
     };
+
+    measure();
     raf = requestAnimationFrame(loop);
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize);
     return () => {
       alive = false;
       cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
     };
   }, [phase, bugs.length]);
 
@@ -263,8 +302,10 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       {phase !== "done" && (
         <div
           ref={scrollRef}
-          className="lab-carousel flex h-40 shrink-0 items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
+          className="lab-carousel flex shrink-0 items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
           style={{
+            height: CAROUSEL_H,
+            paddingTop: TOP_PAD,
             touchAction: "pan-x",
             paddingLeft: "42vw",
             paddingRight: "42vw",
