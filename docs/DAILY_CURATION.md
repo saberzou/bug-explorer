@@ -33,6 +33,23 @@ agents, separate schedules, ~9.5h apart — so a failure in one can't mask a
 failure in the other. Both are gated behind Saber's review and stay **disabled**
 until he enables them.
 
+> **Note (2026-06-17): the Add job is now a two-cron split.** Scheduled isolated
+> cron turns get force-aborted at ~250s, but a full specimen run legitimately
+> needs 7–12 min (image gen is the long pole). So the daily procedure below is
+> split across two short turns that hand off via the working tree + a gitignored
+> state file `data/.daily_prep_state.json`:
+>
+> | Half | Cron id | Schedule (CST) | Does |
+> |------|---------|----------------|------|
+> | **PREP** | `2cbd39b0-8396-4f98-b0ab-d2fc361bde20` | `30 2 * * *` (02:30) | Steps 1–4 below minus image: sync, pick species, write data row, fetch photos, write the thumbnail prompt + handoff state. No image, no commit. |
+> | **FINISH** | `4d864a43-7d2a-4eec-a96b-820d92144776` | `50 2 * * *` (02:50) | Steps 5–7: read handoff (stale/missing/corrupt guarded), generate thumbnail, run the hard gate, commit atomically, push, announce. |
+>
+> FINISH must **not** `git pull`/`checkout` on entry — that would wipe PREP's
+> uncommitted data row + photos. The handoff lives in the shared canonical
+> checkout's working tree. The status file + watchdog contract is unchanged:
+> FINISH writes `data/last_daily_run.json` on every exit path at ~02:50, well
+> before the noon watchdog reads it.
+
 | Role | Cron id | Agent | Schedule (CST) | What it does |
 |------|---------|-------|----------------|--------------|
 | **Add** | `2cbd39b0-8396-4f98-b0ab-d2fc361bde20` | `axel` | `30 2 * * *` (02:30) | Runs the daily procedure below. On every exit path writes `data/last_daily_run.json` via `scripts/write_run_status.py`. |
