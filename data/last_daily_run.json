@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-16",
-  "slug": "golden-tortoise-beetle",
-  "commonName": "Golden Tortoise Beetle",
-  "discoveredOn": "2026-06-29",
-  "ranAtUtc": "2026-06-16T14:13:01Z",
+  "date": "2026-06-17",
+  "slug": "twisted-wing-parasite",
+  "commonName": "Twisted-wing Parasite",
+  "discoveredOn": "2026-06-30",
+  "ranAtUtc": "2026-06-16T18:40:07Z",
   "note": null,
-  "bugCount": 70
+  "bugCount": 71
 }
