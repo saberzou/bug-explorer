@@ -14,20 +14,27 @@ export interface LabBug {
 
 type Phase = "idle" | "breeding" | "done" | "error";
 
-// Carousel arc tuning. ARC_DEPTH = how far (px) the edge items dip below the
-// centre ones. Smaller = gentler arc. TOP_PAD keeps the flat centre items off
-// the top edge; the container is sized to fit TOP_PAD + item + ARC_DEPTH so the
-// dipped items at the sides never get clipped at the bottom.
-const ARC_DEPTH = 34;
-const TOP_PAD = 8;
-const ITEM = 56; // h-14 / w-14
-const CAROUSEL_H = TOP_PAD + ITEM + ARC_DEPTH + 12; // + bottom breathing room
-
 interface Result {
   image: string;
   name: string;
   parents: [string, string];
 }
+
+// --- carousel geometry --------------------------------------------------------
+// We do NOT use native scroll. A single rAF loop owns one horizontal offset and
+// writes each item's x AND y transform in the same frame, so the horizontal
+// position and the vertical arc can never desync (that cross-thread desync was
+// the shake: native momentum scroll runs on the compositor while the JS arc
+// update lagged a frame behind on the main thread).
+const ITEM = 56; // px, the circular thumb (h-14 / w-14)
+const GAP = 14; // px between thumbs
+const STEP = ITEM + GAP; // center-to-center spacing
+const ARC_DEPTH = 26; // px the edge items dip below center — smaller = subtler arc
+const ARC_SPAN = 320; // px from center over which the full dip is reached
+const TOP_PAD = 10;
+const CAROUSEL_H = TOP_PAD + ITEM + ARC_DEPTH + 14; // sized so the dip never clips
+const FRICTION = 0.94; // inertia decay per frame
+const MIN_V = 0.02; // velocity floor to stop the loop
 
 export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const bySlug = useRef(new Map(bugs.map((b) => [b.slug, b])));
@@ -39,7 +46,16 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const vesselRef = useRef<HTMLDivElement>(null);
   const slotRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const ghostRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // carousel refs (no React state in the hot path — all mutable refs)
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const offsetRef = useRef(0); // current scroll offset in px (0 = first item centered)
+  const velRef = useRef(0); // px/frame inertia
+  const targetRef = useRef<number | null>(null); // snap target, when settling
+  const rafRef = useRef(0);
+  const runningRef = useRef(false);
+  const maxOffsetRef = useRef(0);
 
   const both = parents[0] && parents[1];
 
@@ -56,95 +72,140 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     setParents((p) => (i === 0 ? [null, p[1]] : [p[0], null]));
   }
 
-  // --- curved carousel: items ride a gentle arc -----------------------------
-  // Two fixes for the flicker: (1) we never read layout (offsetLeft/Width) in
-  // the rAF loop — those force a synchronous reflow every frame and, mixed with
-  // the transform writes, cause read/write layout thrashing. Instead we cache
-  // each item's center once and recompute only on resize. (2) we bail out when
-  // scrollLeft hasn't moved, so momentum frames don't repaint needlessly.
-  const centersRef = useRef<number[]>([]);
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    let raf = 0;
-    let alive = true;
-    let lastSl = -1;
-    let lastW = -1;
+  // Paint one frame: place every item by transform from the single offset.
+  // x and y are written together → impossible to desync → no shake.
+  function paint() {
+    const vp = viewportRef.current;
+    if (!vp) return;
+    const center = vp.clientWidth / 2;
+    const off = offsetRef.current;
+    const items = itemRefs.current;
+    for (let i = 0; i < items.length; i++) {
+      const el = items[i];
+      if (!el) continue;
+      const x = center - ITEM / 2 + i * STEP - off; // item's left in viewport px
+      const dist = x + ITEM / 2 - center; // signed px from viewport center
+      const t = Math.min(Math.abs(dist) / ARC_SPAN, 1);
+      const y = TOP_PAD + ARC_DEPTH * t * t; // flat center, eased dip to the sides
+      el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      // fade + shrink far items a touch so the row reads as a shelf, not a strip
+      const f = 1 - 0.45 * t;
+      el.style.opacity = String(f);
+    }
+  }
 
-    const measure = () => {
-      const kids = el.children as HTMLCollectionOf<HTMLElement>;
-      const c: number[] = [];
-      for (let i = 0; i < kids.length; i++) {
-        c[i] = kids[i].offsetLeft + kids[i].offsetWidth / 2;
-      }
-      centersRef.current = c;
-      lastW = el.clientWidth;
-      lastSl = -1; // force a re-layout pass after measuring
-    };
+  function clampOffset(v: number) {
+    const max = maxOffsetRef.current;
+    if (v < 0) return 0;
+    if (v > max) return max;
+    return v;
+  }
 
-    const loop = () => {
-      if (!alive) return;
-      if (el.clientWidth !== lastW) measure();
-      const sl = el.scrollLeft;
-      if (sl !== lastSl) {
-        lastSl = sl;
-        const half = el.clientWidth / 2 || 1;
-        // Half the carousel width is where items reach the deepest dip.
-        const span = Math.max(half, 1);
-        const centers = centersRef.current;
-        const kids = el.children as HTMLCollectionOf<HTMLElement>;
-        for (let i = 0; i < kids.length; i++) {
-          const x = centers[i] - sl - half; // px from viewport center
-          const t = Math.min(Math.abs(x) / span, 1); // 0 at center → 1 at edges
-          const y = ARC_DEPTH * t * t; // ease so the centre stays flat, edges dip
-          kids[i].style.transform = `translate3d(0, ${y}px, 0)`;
+  function ensureLoop() {
+    if (runningRef.current) return;
+    runningRef.current = true;
+    const tick = () => {
+      const target = targetRef.current;
+      if (target !== null) {
+        // ease toward snap target
+        const d = target - offsetRef.current;
+        offsetRef.current += d * 0.18;
+        if (Math.abs(d) < 0.5) {
+          offsetRef.current = target;
+          targetRef.current = null;
+          velRef.current = 0;
+          paint();
+          runningRef.current = false;
+          return;
+        }
+      } else {
+        // inertia
+        offsetRef.current += velRef.current * 16;
+        const clamped = clampOffset(offsetRef.current);
+        if (clamped !== offsetRef.current) {
+          offsetRef.current = clamped;
+          velRef.current = 0;
+        }
+        velRef.current *= FRICTION;
+        if (Math.abs(velRef.current) < MIN_V) {
+          velRef.current = 0;
+          // settle to nearest item center
+          targetRef.current = clampOffset(Math.round(offsetRef.current / STEP) * STEP);
         }
       }
-      raf = requestAnimationFrame(loop);
+      paint();
+      rafRef.current = requestAnimationFrame(tick);
     };
+    rafRef.current = requestAnimationFrame(tick);
+  }
 
-    measure();
-    raf = requestAnimationFrame(loop);
-    const onResize = () => measure();
-    window.addEventListener("resize", onResize);
-    return () => {
-      alive = false;
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", onResize);
+  // measure + initial paint; recompute bounds on resize / list change
+  useEffect(() => {
+    const vp = viewportRef.current;
+    if (!vp) return;
+    const measure = () => {
+      maxOffsetRef.current = Math.max(0, (bugs.length - 1) * STEP);
+      offsetRef.current = clampOffset(offsetRef.current);
+      paint();
     };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+      cancelAnimationFrame(rafRef.current);
+      runningRef.current = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, bugs.length]);
 
-  // Direction-aware: vertical drag picks a bug up; horizontal swipe scrolls the
-  // carousel (touch-action: pan-x); a tap adds it to the next slot.
-  function startDrag(e: React.PointerEvent, slug: string) {
+  // Unified pointer handler. Horizontal drag scrolls the track (we own it, no
+  // native scroll). Vertical drag lifts a ghost to drop into the dish. A tap
+  // adds the bug. Velocity from the last moves drives inertia on release.
+  function onItemPointerDown(e: React.PointerEvent, slug: string) {
     if (phase === "breeding") return;
     const startX = e.clientX;
     const startY = e.clientY;
-    let mode: "" | "drag" | "scroll" = "";
+    const startOffset = offsetRef.current;
+    let mode: "" | "scroll" | "drag" = "";
+    let lastX = startX;
+    let lastT = performance.now();
     const ghost = ghostRef.current;
+
+    // stop any running inertia/snap the moment a finger lands
+    targetRef.current = null;
+    velRef.current = 0;
+
     if (ghost) {
       ghost.style.backgroundImage = `url(/bugs/${slug}.png)`;
       ghost.style.left = `${startX}px`;
       ghost.style.top = `${startY}px`;
     }
+
     const move = (ev: PointerEvent) => {
       const dx = ev.clientX - startX;
       const dy = ev.clientY - startY;
       if (!mode) {
-        if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) mode = "drag";
-        else if (Math.abs(dx) > 10) {
-          mode = "scroll"; // let the browser scroll the carousel
-          cleanup();
-          return;
-        } else return;
+        if (Math.abs(dx) > 8 && Math.abs(dx) >= Math.abs(dy)) mode = "scroll";
+        else if (Math.abs(dy) > 10) mode = "drag";
+        else return;
       }
-      if (mode === "drag" && ghost) {
+      if (mode === "scroll") {
+        ev.preventDefault();
+        offsetRef.current = clampOffset(startOffset - dx);
+        const now = performance.now();
+        const dt = now - lastT || 16;
+        velRef.current = -(ev.clientX - lastX) / dt; // px/ms
+        lastX = ev.clientX;
+        lastT = now;
+        paint();
+      } else if (mode === "drag" && ghost) {
         ev.preventDefault();
         ghost.style.opacity = "1";
         ghost.style.left = `${ev.clientX}px`;
         ghost.style.top = `${ev.clientY}px`;
       }
     };
+
     const up = (ev: PointerEvent) => {
       const dx = ev.clientX - startX;
       const dy = ev.clientY - startY;
@@ -154,17 +215,23 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
         const over =
           v && ev.clientX >= v.left && ev.clientX <= v.right && ev.clientY >= v.top && ev.clientY <= v.bottom;
         if (over) addParent(slug);
-      } else if (mode === "" && Math.hypot(dx, dy) < 8) {
+      } else if (mode === "scroll") {
+        ensureLoop(); // fling with inertia + snap
+      } else if (Math.hypot(dx, dy) < 8) {
         addParent(slug); // tap
       }
       cleanup();
     };
+
     const cleanup = () => {
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", up);
+      window.removeEventListener("pointercancel", up);
     };
+
     window.addEventListener("pointermove", move, { passive: false });
     window.addEventListener("pointerup", up);
+    window.addEventListener("pointercancel", up);
   }
 
   async function breed() {
@@ -298,36 +365,50 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
         )}
       </div>
 
-      {/* curved, scrollable, fading carousel */}
+      {/* curved carousel — JS-owned transform track (no native scroll) */}
       {phase !== "done" && (
         <div
-          ref={scrollRef}
-          className="lab-carousel flex shrink-0 items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
+          ref={viewportRef}
+          className="relative w-full shrink-0 overflow-hidden"
           style={{
             height: CAROUSEL_H,
-            paddingTop: TOP_PAD,
-            touchAction: "pan-x",
-            paddingLeft: "42vw",
-            paddingRight: "42vw",
+            touchAction: "none",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent, #000 16%, #000 84%, transparent)",
-            maskImage: "linear-gradient(to right, transparent, #000 16%, #000 84%, transparent)",
+              "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
+            maskImage: "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
           }}
         >
-          {bugs.map((b) => {
+          {bugs.map((b, i) => {
             const chosen = parents.includes(b.slug);
             return (
               <button
                 key={b.slug}
-                onPointerDown={(e) => startDrag(e, b.slug)}
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                onPointerDown={(e) => onItemPointerDown(e, b.slug)}
                 aria-label={`Add ${b.commonName}`}
-                style={{ touchAction: "pan-x", willChange: "transform" }}
-                className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-zinc-900 ring-1 transition ${
-                  chosen ? "opacity-30 ring-amber-300/60" : "ring-zinc-700/50"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: ITEM,
+                  height: ITEM,
+                  touchAction: "none",
+                  willChange: "transform, opacity",
+                  transform: "translate3d(0,0,0)",
+                }}
+                className={`overflow-hidden rounded-full bg-zinc-900 ring-1 ${
+                  chosen ? "ring-amber-300/70" : "ring-zinc-700/50"
                 }`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/bugs/${b.slug}.png`} alt={b.commonName} draggable={false} className="h-full w-full object-cover" />
+                <img
+                  src={`/bugs/${b.slug}.png`}
+                  alt={b.commonName}
+                  draggable={false}
+                  className={`h-full w-full object-cover transition-opacity ${chosen ? "opacity-40" : ""}`}
+                />
               </button>
             );
           })}
@@ -350,8 +431,6 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
 
       <style>{`
         @keyframes fadein { from { opacity: 0; transform: scale(0.7) } to { opacity: 1; transform: scale(1) } }
-        .lab-carousel::-webkit-scrollbar { display: none }
-        .lab-carousel { scrollbar-width: none }
       `}</style>
     </main>
   );
