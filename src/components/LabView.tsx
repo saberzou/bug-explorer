@@ -47,35 +47,33 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     setParents((p) => (i === 0 ? [null, p[1]] : [p[0], null]));
   }
 
-  // --- curved carousel: arc each item by its distance from the row center -----
+  // --- curved carousel: items ride the top arc of a big circle ---------------
+  // A continuous rAF loop reads scrollLeft every frame (iOS fires the `scroll`
+  // event too coarsely during momentum, which caused the jitter).
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
     let raf = 0;
-    const update = () => {
-      const sl = el.scrollLeft;
+    let alive = true;
+    const loop = () => {
+      if (!alive) return;
       const half = el.clientWidth / 2 || 1;
+      const R = Math.max(220, el.clientWidth * 0.72); // big-circle radius
+      const sl = el.scrollLeft;
       for (const child of Array.from(el.children) as HTMLElement[]) {
-        // Use static offsetLeft (no per-frame getBoundingClientRect) so iOS
-        // momentum scroll doesn't jitter the arc.
-        const c = child.offsetLeft + child.offsetWidth / 2 - sl;
-        const dx = (c - half) / half; // -1..1 across the viewport
-        child.style.transform = `translateY(${16 * dx * dx}px)`;
+        const x = child.offsetLeft + child.offsetWidth / 2 - sl - half; // px from center
+        const ax = Math.min(Math.abs(x), R);
+        const y = R - Math.sqrt(R * R - ax * ax); // circle: 0 at center, grows to the sides
+        child.style.transform = `translateY(${10 + y}px)`;
       }
+      raf = requestAnimationFrame(loop);
     };
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(update);
-    };
-    update();
-    el.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update);
+    raf = requestAnimationFrame(loop);
     return () => {
+      alive = false;
       cancelAnimationFrame(raf);
-      el.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", update);
     };
-  }, [phase]);
+  }, [phase, bugs.length]);
 
   // Direction-aware: vertical drag picks a bug up; horizontal swipe scrolls the
   // carousel (touch-action: pan-x); a tap adds it to the next slot.
@@ -265,7 +263,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       {phase !== "done" && (
         <div
           ref={scrollRef}
-          className="lab-carousel flex h-28 shrink-0 items-center gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
+          className="lab-carousel flex h-40 shrink-0 items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
           style={{
             touchAction: "pan-x",
             paddingLeft: "42vw",
