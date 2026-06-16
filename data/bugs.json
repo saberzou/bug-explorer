@@ -1309,5 +1309,24 @@
       "#7A5C3E",
       "#C7B299"
     ]
+  },
+  {
+    "slug": "golden-tortoise-beetle",
+    "commonName": "Golden Tortoise Beetle",
+    "latinName": "Charidotella sexpunctata",
+    "habitat": "Bindweed and morning-glory leaves across eastern North America",
+    "sizeMm": 6,
+    "sizeKind": "body",
+    "weirdFact": "It shifts from mirror-bright gold to brick red on demand, pumping fluid through micro-layers under its clear shell like a living mood ring.",
+    "whyItsCool": "A 6mm beetle that wears a transparent tortoise shell and changes colour when you spook it — molten gold one second, dull red the next.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-29",
+    "order": "Coleoptera",
+    "family": "Chrysomelidae",
+    "colorPalette": [
+      "#D9A300",
+      "#B5471F",
+      "#3E2A12"
+    ]
   }
 ]

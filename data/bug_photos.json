@@ -1917,5 +1917,33 @@
       "height": 3037,
       "localPath": "/bugs/photos/corpse-carrying-assassin-bug/2.jpg"
     }
+  ],
+  "golden-tortoise-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Charidotella_sexpunctata_adult.jpg/1280px-Charidotella_sexpunctata_adult.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Charidotella_sexpunctata_adult.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Charidotella_sexpunctata_adult.jpg",
+      "credit": "Beatriz Moisset",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Golden tortoise beetle, Charidotella sexpunctata, adult, emerged from pupa on bindweed. Pennypack Restoration Trust, Montgomery County, Pennsylvania, USA. https://bugguide.net/node/view/316414",
+      "fileTitle": "File:Charidotella sexpunctata adult.jpg",
+      "width": 2551,
+      "height": 1967,
+      "localPath": "/bugs/photos/golden-tortoise-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Chrysomelidae-_Charidotella_sexpunctata_%28Golden_Tortoise_Beetle%29.jpg/1280px-Chrysomelidae-_Charidotella_sexpunctata_%28Golden_Tortoise_Beetle%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Chrysomelidae-_Charidotella_sexpunctata_%28Golden_Tortoise_Beetle%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Chrysomelidae-_Charidotella_sexpunctata_(Golden_Tortoise_Beetle).jpg",
+      "credit": "Kristof Zyskowski & Yulia Bereshpolova",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "USA: Connecticut, New Haven County, West Rock Ridge State Park",
+      "fileTitle": "File:Chrysomelidae- Charidotella sexpunctata (Golden Tortoise Beetle).jpg",
+      "width": 2200,
+      "height": 1467,
+      "localPath": "/bugs/photos/golden-tortoise-beetle/2.jpg"
+    }
   ]
 }
