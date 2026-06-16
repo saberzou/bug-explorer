@@ -33,8 +33,8 @@ const ARC_DEPTH = 26; // px the edge items dip below center — smaller = subtle
 const ARC_SPAN = 320; // px from center over which the full dip is reached
 const TOP_PAD = 10;
 const CAROUSEL_H = TOP_PAD + ITEM + ARC_DEPTH + 14; // sized so the dip never clips
-const FRICTION = 0.94; // inertia decay per frame
-const MIN_V = 0.02; // velocity floor to stop the loop
+const FRICTION = 0.965; // inertia decay per frame — higher = glides longer, less "wall" resistance
+const MIN_V = 0.008; // velocity floor to stop the loop — lower = tapers smoothly instead of cutting out early
 
 export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const bySlug = useRef(new Map(bugs.map((b) => [b.slug, b])));
@@ -113,9 +113,10 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     const tick = () => {
       const target = targetRef.current;
       if (target !== null) {
-        // ease toward snap target
+        // ease toward snap target — gentle pull so it guides to center without
+        // yanking/sticking the moment you let go
         const d = target - offsetRef.current;
-        offsetRef.current += d * 0.18;
+        offsetRef.current += d * 0.12;
         if (Math.abs(d) < 0.5) {
           offsetRef.current = target;
           targetRef.current = null;
@@ -198,7 +199,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       const dx = ev.clientX - startX;
       const dy = ev.clientY - startY;
       if (!mode) {
-        if (Math.abs(dx) > 8 && Math.abs(dx) >= Math.abs(dy)) mode = "scroll";
+        if (Math.abs(dx) > 6 && Math.abs(dx) >= Math.abs(dy)) mode = "scroll";
         else if (Math.abs(dy) > 10) mode = "drag";
         else return;
       }
