@@ -288,7 +288,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     swirlTl.current?.kill();
 
     // proxy the timeline tweens; onUpdate maps it onto the two orbiting images
-    const o = { ang: 0, rad: 46, blur: 1.5, spin: 0 };
+    const o = { ang: 0, rad: 46, blur: 3, spin: 0 };
     const place = () => {
       const set = (el: HTMLImageElement, ph: number) => {
         const x = Math.cos(o.ang + ph) * o.rad;
@@ -310,7 +310,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     tl.to(o, { ang: "+=" + Math.PI * 2, duration: 1.6, ease: "none", repeat: -1 }, 0)
       .to(o, { spin: "+=360", duration: 2.2, ease: "none", repeat: -1 }, 0)
       // independent breathing: pull inward + blur up, then back out (yoyo loops clean).
-      .to(o, { rad: 18, blur: 7, duration: 1.5, ease: "sine.inOut", repeat: -1, yoyo: true }, 0);
+      .to(o, { rad: 18, blur: 14, duration: 1.5, ease: "sine.inOut", repeat: -1, yoyo: true }, 0);
     if (flash) {
       // flash pulses in sync with the tightest point of the breathing cycle.
       tl.to(flash, { opacity: 0.9, scale: 1, duration: 0.75, ease: "sine.inOut", repeat: -1, yoyo: true, repeatDelay: 0 }, 0.75);
