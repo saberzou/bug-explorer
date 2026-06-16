@@ -53,13 +53,14 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     if (!el) return;
     let raf = 0;
     const update = () => {
-      const rect = el.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const half = rect.width / 2 || 1;
+      const sl = el.scrollLeft;
+      const half = el.clientWidth / 2 || 1;
       for (const child of Array.from(el.children) as HTMLElement[]) {
-        const r = child.getBoundingClientRect();
-        const dx = (r.left + r.width / 2 - cx) / half; // -1..1
-        child.style.transform = `translateY(${26 * dx * dx}px)`; // center sits higher
+        // Use static offsetLeft (no per-frame getBoundingClientRect) so iOS
+        // momentum scroll doesn't jitter the arc.
+        const c = child.offsetLeft + child.offsetWidth / 2 - sl;
+        const dx = (c - half) / half; // -1..1 across the viewport
+        child.style.transform = `translateY(${16 * dx * dx}px)`;
       }
     };
     const onScroll = () => {
@@ -264,7 +265,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       {phase !== "done" && (
         <div
           ref={scrollRef}
-          className="lab-carousel flex shrink-0 items-center gap-3 overflow-x-auto overscroll-x-contain py-6"
+          className="lab-carousel flex h-28 shrink-0 items-center gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain"
           style={{
             touchAction: "pan-x",
             paddingLeft: "42vw",
@@ -281,7 +282,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
                 key={b.slug}
                 onPointerDown={(e) => startDrag(e, b.slug)}
                 aria-label={`Add ${b.commonName}`}
-                style={{ touchAction: "pan-x" }}
+                style={{ touchAction: "pan-x", willChange: "transform" }}
                 className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-zinc-900 ring-1 transition ${
                   chosen ? "opacity-30 ring-amber-300/60" : "ring-zinc-700/50"
                 }`}
