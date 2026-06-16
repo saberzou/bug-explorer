@@ -199,8 +199,16 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       const dx = ev.clientX - startX;
       const dy = ev.clientY - startY;
       if (!mode) {
-        if (Math.abs(dx) > 6 && Math.abs(dx) >= Math.abs(dy)) mode = "scroll";
-        else if (Math.abs(dy) > 10) mode = "drag";
+        const adx = Math.abs(dx);
+        const ady = Math.abs(dy);
+        // Horizontal carousel: bias hard toward scrolling. The old test required
+        // adx >= ady, so a natural diagonal flick (even slightly more vertical)
+        // never entered scroll mode — and since the track is touchAction:none
+        // with no native scroll fallback, that read as a dead "stick." Now scroll
+        // engages on any roughly-horizontal move; only a clearly, deliberately
+        // vertical gesture falls to the ghost-lift "drag."
+        if (adx > 6 && adx > ady * 0.6) mode = "scroll";
+        else if (ady > 10 && ady > adx * 1.4) mode = "drag";
         else return;
       }
       if (mode === "scroll") {
