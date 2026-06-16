@@ -60,6 +60,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const targetRef = useRef<number | null>(null); // snap target, when settling
   const rafRef = useRef(0);
   const runningRef = useRef(false);
+  const draggingRef = useRef(false); // finger-down scrolling: loop paints, pointer drives offset
   const maxOffsetRef = useRef(0);
   const didInitRef = useRef(false); // center-anchor only on first layout
 
@@ -111,6 +112,14 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     if (runningRef.current) return;
     runningRef.current = true;
     const tick = () => {
+      // While a finger is down and scrolling, the loop only PAINTS — offset is
+      // driven by the pointer handler. This decouples rendering from the
+      // (120Hz) pointermove rate so finger-tracking can't stutter/stick.
+      if (draggingRef.current) {
+        paint();
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
       const target = targetRef.current;
       if (target !== null) {
         // ease toward snap target — gentle pull so it guides to center without
@@ -168,6 +177,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       window.removeEventListener("resize", measure);
       cancelAnimationFrame(rafRef.current);
       runningRef.current = false;
+      draggingRef.current = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, bugs.length]);
@@ -239,13 +249,19 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       }
       if (mode === "scroll") {
         ev.preventDefault();
+        // Engage the paint loop once; from here the pointer only updates the
+        // offset/velocity and the rAF loop renders (one paint per frame).
+        if (!draggingRef.current) {
+          draggingRef.current = true;
+          targetRef.current = null;
+          ensureLoop();
+        }
         offsetRef.current = clampOffset(startOffset - dx);
         const now = performance.now();
         const dt = now - lastT || 16;
         velRef.current = -(ev.clientX - lastX) / dt; // px/ms
         lastX = ev.clientX;
         lastT = now;
-        paint();
       } else if (mode === "drag" && ghost && slug) {
         ev.preventDefault();
         ghost.style.opacity = "1";
@@ -266,7 +282,9 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
           if (over) addParent(slug);
         }
       } else if (mode === "scroll") {
-        ensureLoop(); // fling with inertia + snap
+        // hand off to inertia: stop driving the offset, let the loop fling + snap
+        draggingRef.current = false;
+        ensureLoop();
       } else if (slug && Math.hypot(dx, dy) < 8) {
         addParent(slug); // tap
       }
