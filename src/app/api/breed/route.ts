@@ -14,6 +14,7 @@ const MODELS = [
   "gemini-3.1-flash-image-preview",
 ].filter((m): m is string => Boolean(m));
 const UNIQUE_MODELS = [...new Set(MODELS)];
+
 // Accept the common Gemini/Google key names so whichever you set in Vercel works.
 const API_KEY = (
   process.env.GEMINI_API_KEY ||
@@ -25,15 +26,29 @@ const API_KEY = (
   ""
 ).trim();
 
-// Best-effort per-instance rate limit (serverless instances are ephemeral, so
-// this is a soft guard against accidental hammering, not airtight abuse control).
-const hits = new Map<string, number[]>();
-function rateLimited(ip: string): boolean {
+// Only expose upstream error detail when explicitly debugging (avoid leaking
+// provider error text / model ids to end users in production).
+const DEBUG = process.env.LAB_DEBUG === "1";
+
+// Per-IP limit (best-effort; X-Forwarded-For is client-influenced so this is a
+// courtesy throttle, not a hard control)...
+const ipHits = new Map<string, number[]>();
+function ipLimited(ip: string): boolean {
   const now = Date.now();
-  const arr = (hits.get(ip) || []).filter((t) => now - t < 60_000);
+  const arr = (ipHits.get(ip) || []).filter((t) => now - t < 60_000);
   arr.push(now);
-  hits.set(ip, arr);
-  return arr.length > 8; // 8 breeds / minute / instance
+  ipHits.set(ip, arr);
+  return arr.length > 8;
+}
+
+// ...backed by a GLOBAL per-instance cap that bounds spend even if the per-IP
+// key is spoofed. This is the real cost circuit-breaker for the paid API.
+const globalHits: number[] = [];
+function globalLimited(): boolean {
+  const now = Date.now();
+  while (globalHits.length && now - globalHits[0] > 60_000) globalHits.shift();
+  globalHits.push(now);
+  return globalHits.length > 30; // 30 generations / minute / instance
 }
 
 function hybridName(a: string, b: string): string {
@@ -46,35 +61,33 @@ function hybridName(a: string, b: string): string {
   return blend.charAt(0).toUpperCase() + blend.slice(1);
 }
 
+function fail(error: string, status: number, detail?: string) {
+  return NextResponse.json(
+    detail && DEBUG ? { error, detail } : { error },
+    { status },
+  );
+}
+
 export async function POST(req: Request) {
-  if (!API_KEY) {
-    return NextResponse.json(
-      { error: "The lab is offline — no AI key configured yet." },
-      { status: 503 },
-    );
-  }
+  if (!API_KEY) return fail("The lab is offline — no AI key configured yet.", 503);
+
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "anon";
-  if (rateLimited(ip)) {
-    return NextResponse.json(
-      { error: "Whoa — too many experiments. Give the lab a minute." },
-      { status: 429 },
-    );
+  if (ipLimited(ip) || globalLimited()) {
+    return fail("Whoa — too many experiments. Give the lab a minute.", 429);
   }
 
-  let body: { a?: string; b?: string };
+  let body: { a?: unknown; b?: unknown };
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "Bad request." }, { status: 400 });
+    return fail("Bad request.", 400);
   }
   const { a, b } = body;
-  if (!a || !b || a === b) {
-    return NextResponse.json({ error: "Pick two different species." }, { status: 400 });
+  if (typeof a !== "string" || typeof b !== "string" || !a || !b || a === b) {
+    return fail("Pick two different species.", 400);
   }
   const [bugA, bugB] = await Promise.all([getBug(a), getBug(b)]);
-  if (!bugA || !bugB) {
-    return NextResponse.json({ error: "Unknown species." }, { status: 400 });
-  }
+  if (!bugA || !bugB) return fail("Unknown species.", 400);
 
   const prompt =
     `A hand-drawn naturalist scientific illustration of a SINGLE fantastical hybrid insect — ` +
@@ -89,24 +102,29 @@ export async function POST(req: Request) {
 
   let detail = "no model attempted";
   for (const model of UNIQUE_MODELS) {
+    const ctrl = new AbortController();
+    const timeout = setTimeout(() => ctrl.abort(), 30_000); // don't hang the function
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
-      const r = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { responseModalities: ["TEXT", "IMAGE"] },
-        }),
-      });
+      const r = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": API_KEY },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { responseModalities: ["TEXT", "IMAGE"] },
+          }),
+          signal: ctrl.signal,
+        },
+      );
       if (!r.ok) {
         detail = `${model}: ${r.status} ${(await r.text()).replace(/\s+/g, " ").slice(0, 150)}`;
         console.error("gemini breed failed", detail);
-        continue; // try the next model id
+        continue;
       }
       const data = await r.json();
       const parts = data?.candidates?.[0]?.content?.parts ?? [];
-      const img = parts.find((p: { inlineData?: { data?: string } }) => p.inlineData?.data);
+      const img = parts.find((p: { inlineData?: { data?: string; mimeType?: string } }) => p.inlineData?.data);
       if (!img?.inlineData?.data) {
         detail = `${model}: response had no image`;
         continue;
@@ -120,11 +138,9 @@ export async function POST(req: Request) {
     } catch (e) {
       detail = `${model}: ${String(e).slice(0, 150)}`;
       console.error("breed route error", detail);
+    } finally {
+      clearTimeout(timeout);
     }
   }
-  // All models failed — surface the real reason so it can be diagnosed on-screen.
-  return NextResponse.json(
-    { error: "The cross fizzled — generation failed.", detail },
-    { status: 502 },
-  );
+  return fail("The cross fizzled — generation failed.", 502, detail);
 }
