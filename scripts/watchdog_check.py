@@ -74,6 +74,39 @@ def head_commit() -> str | None:
         return None
 
 
+def specimen_commit_landed_today(expected: str) -> bool:
+    """True iff a real daily-specimen ADD commit was committed today (local CST).
+
+    Real specimen commits look like:
+        Add <Common Name> (<Latin>) — daily specimen <YYYY-MM-DD>
+    The trailing date is the QUEUE FRONTIER date (~10 days ahead), so we must
+    gate on the commit's own committer-date == today, NOT on that text. The
+    abort/salvage path only ever produces 'chore: ...' commits (prompt/anatomy,
+    daily-run status), which never contain the 'daily specimen' marker — so the
+    presence of a today-committed 'daily specimen' add is the honest heartbeat.
+    """
+    try:
+        out = subprocess.run(
+            [
+                "git", "-C", str(ROOT), "log",
+                f"--since={expected} 00:00:00",
+                f"--until={expected} 23:59:59",
+                "--pretty=%s",
+            ],
+            capture_output=True, text=True, timeout=8,
+        )
+        if out.returncode != 0:
+            # Can't determine -> don't mask a possible failure; be conservative.
+            return False
+        for line in out.stdout.splitlines():
+            low = line.lower()
+            if "daily specimen" in low and low.startswith("add "):
+                return True
+        return False
+    except Exception:
+        return False
+
+
 def emit(verdict: str, status: str, expected: str, *, date=None, slug=None,
          detail: str, commit=None) -> dict:
     return {
@@ -142,8 +175,27 @@ def main() -> int:
         return EXIT_SILENT
 
     # --- ran today: now branch on status quality ---
+    # status=ok is NOT trusted on its own. The salvage path can write
+    # {date:today, status:"ok"} even when the run aborted before landing a real
+    # specimen (prompt/anatomy committed, then crash): bugCount stays flat and
+    # no "daily specimen" add-commit lands, yet the status file reads green.
+    # Cross-check git for an actual specimen-add commit dated today before
+    # declaring healthy; otherwise it's a masked silent failure.
     if status == "ok":
         label = common or slug or "a specimen"
+        if not specimen_commit_landed_today(expected):
+            payload = emit(
+                "silent_failure", "ok", expected, date=run_date, slug=slug,
+                detail=(
+                    f"Bug Explorer status file says ok for {expected} ({label}"
+                    + (f", {slug}" if slug else "")
+                    + "), but NO daily-specimen add-commit landed today — "
+                    "the 2:30 run likely aborted after writing a salvage status. "
+                    "Treating as a masked silent failure."
+                ),
+            )
+            print(json.dumps(payload))
+            return EXIT_SILENT
         payload = emit(
             "healthy", "ok", expected, date=run_date, slug=slug,
             detail=f"Healthy: today's run committed {label}" + (f" ({slug})" if slug else "") + ".",
