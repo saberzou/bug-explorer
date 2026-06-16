@@ -58,6 +58,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const offsetRef = useRef(0); // current scroll offset in px (0 = first item centered)
   const velRef = useRef(0); // px/frame inertia
   const targetRef = useRef<number | null>(null); // snap target, when settling
+  const flingDirRef = useRef(0); // -1/0/+1 swipe-release direction → biases the settle so a swipe carries PAST center instead of snapping back
   const rafRef = useRef(0);
   const runningRef = useRef(false);
   const draggingRef = useRef(false); // finger-down scrolling: loop paints, pointer drives offset
@@ -145,8 +146,20 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
         velRef.current *= FRICTION;
         if (Math.abs(velRef.current) < MIN_V) {
           velRef.current = 0;
-          // settle to nearest item center
-          targetRef.current = clampOffset(Math.round(offsetRef.current / STEP) * STEP);
+          // Settle, but BIAS by the swipe direction. Plain round-to-nearest made
+          // the centered item "sticky": on a slow/gentle swipe, velocity decays
+          // below MIN_V while the offset is still nearest the item you're trying
+          // to leave, so it snapped right back to center — you could never push
+          // the centered image past center. With a directional fling we round UP
+          // (forward) or DOWN (backward) so any deliberate swipe lands on the
+          // NEXT item in that direction; only a negligible nudge rounds to
+          // nearest. dir is consumed once.
+          const cur = offsetRef.current / STEP;
+          const dir = flingDirRef.current;
+          const idx =
+            dir > 0 ? Math.ceil(cur - 1e-4) : dir < 0 ? Math.floor(cur + 1e-4) : Math.round(cur);
+          flingDirRef.current = 0;
+          targetRef.current = clampOffset(idx * STEP);
         }
       }
       paint();
@@ -282,6 +295,16 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
           if (over) addParent(slug);
         }
       } else if (mode === "scroll") {
+        // Record the release direction so the settle can carry PAST center in the
+        // swipe direction instead of snapping back. Velocity sign is primary;
+        // net drag is the fallback when the last move sampled ~0 velocity.
+        const dir =
+          Math.abs(velRef.current) > 0.0015
+            ? Math.sign(velRef.current)
+            : Math.abs(dx) > STEP * 0.25
+              ? Math.sign(-dx) // dx>0 = finger moved right = scroll backward (offset decreases)
+              : 0;
+        flingDirRef.current = dir;
         // hand off to inertia: stop driving the offset, let the loop fling + snap
         draggingRef.current = false;
         ensureLoop();
