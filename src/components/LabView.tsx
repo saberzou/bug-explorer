@@ -277,8 +277,9 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   }
 
   // Two parent images orbit the dish center, spin, and blur as they pull inward;
-  // a soft flash swells between them — reads as genes being spliced. The loop
-  // repeats until stopSwirl() (API resolved), so it covers any request length.
+  // a soft flash swells between them — reads as genes being spliced. Rotation is
+  // CONTINUOUS (constant velocity, seamless wrap) so it never visibly restarts;
+  // the inward-pull + blur breathe on their own yoyo. Runs until stopSwirl().
   function startSwirl() {
     const a = swirlRefs[0].current;
     const b = swirlRefs[1].current;
@@ -287,7 +288,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     swirlTl.current?.kill();
 
     // proxy the timeline tweens; onUpdate maps it onto the two orbiting images
-    const o = { ang: 0, rad: 46, blur: 0, spin: 0 };
+    const o = { ang: 0, rad: 46, blur: 1.5, spin: 0 };
     const place = () => {
       const set = (el: HTMLImageElement, ph: number) => {
         const x = Math.cos(o.ang + ph) * o.rad;
@@ -303,14 +304,16 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     if (flash) gsap.set(flash, { opacity: 0, scale: 0.3, xPercent: -50, yPercent: -50 });
     place();
 
-    const tl = gsap.timeline({ repeat: -1, onUpdate: place });
-    // each cycle: swing the pair around ~1.5 turns while tightening + blurring,
-    // then ease back out so it can loop seamlessly until the result lands.
-    tl.to(o, { ang: Math.PI * 3, spin: 360, rad: 16, blur: 3, duration: 1.5, ease: "power1.inOut" })
-      .to(o, { ang: Math.PI * 4.5, spin: 540, rad: 46, blur: 0, duration: 1.2, ease: "power1.inOut" });
+    const tl = gsap.timeline({ onUpdate: place });
+    // CONTINUOUS orbit + self-spin: 0→2π and 0→360° are the same orientation, so
+    // repeat is seamless (no jump-back). Linear ease = constant angular velocity.
+    tl.to(o, { ang: "+=" + Math.PI * 2, duration: 1.6, ease: "none", repeat: -1 }, 0)
+      .to(o, { spin: "+=360", duration: 2.2, ease: "none", repeat: -1 }, 0)
+      // independent breathing: pull inward + blur up, then back out (yoyo loops clean).
+      .to(o, { rad: 18, blur: 7, duration: 1.5, ease: "sine.inOut", repeat: -1, yoyo: true }, 0);
     if (flash) {
-      tl.to(flash, { opacity: 0.85, scale: 1, duration: 0.5, ease: "power2.out" }, 1.1)
-        .to(flash, { opacity: 0, scale: 0.4, duration: 0.5, ease: "power2.in" }, 1.7);
+      // flash pulses in sync with the tightest point of the breathing cycle.
+      tl.to(flash, { opacity: 0.9, scale: 1, duration: 0.75, ease: "sine.inOut", repeat: -1, yoyo: true, repeatDelay: 0 }, 0.75);
     }
     swirlTl.current = tl;
   }
