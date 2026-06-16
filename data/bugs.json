@@ -1328,5 +1328,24 @@
       "#B5471F",
       "#3E2A12"
     ]
+  },
+  {
+    "slug": "twisted-wing-parasite",
+    "commonName": "Twisted-wing Parasite",
+    "latinName": "Xenos vesparum",
+    "habitat": "Inside living paper wasps across southern Europe and the Mediterranean",
+    "sizeMm": 4,
+    "sizeKind": "body",
+    "weirdFact": "The female never leaves her wasp host — she's a headless, legless bag of eggs fused into its abdomen, mating through a tiny hatch.",
+    "whyItsCool": "A parasite that hijacks a wasp into a roaming nursery, then sends out fan-winged, raspberry-eyed males that live a few frantic hours to find her.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-30",
+    "order": "Strepsiptera",
+    "family": "Xenidae",
+    "colorPalette": [
+      "#7A1F2B",
+      "#C9912F",
+      "#3A2A1E"
+    ]
   }
 ]

@@ -1945,5 +1945,33 @@
       "height": 1467,
       "localPath": "/bugs/photos/golden-tortoise-beetle/2.jpg"
     }
+  ],
+  "twisted-wing-parasite": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gallische_Feldwespe_Polistes_dominula_Xenos_vesparum_9491.jpg/1280px-Gallische_Feldwespe_Polistes_dominula_Xenos_vesparum_9491.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Gallische_Feldwespe_Polistes_dominula_Xenos_vesparum_9491.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gallische_Feldwespe_Polistes_dominula_Xenos_vesparum_9491.jpg",
+      "credit": "NobbiP",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "caption": "Gallische Feldwespe Polistes dominula mit Parasit Xenos vesparum",
+      "fileTitle": "File:Gallische Feldwespe Polistes dominula Xenos vesparum 9491.jpg",
+      "width": 4624,
+      "height": 4624,
+      "localPath": "/bugs/photos/twisted-wing-parasite/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Xenos_vesparum_in_Polistes_dominulaXenos_vesparum.jpg/1280px-Xenos_vesparum_in_Polistes_dominulaXenos_vesparum.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Xenos_vesparum_in_Polistes_dominulaXenos_vesparum.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Xenos_vesparum_in_Polistes_dominulaXenos_vesparum.jpg",
+      "credit": "Garnhami",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Xenos vesparum in Polistes dominula",
+      "fileTitle": "File:Xenos vesparum in Polistes dominulaXenos vesparum.jpg",
+      "width": 4000,
+      "height": 2672,
+      "localPath": "/bugs/photos/twisted-wing-parasite/2.jpg"
+    }
   ]
 }
