@@ -546,8 +546,9 @@ function ParentSlot({
           <span className="absolute inset-0 grid place-items-center bg-black/0 text-lg text-transparent group-hover:bg-black/40 group-hover:text-amber-100">✕</span>
         </button>
       ) : (
-        <div className="grid h-20 w-20 place-items-center rounded-full border border-dashed border-zinc-600/60 text-[10px] uppercase tracking-wider text-zinc-600">
-          {side}
+        <div className="grid h-20 w-20 place-items-center rounded-full border border-dashed border-zinc-600/60 text-center text-zinc-600">
+          <span className="text-[8px] uppercase tracking-[0.15em] leading-tight">Specimen</span>
+          <span className="font-serif text-base leading-none text-zinc-500">{side === "left" ? "A" : "B"}</span>
         </div>
       )}
     </div>
