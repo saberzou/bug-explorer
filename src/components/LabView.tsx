@@ -185,6 +185,20 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     let lastT = performance.now();
     const ghost = ghostRef.current;
 
+    // CRITICAL for iOS touch: capture the pointer on the element that got the
+    // pointerdown. The thumbs are only 56px, so the finger leaves the button
+    // almost immediately on a swipe — and without capture, iOS Safari stops
+    // delivering pointermove (it reclaims the gesture), which read as the
+    // carousel "sticking / not scrolling past" after the first few px. Capture
+    // guarantees the full move→up stream stays with us regardless of finger pos.
+    const captureEl = e.currentTarget as HTMLElement;
+    const pid = e.pointerId;
+    try {
+      captureEl.setPointerCapture(pid);
+    } catch {
+      /* not all pointers are capturable; safe to ignore */
+    }
+
     // stop any running inertia/snap the moment a finger lands
     targetRef.current = null;
     velRef.current = 0;
@@ -246,6 +260,11 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     };
 
     const cleanup = () => {
+      try {
+        captureEl.releasePointerCapture(pid);
+      } catch {
+        /* already released / element gone */
+      }
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", up);
       window.removeEventListener("pointercancel", up);
@@ -485,6 +504,10 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
                   width: ITEM,
                   height: ITEM,
                   touchAction: "none",
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
+                  WebkitTouchCallout: "none",
                   willChange: "transform, opacity",
                   transform: "translate3d(0,0,0)",
                 }}
