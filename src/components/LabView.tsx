@@ -61,6 +61,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const rafRef = useRef(0);
   const runningRef = useRef(false);
   const maxOffsetRef = useRef(0);
+  const didInitRef = useRef(false); // center-anchor only on first layout
 
   const both = parents[0] && parents[1];
 
@@ -150,7 +151,14 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     if (!vp) return;
     const measure = () => {
       maxOffsetRef.current = Math.max(0, (bugs.length - 1) * STEP);
-      offsetRef.current = clampOffset(offsetRef.current);
+      // On first layout, open anchored at the MIDDLE of the row (not the left
+      // end). offset 0 centers the first item; (n-1)/2*STEP centers the middle.
+      if (!didInitRef.current) {
+        didInitRef.current = true;
+        offsetRef.current = clampOffset(Math.round((bugs.length - 1) / 2) * STEP);
+      } else {
+        offsetRef.current = clampOffset(offsetRef.current);
+      }
       paint();
     };
     measure();
