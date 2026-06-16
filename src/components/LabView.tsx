@@ -175,7 +175,13 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   // Unified pointer handler. Horizontal drag scrolls the track (we own it, no
   // native scroll). Vertical drag lifts a ghost to drop into the dish. A tap
   // adds the bug. Velocity from the last moves drives inertia on release.
-  function onItemPointerDown(e: React.PointerEvent, slug: string) {
+  // Scroll-gesture entry point lives on the VIEWPORT (not the individual 56px
+  // thumbs). If it were only on the thumbs, a touch landing on a 14px gap, the
+  // masked edges, or between circles would fire nothing and dead-stick — which
+  // is most touch-down points on a phone. On the viewport, a swipe starts a
+  // scroll anywhere on the carousel. We hit-test the thumb under the finger
+  // (elementFromPoint) only for the tap-to-add / drag-to-dish sub-behavior.
+  function onCarouselPointerDown(e: React.PointerEvent) {
     if (phase === "breeding") return;
     const startX = e.clientX;
     const startY = e.clientY;
@@ -185,12 +191,18 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     let lastT = performance.now();
     const ghost = ghostRef.current;
 
-    // CRITICAL for iOS touch: capture the pointer on the element that got the
-    // pointerdown. The thumbs are only 56px, so the finger leaves the button
-    // almost immediately on a swipe — and without capture, iOS Safari stops
-    // delivering pointermove (it reclaims the gesture), which read as the
-    // carousel "sticking / not scrolling past" after the first few px. Capture
-    // guarantees the full move→up stream stays with us regardless of finger pos.
+    // Which thumb (if any) is under the initial touch? null = landed on a gap/
+    // edge — still scrollable, just no tap/drag target.
+    const hit = (document.elementFromPoint(startX, startY) as HTMLElement | null)?.closest(
+      "[data-slug]",
+    ) as HTMLElement | null;
+    const slug = hit?.dataset.slug ?? null;
+
+    // CRITICAL for iOS touch: capture the pointer on the viewport. The thumbs are
+    // only 56px, so the finger leaves wherever it landed almost immediately on a
+    // swipe — and without capture, iOS Safari stops delivering pointermove (it
+    // reclaims the gesture), which read as the carousel "sticking / not scrolling
+    // past" after the first few px. Capture keeps the full move→up stream with us.
     const captureEl = e.currentTarget as HTMLElement;
     const pid = e.pointerId;
     try {
@@ -203,7 +215,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     targetRef.current = null;
     velRef.current = 0;
 
-    if (ghost) {
+    if (ghost && slug) {
       ghost.style.backgroundImage = `url(/bugs/${slug}.png)`;
       ghost.style.left = `${startX}px`;
       ghost.style.top = `${startY}px`;
@@ -234,7 +246,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
         lastX = ev.clientX;
         lastT = now;
         paint();
-      } else if (mode === "drag" && ghost) {
+      } else if (mode === "drag" && ghost && slug) {
         ev.preventDefault();
         ghost.style.opacity = "1";
         ghost.style.left = `${ev.clientX}px`;
@@ -247,13 +259,15 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       const dy = ev.clientY - startY;
       if (ghost) ghost.style.opacity = "0";
       if (mode === "drag") {
-        const v = vesselRef.current?.getBoundingClientRect();
-        const over =
-          v && ev.clientX >= v.left && ev.clientX <= v.right && ev.clientY >= v.top && ev.clientY <= v.bottom;
-        if (over) addParent(slug);
+        if (slug) {
+          const v = vesselRef.current?.getBoundingClientRect();
+          const over =
+            v && ev.clientX >= v.left && ev.clientX <= v.right && ev.clientY >= v.top && ev.clientY <= v.bottom;
+          if (over) addParent(slug);
+        }
       } else if (mode === "scroll") {
         ensureLoop(); // fling with inertia + snap
-      } else if (Math.hypot(dx, dy) < 8) {
+      } else if (slug && Math.hypot(dx, dy) < 8) {
         addParent(slug); // tap
       }
       cleanup();
@@ -478,10 +492,16 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       {phase !== "done" && (
         <div
           ref={viewportRef}
+          onPointerDown={onCarouselPointerDown}
           className="relative w-full shrink-0 overflow-hidden"
           style={{
             height: CAROUSEL_H,
             touchAction: "none",
+            WebkitTapHighlightColor: "transparent",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            WebkitTouchCallout: "none",
+            cursor: "grab",
             WebkitMaskImage:
               "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
             maskImage: "linear-gradient(to right, transparent, #000 18%, #000 82%, transparent)",
@@ -495,7 +515,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
                 ref={(el) => {
                   itemRefs.current[i] = el;
                 }}
-                onPointerDown={(e) => onItemPointerDown(e, b.slug)}
+                data-slug={b.slug}
                 aria-label={`Add ${b.commonName}`}
                 style={{
                   position: "absolute",
