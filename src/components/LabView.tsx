@@ -47,6 +47,11 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
   const slotRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const ghostRef = useRef<HTMLDivElement>(null);
 
+  // breeding swirl: the two parent images orbit + blur into a merging flash
+  const swirlRefs = [useRef<HTMLImageElement>(null), useRef<HTMLImageElement>(null)];
+  const flashRef = useRef<HTMLDivElement>(null);
+  const swirlTl = useRef<gsap.core.Timeline | null>(null);
+
   // carousel refs (no React state in the hot path — all mutable refs)
   const viewportRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -239,22 +244,9 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
     setPhase("breeding");
     setError("");
     const reduced = prefersReducedMotion();
-    if (!reduced) {
-      slotRefs.forEach((r, i) => {
-        const el = r.current;
-        if (!el) return;
-        gsap.to(el, {
-          x: 0,
-          y: 0,
-          rotate: i === 0 ? 200 : -200,
-          scale: 0.4,
-          opacity: 0.15,
-          duration: 0.9,
-          ease: "power2.inOut",
-        });
-      });
-    }
-    const minAnim = reduced ? Promise.resolve() : new Promise((res) => setTimeout(res, 900));
+    // Start the swirl after React mounts the breeding <img>s.
+    if (!reduced) requestAnimationFrame(() => requestAnimationFrame(() => startSwirl()));
+    const minAnim = reduced ? Promise.resolve() : new Promise((res) => setTimeout(res, 1700));
     try {
       const reqP = fetch("/api/breed", {
         method: "POST",
@@ -266,15 +258,62 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
       if (!res.ok) {
         throw new Error(data?.detail ? `${data.error} [${data.detail}]` : data?.error || "Something went wrong.");
       }
+      stopSwirl();
       setResult(data as Result);
       setPhase("done");
     } catch (e) {
+      stopSwirl();
       setError(e instanceof Error ? e.message : "Something went wrong.");
       setPhase("error");
     }
   }
 
+  // Two parent images orbit the dish center, spin, and blur as they pull inward;
+  // a soft flash swells between them — reads as genes being spliced. The loop
+  // repeats until stopSwirl() (API resolved), so it covers any request length.
+  function startSwirl() {
+    const a = swirlRefs[0].current;
+    const b = swirlRefs[1].current;
+    const flash = flashRef.current;
+    if (!a || !b) return;
+    swirlTl.current?.kill();
+
+    // proxy the timeline tweens; onUpdate maps it onto the two orbiting images
+    const o = { ang: 0, rad: 46, blur: 0, spin: 0 };
+    const place = () => {
+      const set = (el: HTMLImageElement, ph: number) => {
+        const x = Math.cos(o.ang + ph) * o.rad;
+        const y = Math.sin(o.ang + ph) * o.rad;
+        const sc = 0.74 + (1 - o.rad / 46) * 0.18;
+        el.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${o.spin}deg) scale(${sc})`;
+        el.style.filter = `blur(${o.blur}px)`;
+      };
+      set(a, 0);
+      set(b, Math.PI); // 180° apart so they chase each other
+    };
+    gsap.set([a, b], { opacity: 1 });
+    if (flash) gsap.set(flash, { opacity: 0, scale: 0.3, xPercent: -50, yPercent: -50 });
+    place();
+
+    const tl = gsap.timeline({ repeat: -1, onUpdate: place });
+    // each cycle: swing the pair around ~1.5 turns while tightening + blurring,
+    // then ease back out so it can loop seamlessly until the result lands.
+    tl.to(o, { ang: Math.PI * 3, spin: 360, rad: 16, blur: 3, duration: 1.5, ease: "power1.inOut" })
+      .to(o, { ang: Math.PI * 4.5, spin: 540, rad: 46, blur: 0, duration: 1.2, ease: "power1.inOut" });
+    if (flash) {
+      tl.to(flash, { opacity: 0.85, scale: 1, duration: 0.5, ease: "power2.out" }, 1.1)
+        .to(flash, { opacity: 0, scale: 0.4, duration: 0.5, ease: "power2.in" }, 1.7);
+    }
+    swirlTl.current = tl;
+  }
+
+  function stopSwirl() {
+    swirlTl.current?.kill();
+    swirlTl.current = null;
+  }
+
   function reset() {
+    stopSwirl();
     setParents([null, null]);
     setResult(null);
     setError("");
@@ -308,7 +347,7 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
             boxShadow: "inset 0 0 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(251,191,36,0.18)",
           }}
         >
-          {phase !== "done" && (
+          {phase !== "done" && phase !== "breeding" && (
             <>
               <ParentSlot ref={slotRefs[0]} bug={parents[0] ? bySlug.current.get(parents[0]) : undefined} side="left" onRemove={() => removeParent(0)} />
               <ParentSlot ref={slotRefs[1]} bug={parents[1] ? bySlug.current.get(parents[1]) : undefined} side="right" onRemove={() => removeParent(1)} />
@@ -316,7 +355,38 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
           )}
           {phase === "breeding" && (
             <div className="pointer-events-none absolute inset-0 grid place-items-center">
-              <div className="h-14 w-14 animate-spin rounded-full border-2 border-amber-200/30 border-t-amber-200" />
+              {/* soft merge flash that swells between the two specimens */}
+              <div
+                ref={flashRef}
+                className="absolute left-1/2 top-1/2 h-24 w-24 rounded-full"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(255,244,214,0.95), rgba(251,191,36,0.45) 45%, rgba(251,191,36,0) 72%)",
+                  opacity: 0,
+                  mixBlendMode: "screen",
+                }}
+              />
+              {/* the two parents, driven by the swirl timeline (GSAP sets transform) */}
+              {parents[0] && (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  ref={swirlRefs[0]}
+                  src={`/bugs/${parents[0]}.png`}
+                  alt=""
+                  className="absolute left-1/2 top-1/2 h-20 w-20 rounded-full object-cover ring-2 ring-amber-200/40"
+                  style={{ willChange: "transform, filter" }}
+                />
+              )}
+              {parents[1] && (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  ref={swirlRefs[1]}
+                  src={`/bugs/${parents[1]}.png`}
+                  alt=""
+                  className="absolute left-1/2 top-1/2 h-20 w-20 rounded-full object-cover ring-2 ring-amber-200/40"
+                  style={{ willChange: "transform, filter" }}
+                />
+              )}
               <p className="absolute bottom-7 text-[11px] uppercase tracking-widest text-amber-200/80">splicing genes…</p>
             </div>
           )}
