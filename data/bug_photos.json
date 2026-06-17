@@ -1973,5 +1973,33 @@
       "height": 2672,
       "localPath": "/bugs/photos/twisted-wing-parasite/2.jpg"
     }
+  ],
+  "meadow-froghopper": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/%28MHNT%29_Philaenus_spumarius.jpg/1280px-%28MHNT%29_Philaenus_spumarius.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/%28MHNT%29_Philaenus_spumarius.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Philaenus_spumarius.jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "en:Philaenus spumarius - (meadow froghoppe ) Locality : Fronton, Haute-Garonne France.",
+      "fileTitle": "File:(MHNT) Philaenus spumarius.jpg",
+      "width": 6262,
+      "height": 4394,
+      "localPath": "/bugs/photos/meadow-froghopper/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Common_Froghopper_-_Philaenus_spumarius_%2850167040397%29.jpg/1280px-Common_Froghopper_-_Philaenus_spumarius_%2850167040397%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Common_Froghopper_-_Philaenus_spumarius_%2850167040397%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Common_Froghopper_-_Philaenus_spumarius_(50167040397).jpg",
+      "credit": "AJC1",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Common Froghopper - Philaenus spumarius",
+      "fileTitle": "File:Common Froghopper - Philaenus spumarius (50167040397).jpg",
+      "width": 2048,
+      "height": 1186,
+      "localPath": "/bugs/photos/meadow-froghopper/2.jpg"
+    }
   ]
 }

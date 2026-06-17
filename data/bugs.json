@@ -1347,5 +1347,24 @@
       "#C9912F",
       "#3A2A1E"
     ]
+  },
+  {
+    "slug": "meadow-froghopper",
+    "commonName": "Meadow Froghopper",
+    "latinName": "Philaenus spumarius",
+    "habitat": "Meadows & grasslands across Europe, Asia and North America",
+    "sizeMm": 6,
+    "sizeKind": "body",
+    "weirdFact": "Holds the insect high-jump record: launches at ~400g acceleration and clears 70cm, over 100x its own body length.",
+    "whyItsCool": "A 6mm bug that out-jumps a flea and raises its young inside self-made spit foam. Nature's overpowered pocket athlete.",
+    "rarity": "common",
+    "discoveredOn": "2026-07-01",
+    "order": "Hemiptera",
+    "family": "Aphrophoridae",
+    "colorPalette": [
+      "#8a7d5a",
+      "#c9b079",
+      "#3f3a2c"
+    ]
   }
 ]
