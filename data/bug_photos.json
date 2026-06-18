@@ -2001,5 +2001,33 @@
       "height": 1186,
       "localPath": "/bugs/photos/meadow-froghopper/2.jpg"
     }
+  ],
+  "trilobite-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Platerodrilus_sp_Trilobitk%C3%A4fer.jpg/1280px-Platerodrilus_sp_Trilobitk%C3%A4fer.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Platerodrilus_sp_Trilobitk%C3%A4fer.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Platerodrilus_sp_Trilobitk%C3%A4fer.jpg",
+      "credit": "Holger Krisp",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Trilobite beetle, Platerodrilus sp.",
+      "fileTitle": "File:Platerodrilus sp Trilobitkäfer.jpg",
+      "width": 2666,
+      "height": 4000,
+      "localPath": "/bugs/photos/trilobite-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Lycostomus_male_and_Platerodrilus_female.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Lycostomus_male_and_Platerodrilus_female.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lycostomus_male_and_Platerodrilus_female.jpg",
+      "credit": "Tiia Monto",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Lycostomus male and Platerodrilus female in Augsburg Naturmuseum.",
+      "fileTitle": "File:Lycostomus male and Platerodrilus female.jpg",
+      "width": 755,
+      "height": 1037,
+      "localPath": "/bugs/photos/trilobite-beetle/2.jpg"
+    }
   ]
 }

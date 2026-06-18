@@ -1366,5 +1366,24 @@
       "#c9b079",
       "#3f3a2c"
     ]
+  },
+  {
+    "slug": "trilobite-beetle",
+    "commonName": "Trilobite Beetle",
+    "latinName": "Platerodrilus ruficollis",
+    "habitat": "Damp tropical rainforest floors of India and Southeast Asia",
+    "sizeMm": 60,
+    "sizeKind": "body",
+    "weirdFact": "Only females look like trilobites — they stay larva-shaped for life. The matching males are tiny winged beetles a tenth their size.",
+    "whyItsCool": "A 4-cm armored tank crawling Borneo's forest floor that fooled scientists for 150 years, who couldn't tell which beetle it grew into.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-02",
+    "order": "Coleoptera",
+    "family": "Lycidae",
+    "colorPalette": [
+      "#2A2622",
+      "#C8472E",
+      "#6E6A5A"
+    ]
   }
 ]
