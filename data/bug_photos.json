@@ -2029,5 +2029,33 @@
       "height": 1037,
       "localPath": "/bugs/photos/trilobite-beetle/2.jpg"
     }
+  ],
+  "common-scorpionfly": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/EL_foto%2C_Eimar_Kull_-_PILT6045_Panorpa_communis.jpg/1280px-EL_foto%2C_Eimar_Kull_-_PILT6045_Panorpa_communis.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/EL_foto%2C_Eimar_Kull_-_PILT6045_Panorpa_communis.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:EL_foto,_Eimar_Kull_-_PILT6045_Panorpa_communis.jpg",
+      "credit": "Eimar Kull",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Harilik koonlane otsevaates. Pildistatud 2020. aasta juunis Pärnus",
+      "fileTitle": "File:EL foto, Eimar Kull - PILT6045 Panorpa communis.jpg",
+      "width": 5472,
+      "height": 3648,
+      "localPath": "/bugs/photos/common-scorpionfly/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/20190522_Leeuwenhorstbos_-_Panorpa_communis.jpg/1280px-20190522_Leeuwenhorstbos_-_Panorpa_communis.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/20190522_Leeuwenhorstbos_-_Panorpa_communis.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:20190522_Leeuwenhorstbos_-_Panorpa_communis.jpg",
+      "credit": "Rudolphous",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "20190522 Leeuwenhorstbos",
+      "fileTitle": "File:20190522 Leeuwenhorstbos - Panorpa communis.jpg",
+      "width": 4032,
+      "height": 3024,
+      "localPath": "/bugs/photos/common-scorpionfly/2.jpg"
+    }
   ]
 }

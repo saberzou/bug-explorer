@@ -1385,5 +1385,24 @@
       "#C8472E",
       "#6E6A5A"
     ]
+  },
+  {
+    "slug": "common-scorpionfly",
+    "commonName": "Common Scorpionfly",
+    "latinName": "Panorpa communis",
+    "habitat": "Shaded hedgerows, nettle beds and damp woodland edges across Europe",
+    "sizeMm": 30,
+    "sizeKind": "wingspan",
+    "weirdFact": "The male's tail curls up into a bulb that looks exactly like a scorpion's stinger — but it's harmless genitalia, not a weapon.",
+    "whyItsCool": "It bluffs like a scorpion, eats the dead, and males must hand over a gift of saliva or carrion before any female will mate.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-03",
+    "order": "Mecoptera",
+    "family": "Panorpidae",
+    "colorPalette": [
+      "#1F1B17",
+      "#D9A441",
+      "#9C3B2E"
+    ]
   }
 ]
