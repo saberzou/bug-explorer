@@ -66,10 +66,20 @@ function spiralCoord(index: number): AxialCoord {
  * this is intentional: newest-at-center is the whole point.)
  *
  * Algorithm:
- *   1. Sort by `discoveredOn` descending (newest first), then by slug
- *      (deterministic tie-break for same-day cohorts).
- *   2. Walk the spiral from slot 0 outward, assigning each bug in order. The
+ *   1. Compute each bug's EFFECTIVE sort date = min(discoveredOn, today).
+ *      Future-dated bugs (the daily-add pipeline pre-stamps specimens days
+ *      ahead) are clamped to today so they can't outrank the genuinely-newest
+ *      already-released bug. The real latest bug therefore holds the center.
+ *   2. Sort by effective date descending (newest first). Tie-break first by
+ *      ACTUAL discoveredOn ascending — so among today's clamped cohort the
+ *      soonest-upcoming bug sits nearest the center and each future bug rotates
+ *      inward as its date arrives — then by slug (deterministic, machine-stable).
+ *   3. Walk the spiral from slot 0 outward, assigning each bug in order. The
  *      Nth-newest bug gets the Nth spiral slot.
+ *
+ * Note: the build is static, so "today" is frozen at build time; the daily-add
+ * cron rebuilds/redeploys each day, which refreshes it. Pass an explicit
+ * `today` in tests for determinism.
  *
  * Result: dense hex pack with zero gaps, newest at center, older bugs ringed
  * outward by recency.
@@ -81,17 +91,27 @@ export interface BugEntry {
   discoveredOn: string; // ISO date
 }
 
-export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
+export function assignCoords(
+  bugs: BugEntry[],
+  today: string = new Date().toISOString().slice(0, 10),
+): Map<string, AxialCoord> {
   const map = new Map<string, AxialCoord>();
   if (bugs.length === 0) return map;
 
-  // Resolve newest first so the most recent bug claims the center slot.
+  // Effective date clamps future-dated bugs to today so a specimen "discovered"
+  // two weeks out can't sit in the center ahead of the real latest release.
+  const effective = (d: string) => (d > today ? today : d);
+
+  // Newest-effective first claims the center slot. Future cohort (all clamped
+  // to today) is ordered by true date ascending so the soonest one is nearest
+  // center and rotates inward as its day arrives; slug breaks remaining ties.
   const sorted = [...bugs].sort((a, b) => {
+    const ea = effective(a.discoveredOn);
+    const eb = effective(b.discoveredOn);
+    if (ea !== eb) return ea > eb ? -1 : 1;
     if (a.discoveredOn !== b.discoveredOn) {
-      return a.discoveredOn > b.discoveredOn ? -1 : 1;
+      return a.discoveredOn < b.discoveredOn ? -1 : 1;
     }
-    // Tie-break by slug (stable, deterministic) so a batch of same-day bugs
-    // resolves in a fixed order across machines.
     return a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0;
   });
 
