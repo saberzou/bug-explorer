@@ -1,8 +1,9 @@
 // Deterministic slug → axial hex coordinates.
-// Stable: a slug, once assigned, NEVER changes position. New bugs always grow
-// the cluster outward in chronological order, so older bugs sit closer to
-// the center and recent additions ring around them like growth rings on a
-// tree. Forward-only assignment guarantees the no-reflow contract.
+// Recency-centered: the NEWEST bug sits at the center slot and older bugs ring
+// outward by discovery date, so a visitor always lands on the most recent
+// addition in the middle of the cluster. Adding a newer bug re-centers the
+// cluster (existing bugs shift outward by one ring) — this reflow is intentional
+// and is what keeps "something new" in the center on every visit.
 
 export interface AxialCoord {
   q: number;
@@ -58,17 +59,20 @@ function spiralCoord(index: number): AxialCoord {
 /**
  * Assign stable axial coords to a list of bugs.
  *
- * Stability contract: a slug, once assigned, NEVER changes position. New bugs
- * always claim the next outer slot beyond all existing ones — the cluster
- * grows outward chronologically, like growth rings on a tree.
+ * Stability contract: the cluster is re-centered on the NEWEST bug. Each time
+ * a newer bug is added it takes the center slot and the rest spiral outward by
+ * recency, so the most recent discoveries are always near the middle where
+ * visitors look first. (Positions therefore reflow when a newer bug arrives —
+ * this is intentional: newest-at-center is the whole point.)
  *
  * Algorithm:
- *   1. Sort by `discoveredOn` ascending, then by slug (deterministic tie-break
- *      for same-day cohorts).
+ *   1. Sort by `discoveredOn` descending (newest first), then by slug
+ *      (deterministic tie-break for same-day cohorts).
  *   2. Walk the spiral from slot 0 outward, assigning each bug in order. The
- *      Nth-oldest bug gets the Nth spiral slot.
+ *      Nth-newest bug gets the Nth spiral slot.
  *
- * Result: dense hex pack with zero gaps, oldest at center, no reflow ever.
+ * Result: dense hex pack with zero gaps, newest at center, older bugs ringed
+ * outward by recency.
  * 30 bugs fill rings 0–3 (37 slots, 7 leftover empty at the outer edge).
  * 100 bugs fill rings 0–6. 1000 bugs reach ring 19.
  */
@@ -81,10 +85,10 @@ export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
   const map = new Map<string, AxialCoord>();
   if (bugs.length === 0) return map;
 
-  // Resolve oldest first so new bugs always claim the next outer slot.
+  // Resolve newest first so the most recent bug claims the center slot.
   const sorted = [...bugs].sort((a, b) => {
     if (a.discoveredOn !== b.discoveredOn) {
-      return a.discoveredOn < b.discoveredOn ? -1 : 1;
+      return a.discoveredOn > b.discoveredOn ? -1 : 1;
     }
     // Tie-break by slug (stable, deterministic) so a batch of same-day bugs
     // resolves in a fixed order across machines.
@@ -93,10 +97,10 @@ export function assignCoords(bugs: BugEntry[]): Map<string, AxialCoord> {
 
   for (let index = 0; index < sorted.length; index++) {
     const { slug } = sorted[index];
-    // Assign sequentially to spiral slots 0, 1, 2, ... Older bugs land in
-    // central slots; new bugs grow the cluster outward like rings of a tree.
-    // This guarantees a dense pack regardless of cohort size, and no existing
-    // bug ever shifts because we resolve in chronological order.
+    // Assign sequentially to spiral slots 0, 1, 2, ... Newest bug lands in the
+    // center slot; older bugs ring outward by recency. Adding a newer bug
+    // re-centers the cluster (positions reflow), which is the intended
+    // "always show something new in the middle" behavior.
     const coord = spiralCoord(index);
     map.set(slug, coord);
   }
