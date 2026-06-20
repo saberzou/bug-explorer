@@ -2070,5 +2070,33 @@
       "height": 3024,
       "localPath": "/bugs/photos/common-scorpionfly/2.jpg"
     }
+  ],
+  "spiny-devil-katydid": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Panacanthus_cuspidatus_%2815169810741%29.jpg/1280px-Panacanthus_cuspidatus_%2815169810741%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Panacanthus_cuspidatus_%2815169810741%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Panacanthus_cuspidatus_(15169810741).jpg",
+      "credit": "Graham Wise from Brisbane, Australia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Spiny Headed Katydid",
+      "fileTitle": "File:Panacanthus cuspidatus (15169810741).jpg",
+      "width": 5183,
+      "height": 3090,
+      "localPath": "/bugs/photos/spiny-devil-katydid/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Panacanthus_cuspidatus_-_Yaupi%2C_Morona-Santiago_Province_-_Ecuador.jpg/1280px-Panacanthus_cuspidatus_-_Yaupi%2C_Morona-Santiago_Province_-_Ecuador.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Panacanthus_cuspidatus_-_Yaupi%2C_Morona-Santiago_Province_-_Ecuador.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Panacanthus_cuspidatus_-_Yaupi,_Morona-Santiago_Province_-_Ecuador.jpg",
+      "credit": "Geoff Gallice from Gainesville, FL, USA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Panacanthus cuspidatus",
+      "fileTitle": "File:Panacanthus cuspidatus - Yaupi, Morona-Santiago Province - Ecuador.jpg",
+      "width": 1800,
+      "height": 1200,
+      "localPath": "/bugs/photos/spiny-devil-katydid/2.jpg"
+    }
   ]
 }

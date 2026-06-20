@@ -1404,5 +1404,24 @@
       "#D9A441",
       "#9C3B2E"
     ]
+  },
+  {
+    "slug": "spiny-devil-katydid",
+    "commonName": "Spiny Devil Katydid",
+    "latinName": "Panacanthus cuspidatus",
+    "habitat": "Amazon rainforest understory of Ecuador, Peru & Colombia",
+    "sizeMm": 60,
+    "sizeKind": "body",
+    "weirdFact": "Bristling with spikes and a head horn, it rears up and lashes its thorny legs, which double as a prey-snaring cage.",
+    "whyItsCool": "A leaf-green gremlin armored like a medieval mace. Its spines scale with its song's complexity: louder bug, spinier bug.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-21",
+    "order": "Orthoptera",
+    "family": "Tettigoniidae",
+    "colorPalette": [
+      "#4a7c34",
+      "#2f5320",
+      "#c4d68a"
+    ]
   }
 ]
