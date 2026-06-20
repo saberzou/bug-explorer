@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-20",
-  "slug": "common-scorpionfly",
-  "commonName": "Common Scorpionfly",
-  "discoveredOn": "2026-07-03",
-  "ranAtUtc": "2026-06-19T17:52:24Z",
+  "date": "2026-06-21",
+  "slug": "spiny-devil-katydid",
+  "commonName": "Spiny Devil Katydid",
+  "discoveredOn": "2026-06-21",
+  "ranAtUtc": "2026-06-20T17:53:16Z",
   "note": null,
-  "bugCount": 74
+  "bugCount": 75
 }
