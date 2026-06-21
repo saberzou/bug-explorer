@@ -1423,5 +1423,24 @@
       "#2f5320",
       "#c4d68a"
     ]
+  },
+  {
+    "slug": "flannel-moth",
+    "commonName": "Southern Flannel Moth",
+    "latinName": "Megalopyge opercularis",
+    "habitat": "Woodlands & gardens of the southern US and Mexico",
+    "sizeMm": 30,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its fuzzy, harmless-looking adult hides a secret: the larva is the puss caterpillar, the most-reported venomous caterpillar sting in the US.",
+    "whyItsCool": "Looks like a tiny flying toupee, yet packs the wickedest sting in the room — peak 'cute but do NOT touch' energy.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-22",
+    "order": "Lepidoptera",
+    "family": "Megalopygidae",
+    "colorPalette": [
+      "#c98a3e",
+      "#f1d9a0",
+      "#5a3a22"
+    ]
   }
 ]

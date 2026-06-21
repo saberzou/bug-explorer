@@ -2098,5 +2098,33 @@
       "height": 1200,
       "localPath": "/bugs/photos/spiny-devil-katydid/2.jpg"
     }
+  ],
+  "flannel-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Southern_Flannel_Moth_caterpillar_-_Megalopyge_opercularis%2C_Merrimac_Farm_Wildlife_Management_Area%2C_Aden%2C_Virginia.jpg/1280px-Southern_Flannel_Moth_caterpillar_-_Megalopyge_opercularis%2C_Merrimac_Farm_Wildlife_Management_Area%2C_Aden%2C_Virginia.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Southern_Flannel_Moth_caterpillar_-_Megalopyge_opercularis%2C_Merrimac_Farm_Wildlife_Management_Area%2C_Aden%2C_Virginia.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Southern_Flannel_Moth_caterpillar_-_Megalopyge_opercularis,_Merrimac_Farm_Wildlife_Management_Area,_Aden,_Virginia.jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Southern Flannel Moth caterpillar - Megalopyge opercularis, Merrimac Farm Wildlife Management Area, Aden, Virginia",
+      "fileTitle": "File:Southern Flannel Moth caterpillar - Megalopyge opercularis, Merrimac Farm Wildlife Management Area, Aden, Virginia.jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/flannel-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Megalopyge_opercularis_%28Larva%29.jpg/1280px-Megalopyge_opercularis_%28Larva%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Megalopyge_opercularis_%28Larva%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Megalopyge_opercularis_(Larva).jpg",
+      "credit": "Iose",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Megalopyge opercularis",
+      "fileTitle": "File:Megalopyge opercularis (Larva).jpg",
+      "width": 3096,
+      "height": 4128,
+      "localPath": "/bugs/photos/flannel-moth/2.jpg"
+    }
   ]
 }
