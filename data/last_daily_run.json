@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-22",
-  "slug": "flannel-moth",
-  "commonName": "Southern Flannel Moth",
-  "discoveredOn": "2026-06-22",
-  "ranAtUtc": "2026-06-21T17:53:31Z",
+  "date": "2026-06-23",
+  "slug": "saddleback-caterpillar",
+  "commonName": "Saddleback Caterpillar",
+  "discoveredOn": "2026-06-23",
+  "ranAtUtc": "2026-06-22T17:53:01Z",
   "note": null,
-  "bugCount": 76
+  "bugCount": 77
 }
