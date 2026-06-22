@@ -2126,5 +2126,33 @@
       "height": 4128,
       "localPath": "/bugs/photos/flannel-moth/2.jpg"
     }
+  ],
+  "saddleback-caterpillar": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/-_4700_%E2%80%93_Acharia_stimulea_%E2%80%93_Saddleback_Caterpillar_Moth_%2835735138342%29.jpg/1280px--_4700_%E2%80%93_Acharia_stimulea_%E2%80%93_Saddleback_Caterpillar_Moth_%2835735138342%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/-_4700_%E2%80%93_Acharia_stimulea_%E2%80%93_Saddleback_Caterpillar_Moth_%2835735138342%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:-_4700_%E2%80%93_Acharia_stimulea_%E2%80%93_Saddleback_Caterpillar_Moth_(35735138342).jpg",
+      "credit": "Andy Reago & Chrissy McClarren",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Cuivre River State Park 7/8/17 Troy, MO Moth Night",
+      "fileTitle": "File:- 4700 – Acharia stimulea – Saddleback Caterpillar Moth (35735138342).jpg",
+      "width": 3028,
+      "height": 1801,
+      "localPath": "/bugs/photos/saddleback-caterpillar/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Acharia_stimulea_5020019.jpg/1280px-Acharia_stimulea_5020019.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Acharia_stimulea_5020019.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Acharia_stimulea_5020019.jpg",
+      "credit": "Pennsylvania Department of Conservation and Natural Resources - Forestry Archive,",
+      "license": "CC BY 3.0 us",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+      "caption": "Acharia stimulea Clemens, 1960 Common Name: saddleback caterpillar Photographer: Pennsylvania Department of Conservation and Natural Resources - Forestry Archive, , United States Contact: Fengyou Jia, Division of Forest Pest Management, DCNR, PA Descriptor: Pupa(e) Image taken in",
+      "fileTitle": "File:Acharia stimulea 5020019.jpg",
+      "width": 1536,
+      "height": 1026,
+      "localPath": "/bugs/photos/saddleback-caterpillar/2.jpg"
+    }
   ]
 }

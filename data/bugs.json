@@ -665,22 +665,193 @@
     ]
   },
   {
-    "slug": "giant-water-bug",
-    "commonName": "Giant Water Bug",
-    "latinName": "Lethocerus americanus",
-    "habitat": "Freshwater ponds and streams across North America",
-    "sizeMm": 65,
+    "slug": "asian-giant-hornet",
+    "commonName": "Asian Giant Hornet",
+    "latinName": "Vespa mandarinia",
+    "habitat": "Forested mountains across East and Southeast Asia",
+    "sizeMm": 50,
     "sizeKind": "body",
-    "weirdFact": "Hunts frogs, small fish, even baby snakes by injecting digestive enzymes and slurping the liquefied insides through its beak.",
-    "whyItsCool": "The ocean has the great white. Your local pond has this. Entomologists call its bite the worst pain in entomology, and they mean it as a compliment.",
+    "weirdFact": "Largest hornet on Earth. 6mm stinger delivers neurotoxin that dissolves human tissue. Can decapitate 40 honey bees per minute.",
+    "whyItsCool": "Japanese honey bees coevolved one of the wildest defenses in nature: they swarm and vibrate-cook scout hornets alive inside a buzzing ball at 47°C, just barely below what kills bees.",
     "rarity": "uncommon",
-    "discoveredOn": "2026-06-11",
-    "order": "Hemiptera",
-    "family": "Belostomatidae",
+    "discoveredOn": "2026-06-10",
+    "order": "Hymenoptera",
+    "family": "Vespidae",
     "colorPalette": [
-      "#3A3329",
-      "#8B7355",
-      "#C4A878"
+      "#F4A50A",
+      "#5C3A21",
+      "#1A1815"
+    ]
+  },
+  {
+    "slug": "bee-fly",
+    "commonName": "Bee Fly",
+    "latinName": "Bombylius major",
+    "habitat": "Spring meadows across Eurasia and North America",
+    "sizeMm": 12,
+    "sizeKind": "body",
+    "weirdFact": "Looks exactly like a fluffy bumblebee but is actually a fly. Hovers like a hummingbird and sips nectar with a needle-long proboscis.",
+    "whyItsCool": "Cosplays as a bee for predator protection without being able to sting. Pure aesthetic mimicry. The bee-fashion is so good it works on the predators it evolved against.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-10",
+    "order": "Diptera",
+    "family": "Bombyliidae",
+    "colorPalette": [
+      "#8B6F4E",
+      "#D4A574",
+      "#F4E4C1"
+    ]
+  },
+  {
+    "slug": "bullet-ant",
+    "commonName": "Bullet Ant",
+    "latinName": "Paraponera clavata",
+    "habitat": "Lowland Central and South American rainforests",
+    "sizeMm": 25,
+    "sizeKind": "body",
+    "weirdFact": "Top of the Schmidt Sting Pain Index at 4.0+, named because the sting feels like being shot. Sateré-Mawé initiation rituals use gloves filled with them.",
+    "whyItsCool": "Largest ant in the Americas. The pain isn't just intense, it lasts up to 24 hours of pure searing wave. Basically the worst hour of your life, on demand.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-10",
+    "order": "Hymenoptera",
+    "family": "Formicidae",
+    "colorPalette": [
+      "#1F1612",
+      "#3D2A1F",
+      "#6B4E33"
+    ]
+  },
+  {
+    "slug": "honeypot-ant",
+    "commonName": "Honeypot Ant",
+    "latinName": "Myrmecocystus mexicanus",
+    "habitat": "Arid deserts of southwestern North America",
+    "sizeMm": 8,
+    "sizeKind": "body",
+    "weirdFact": "Specialized workers called repletes hang from underground cave ceilings, abdomens swollen into translucent amber spheres of stored nectar. Living pantries.",
+    "whyItsCool": "An entire caste of ants whose only job is to BE storage. Their swollen bellies feed the colony in dry months. They are traditional Aboriginal sweets too.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-10",
+    "order": "Hymenoptera",
+    "family": "Formicidae",
+    "colorPalette": [
+      "#D4691E",
+      "#F4C842",
+      "#8B4513"
+    ]
+  },
+  {
+    "slug": "lubber-grasshopper",
+    "commonName": "Eastern Lubber Grasshopper",
+    "latinName": "Romalea microptera",
+    "habitat": "Southeastern United States, pine and palmetto scrub",
+    "sizeMm": 75,
+    "sizeKind": "body",
+    "weirdFact": "Too heavy to fly. Toxic to most predators. When threatened, hisses loudly and spits irritant foam from its thorax. Stomps slowly because it can.",
+    "whyItsCool": "Yellow-and-black tank that knows it's untouchable. Walks around the Florida swamps with the confidence of something that has never been afraid of anything.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-10",
+    "order": "Orthoptera",
+    "family": "Romaleidae",
+    "colorPalette": [
+      "#F4C842",
+      "#1A1815",
+      "#C13A2E"
+    ]
+  },
+  {
+    "slug": "picture-winged-fly",
+    "commonName": "Picture-winged Fly",
+    "latinName": "Ceroxys urticae",
+    "habitat": "Damp meadows and nettle patches across Europe",
+    "sizeMm": 7,
+    "sizeKind": "body",
+    "weirdFact": "Wings have dark markings that mimic the silhouettes of jumping spider legs. When threatened, it waves them like spider arms to scare the spider off.",
+    "whyItsCool": "Fights its predator by impersonating it. The fly's wing patterns are basically a spider costume worn 24/7. Mutual confusion as defense.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-10",
+    "order": "Diptera",
+    "family": "Ulidiidae",
+    "colorPalette": [
+      "#2C2620",
+      "#8B6F4E",
+      "#D9C9A8"
+    ]
+  },
+  {
+    "slug": "sunset-moth",
+    "commonName": "Madagascan Sunset Moth",
+    "latinName": "Chrysiridia rhipheus",
+    "habitat": "Madagascan forests, on Omphalea vines",
+    "sizeMm": 80,
+    "sizeKind": "wingspan",
+    "weirdFact": "Day-flying moth that looks like a butterfly. Wings have no pigment; their iridescent rainbow comes from microscopic ridges that diffract light.",
+    "whyItsCool": "Structural color, not paint. The same physics that makes oil slicks rainbow makes this moth rainbow. Once considered the most beautiful insect on Earth, traded as Victorian jewelry.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-10",
+    "order": "Lepidoptera",
+    "family": "Uraniidae",
+    "colorPalette": [
+      "#2D7BB5",
+      "#16A085",
+      "#E8A547"
+    ]
+  },
+  {
+    "slug": "termite-queen",
+    "commonName": "African Termite Queen",
+    "latinName": "Macrotermes bellicosus",
+    "habitat": "African savanna mounds reaching 8m tall",
+    "sizeMm": 50,
+    "sizeKind": "body",
+    "weirdFact": "Sausage-shaped and immobile. Lives 50 years, lays an egg every 3 seconds. The colony she founds builds 8-meter towers with internal climate control.",
+    "whyItsCool": "Longest-lived insect in the world, possibly. The mound she sits in operates passive air-conditioning that human architects studied to design buildings.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-10",
+    "order": "Blattodea",
+    "family": "Termitidae",
+    "colorPalette": [
+      "#F5E6D3",
+      "#8B6F4E",
+      "#4A3526"
+    ]
+  },
+  {
+    "slug": "titan-beetle",
+    "commonName": "Titan Beetle",
+    "latinName": "Titanus giganteus",
+    "habitat": "Amazonian rainforest in Brazil, Colombia, Peru",
+    "sizeMm": 170,
+    "sizeKind": "body",
+    "weirdFact": "Largest beetle in the Amazon, possibly the world. Jaws can snap a wooden pencil in half. Adults don't eat, they live only to mate.",
+    "whyItsCool": "Bigger than your hand. So rare and elusive that no scientist has ever observed its larva. We know the adults exist; the kids are pure rumor.",
+    "rarity": "legendary",
+    "discoveredOn": "2026-06-10",
+    "order": "Coleoptera",
+    "family": "Cerambycidae",
+    "colorPalette": [
+      "#3D2A1A",
+      "#6B4E2F",
+      "#D9B97D"
+    ]
+  },
+  {
+    "slug": "vampire-moth",
+    "commonName": "Vampire Moth",
+    "latinName": "Calyptra thalictri",
+    "habitat": "Forests across Russia, Eastern Europe, and parts of Scandinavia",
+    "sizeMm": 50,
+    "sizeKind": "wingspan",
+    "weirdFact": "Pierces fruit normally with its proboscis. But males will also pierce mammalian skin, including humans, to drink blood. Documented in the wild.",
+    "whyItsCool": "Not a horror movie metaphor, an actual species. The proboscis evolved to pierce thick fruit, then evolution went what if humans. The few that drink blood live longer.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-10",
+    "order": "Lepidoptera",
+    "family": "Erebidae",
+    "colorPalette": [
+      "#3D2826",
+      "#8B4A3F",
+      "#D4A574"
     ]
   },
   {
@@ -703,22 +874,22 @@
     ]
   },
   {
-    "slug": "water-strider",
-    "commonName": "Water Strider",
-    "latinName": "Gerris remigis",
-    "habitat": "Surface of still or slow-moving freshwater worldwide",
-    "sizeMm": 16,
+    "slug": "giant-water-bug",
+    "commonName": "Giant Water Bug",
+    "latinName": "Lethocerus americanus",
+    "habitat": "Freshwater ponds and streams across North America",
+    "sizeMm": 65,
     "sizeKind": "body",
-    "weirdFact": "Microscopic hairs on its legs trap air, letting it skate on water surface tension without ever breaking through.",
-    "whyItsCool": "Living physics demo. Every time you see one, you are watching the difference between weight and surface tension play out in real time.",
-    "rarity": "common",
-    "discoveredOn": "2026-06-12",
+    "weirdFact": "Hunts frogs, small fish, even baby snakes by injecting digestive enzymes and slurping the liquefied insides through its beak.",
+    "whyItsCool": "The ocean has the great white. Your local pond has this. Entomologists call its bite the worst pain in entomology, and they mean it as a compliment.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-11",
     "order": "Hemiptera",
-    "family": "Gerridae",
+    "family": "Belostomatidae",
     "colorPalette": [
-      "#1F2937",
-      "#4B5563",
-      "#9CA3AF"
+      "#3A3329",
+      "#8B7355",
+      "#C4A878"
     ]
   },
   {
@@ -738,6 +909,25 @@
       "#FDF6E3",
       "#D4B886",
       "#7A5C3F"
+    ]
+  },
+  {
+    "slug": "water-strider",
+    "commonName": "Water Strider",
+    "latinName": "Gerris remigis",
+    "habitat": "Surface of still or slow-moving freshwater worldwide",
+    "sizeMm": 16,
+    "sizeKind": "body",
+    "weirdFact": "Microscopic hairs on its legs trap air, letting it skate on water surface tension without ever breaking through.",
+    "whyItsCool": "Living physics demo. Every time you see one, you are watching the difference between weight and surface tension play out in real time.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-12",
+    "order": "Hemiptera",
+    "family": "Gerridae",
+    "colorPalette": [
+      "#1F2937",
+      "#4B5563",
+      "#9CA3AF"
     ]
   },
   {
@@ -779,6 +969,44 @@
     ]
   },
   {
+    "slug": "brazilian-treehopper",
+    "commonName": "Brazilian Treehopper",
+    "latinName": "Bocydium globulare",
+    "habitat": "Brazilian Atlantic rainforest",
+    "sizeMm": 5,
+    "sizeKind": "body",
+    "weirdFact": "Wears a helicopter-rotor crown of black hairy spheres on its head. Scientists still aren't sure what they're for.",
+    "whyItsCool": "Looks like an alien drone got stuck on a beetle. Evolution occasionally produces something so weird it shouldn't be allowed to exist, and then it does, on a leaf in Brazil.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-14",
+    "order": "Hemiptera",
+    "family": "Membracidae",
+    "colorPalette": [
+      "#2D2218",
+      "#5C4634",
+      "#8B6F4E"
+    ]
+  },
+  {
+    "slug": "common-earwig",
+    "commonName": "Common Earwig",
+    "latinName": "Forficula auricularia",
+    "habitat": "Gardens, leaf litter, and crevices across Europe and North America",
+    "sizeMm": 14,
+    "sizeKind": "body",
+    "weirdFact": "Folds its fan-like flight wings into intricate origami packets ten times under those tail forceps, yet rarely bothers to fly. The ear-crawling legend is pure myth.",
+    "whyItsCool": "One of the very few insects that mothers her young, guarding the eggs, licking off mould, and feeding the hatchlings. Tender parenting from a bug everyone fears.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-14",
+    "order": "Dermaptera",
+    "family": "Forficulidae",
+    "colorPalette": [
+      "#5C3A21",
+      "#8B5E3C",
+      "#C89B6F"
+    ]
+  },
+  {
     "slug": "springtail",
     "commonName": "Springtail",
     "latinName": "Anurida maritima",
@@ -798,22 +1026,41 @@
     ]
   },
   {
-    "slug": "brazilian-treehopper",
-    "commonName": "Brazilian Treehopper",
-    "latinName": "Bocydium globulare",
-    "habitat": "Brazilian Atlantic rainforest",
-    "sizeMm": 5,
-    "sizeKind": "body",
-    "weirdFact": "Wears a helicopter-rotor crown of black hairy spheres on its head. Scientists still aren't sure what they're for.",
-    "whyItsCool": "Looks like an alien drone got stuck on a beetle. Evolution occasionally produces something so weird it shouldn't be allowed to exist, and then it does, on a leaf in Brazil.",
+    "slug": "helicopter-damselfly",
+    "commonName": "Helicopter Damselfly",
+    "latinName": "Megaloprepus caerulatus",
+    "habitat": "Rainforest canopy gaps of Central and South America",
+    "sizeMm": 190,
+    "sizeKind": "wingspan",
+    "weirdFact": "Hovers like a tiny helicopter to pluck orb-weaver spiders straight out of their webs, then breeds only in rainwater pooled in tree holes.",
+    "whyItsCool": "The largest damselfly alive, a 19cm sliver with wand-tipped wings of blue. It rules tree-hole ponds no bigger than a teacup as apex predator.",
     "rarity": "rare",
-    "discoveredOn": "2026-06-14",
-    "order": "Hemiptera",
-    "family": "Membracidae",
+    "discoveredOn": "2026-06-15",
+    "order": "Odonata",
+    "family": "Pseudostigmatidae",
     "colorPalette": [
-      "#2D2218",
-      "#5C4634",
-      "#8B6F4E"
+      "#1B2A4A",
+      "#2E6FB7",
+      "#0E1410"
+    ]
+  },
+  {
+    "slug": "hickory-horned-devil",
+    "commonName": "Hickory Horned Devil",
+    "latinName": "Citheronia regalis",
+    "habitat": "Deciduous forests of the eastern United States",
+    "sizeMm": 140,
+    "sizeKind": "body",
+    "weirdFact": "North America's largest caterpillar wears menacing black-tipped orange horns, yet they're rubbery and completely harmless.",
+    "whyItsCool": "A 14cm dragon cosplaying as a threat. Pure bluff: all spikes, zero sting, then it becomes a giant regal moth.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-15",
+    "order": "Lepidoptera",
+    "family": "Saturniidae",
+    "colorPalette": [
+      "#3DA35D",
+      "#E8772E",
+      "#1F2A1A"
     ]
   },
   {
@@ -893,22 +1140,41 @@
     ]
   },
   {
-    "slug": "new-zealand-glowworm",
-    "commonName": "New Zealand Glow-worm",
-    "latinName": "Arachnocampa luminosa",
-    "habitat": "Damp cave ceilings and forest banks in New Zealand",
-    "sizeMm": 30,
+    "slug": "corpse-carrying-assassin-bug",
+    "commonName": "Corpse-carrying Assassin Bug",
+    "latinName": "Acanthaspis petax",
+    "habitat": "Dry tropical scrub and forest floors of East Africa and Malaysia",
+    "sizeMm": 12,
     "sizeKind": "body",
-    "weirdFact": "Not a worm. Larva of a fungus gnat. Dangles 30cm strands of sticky beads from cave ceilings and glows blue-green to lure flies into them.",
-    "whyItsCool": "The famous starry cave ceilings of Waitomo are this. Every glowing dot is a maggot fishing with a glowing chandelier. Sublime and gross at once.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-17",
-    "order": "Diptera",
-    "family": "Keroplatidae",
+    "weirdFact": "The nymph glues the drained husks of the ants it kills onto its own back, building a wobbling corpse-pile up to 20 bodies tall.",
+    "whyItsCool": "It wears its victims as a backpack of armour and disguise — a tiny serial killer cloaked in the dead, fooling spiders and rival assassins alike.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-16",
+    "order": "Hemiptera",
+    "family": "Reduviidae",
     "colorPalette": [
-      "#0A1525",
-      "#1E5D8F",
-      "#7FD9D1"
+      "#3A2A1E",
+      "#7A5C3E",
+      "#C7B299"
+    ]
+  },
+  {
+    "slug": "golden-tortoise-beetle",
+    "commonName": "Golden Tortoise Beetle",
+    "latinName": "Charidotella sexpunctata",
+    "habitat": "Bindweed and morning-glory leaves across eastern North America",
+    "sizeMm": 6,
+    "sizeKind": "body",
+    "weirdFact": "It shifts from mirror-bright gold to brick red on demand, pumping fluid through micro-layers under its clear shell like a living mood ring.",
+    "whyItsCool": "A 6mm beetle that wears a transparent tortoise shell and changes colour when you spook it — molten gold one second, dull red the next.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-16",
+    "order": "Coleoptera",
+    "family": "Chrysomelidae",
+    "colorPalette": [
+      "#D9A300",
+      "#B5471F",
+      "#3E2A12"
     ]
   },
   {
@@ -928,6 +1194,44 @@
       "#1E4A2E",
       "#E8B547",
       "#C13A2E"
+    ]
+  },
+  {
+    "slug": "new-zealand-glowworm",
+    "commonName": "New Zealand Glow-worm",
+    "latinName": "Arachnocampa luminosa",
+    "habitat": "Damp cave ceilings and forest banks in New Zealand",
+    "sizeMm": 30,
+    "sizeKind": "body",
+    "weirdFact": "Not a worm. Larva of a fungus gnat. Dangles 30cm strands of sticky beads from cave ceilings and glows blue-green to lure flies into them.",
+    "whyItsCool": "The famous starry cave ceilings of Waitomo are this. Every glowing dot is a maggot fishing with a glowing chandelier. Sublime and gross at once.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-17",
+    "order": "Diptera",
+    "family": "Keroplatidae",
+    "colorPalette": [
+      "#0A1525",
+      "#1E5D8F",
+      "#7FD9D1"
+    ]
+  },
+  {
+    "slug": "twisted-wing-parasite",
+    "commonName": "Twisted-wing Parasite",
+    "latinName": "Xenos vesparum",
+    "habitat": "Inside living paper wasps across southern Europe and the Mediterranean",
+    "sizeMm": 4,
+    "sizeKind": "body",
+    "weirdFact": "The female never leaves her wasp host — she's a headless, legless bag of eggs fused into its abdomen, mating through a tiny hatch.",
+    "whyItsCool": "A parasite that hijacks a wasp into a roaming nursery, then sends out fan-winged, raspberry-eyed males that live a few frantic hours to find her.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-17",
+    "order": "Strepsiptera",
+    "family": "Xenidae",
+    "colorPalette": [
+      "#7A1F2B",
+      "#C9912F",
+      "#3A2A1E"
     ]
   },
   {
@@ -969,22 +1273,22 @@
     ]
   },
   {
-    "slug": "frog-legged-leaf-beetle",
-    "commonName": "Frog-legged Leaf Beetle",
-    "latinName": "Sagra buqueti",
-    "habitat": "Southeast Asian rainforest canopy",
-    "sizeMm": 35,
+    "slug": "meadow-froghopper",
+    "commonName": "Meadow Froghopper",
+    "latinName": "Philaenus spumarius",
+    "habitat": "Meadows & grasslands across Europe, Asia and North America",
+    "sizeMm": 6,
     "sizeKind": "body",
-    "weirdFact": "Hind legs are absurdly oversized, frog-like and muscular. Body is iridescent rainbow-metallic. Green, gold, magenta depending on the light.",
-    "whyItsCool": "Imagine a frog and a peacock had a beetle baby. That's this. Hugely sought-after by collectors. Tropical pet-shop royalty.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-19",
-    "order": "Coleoptera",
-    "family": "Chrysomelidae",
+    "weirdFact": "Holds the insect high-jump record: launches at ~400g acceleration and clears 70cm, over 100x its own body length.",
+    "whyItsCool": "A 6mm bug that out-jumps a flea and raises its young inside self-made spit foam. Nature's overpowered pocket athlete.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-18",
+    "order": "Hemiptera",
+    "family": "Aphrophoridae",
     "colorPalette": [
-      "#2D5F3F",
-      "#D946EF",
-      "#FBBF24"
+      "#8a7d5a",
+      "#c9b079",
+      "#3f3a2c"
     ]
   },
   {
@@ -1007,364 +1311,22 @@
     ]
   },
   {
-    "slug": "leafcutter-ant",
-    "commonName": "Leafcutter Ant",
-    "latinName": "Atta cephalotes",
-    "habitat": "Tropical forests of Central and South America",
-    "sizeMm": 14,
+    "slug": "frog-legged-leaf-beetle",
+    "commonName": "Frog-legged Leaf Beetle",
+    "latinName": "Sagra buqueti",
+    "habitat": "Southeast Asian rainforest canopy",
+    "sizeMm": 35,
     "sizeKind": "body",
-    "weirdFact": "Doesn't eat the leaves it cuts. Farms a specific fungus on them inside underground cathedral nests, in a relationship 50 million years old.",
-    "whyItsCool": "Tiny civilizations doing industrial agriculture. The fungus has co-evolved to be unable to live anywhere else. Mutual dependence as a way of life.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-20",
-    "order": "Hymenoptera",
-    "family": "Formicidae",
-    "colorPalette": [
-      "#5C3A21",
-      "#8B6E4E",
-      "#4A7C3F"
-    ]
-  },
-  {
-    "slug": "weaver-ant",
-    "commonName": "Weaver Ant",
-    "latinName": "Oecophylla smaragdina",
-    "habitat": "Tropical canopy across South and Southeast Asia, Australia",
-    "sizeMm": 10,
-    "sizeKind": "body",
-    "weirdFact": "Builds nests by literally sewing leaves together. Workers hold leaf edges in place while others carry larvae back and forth as living glue guns, larvae extruding silk on command.",
-    "whyItsCool": "Used as biological pest control in citrus orchards for over 1,700 years. Possibly the oldest documented human-managed insect agriculture.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-20",
-    "order": "Hymenoptera",
-    "family": "Formicidae",
-    "colorPalette": [
-      "#D4691E",
-      "#F4A75A",
-      "#2D5F3F"
-    ]
-  },
-  {
-    "slug": "honeypot-ant",
-    "commonName": "Honeypot Ant",
-    "latinName": "Myrmecocystus mexicanus",
-    "habitat": "Arid deserts of southwestern North America",
-    "sizeMm": 8,
-    "sizeKind": "body",
-    "weirdFact": "Specialized workers called repletes hang from underground cave ceilings, abdomens swollen into translucent amber spheres of stored nectar. Living pantries.",
-    "whyItsCool": "An entire caste of ants whose only job is to BE storage. Their swollen bellies feed the colony in dry months. They are traditional Aboriginal sweets too.",
+    "weirdFact": "Hind legs are absurdly oversized, frog-like and muscular. Body is iridescent rainbow-metallic. Green, gold, magenta depending on the light.",
+    "whyItsCool": "Imagine a frog and a peacock had a beetle baby. That's this. Hugely sought-after by collectors. Tropical pet-shop royalty.",
     "rarity": "rare",
-    "discoveredOn": "2026-06-10",
-    "order": "Hymenoptera",
-    "family": "Formicidae",
-    "colorPalette": [
-      "#D4691E",
-      "#F4C842",
-      "#8B4513"
-    ]
-  },
-  {
-    "slug": "bullet-ant",
-    "commonName": "Bullet Ant",
-    "latinName": "Paraponera clavata",
-    "habitat": "Lowland Central and South American rainforests",
-    "sizeMm": 25,
-    "sizeKind": "body",
-    "weirdFact": "Top of the Schmidt Sting Pain Index at 4.0+, named because the sting feels like being shot. Sateré-Mawé initiation rituals use gloves filled with them.",
-    "whyItsCool": "Largest ant in the Americas. The pain isn't just intense, it lasts up to 24 hours of pure searing wave. Basically the worst hour of your life, on demand.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Hymenoptera",
-    "family": "Formicidae",
-    "colorPalette": [
-      "#1F1612",
-      "#3D2A1F",
-      "#6B4E33"
-    ]
-  },
-  {
-    "slug": "termite-queen",
-    "commonName": "African Termite Queen",
-    "latinName": "Macrotermes bellicosus",
-    "habitat": "African savanna mounds reaching 8m tall",
-    "sizeMm": 50,
-    "sizeKind": "body",
-    "weirdFact": "Sausage-shaped and immobile. Lives 50 years, lays an egg every 3 seconds. The colony she founds builds 8-meter towers with internal climate control.",
-    "whyItsCool": "Longest-lived insect in the world, possibly. The mound she sits in operates passive air-conditioning that human architects studied to design buildings.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Blattodea",
-    "family": "Termitidae",
-    "colorPalette": [
-      "#F5E6D3",
-      "#8B6F4E",
-      "#4A3526"
-    ]
-  },
-  {
-    "slug": "titan-beetle",
-    "commonName": "Titan Beetle",
-    "latinName": "Titanus giganteus",
-    "habitat": "Amazonian rainforest in Brazil, Colombia, Peru",
-    "sizeMm": 170,
-    "sizeKind": "body",
-    "weirdFact": "Largest beetle in the Amazon, possibly the world. Jaws can snap a wooden pencil in half. Adults don't eat, they live only to mate.",
-    "whyItsCool": "Bigger than your hand. So rare and elusive that no scientist has ever observed its larva. We know the adults exist; the kids are pure rumor.",
-    "rarity": "legendary",
-    "discoveredOn": "2026-06-10",
-    "order": "Coleoptera",
-    "family": "Cerambycidae",
-    "colorPalette": [
-      "#3D2A1A",
-      "#6B4E2F",
-      "#D9B97D"
-    ]
-  },
-  {
-    "slug": "lubber-grasshopper",
-    "commonName": "Eastern Lubber Grasshopper",
-    "latinName": "Romalea microptera",
-    "habitat": "Southeastern United States, pine and palmetto scrub",
-    "sizeMm": 75,
-    "sizeKind": "body",
-    "weirdFact": "Too heavy to fly. Toxic to most predators. When threatened, hisses loudly and spits irritant foam from its thorax. Stomps slowly because it can.",
-    "whyItsCool": "Yellow-and-black tank that knows it's untouchable. Walks around the Florida swamps with the confidence of something that has never been afraid of anything.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Orthoptera",
-    "family": "Romaleidae",
-    "colorPalette": [
-      "#F4C842",
-      "#1A1815",
-      "#C13A2E"
-    ]
-  },
-  {
-    "slug": "vampire-moth",
-    "commonName": "Vampire Moth",
-    "latinName": "Calyptra thalictri",
-    "habitat": "Forests across Russia, Eastern Europe, and parts of Scandinavia",
-    "sizeMm": 50,
-    "sizeKind": "wingspan",
-    "weirdFact": "Pierces fruit normally with its proboscis. But males will also pierce mammalian skin, including humans, to drink blood. Documented in the wild.",
-    "whyItsCool": "Not a horror movie metaphor, an actual species. The proboscis evolved to pierce thick fruit, then evolution went what if humans. The few that drink blood live longer.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-10",
-    "order": "Lepidoptera",
-    "family": "Erebidae",
-    "colorPalette": [
-      "#3D2826",
-      "#8B4A3F",
-      "#D4A574"
-    ]
-  },
-  {
-    "slug": "asian-giant-hornet",
-    "commonName": "Asian Giant Hornet",
-    "latinName": "Vespa mandarinia",
-    "habitat": "Forested mountains across East and Southeast Asia",
-    "sizeMm": 50,
-    "sizeKind": "body",
-    "weirdFact": "Largest hornet on Earth. 6mm stinger delivers neurotoxin that dissolves human tissue. Can decapitate 40 honey bees per minute.",
-    "whyItsCool": "Japanese honey bees coevolved one of the wildest defenses in nature: they swarm and vibrate-cook scout hornets alive inside a buzzing ball at 47°C, just barely below what kills bees.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Hymenoptera",
-    "family": "Vespidae",
-    "colorPalette": [
-      "#F4A50A",
-      "#5C3A21",
-      "#1A1815"
-    ]
-  },
-  {
-    "slug": "picture-winged-fly",
-    "commonName": "Picture-winged Fly",
-    "latinName": "Ceroxys urticae",
-    "habitat": "Damp meadows and nettle patches across Europe",
-    "sizeMm": 7,
-    "sizeKind": "body",
-    "weirdFact": "Wings have dark markings that mimic the silhouettes of jumping spider legs. When threatened, it waves them like spider arms to scare the spider off.",
-    "whyItsCool": "Fights its predator by impersonating it. The fly's wing patterns are basically a spider costume worn 24/7. Mutual confusion as defense.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Diptera",
-    "family": "Ulidiidae",
-    "colorPalette": [
-      "#2C2620",
-      "#8B6F4E",
-      "#D9C9A8"
-    ]
-  },
-  {
-    "slug": "sunset-moth",
-    "commonName": "Madagascan Sunset Moth",
-    "latinName": "Chrysiridia rhipheus",
-    "habitat": "Madagascan forests, on Omphalea vines",
-    "sizeMm": 80,
-    "sizeKind": "wingspan",
-    "weirdFact": "Day-flying moth that looks like a butterfly. Wings have no pigment; their iridescent rainbow comes from microscopic ridges that diffract light.",
-    "whyItsCool": "Structural color, not paint. The same physics that makes oil slicks rainbow makes this moth rainbow. Once considered the most beautiful insect on Earth, traded as Victorian jewelry.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-10",
-    "order": "Lepidoptera",
-    "family": "Uraniidae",
-    "colorPalette": [
-      "#2D7BB5",
-      "#16A085",
-      "#E8A547"
-    ]
-  },
-  {
-    "slug": "bee-fly",
-    "commonName": "Bee Fly",
-    "latinName": "Bombylius major",
-    "habitat": "Spring meadows across Eurasia and North America",
-    "sizeMm": 12,
-    "sizeKind": "body",
-    "weirdFact": "Looks exactly like a fluffy bumblebee but is actually a fly. Hovers like a hummingbird and sips nectar with a needle-long proboscis.",
-    "whyItsCool": "Cosplays as a bee for predator protection without being able to sting. Pure aesthetic mimicry. The bee-fashion is so good it works on the predators it evolved against.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-10",
-    "order": "Diptera",
-    "family": "Bombyliidae",
-    "colorPalette": [
-      "#8B6F4E",
-      "#D4A574",
-      "#F4E4C1"
-    ]
-  },
-  {
-    "slug": "common-earwig",
-    "commonName": "Common Earwig",
-    "latinName": "Forficula auricularia",
-    "habitat": "Gardens, leaf litter, and crevices across Europe and North America",
-    "sizeMm": 14,
-    "sizeKind": "body",
-    "weirdFact": "Folds its fan-like flight wings into intricate origami packets ten times under those tail forceps, yet rarely bothers to fly. The ear-crawling legend is pure myth.",
-    "whyItsCool": "One of the very few insects that mothers her young, guarding the eggs, licking off mould, and feeding the hatchlings. Tender parenting from a bug everyone fears.",
-    "rarity": "common",
-    "discoveredOn": "2026-06-14",
-    "order": "Dermaptera",
-    "family": "Forficulidae",
-    "colorPalette": [
-      "#5C3A21",
-      "#8B5E3C",
-      "#C89B6F"
-    ]
-  },
-  {
-    "slug": "hickory-horned-devil",
-    "commonName": "Hickory Horned Devil",
-    "latinName": "Citheronia regalis",
-    "habitat": "Deciduous forests of the eastern United States",
-    "sizeMm": 140,
-    "sizeKind": "body",
-    "weirdFact": "North America's largest caterpillar wears menacing black-tipped orange horns, yet they're rubbery and completely harmless.",
-    "whyItsCool": "A 14cm dragon cosplaying as a threat. Pure bluff: all spikes, zero sting, then it becomes a giant regal moth.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-15",
-    "order": "Lepidoptera",
-    "family": "Saturniidae",
-    "colorPalette": [
-      "#3DA35D",
-      "#E8772E",
-      "#1F2A1A"
-    ]
-  },
-  {
-    "slug": "helicopter-damselfly",
-    "commonName": "Helicopter Damselfly",
-    "latinName": "Megaloprepus caerulatus",
-    "habitat": "Rainforest canopy gaps of Central and South America",
-    "sizeMm": 190,
-    "sizeKind": "wingspan",
-    "weirdFact": "Hovers like a tiny helicopter to pluck orb-weaver spiders straight out of their webs, then breeds only in rainwater pooled in tree holes.",
-    "whyItsCool": "The largest damselfly alive, a 19cm sliver with wand-tipped wings of blue. It rules tree-hole ponds no bigger than a teacup as apex predator.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-15",
-    "order": "Odonata",
-    "family": "Pseudostigmatidae",
-    "colorPalette": [
-      "#1B2A4A",
-      "#2E6FB7",
-      "#0E1410"
-    ]
-  },
-  {
-    "slug": "corpse-carrying-assassin-bug",
-    "commonName": "Corpse-carrying Assassin Bug",
-    "latinName": "Acanthaspis petax",
-    "habitat": "Dry tropical scrub and forest floors of East Africa and Malaysia",
-    "sizeMm": 12,
-    "sizeKind": "body",
-    "weirdFact": "The nymph glues the drained husks of the ants it kills onto its own back, building a wobbling corpse-pile up to 20 bodies tall.",
-    "whyItsCool": "It wears its victims as a backpack of armour and disguise — a tiny serial killer cloaked in the dead, fooling spiders and rival assassins alike.",
-    "rarity": "uncommon",
-    "discoveredOn": "2026-06-16",
-    "order": "Hemiptera",
-    "family": "Reduviidae",
-    "colorPalette": [
-      "#3A2A1E",
-      "#7A5C3E",
-      "#C7B299"
-    ]
-  },
-  {
-    "slug": "golden-tortoise-beetle",
-    "commonName": "Golden Tortoise Beetle",
-    "latinName": "Charidotella sexpunctata",
-    "habitat": "Bindweed and morning-glory leaves across eastern North America",
-    "sizeMm": 6,
-    "sizeKind": "body",
-    "weirdFact": "It shifts from mirror-bright gold to brick red on demand, pumping fluid through micro-layers under its clear shell like a living mood ring.",
-    "whyItsCool": "A 6mm beetle that wears a transparent tortoise shell and changes colour when you spook it — molten gold one second, dull red the next.",
-    "rarity": "common",
-    "discoveredOn": "2026-06-16",
+    "discoveredOn": "2026-06-19",
     "order": "Coleoptera",
     "family": "Chrysomelidae",
     "colorPalette": [
-      "#D9A300",
-      "#B5471F",
-      "#3E2A12"
-    ]
-  },
-  {
-    "slug": "twisted-wing-parasite",
-    "commonName": "Twisted-wing Parasite",
-    "latinName": "Xenos vesparum",
-    "habitat": "Inside living paper wasps across southern Europe and the Mediterranean",
-    "sizeMm": 4,
-    "sizeKind": "body",
-    "weirdFact": "The female never leaves her wasp host — she's a headless, legless bag of eggs fused into its abdomen, mating through a tiny hatch.",
-    "whyItsCool": "A parasite that hijacks a wasp into a roaming nursery, then sends out fan-winged, raspberry-eyed males that live a few frantic hours to find her.",
-    "rarity": "rare",
-    "discoveredOn": "2026-06-17",
-    "order": "Strepsiptera",
-    "family": "Xenidae",
-    "colorPalette": [
-      "#7A1F2B",
-      "#C9912F",
-      "#3A2A1E"
-    ]
-  },
-  {
-    "slug": "meadow-froghopper",
-    "commonName": "Meadow Froghopper",
-    "latinName": "Philaenus spumarius",
-    "habitat": "Meadows & grasslands across Europe, Asia and North America",
-    "sizeMm": 6,
-    "sizeKind": "body",
-    "weirdFact": "Holds the insect high-jump record: launches at ~400g acceleration and clears 70cm, over 100x its own body length.",
-    "whyItsCool": "A 6mm bug that out-jumps a flea and raises its young inside self-made spit foam. Nature's overpowered pocket athlete.",
-    "rarity": "common",
-    "discoveredOn": "2026-06-18",
-    "order": "Hemiptera",
-    "family": "Aphrophoridae",
-    "colorPalette": [
-      "#8a7d5a",
-      "#c9b079",
-      "#3f3a2c"
+      "#2D5F3F",
+      "#D946EF",
+      "#FBBF24"
     ]
   },
   {
@@ -1406,6 +1368,44 @@
     ]
   },
   {
+    "slug": "leafcutter-ant",
+    "commonName": "Leafcutter Ant",
+    "latinName": "Atta cephalotes",
+    "habitat": "Tropical forests of Central and South America",
+    "sizeMm": 14,
+    "sizeKind": "body",
+    "weirdFact": "Doesn't eat the leaves it cuts. Farms a specific fungus on them inside underground cathedral nests, in a relationship 50 million years old.",
+    "whyItsCool": "Tiny civilizations doing industrial agriculture. The fungus has co-evolved to be unable to live anywhere else. Mutual dependence as a way of life.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-20",
+    "order": "Hymenoptera",
+    "family": "Formicidae",
+    "colorPalette": [
+      "#5C3A21",
+      "#8B6E4E",
+      "#4A7C3F"
+    ]
+  },
+  {
+    "slug": "weaver-ant",
+    "commonName": "Weaver Ant",
+    "latinName": "Oecophylla smaragdina",
+    "habitat": "Tropical canopy across South and Southeast Asia, Australia",
+    "sizeMm": 10,
+    "sizeKind": "body",
+    "weirdFact": "Builds nests by literally sewing leaves together. Workers hold leaf edges in place while others carry larvae back and forth as living glue guns, larvae extruding silk on command.",
+    "whyItsCool": "Used as biological pest control in citrus orchards for over 1,700 years. Possibly the oldest documented human-managed insect agriculture.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-20",
+    "order": "Hymenoptera",
+    "family": "Formicidae",
+    "colorPalette": [
+      "#D4691E",
+      "#F4A75A",
+      "#2D5F3F"
+    ]
+  },
+  {
     "slug": "spiny-devil-katydid",
     "commonName": "Spiny Devil Katydid",
     "latinName": "Panacanthus cuspidatus",
@@ -1441,6 +1441,25 @@
       "#c98a3e",
       "#f1d9a0",
       "#5a3a22"
+    ]
+  },
+  {
+    "slug": "saddleback-caterpillar",
+    "commonName": "Saddleback Caterpillar",
+    "latinName": "Acharia stimulea",
+    "habitat": "Deciduous woodland edges, gardens and ornamental shrubs across eastern North America",
+    "sizeMm": 25,
+    "sizeKind": "body",
+    "weirdFact": "It wears a lime-green 'saddle' on a purple-brown body and fires venom from spines that snap off in your skin.",
+    "whyItsCool": "A caterpillar cosplaying as a tiny saddled horse, yet packing one of North America's most painful stings - gorgeous and don't-touch.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-23",
+    "order": "Lepidoptera",
+    "family": "Limacodidae",
+    "colorPalette": [
+      "#5a7d2a",
+      "#6b3f2a",
+      "#e8e2d0"
     ]
   }
 ]
