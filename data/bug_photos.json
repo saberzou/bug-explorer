@@ -2154,5 +2154,33 @@
       "height": 1026,
       "localPath": "/bugs/photos/saddleback-caterpillar/2.jpg"
     }
+  ],
+  "hummingbird-hawkmoth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Macroglossum_stellatarum_%2844064519252%29.jpg/1280px-Macroglossum_stellatarum_%2844064519252%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Macroglossum_stellatarum_%2844064519252%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Macroglossum_stellatarum_(44064519252).jpg",
+      "credit": "xulescu_g",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "hummingbird hawk-moth Taubenschwänzchen",
+      "fileTitle": "File:Macroglossum stellatarum (44064519252).jpg",
+      "width": 4000,
+      "height": 4500,
+      "localPath": "/bugs/photos/hummingbird-hawkmoth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Macroglossum_stellatarum_%288750838173%29.jpg/1280px-Macroglossum_stellatarum_%288750838173%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Macroglossum_stellatarum_%288750838173%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Macroglossum_stellatarum_(8750838173).jpg",
+      "credit": "Donald Hobern from Copenhagen, Denmark",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Macroglossum stellatarum (Linnaeus, 1758), Hummingbird Hawkmoth, Ebro Delta, Spain, 18 May 2013",
+      "fileTitle": "File:Macroglossum stellatarum (8750838173).jpg",
+      "width": 3600,
+      "height": 2700,
+      "localPath": "/bugs/photos/hummingbird-hawkmoth/2.jpg"
+    }
   ]
 }

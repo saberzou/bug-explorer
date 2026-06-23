@@ -1461,5 +1461,24 @@
       "#6b3f2a",
       "#e8e2d0"
     ]
+  },
+  {
+    "slug": "hummingbird-hawkmoth",
+    "commonName": "Hummingbird Hawk-moth",
+    "latinName": "Macroglossum stellatarum",
+    "habitat": "Open meadows and gardens across Europe, North Africa, and temperate Asia",
+    "sizeMm": 45,
+    "sizeKind": "wingspan",
+    "weirdFact": "It hovers at flowers beating its wings ~80 times a second and even hums, so people swear they saw a tiny hummingbird.",
+    "whyItsCool": "A day-flying moth that convergently reinvented the hummingbird, proving evolution will happily build the same trick twice.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-24",
+    "order": "Lepidoptera",
+    "family": "Sphingidae",
+    "colorPalette": [
+      "#a8742f",
+      "#5c5853",
+      "#d8c49a"
+    ]
   }
 ]
