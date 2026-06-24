@@ -1480,5 +1480,24 @@
       "#5c5853",
       "#d8c49a"
     ]
+  },
+  {
+    "slug": "spotted-lanternfly",
+    "commonName": "Spotted Lanternfly",
+    "latinName": "Lycorma delicatula",
+    "habitat": "Asian forests on tree-of-heaven; now invasive across Korea, Japan and the eastern USA",
+    "sizeMm": 25,
+    "sizeKind": "body",
+    "weirdFact": "Drab grey at rest, it flashes scarlet underwings when it leaps and weeps honeydew that ferments to a wasp-luring vinegar.",
+    "whyItsCool": "A planthopper in two costumes: tweed jacket folded shut, blood-red petticoat mid-jump. Beautiful, and a quarantine nightmare.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-25",
+    "order": "Hemiptera",
+    "family": "Fulgoridae",
+    "colorPalette": [
+      "#cfc6b0",
+      "#c8352c",
+      "#2b2b2b"
+    ]
   }
 ]

@@ -2182,5 +2182,33 @@
       "height": 2700,
       "localPath": "/bugs/photos/hummingbird-hawkmoth/2.jpg"
     }
+  ],
+  "spotted-lanternfly": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/253_365_-_Spotted_Lanternfly_-_Lycorma_delicatula%2C_Gillis_Falls_Park%2C_Woodbine%2C_Maryland%2C_September_10%2C_2023_%2853179563528%29.jpg/1280px-253_365_-_Spotted_Lanternfly_-_Lycorma_delicatula%2C_Gillis_Falls_Park%2C_Woodbine%2C_Maryland%2C_September_10%2C_2023_%2853179563528%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/253_365_-_Spotted_Lanternfly_-_Lycorma_delicatula%2C_Gillis_Falls_Park%2C_Woodbine%2C_Maryland%2C_September_10%2C_2023_%2853179563528%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:253_365_-_Spotted_Lanternfly_-_Lycorma_delicatula,_Gillis_Falls_Park,_Woodbine,_Maryland,_September_10,_2023_(53179563528).jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "253/365 - Spotted Lanternfly - Lycorma delicatula, Gillis Falls Park, Woodbine, Maryland, September 10, 2023",
+      "fileTitle": "File:253 365 - Spotted Lanternfly - Lycorma delicatula, Gillis Falls Park, Woodbine, Maryland, September 10, 2023 (53179563528).jpg",
+      "width": 2260,
+      "height": 2260,
+      "localPath": "/bugs/photos/spotted-lanternfly/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Lycorma_delicatula_-_spotted_lanternfly_larva_on_a_flower-_gwtstl_-_515617448.jpeg/1280px-Lycorma_delicatula_-_spotted_lanternfly_larva_on_a_flower-_gwtstl_-_515617448.jpeg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Lycorma_delicatula_-_spotted_lanternfly_larva_on_a_flower-_gwtstl_-_515617448.jpeg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lycorma_delicatula_-_spotted_lanternfly_larva_on_a_flower-_gwtstl_-_515617448.jpeg",
+      "credit": "gwtstl",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Lycorma delicatula, Butler St, Pittsburgh, PA, US, 2025-06-04 (iNaturalist).",
+      "fileTitle": "File:Lycorma delicatula - spotted lanternfly larva on a flower- gwtstl - 515617448.jpeg",
+      "width": 2048,
+      "height": 1536,
+      "localPath": "/bugs/photos/spotted-lanternfly/2.jpg"
+    }
   ]
 }
