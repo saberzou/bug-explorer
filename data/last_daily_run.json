@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-24",
-  "slug": "hummingbird-hawkmoth",
-  "commonName": "Hummingbird Hawk-moth",
-  "discoveredOn": "2026-06-24",
-  "ranAtUtc": "2026-06-23T17:54:30Z",
+  "date": "2026-06-25",
+  "slug": "spotted-lanternfly",
+  "commonName": null,
+  "discoveredOn": null,
+  "ranAtUtc": "2026-06-24T17:53:21Z",
   "note": null,
-  "bugCount": 78
+  "bugCount": 79
 }
