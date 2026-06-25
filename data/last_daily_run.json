@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-25",
-  "slug": "spotted-lanternfly",
-  "commonName": "Spotted Lanternfly",
-  "discoveredOn": "2026-06-25",
-  "ranAtUtc": "2026-06-24T17:53:52Z",
-  "note": "FINISH tail-abort recovered by Atticus; image+gate already complete, commit+push only",
-  "bugCount": 79
+  "date": "2026-06-26",
+  "slug": "flag-footed-bug",
+  "commonName": "Flag-footed Bug",
+  "discoveredOn": "2026-06-26",
+  "ranAtUtc": "2026-06-25T17:53:18Z",
+  "note": null,
+  "bugCount": 80
 }
