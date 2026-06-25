@@ -1499,5 +1499,24 @@
       "#c8352c",
       "#2b2b2b"
     ]
+  },
+  {
+    "slug": "flag-footed-bug",
+    "commonName": "Flag-footed Bug",
+    "latinName": "Diactor bilineatus",
+    "habitat": "Central and South American rainforests, on passionflower vines",
+    "sizeMm": 19,
+    "sizeKind": "body",
+    "weirdFact": "Its hind legs end in iridescent leaf-shaped flags it waves like semaphore to tell predators it's not worth the chase.",
+    "whyItsCool": "A true bug that grew literal flags on its shins and learned to wave them — billboards in place of armor.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-26",
+    "order": "Hemiptera",
+    "family": "Coreidae",
+    "colorPalette": [
+      "#3f8f4a",
+      "#d9b53a",
+      "#2a2118"
+    ]
   }
 ]

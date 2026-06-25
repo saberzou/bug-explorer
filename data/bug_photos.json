@@ -2210,5 +2210,33 @@
       "height": 1536,
       "localPath": "/bugs/photos/spotted-lanternfly/2.jpg"
     }
+  ],
+  "flag-footed-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Diactor_bilineatus_01.jpg/1280px-Diactor_bilineatus_01.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Diactor_bilineatus_01.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Diactor_bilineatus_01.jpg",
+      "credit": "Nosferattus",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "caption": "Diactor bilineatus",
+      "fileTitle": "File:Diactor bilineatus 01.jpg",
+      "width": 3680,
+      "height": 2760,
+      "localPath": "/bugs/photos/flag-footed-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Diactor_bilineatus_%28Coreidae-_Coreinae-_Anisoscelini%29_feasting_on_maracuja_%28Passiflora_edulis%29_%2829821931941%29.jpg/1280px-Diactor_bilineatus_%28Coreidae-_Coreinae-_Anisoscelini%29_feasting_on_maracuja_%28Passiflora_edulis%29_%2829821931941%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Diactor_bilineatus_%28Coreidae-_Coreinae-_Anisoscelini%29_feasting_on_maracuja_%28Passiflora_edulis%29_%2829821931941%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Diactor_bilineatus_(Coreidae-_Coreinae-_Anisoscelini)_feasting_on_maracuja_(Passiflora_edulis)_(29821931941).jpg",
+      "credit": "yakovlev.alexey from Moscow, Russia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Ecuador, Misahualli, Banana Lodge. Small leaffooted bugs can be confused with nymphs of the assassin bug.",
+      "fileTitle": "File:Diactor bilineatus (Coreidae- Coreinae- Anisoscelini) feasting on maracuja (Passiflora edulis) (29821931941).jpg",
+      "width": 3437,
+      "height": 2291,
+      "localPath": "/bugs/photos/flag-footed-bug/2.jpg"
+    }
   ]
 }
