@@ -1518,5 +1518,24 @@
       "#d9b53a",
       "#2a2118"
     ]
+  },
+  {
+    "slug": "devils-coach-horse",
+    "commonName": "Devil's Coach Horse Beetle",
+    "latinName": "Ocypus olens",
+    "habitat": "European, North African and introduced damp woodland, hedgerows and gardens",
+    "sizeMm": 28,
+    "sizeKind": "body",
+    "weirdFact": "Threatened, it curls its abdomen up like a scorpion and oozes a foul stink from two white glands.",
+    "whyItsCool": "A short-winged rove beetle that bluffs like a scorpion, bites hard, and patrols gardens as a night-shift pest assassin.",
+    "rarity": "common",
+    "discoveredOn": "2026-06-27",
+    "order": "Coleoptera",
+    "family": "Staphylinidae",
+    "colorPalette": [
+      "#1a1a1c",
+      "#3b3b40",
+      "#caa86a"
+    ]
   }
 ]

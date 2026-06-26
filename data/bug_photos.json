@@ -2238,5 +2238,33 @@
       "height": 2291,
       "localPath": "/bugs/photos/flag-footed-bug/2.jpg"
     }
+  ],
+  "devils-coach-horse": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Escarabajo_errante_%28Ocypus_olens%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-06-28%2C_DD_440-475_FS.jpg/1280px-Escarabajo_errante_%28Ocypus_olens%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-06-28%2C_DD_440-475_FS.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Escarabajo_errante_%28Ocypus_olens%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-06-28%2C_DD_440-475_FS.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Escarabajo_errante_(Ocypus_olens),_Hartelholz,_M%C3%BAnich,_Alemania,_2020-06-28,_DD_440-475_FS.jpg",
+      "credit": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Dead specimen of Devil's Coach-horse (Ocypus olens), Hartelholz, Munich, Germany",
+      "fileTitle": "File:Escarabajo errante (Ocypus olens), Hartelholz, Múnich, Alemania, 2020-06-28, DD 440-475 FS.jpg",
+      "width": 7699,
+      "height": 4317,
+      "localPath": "/bugs/photos/devils-coach-horse/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/2019-09-17_%28100%29_Ocypus_olens_%28Schwarzer_Moderk%C3%A4fer%29_at_Bichlh%C3%A4usl%2C_Tiefgrabenrotte%2C_Frankenfels%2C_Austria.jpg/1280px-2019-09-17_%28100%29_Ocypus_olens_%28Schwarzer_Moderk%C3%A4fer%29_at_Bichlh%C3%A4usl%2C_Tiefgrabenrotte%2C_Frankenfels%2C_Austria.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/2019-09-17_%28100%29_Ocypus_olens_%28Schwarzer_Moderk%C3%A4fer%29_at_Bichlh%C3%A4usl%2C_Tiefgrabenrotte%2C_Frankenfels%2C_Austria.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:2019-09-17_(100)_Ocypus_olens_(Schwarzer_Moderk%C3%A4fer)_at_Bichlh%C3%A4usl,_Tiefgrabenrotte,_Frankenfels,_Austria.jpg",
+      "credit": "GT1976",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Ocypus olens (Schwarzer Moderkäfer) at Bichlhäusl, Tiefgrabenrotte, Frankenfels, Austria",
+      "fileTitle": "File:2019-09-17 (100) Ocypus olens (Schwarzer Moderkäfer) at Bichlhäusl, Tiefgrabenrotte, Frankenfels, Austria.jpg",
+      "width": 4032,
+      "height": 3024,
+      "localPath": "/bugs/photos/devils-coach-horse/2.jpg"
+    }
   ]
 }
