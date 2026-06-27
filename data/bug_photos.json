@@ -2266,5 +2266,33 @@
       "height": 3024,
       "localPath": "/bugs/photos/devils-coach-horse/2.jpg"
     }
+  ],
+  "ogre-faced-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Deinopis_spinosa_416462459.jpg/1280px-Deinopis_spinosa_416462459.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Deinopis_spinosa_416462459.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Deinopis_spinosa_416462459.jpg",
+      "credit": "Alex Abair",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Ogre-faced Spider (Deinopis spinosa) in the United States",
+      "fileTitle": "File:Deinopis spinosa 416462459.jpg",
+      "width": 1536,
+      "height": 2048,
+      "localPath": "/bugs/photos/ogre-faced-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/..._spider_--_net-casting_spider_..._Deinopis_sp._%286073678732%29.jpg/1280px-..._spider_--_net-casting_spider_..._Deinopis_sp._%286073678732%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/..._spider_--_net-casting_spider_..._Deinopis_sp._%286073678732%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:..._spider_--_net-casting_spider_..._Deinopis_sp._(6073678732).jpg",
+      "credit": "Dinesh Valke from Thane, India",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "... spider :: net-casting spider ... Deinopis sp.",
+      "fileTitle": "File:... spider -- net-casting spider ... Deinopis sp. (6073678732).jpg",
+      "width": 4000,
+      "height": 3000,
+      "localPath": "/bugs/photos/ogre-faced-spider/2.jpg"
+    }
   ]
 }

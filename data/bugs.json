@@ -1537,5 +1537,24 @@
       "#3b3b40",
       "#caa86a"
     ]
+  },
+  {
+    "slug": "ogre-faced-spider",
+    "commonName": "Ogre-faced Spider",
+    "latinName": "Deinopis spinosa",
+    "habitat": "Subtropical shrublands and forest edges of the southeastern United States",
+    "sizeMm": 16,
+    "sizeKind": "body",
+    "weirdFact": "It holds a stretchy silk net between its front legs and lunges to scoop prey out of the air mid-jump.",
+    "whyItsCool": "A night hunter with the biggest eyes of any spider that also hears bugs through its legs and casts a net like a gladiator.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-28",
+    "order": "Araneae",
+    "family": "Deinopidae",
+    "colorPalette": [
+      "#6b5640",
+      "#bfae8e",
+      "#3a2f25"
+    ]
   }
 ]
