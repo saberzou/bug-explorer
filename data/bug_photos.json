@@ -2294,5 +2294,33 @@
       "height": 3000,
       "localPath": "/bugs/photos/ogre-faced-spider/2.jpg"
     }
+  ],
+  "pelican-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Eriauchenius_workmani_%2810.3897-zookeys.727.20222%29_Figure_8.jpg/1280px-Eriauchenius_workmani_%2810.3897-zookeys.727.20222%29_Figure_8.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Eriauchenius_workmani_%2810.3897-zookeys.727.20222%29_Figure_8.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriauchenius_workmani_(10.3897-zookeys.727.20222)_Figure_8.jpg",
+      "credit": "Wood HM, Scharff N (2018) A review of the Madagascan pelican spiders of the genera Eriauchenius O. Pickard-Cambridge, 1881 and Madagascarchaea gen. n. (Araneae, Archaeidae). ZooKeys 727: 1-96. https://doi.org/10.3897/zookeys.727.20222",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Figure 8; Eriauchenius workmani Pickard-Cambridge, 1881. A male (CASENT9010050) habitus, lateral view B female (CASENT9010045) internal genitalia, dorsal view D–F, L male right pedipalpal bulb (CASENT9010058) image reversed G–I left pedipalpal bulb (CASENT9003490) J–K left pedipa",
+      "fileTitle": "File:Eriauchenius workmani (10.3897-zookeys.727.20222) Figure 8.jpg",
+      "width": 1457,
+      "height": 2047,
+      "localPath": "/bugs/photos/pelican-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Eriauchenius_andriamanelo_%2810.3897-zookeys.727.20222%29_Figure_3.jpg/1280px-Eriauchenius_andriamanelo_%2810.3897-zookeys.727.20222%29_Figure_3.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Eriauchenius_andriamanelo_%2810.3897-zookeys.727.20222%29_Figure_3.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriauchenius_andriamanelo_(10.3897-zookeys.727.20222)_Figure_3.jpg",
+      "credit": "Wood HM, Scharff N (2018) A review of the Madagascan pelican spiders of the genera Eriauchenius O. Pickard-Cambridge, 1881 and Madagascarchaea gen. n. (Araneae, Archaeidae). ZooKeys 727: 1-96. https://doi.org/10.3897/zookeys.727.20222",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Figure 3; Eriauchenius andriamanelo sp. n. A male (CASENT9004508) habitus, lateral view. B, L female (CASENT9003265) internal genitalia, arrow showing sclerotized T-shaped projection: B dorsal view L posterior view D–F male right pedipalpal bulb (CASENT9010070), image reversed C,",
+      "fileTitle": "File:Eriauchenius andriamanelo (10.3897-zookeys.727.20222) Figure 3.jpg",
+      "width": 1457,
+      "height": 2047,
+      "localPath": "/bugs/photos/pelican-spider/2.jpg"
+    }
   ]
 }

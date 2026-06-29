@@ -1556,5 +1556,24 @@
       "#bfae8e",
       "#3a2f25"
     ]
+  },
+  {
+    "slug": "pelican-spider",
+    "commonName": "Pelican Spider",
+    "latinName": "Eriauchenius workmani",
+    "habitat": "Leaf litter and low foliage of Madagascar's humid montane forests",
+    "sizeMm": 4,
+    "sizeKind": "body",
+    "weirdFact": "It hunts only other spiders, following silk draglines and plucking webs to lure victims onto its long fang-tipped jaws.",
+    "whyItsCool": "A living-fossil assassin with a giraffe neck and spear-tipped jaws, holding doomed prey at arm's length like a tiny medieval jouster.",
+    "rarity": "rare",
+    "discoveredOn": "2026-06-29",
+    "order": "Araneae",
+    "family": "Archaeidae",
+    "colorPalette": [
+      "#6e4a2f",
+      "#3a2618",
+      "#d8c39a"
+    ]
   }
 ]
