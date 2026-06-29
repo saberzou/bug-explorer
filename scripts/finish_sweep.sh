@@ -22,6 +22,9 @@ set -uo pipefail
 REPO="/Users/saberzou/OpenClawProjects/axel/bug-explorer"
 cd "$REPO" || { echo "SWEEP ERROR: repo missing $REPO"; exit 1; }
 STATE="data/.daily_prep_state.json"
+LOG="/Users/saberzou/.openclaw/workspace-axel/findings/finish-sweep.log"
+mkdir -p "$(dirname "$LOG")" 2>/dev/null
+log(){ echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" >> "$LOG"; }
 
 # 1. No prep handoff → nothing was prepped, or FINISH already cleaned it after shipping.
 if [ ! -f "$STATE" ]; then echo "Sweep: no prep handoff, nothing stranded."; exit 0; fi
@@ -35,15 +38,15 @@ DISC=$(python3 -c "import json;print(json.load(open('$STATE'))['discovered'])" 2
 # 2. Already pushed? frontier slug live → idempotent no-op.
 git fetch -q origin main 2>/dev/null
 if git show origin/main:data/bugs.json 2>/dev/null | python3 -c "import json,sys;b=json.load(sys.stdin);b=b if isinstance(b,list) else b.get('bugs',b);sys.exit(0 if b and b[-1].get('slug')=='$SLUG' else 1)"; then
-  echo "Sweep: $SLUG already live on origin — nothing to ship."; rm -f "$STATE"; exit 0
+  echo "Sweep: $SLUG already live on origin — nothing to ship."; log "rescued=0 slug=$SLUG note=already-live"; rm -f "$STATE"; exit 0
 fi
 
 # 3. Thumb must already exist — sweep does NOT regenerate.
-if [ ! -f "public/bugs/$SLUG.png" ]; then echo "Sweep: $SLUG prepped but NO thumbnail — FINISH never generated it; needs a real re-run, not a net. Leaving tree intact."; exit 0; fi
+if [ ! -f "public/bugs/$SLUG.png" ]; then echo "Sweep: $SLUG prepped but NO thumbnail — FINISH never generated it; needs a real re-run, not a net. Leaving tree intact."; log "rescued=0 slug=$SLUG PENDING note=no-thumb"; exit 0; fi
 
 # 4. Hard gate must be green.
 rm -f public/bugs/.prompt-$SLUG.txt
-if ! python3 scripts/validate_bug.py --frontier >/dev/null 2>&1; then echo "Sweep: $SLUG gate RED — not auto-shipping. Needs image fix. Tree left intact."; exit 0; fi
+if ! python3 scripts/validate_bug.py --frontier >/dev/null 2>&1; then echo "Sweep: $SLUG gate RED — not auto-shipping. Needs image fix. Tree left intact."; log "rescued=0 slug=$SLUG PENDING note=gate-red"; exit 0; fi
 
 # 5. Stranded + green → finish it.
 git add data/bugs.json public/bugs/$SLUG.png data/bug_photos.json public/bugs/photos/$SLUG/ 2>/dev/null
@@ -51,4 +54,4 @@ git commit -q -m "Add $COMMON ($LATIN) — daily specimen $DISC (finish-sweep)" 
 python3 scripts/write_run_status.py --status ok --slug "$SLUG" --common "$COMMON" --discovered "$DISC" >/dev/null 2>&1
 git add data/last_daily_run.json 2>/dev/null && git commit -q -m "chore: daily-run status $DISC (finish-sweep)" 2>/dev/null
 rm -f "$STATE"
-git pull --rebase -q origin main && git push -q origin main && echo "Sweep: RESCUED $COMMON — committed+pushed." || { echo "Sweep: push failed."; exit 1; }
+git pull --rebase -q origin main && git push -q origin main && { echo "Sweep: RESCUED $COMMON — committed+pushed."; log "rescued=1 slug=$SLUG note=stranded-finish"; } || { echo "Sweep: push failed."; log "rescued=0 slug=$SLUG PENDING note=push-failed"; exit 1; }
