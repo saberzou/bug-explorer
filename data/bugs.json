@@ -1575,5 +1575,24 @@
       "#3a2618",
       "#d8c39a"
     ]
+  },
+  {
+    "slug": "io-moth",
+    "commonName": "Io Moth",
+    "latinName": "Automeris io",
+    "habitat": "Deciduous forests, fields, and suburbs across eastern North America",
+    "sizeMm": 75,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its forewings hide two giant eyespots it flashes to fake a startled owl and scare off birds mid-attack.",
+    "whyItsCool": "A drab yellow moth carrying a pair of bluffing owl-eyes on its back is the best jump-scare evolution ever built.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-06-30",
+    "order": "Lepidoptera",
+    "family": "Saturniidae",
+    "colorPalette": [
+      "#e8b318",
+      "#2f2a6b",
+      "#7a1f1f"
+    ]
   }
 ]

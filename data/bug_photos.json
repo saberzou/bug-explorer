@@ -2322,5 +2322,33 @@
       "height": 2047,
       "localPath": "/bugs/photos/pelican-spider/2.jpg"
     }
+  ],
+  "io-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/-_7746_%E2%80%93_Automeris_io_%E2%80%93_Io_Moth_%2827522144420%29.jpg/1280px--_7746_%E2%80%93_Automeris_io_%E2%80%93_Io_Moth_%2827522144420%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/-_7746_%E2%80%93_Automeris_io_%E2%80%93_Io_Moth_%2827522144420%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:-_7746_%E2%80%93_Automeris_io_%E2%80%93_Io_Moth_(27522144420).jpg",
+      "credit": "Andy Reago & Chrissy McClarren",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Cuivre River State Park Troy Missouri 6/18/16",
+      "fileTitle": "File:- 7746 – Automeris io – Io Moth (27522144420).jpg",
+      "width": 6000,
+      "height": 4000,
+      "localPath": "/bugs/photos/io-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Automeris_io_%28Saturniidae%29_-_003652.jpg/1280px-Automeris_io_%28Saturniidae%29_-_003652.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Automeris_io_%28Saturniidae%29_-_003652.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Automeris_io_(Saturniidae)_-_003652.jpg",
+      "credit": "Juan Carlos Fonseca Mata",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Automeris io (Familia: Saturniidae), polilla amarilla ojos de venado o mariposa io.",
+      "fileTitle": "File:Automeris io (Saturniidae) - 003652.jpg",
+      "width": 4093,
+      "height": 4093,
+      "localPath": "/bugs/photos/io-moth/2.jpg"
+    }
   ]
 }
