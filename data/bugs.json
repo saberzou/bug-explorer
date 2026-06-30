@@ -1594,5 +1594,24 @@
       "#2f2a6b",
       "#7a1f1f"
     ]
+  },
+  {
+    "slug": "bolas-spider",
+    "commonName": "Bolas Spider",
+    "latinName": "Mastophora hutchinsoni",
+    "habitat": "Shrubs and forest edges across temperate and subtropical North America",
+    "sizeMm": 13,
+    "sizeKind": "body",
+    "weirdFact": "She swings a single sticky glue-bead on a silk thread and reels in male moths lured by her fake pheromone perfume.",
+    "whyItsCool": "An angler that fishes the night air with one baited line, perfumed to smell like a moth's date — pure chemical con artistry.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-01",
+    "order": "Araneae",
+    "family": "Araneidae",
+    "colorPalette": [
+      "#d8cfae",
+      "#6b5a3e",
+      "#3a2f22"
+    ]
   }
 ]

@@ -2350,5 +2350,33 @@
       "height": 4093,
       "localPath": "/bugs/photos/io-moth/2.jpg"
     }
+  ],
+  "bolas-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mastophora_hutchinsoni_%E2%99%80_%2848448404301%29.jpg/1280px-Mastophora_hutchinsoni_%E2%99%80_%2848448404301%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Mastophora_hutchinsoni_%E2%99%80_%2848448404301%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Mastophora_hutchinsoni_%E2%99%80_(48448404301).jpg",
+      "credit": "Christina Butler from Georgia, United States",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Mastophora hutchinsoni ♀",
+      "fileTitle": "File:Mastophora hutchinsoni ♀ (48448404301).jpg",
+      "width": 2422,
+      "height": 2244,
+      "localPath": "/bugs/photos/bolas-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Patte_de_Mastophora_m%C3%A2le_1.jpg/1280px-Patte_de_Mastophora_m%C3%A2le_1.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Patte_de_Mastophora_m%C3%A2le_1.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Patte_de_Mastophora_m%C3%A2le_1.jpg",
+      "credit": "LOPEZ André",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Patte antérieure de Mastophora mâle : coupe histologique transversale montrant des glandules intraépidermiques et leurs canalicules excréteurs.",
+      "fileTitle": "File:Patte de Mastophora mâle 1.jpg",
+      "width": 5593,
+      "height": 3663,
+      "localPath": "/bugs/photos/bolas-spider/2.jpg"
+    }
   ]
 }
