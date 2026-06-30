@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-06-30",
-  "slug": "io-moth",
-  "commonName": "Io Moth",
-  "discoveredOn": "2026-06-30",
-  "ranAtUtc": "2026-06-29T18:10:06Z",
+  "date": "2026-07-01",
+  "slug": "bolas-spider",
+  "commonName": "Bolas Spider",
+  "discoveredOn": "2026-07-01",
+  "ranAtUtc": "2026-06-30T17:53:30Z",
   "note": null,
-  "bugCount": 84
+  "bugCount": 85
 }
