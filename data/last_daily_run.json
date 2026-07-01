@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-01",
-  "slug": "bolas-spider",
-  "commonName": "Bolas Spider",
-  "discoveredOn": "2026-07-01",
-  "ranAtUtc": "2026-06-30T17:53:30Z",
+  "date": "2026-07-02",
+  "slug": "jewel-wasp",
+  "commonName": "Emerald Cockroach Wasp",
+  "discoveredOn": "2026-07-02",
+  "ranAtUtc": "2026-07-01T17:55:24Z",
   "note": null,
-  "bugCount": 85
+  "bugCount": 86
 }
