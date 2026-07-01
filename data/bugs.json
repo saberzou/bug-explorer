@@ -1613,5 +1613,24 @@
       "#6b5a3e",
       "#3a2f22"
     ]
+  },
+  {
+    "slug": "jewel-wasp",
+    "commonName": "Emerald Cockroach Wasp",
+    "latinName": "Ampulex compressa",
+    "habitat": "Tropical regions of Africa, South Asia, and the Pacific Islands",
+    "sizeMm": 22,
+    "sizeKind": "body",
+    "weirdFact": "It stings a cockroach's brain to erase its escape reflex, then leads the docile zombie by an antenna into a grave.",
+    "whyItsCool": "A neurosurgeon in metallic-green armor: it hijacks another animal's free will with two precise stings, not brute force.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-02",
+    "order": "Hymenoptera",
+    "family": "Ampulicidae",
+    "colorPalette": [
+      "#0f9d78",
+      "#0a5c46",
+      "#d9663b"
+    ]
   }
 ]

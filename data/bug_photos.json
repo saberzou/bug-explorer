@@ -2378,5 +2378,33 @@
       "height": 3663,
       "localPath": "/bugs/photos/bolas-spider/2.jpg"
     }
+  ],
+  "jewel-wasp": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Ampulex_compressa-brazil-01.jpg/1280px-Ampulex_compressa-brazil-01.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Ampulex_compressa-brazil-01.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ampulex_compressa-brazil-01.jpg",
+      "credit": "Dianakc",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Ampulex compressa",
+      "fileTitle": "File:Ampulex compressa-brazil-01.jpg",
+      "width": 3072,
+      "height": 2304,
+      "localPath": "/bugs/photos/jewel-wasp/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ampulex_compressa-pjt2.jpg/1280px-Ampulex_compressa-pjt2.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ampulex_compressa-pjt2.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ampulex_compressa-pjt2.jpg",
+      "credit": "Pjt56",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Jewel wasp (Ampulex compressa)",
+      "fileTitle": "File:Ampulex compressa-pjt2.jpg",
+      "width": 2644,
+      "height": 2072,
+      "localPath": "/bugs/photos/jewel-wasp/2.jpg"
+    }
   ]
 }
