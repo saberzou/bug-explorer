@@ -1632,5 +1632,24 @@
       "#0a5c46",
       "#d9663b"
     ]
+  },
+  {
+    "slug": "giant-burrowing-cockroach",
+    "commonName": "Giant Burrowing Cockroach",
+    "latinName": "Macropanesthia rhinoceros",
+    "habitat": "Tropical and subtropical Queensland woodlands, in deep soil burrows",
+    "sizeMm": 80,
+    "sizeKind": "body",
+    "weirdFact": "The world's heaviest roach: 33g, wingless, digs a metre-deep burrow and can live a decade hauling eucalyptus leaves down to eat.",
+    "whyItsCool": "A gentle, wingless tank that raises its young underground for years — the cockroach that quietly became a devoted homebody.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-03",
+    "order": "Blattodea",
+    "family": "Blaberidae",
+    "colorPalette": [
+      "#5a3a24",
+      "#8a5a30",
+      "#d8c4a0"
+    ]
   }
 ]

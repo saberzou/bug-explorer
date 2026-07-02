@@ -2406,5 +2406,33 @@
       "height": 2072,
       "localPath": "/bugs/photos/jewel-wasp/2.jpg"
     }
+  ],
+  "giant-burrowing-cockroach": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Macropanesthia_rhinoceros_in_captivity.jpg/1280px-Macropanesthia_rhinoceros_in_captivity.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Macropanesthia_rhinoceros_in_captivity.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Macropanesthia_rhinoceros_in_captivity.jpg",
+      "credit": "Urasimaru",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Macropanesthia rhinoceros in captivity",
+      "fileTitle": "File:Macropanesthia rhinoceros in captivity.jpg",
+      "width": 2048,
+      "height": 1536,
+      "localPath": "/bugs/photos/giant-burrowing-cockroach/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/MP_-_Macropanesthia_rhinoceros_1.jpg/1280px-MP_-_Macropanesthia_rhinoceros_1.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/MP_-_Macropanesthia_rhinoceros_1.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:MP_-_Macropanesthia_rhinoceros_1.jpg",
+      "credit": "Mark Pellegrini (Raul654)",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "caption": "Macropanesthia rhinoceros Pictures taken by myself at the Audubon Insectarium",
+      "fileTitle": "File:MP - Macropanesthia rhinoceros 1.jpg",
+      "width": 1512,
+      "height": 2016,
+      "localPath": "/bugs/photos/giant-burrowing-cockroach/2.jpg"
+    }
   ]
 }
