@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-02",
-  "slug": "jewel-wasp",
-  "commonName": "Emerald Cockroach Wasp",
-  "discoveredOn": "2026-07-02",
-  "ranAtUtc": "2026-07-01T17:55:24Z",
+  "date": "2026-07-03",
+  "slug": "giant-burrowing-cockroach",
+  "commonName": "Giant Burrowing Cockroach",
+  "discoveredOn": "2026-07-03",
+  "ranAtUtc": "2026-07-02T17:57:05Z",
   "note": null,
-  "bugCount": 86
+  "bugCount": 87
 }
