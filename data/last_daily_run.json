@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-03",
-  "slug": "giant-burrowing-cockroach",
-  "commonName": "Giant Burrowing Cockroach",
-  "discoveredOn": "2026-07-03",
-  "ranAtUtc": "2026-07-02T17:57:05Z",
+  "date": "2026-07-04",
+  "slug": "wallaces-giant-bee",
+  "commonName": "Wallace's Giant Bee",
+  "discoveredOn": "2026-07-04",
+  "ranAtUtc": "2026-07-03T17:52:05Z",
   "note": null,
-  "bugCount": 87
+  "bugCount": 88
 }
