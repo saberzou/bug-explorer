@@ -1651,5 +1651,24 @@
       "#8a5a30",
       "#d8c4a0"
     ]
+  },
+  {
+    "slug": "wallaces-giant-bee",
+    "commonName": "Wallace's Giant Bee",
+    "latinName": "Megachile pluto",
+    "habitat": "Lowland rainforest of Indonesia's North Moluccas, nesting inside active tree-termite mounds",
+    "sizeMm": 38,
+    "sizeKind": "body",
+    "weirdFact": "The world's largest bee builds its nest inside living termite mounds, using giant jaws to gather resin as mortar.",
+    "whyItsCool": "A bee four times a honeybee's size, presumed extinct for decades then rediscovered alive in 2019 — a giant hiding in plain sight.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-04",
+    "order": "Hymenoptera",
+    "family": "Megachilidae",
+    "colorPalette": [
+      "#1a1410",
+      "#c9962e",
+      "#6b4a2b"
+    ]
   }
 ]

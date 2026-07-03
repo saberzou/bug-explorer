@@ -2434,5 +2434,33 @@
       "height": 2016,
       "localPath": "/bugs/photos/giant-burrowing-cockroach/2.jpg"
     }
+  ],
+  "wallaces-giant-bee": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Megachile_pluto_-_dorsal_view_-_Naturalis_Biodiversity_Center_%281991%29.jpg/1280px-Megachile_pluto_-_dorsal_view_-_Naturalis_Biodiversity_Center_%281991%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Megachile_pluto_-_dorsal_view_-_Naturalis_Biodiversity_Center_%281991%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Megachile_pluto_-_dorsal_view_-_Naturalis_Biodiversity_Center_(1991).jpg",
+      "credit": "Naturalis Biodiversity Center",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Megachile pluto (adult, dorsal view) : Preserved specimen number RMNH.INS.108876 from Naturalis Biodiversity Center - Zoology and Geology catalogues (nl) collected in Kampong Pasir Putih Halmahera on 1991-02-28 by Desmier de Chenon, R.",
+      "fileTitle": "File:Megachile pluto - dorsal view - Naturalis Biodiversity Center (1991).jpg",
+      "width": 6016,
+      "height": 4016,
+      "localPath": "/bugs/photos/wallaces-giant-bee/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Megachile_pluto_%28LACM_ENT_463926%29.jpeg/1280px-Megachile_pluto_%28LACM_ENT_463926%29.jpeg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Megachile_pluto_%28LACM_ENT_463926%29.jpeg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Megachile_pluto_(LACM_ENT_463926).jpeg",
+      "credit": "Natural History Museum of Los Angeles County",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Megachile pluto Smith, 1861 : dorsal habitus of a preserved specimen collected in June 20th 2008, in Pulau Obi, south coast Tapaya (Molluca Island, Indonesia) - number collection LACM ENT 463926.",
+      "fileTitle": "File:Megachile pluto (LACM ENT 463926).jpeg",
+      "width": 1600,
+      "height": 1200,
+      "localPath": "/bugs/photos/wallaces-giant-bee/2.jpg"
+    }
   ]
 }
