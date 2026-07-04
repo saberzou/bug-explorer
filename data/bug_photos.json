@@ -2462,5 +2462,33 @@
       "height": 1200,
       "localPath": "/bugs/photos/wallaces-giant-bee/2.jpg"
     }
+  ],
+  "spinybacked-orbweaver": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Gasteracantha_cancriformis_%281%29.jpg/1280px-Gasteracantha_cancriformis_%281%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Gasteracantha_cancriformis_%281%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gasteracantha_cancriformis_(1).jpg",
+      "credit": "Philipp Weigell",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "caption": "Please report references to spam@lagrada.de.",
+      "fileTitle": "File:Gasteracantha cancriformis (1).jpg",
+      "width": 3264,
+      "height": 2448,
+      "localPath": "/bugs/photos/spinybacked-orbweaver/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gasteracantha_cancriformis_%28Spinybacked_orbweaver%29_-_ventral_view.jpg/1280px-Gasteracantha_cancriformis_%28Spinybacked_orbweaver%29_-_ventral_view.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Gasteracantha_cancriformis_%28Spinybacked_orbweaver%29_-_ventral_view.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gasteracantha_cancriformis_(Spinybacked_orbweaver)_-_ventral_view.jpg",
+      "credit": "Josholith",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Gasteracantha cancriformis (Spinybacked orbweaver) - ventral view",
+      "fileTitle": "File:Gasteracantha cancriformis (Spinybacked orbweaver) - ventral view.jpg",
+      "width": 3024,
+      "height": 4032,
+      "localPath": "/bugs/photos/spinybacked-orbweaver/2.jpg"
+    }
   ]
 }

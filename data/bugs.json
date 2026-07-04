@@ -1670,5 +1670,24 @@
       "#c9962e",
       "#6b4a2b"
     ]
+  },
+  {
+    "slug": "spinybacked-orbweaver",
+    "commonName": "Spinybacked Orbweaver",
+    "latinName": "Gasteracantha cancriformis",
+    "habitat": "Woodland edges and shrubby gardens across the southern US, Central America and the Caribbean",
+    "sizeMm": 9,
+    "sizeKind": "body",
+    "weirdFact": "Females wear a hard crab-shaped shell studded with six blood-red spikes and are wider than they are long.",
+    "whyItsCool": "A spider that traded soft-and-squishy for tiny armored spaceship, then decorated its web with silk warning flags.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-05",
+    "order": "Araneae",
+    "family": "Araneidae",
+    "colorPalette": [
+      "#f2ede2",
+      "#c9202a",
+      "#2b2b2b"
+    ]
   }
 ]
