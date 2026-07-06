@@ -441,6 +441,13 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
             boxShadow: "inset 0 0 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(251,191,36,0.18)",
           }}
         >
+          {/* animated border beam that travels around the dish rim */}
+          <span
+            aria-hidden
+            className={`pointer-events-none absolute inset-0 rounded-full bx-beam ${
+              phase === "breeding" ? "bx-beam--active" : ""
+            }`}
+          />
           {phase !== "done" && phase !== "breeding" && (
             <>
               <ParentSlot ref={slotRefs[0]} bug={parents[0] ? bySlug.current.get(parents[0]) : undefined} side="left" onRemove={() => removeParent(0)} />
@@ -605,6 +612,45 @@ export default function LabView({ bugs }: { bugs: LabBug[] }) {
 
       <style>{`
         @keyframes fadein { from { opacity: 0; transform: scale(0.7) } to { opacity: 1; transform: scale(1) } }
+
+        @property --bx-beam-angle {
+          syntax: "<angle>";
+          inherits: false;
+          initial-value: 0deg;
+        }
+        @keyframes bx-beam-spin { to { --bx-beam-angle: 360deg; } }
+
+        /* The beam is a conic gradient (transparent -> bright amber arc) masked
+           down to a thin ring so only the rim glows. Rotating the angle sends
+           the bright arc traveling around the circle. */
+        .bx-beam {
+          --bx-beam-thickness: 2px;
+          background: conic-gradient(
+            from var(--bx-beam-angle),
+            transparent 0deg,
+            transparent 300deg,
+            rgba(251,191,36,0.35) 330deg,
+            rgba(255,244,214,1) 352deg,
+            rgba(251,191,36,0.35) 360deg
+          );
+          -webkit-mask:
+            radial-gradient(farthest-side, transparent calc(100% - var(--bx-beam-thickness)), #000 calc(100% - var(--bx-beam-thickness)));
+          mask:
+            radial-gradient(farthest-side, transparent calc(100% - var(--bx-beam-thickness)), #000 calc(100% - var(--bx-beam-thickness)));
+          animation: bx-beam-spin 5s linear infinite;
+          opacity: 0.85;
+          filter: drop-shadow(0 0 4px rgba(251,191,36,0.55));
+        }
+        /* During breeding the beam speeds up, thickens, and burns brighter. */
+        .bx-beam--active {
+          --bx-beam-thickness: 3px;
+          animation-duration: 1.6s;
+          opacity: 1;
+          filter: drop-shadow(0 0 8px rgba(251,191,36,0.9));
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bx-beam { animation: none; opacity: 0.5; }
+        }
       `}</style>
     </main>
   );
