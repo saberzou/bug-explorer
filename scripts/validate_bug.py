@@ -54,6 +54,13 @@ SAFE_RADIUS_FRAC = 0.94   # subject must stay within this fraction of the circle
 EDGE_SUBJECT_TOL = 0.004  # fraction of pixels allowed beyond the safe radius (noise)
 PLATE_CORNER_STDDEV_MAX = 16.0  # corners at most this noisy => "cream plate" layout
 PLATE_MIN_LUMA = 150            # ...and at least this bright => plate (vs. photo)
+# Vignette / drawn-circular-border guard: on a flat cream plate the four corners
+# (the most "outside the inscribed circle" regions) are as bright as the plate
+# fill sampled at the frame's edge-midpoints. A drawn ring or vignette darkens
+# the corners while leaving low corner *noise*, so it slips past the stddev
+# check above. If the corners are meaningfully darker than the edge-midpoint
+# plate, treat it as a vignette/border artifact and fail.
+VIGNETTE_CORNER_DARKEN_MAX = 14.0  # max (edge-mid luma - corner luma) before it's a vignette
 MIN_COVERAGE = 0.04       # below this the generation is effectively blank/failed
 MAX_COVERAGE = 0.85       # above this the subject is bleeding to the edge
 
@@ -255,6 +262,19 @@ def validate_image(slug: str, rep: Report) -> None:
     corner_stddev = max(math.sqrt(v) for v in var)
     is_plate = corner_stddev <= PLATE_CORNER_STDDEV_MAX and luma(bg) >= PLATE_MIN_LUMA
 
+    # Edge-midpoint plate sample (top/bottom/left/right of the frame, centered).
+    # These sit outside the inscribed circle like the corners, but a corner
+    # vignette / drawn ring darkens the *corners* more than these mid-edges.
+    edge_pixels = []
+    half = k // 2
+    mid = n // 2
+    for (cx, cy) in [(mid - half, 0), (mid - half, n - k), (0, mid - half), (n - k, mid - half)]:
+        for y in range(cy, cy + k):
+            for x in range(cx, cx + k):
+                edge_pixels.append(px[x, y])
+    edge_bg = tuple(sum(c[i] for c in edge_pixels) / len(edge_pixels) for i in range(3))
+    corner_darken = luma(edge_bg) - luma(bg)  # >0 means corners darker than mid-edges
+
     center = (n - 1) / 2.0
     radius = n / 2.0
     safe_r = radius * SAFE_RADIUS_FRAC
@@ -287,6 +307,16 @@ def validate_image(slug: str, rep: Report) -> None:
         return
 
     # Plate-style checks ----------------------------------------------------
+    # Vignette / drawn circular border: corners darker than the plate's mid-edges.
+    if corner_darken > VIGNETTE_CORNER_DARKEN_MAX:
+        rep.err(
+            f"vignette / drawn circular border detected: plate corners are "
+            f"{corner_darken:.0f} luma darker than the frame mid-edges "
+            f"(max {VIGNETTE_CORNER_DARKEN_MAX:.0f}). The background must be a flat "
+            f"even cream to every corner — no ring, no vignette, no darker corners. "
+            f"Re-generate (gemini-2.5-flash-image avoids this bias)."
+        )
+
     if coverage < MIN_COVERAGE:
         rep.err(f"subject too small/empty: fills {coverage:.0%} of the circle "
                 f"(want {MIN_COVERAGE:.0%}-{MAX_COVERAGE:.0%})")

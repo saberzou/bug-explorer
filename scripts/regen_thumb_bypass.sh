@@ -38,9 +38,15 @@ PROMPT_FILE="${1:-}"
 OUT_PNG="${2:-}"
 ENV_FILE="/Users/saberzou/.openclaw/.env"
 HOST="generativelanguage.googleapis.com"
-# Model order: nano-banana pro preview first (matches the tool's Google default),
-# then a stable fallback.
-MODELS=("gemini-3-pro-image-preview" "gemini-2.5-flash-image")
+# Model order: gemini-2.5-flash-image FIRST. For this vintage-plate style,
+# gemini-3-pro-image-preview has a strong circular-mount / vignette bias
+# (renders a darker-cornered ring even with explicit "no vignette" prompting;
+# confirmed 2026-07-09, Atticus QA). flash-image renders a clean flat cream
+# square. pro-image stays as a fallback in case flash is unavailable. The gate
+# now also fails vignettes (validate_bug.py corner-darken check), so a bad
+# pro-image render would be caught before ship, but flash-first avoids the
+# wasted round-trip.
+MODELS=("gemini-2.5-flash-image" "gemini-3-pro-image-preview")
 
 err() { echo "regen-bypass: $*" >&2; }
 
