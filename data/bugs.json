@@ -1708,5 +1708,24 @@
       "#c9d6d3",
       "#3f4a44"
     ]
+  },
+  {
+    "slug": "feather-horned-beetle",
+    "commonName": "Feather-horned Beetle",
+    "latinName": "Rhipicera femorata",
+    "habitat": "Eucalypt woodland and scrub across southern Australia, on foliage in late summer",
+    "sizeMm": 20,
+    "sizeKind": "body",
+    "weirdFact": "Each plumed male antenna carries about 30,000 scent receptors to sniff out a female; hers have barely 100.",
+    "whyItsCool": "It wears two feathery radar dishes on its head and its babies likely hunt buried cicadas — absurd yet fully real.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-09",
+    "order": "Coleoptera",
+    "family": "Rhipiceridae",
+    "colorPalette": [
+      "#3b2f2a",
+      "#8a6d3b",
+      "#d9c7a3"
+    ]
   }
 ]

@@ -2518,5 +2518,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/diving-bell-spider/2.jpg"
     }
+  ],
+  "feather-horned-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/76/Rhipicera_femorata_-_Feb_2022_-_Werrington_lake_reserve.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Rhipicera_femorata_-_Feb_2022_-_Werrington_lake_reserve.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rhipicera_femorata_-_Feb_2022_-_Werrington_lake_reserve.jpg",
+      "credit": "Xyxyzyz",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Rhicpicera femorata. See page 298 of this article here [1]",
+      "fileTitle": "File:Rhipicera femorata - Feb 2022 - Werrington lake reserve.jpg",
+      "width": 729,
+      "height": 575,
+      "localPath": "/bugs/photos/feather-horned-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/00/Rhicpicera_femorata_-_feather_horned_Beetle_-_Feb_2022_1_of_2.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Rhicpicera_femorata_-_feather_horned_Beetle_-_Feb_2022_1_of_2.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rhicpicera_femorata_-_feather_horned_Beetle_-_Feb_2022_1_of_2.jpg",
+      "credit": "Xyxyzyz",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Rhipicera femorata, feather-horned beetle, Werrington Lake Reserve, Feb 2022",
+      "fileTitle": "File:Rhicpicera femorata - feather horned Beetle - Feb 2022 1 of 2.jpg",
+      "width": 1200,
+      "height": 1600,
+      "localPath": "/bugs/photos/feather-horned-beetle/2.jpg"
+    }
   ]
 }
