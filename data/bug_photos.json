@@ -2490,5 +2490,33 @@
       "height": 4032,
       "localPath": "/bugs/photos/spinybacked-orbweaver/2.jpg"
     }
+  ],
+  "diving-bell-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Argyroneta_aquatica_-_male_and_female.png/1280px-Argyroneta_aquatica_-_male_and_female.png",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Argyroneta_aquatica_-_male_and_female.png",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Argyroneta_aquatica_-_male_and_female.png",
+      "credit": "Leon Becker",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Argyroneta aquatica - male and female Becker, Leon. 1882. Les arachnides de Belgique t.12:ptie2-3 [planches] (1896), Bruxelles : F. Hayez. Extracted from Smithsonian Libraries and Archives image - Plate XII Image ID: SIL-39088007472699_0175",
+      "fileTitle": "File:Argyroneta aquatica - male and female.png",
+      "width": 2341,
+      "height": 1621,
+      "localPath": "/bugs/photos/diving-bell-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Argyroneta_aquatica_183275069.jpg/1280px-Argyroneta_aquatica_183275069.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Argyroneta_aquatica_183275069.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Argyroneta_aquatica_183275069.jpg",
+      "credit": "Martin Scheuch",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "European Water Spider (Argyroneta aquatica)",
+      "fileTitle": "File:Argyroneta aquatica 183275069.jpg",
+      "width": 1536,
+      "height": 2048,
+      "localPath": "/bugs/photos/diving-bell-spider/2.jpg"
+    }
   ]
 }

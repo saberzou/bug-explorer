@@ -1689,5 +1689,24 @@
       "#c9202a",
       "#2b2b2b"
     ]
+  },
+  {
+    "slug": "diving-bell-spider",
+    "commonName": "Diving Bell Spider",
+    "latinName": "Argyroneta aquatica",
+    "habitat": "Weedy freshwater ponds, marshes and slow streams across Europe and Asia",
+    "sizeMm": 12,
+    "sizeKind": "body",
+    "weirdFact": "The only spider that lives its whole life underwater, breathing from a silk air-bell it refills at the surface.",
+    "whyItsCool": "It scuba-dives on purpose: a silvery bubble strapped to its belly is its lung, its larder, and its nursery.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-08",
+    "order": "Araneae",
+    "family": "Dictynidae",
+    "colorPalette": [
+      "#7d6a4f",
+      "#c9d6d3",
+      "#3f4a44"
+    ]
   }
 ]
