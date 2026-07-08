@@ -34,7 +34,7 @@ mkdir -p "$(dirname "$LOG")" 2>/dev/null
 log(){ echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" >> "$LOG"; }
 
 # No leftover state -> nothing to protect, normal clear can proceed.
-if [ ! -f "$STATE" ]; then echo "prep-guard: no leftover state, clean start."; exit 0; fi
+if [ ! -f "$STATE" ]; then echo "prep-guard: no leftover state, clean start."; log "CLEAN-START note=no-leftover-state"; exit 0; fi
 
 SLUG=$(python3 -c "import json;print(json.load(open('$STATE')).get('slug',''))" 2>/dev/null)
 DISC=$(python3 -c "import json;print(json.load(open('$STATE')).get('discovered',''))" 2>/dev/null)
