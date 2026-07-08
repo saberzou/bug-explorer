@@ -14,7 +14,7 @@ def main():
     except Exception as e:
         print('parse-fail', e); return 1
     if 'error' in d:
-        e = d['error']; print('api-error', e.get('code'), e.get('status'), e.get('message','')[:120]); return 1
+        e = d['error']; print('api-error', e.get('code'), e.get('status'), e.get('message', '')[:120]); return 1
     raw = None
     for cand in d.get('candidates', []):
         for part in cand.get('content', {}).get('parts', []):
@@ -28,8 +28,22 @@ def main():
         Image.open(io.BytesIO(raw)).verify()
     except Exception as e:
         print('not-a-valid-image', e); return 1
-    open(out, 'wb').write(raw)
-    print('wrote', len(raw), 'bytes')
+    # Gemini generateContent returns JPEG bytes. If the caller asked for a .png
+    # path, RE-ENCODE to real PNG so the extension isn't a lie (strict PNG
+    # loaders choked on JPEG-in-.png; 2026-07-09). For any other extension keep
+    # the original bytes. verify() consumes the stream, so reopen a fresh one.
+    try:
+        if out.lower().endswith('.png'):
+            im = Image.open(io.BytesIO(raw))
+            if im.mode not in ('RGB', 'RGBA'):
+                im = im.convert('RGB')
+            im.save(out, format='PNG')
+            print('wrote real PNG (re-encoded from', len(raw), 'src bytes)')
+        else:
+            open(out, 'wb').write(raw)
+            print('wrote', len(raw), 'bytes')
+    except Exception as e:
+        print('encode-fail', e); return 1
     return 0
 
 if __name__ == '__main__':
