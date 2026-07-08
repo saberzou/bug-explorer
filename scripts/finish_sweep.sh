@@ -53,5 +53,13 @@ git add data/bugs.json public/bugs/$SLUG.png data/bug_photos.json public/bugs/ph
 git commit -q -m "Add $COMMON ($LATIN) — daily specimen $DISC (finish-sweep)" || { echo "Sweep: nothing staged, already committed; just pushing."; }
 python3 scripts/write_run_status.py --status ok --slug "$SLUG" --common "$COMMON" --discovered "$DISC" >/dev/null 2>&1
 git add data/last_daily_run.json 2>/dev/null && git commit -q -m "chore: daily-run status $DISC (finish-sweep)" 2>/dev/null
-rm -f "$STATE"
-git pull --rebase -q origin main && git push -q origin main && { echo "Sweep: RESCUED $COMMON — committed+pushed."; log "rescued=1 slug=$SLUG note=stranded-finish"; } || { echo "Sweep: push failed."; log "rescued=0 slug=$SLUG PENDING note=push-failed"; exit 1; }
+# ⚠️ Do NOT delete the prep state until the push actually SUCCEEDS. Deleting it
+# before a confirmed push is the exact footgun that stranded state on a failed
+# push and made prep_guard's snapshot-before-rescue necessary (2026-07-08). Gate
+# the delete on a real push so the net never drops an un-shipped specimen.
+if git pull --rebase -q origin main && git push -q origin main; then
+  rm -f "$STATE"
+  echo "Sweep: RESCUED $COMMON — committed+pushed."; log "rescued=1 slug=$SLUG note=stranded-finish"
+else
+  echo "Sweep: push failed — leaving prep state intact so the specimen is not lost."; log "rescued=0 slug=$SLUG PENDING note=push-failed-state-kept"; exit 1
+fi
