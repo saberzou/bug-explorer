@@ -45,3 +45,7 @@ next-env.d.ts
 scripts/__pycache__/
 # daily-curation two-turn handoff state (PREP cron writes, FINISH cron reads; never commit)
 data/.daily_prep_state.json
+
+# prep-guard rescue snapshots for un-shipped specimens (recovery artifacts, not site data)
+data/unshipped-*.json
+data/unshipped-*.prompt.txt
