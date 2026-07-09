@@ -1727,5 +1727,24 @@
       "#8a6d3b",
       "#d9c7a3"
     ]
+  },
+  {
+    "slug": "peanut-headed-lanternfly",
+    "commonName": "Peanut-headed Lanternfly",
+    "latinName": "Fulgora laternaria",
+    "habitat": "Central and South American tropical rainforests",
+    "sizeMm": 90,
+    "sizeKind": "body",
+    "weirdFact": "Its bulbous head is a hollow fake shaped like a snake's, complete with painted false eyes to scare predators.",
+    "whyItsCool": "A planthopper that wears a whole reptile skull as a hat, then flashes owl-eye hindwings if the snake bluff fails.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-10",
+    "order": "Hemiptera",
+    "family": "Fulgoridae",
+    "colorPalette": [
+      "#8a7a4e",
+      "#3f3a2c",
+      "#c9a24b"
+    ]
   }
 ]

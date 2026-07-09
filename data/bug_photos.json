@@ -2546,5 +2546,33 @@
       "height": 1600,
       "localPath": "/bugs/photos/feather-horned-beetle/2.jpg"
     }
+  ],
+  "peanut-headed-lanternfly": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flickr_-_ggallice_-_Fulgora_laternaria.jpg/1280px-Flickr_-_ggallice_-_Fulgora_laternaria.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Flickr_-_ggallice_-_Fulgora_laternaria.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Fulgora_laternaria.jpg",
+      "credit": "Geoff Gallice from Gainesville, FL, USA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "eastern Ecuador",
+      "fileTitle": "File:Flickr - ggallice - Fulgora laternaria.jpg",
+      "width": 3672,
+      "height": 2448,
+      "localPath": "/bugs/photos/peanut-headed-lanternfly/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Fulgora_laternaria_TPopp.jpg/1280px-Fulgora_laternaria_TPopp.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Fulgora_laternaria_TPopp.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Fulgora_laternaria_TPopp.jpg",
+      "credit": "Tanja Popp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Fulgora laternaria (Linné, 1758) Herkunft: Peru, Panguana",
+      "fileTitle": "File:Fulgora laternaria TPopp.jpg",
+      "width": 3747,
+      "height": 4307,
+      "localPath": "/bugs/photos/peanut-headed-lanternfly/2.jpg"
+    }
   ]
 }
