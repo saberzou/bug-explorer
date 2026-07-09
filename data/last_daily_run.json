@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-09",
-  "slug": "feather-horned-beetle",
-  "commonName": "Feather-horned Beetle",
-  "discoveredOn": "2026-07-09",
-  "ranAtUtc": "2026-07-08T17:55:27Z",
+  "date": "2026-07-10",
+  "slug": "peanut-headed-lanternfly",
+  "commonName": "Peanut-headed Lanternfly",
+  "discoveredOn": "2026-07-10",
+  "ranAtUtc": "2026-07-09T18:25:15Z",
   "note": null,
-  "bugCount": 91
+  "bugCount": 92
 }
