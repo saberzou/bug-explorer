@@ -1,10 +1,10 @@
 {
-  "status": "ok",
-  "date": "2026-07-10",
-  "slug": "peanut-headed-lanternfly",
-  "commonName": "Peanut-headed Lanternfly",
-  "discoveredOn": "2026-07-10",
-  "ranAtUtc": "2026-07-09T18:25:15Z",
-  "note": null,
+  "status": "blocked",
+  "date": "2026-07-11",
+  "slug": null,
+  "commonName": null,
+  "discoveredOn": null,
+  "ranAtUtc": "2026-07-10T17:53:37Z",
+  "note": "image provider failed both attempts: gpt-image-1.5 endpoint blocked (resolves to private/internal IP)",
   "bugCount": 92
 }
