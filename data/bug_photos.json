@@ -2602,5 +2602,33 @@
       "height": 1625,
       "localPath": "/bugs/photos/thorn-bug/2.jpg"
     }
+  ],
+  "panda-ant": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Euspinolia_militaris%2C_hormiga_panda_-_Flickr_-_Pato_Novoa.jpg/1280px-Euspinolia_militaris%2C_hormiga_panda_-_Flickr_-_Pato_Novoa.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Euspinolia_militaris%2C_hormiga_panda_-_Flickr_-_Pato_Novoa.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Euspinolia_militaris,_hormiga_panda_-_Flickr_-_Pato_Novoa.jpg",
+      "credit": "Pato Novoa from Valparaíso, Chile",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "En propiedad es una avispa sin alas. Quebrada El Medano, Paposo",
+      "fileTitle": "File:Euspinolia militaris, hormiga panda - Flickr - Pato Novoa.jpg",
+      "width": 2048,
+      "height": 1366,
+      "localPath": "/bugs/photos/panda-ant/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Hormiga_panda.png",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Hormiga_panda.png",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hormiga_panda.png",
+      "credit": "Chris Lukhaup",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Euspinolia militaris, the panda ant, a wingless velvet-ant wasp from Chile",
+      "fileTitle": "File:Hormiga panda.png",
+      "width": 500,
+      "height": 334,
+      "localPath": "/bugs/photos/panda-ant/2.jpg"
+    }
   ]
 }

@@ -1765,5 +1765,24 @@
       "#c2452f",
       "#e8ddbf"
     ]
+  },
+  {
+    "slug": "panda-ant",
+    "commonName": "Panda Ant",
+    "latinName": "Euspinolia militaris",
+    "habitat": "Sclerophyll forests of Chile and Argentina",
+    "sizeMm": 8,
+    "sizeKind": "body",
+    "weirdFact": "It isn't an ant at all — it's a wingless female wasp whose panda coloring warns of a truly ferocious sting.",
+    "whyItsCool": "A fuzzy black-and-white wasp cosplaying a panda while packing one of the most agonizing stings in the forest.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-12",
+    "order": "Hymenoptera",
+    "family": "Mutillidae",
+    "colorPalette": [
+      "#1a1a1a",
+      "#f4f1ea",
+      "#8a8f96"
+    ]
   }
 ]
