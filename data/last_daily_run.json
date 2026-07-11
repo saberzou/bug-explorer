@@ -1,10 +1,10 @@
 {
-  "status": "blocked",
+  "status": "ok",
   "date": "2026-07-11",
-  "slug": null,
-  "commonName": null,
-  "discoveredOn": null,
-  "ranAtUtc": "2026-07-10T17:53:37Z",
-  "note": "image provider failed both attempts: gpt-image-1.5 endpoint blocked (resolves to private/internal IP)",
-  "bugCount": 92
+  "slug": "thorn-bug",
+  "commonName": "Thorn Bug",
+  "discoveredOn": "2026-07-11",
+  "ranAtUtc": "2026-07-11T04:08:15Z",
+  "note": null,
+  "bugCount": 93
 }
