@@ -1,10 +1,10 @@
 {
-  "status": "blocked",
+  "status": "ok",
   "date": "2026-07-12",
-  "slug": null,
-  "commonName": null,
-  "discoveredOn": null,
-  "ranAtUtc": "2026-07-11T17:53:28Z",
-  "note": "image provider gpt-image-1.5 blocked: resolves to private/internal IP (routing); both attempts failed, no fallback",
-  "bugCount": 93
+  "slug": "panda-ant",
+  "commonName": "Panda Ant",
+  "discoveredOn": "2026-07-12",
+  "ranAtUtc": "2026-07-11T18:42:08Z",
+  "note": null,
+  "bugCount": 94
 }
