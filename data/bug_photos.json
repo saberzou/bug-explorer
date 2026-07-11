@@ -2574,5 +2574,33 @@
       "height": 4307,
       "localPath": "/bugs/photos/peanut-headed-lanternfly/2.jpg"
     }
+  ],
+  "thorn-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Thorn_Treehopper_-_Umbonia_crassicornis%2C_Oasis_Visitor_Center%2C_Big_Cypress_National_Preserve%2C_Ochopee%2C_Florida.jpg/1280px-Thorn_Treehopper_-_Umbonia_crassicornis%2C_Oasis_Visitor_Center%2C_Big_Cypress_National_Preserve%2C_Ochopee%2C_Florida.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Thorn_Treehopper_-_Umbonia_crassicornis%2C_Oasis_Visitor_Center%2C_Big_Cypress_National_Preserve%2C_Ochopee%2C_Florida.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Thorn_Treehopper_-_Umbonia_crassicornis,_Oasis_Visitor_Center,_Big_Cypress_National_Preserve,_Ochopee,_Florida.jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Thorn Treehopper - Umbonia crassicornis, Oasis Visitor Center, Big Cypress National Preserve, Ochopee, Florida.",
+      "fileTitle": "File:Thorn Treehopper - Umbonia crassicornis, Oasis Visitor Center, Big Cypress National Preserve, Ochopee, Florida.jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/thorn-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Umbonia_crassicornis_%28F_Membracidae%29.jpg/1280px-Umbonia_crassicornis_%28F_Membracidae%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Umbonia_crassicornis_%28F_Membracidae%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Umbonia_crassicornis_(F_Membracidae).jpg",
+      "credit": "Marshal Hedin",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "nymphs of this species form aggregations, and send \"group\" vibrational signals (through plant stems) that elicit anti-predator behavior from the caring female, including wing-fanning and leg-kicking. cool!",
+      "fileTitle": "File:Umbonia crassicornis (F Membracidae).jpg",
+      "width": 2000,
+      "height": 1625,
+      "localPath": "/bugs/photos/thorn-bug/2.jpg"
+    }
   ]
 }

@@ -1746,5 +1746,24 @@
       "#3f3a2c",
       "#c9a24b"
     ]
+  },
+  {
+    "slug": "thorn-bug",
+    "commonName": "Thorn Bug",
+    "latinName": "Umbonia crassicornis",
+    "habitat": "Tropical and subtropical American woodlands, on woody host shrubs and trees",
+    "sizeMm": 12,
+    "sizeKind": "body",
+    "weirdFact": "Its huge pronotal spine mimics a plant thorn so perfectly that predators skip right over the disguised insect.",
+    "whyItsCool": "A treehopper cosplaying as a thorn, and mothers stand guard buzzing vibrations to muster their nymphs against wasps.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-11",
+    "order": "Hemiptera",
+    "family": "Membracidae",
+    "colorPalette": [
+      "#6fae4a",
+      "#c2452f",
+      "#e8ddbf"
+    ]
   }
 ]
