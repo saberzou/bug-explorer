@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-12",
-  "slug": "panda-ant",
-  "commonName": "Panda Ant",
-  "discoveredOn": "2026-07-12",
-  "ranAtUtc": "2026-07-11T18:42:08Z",
+  "date": "2026-07-13",
+  "slug": "wax-tailed-planthopper",
+  "commonName": "Wax-tailed Planthopper",
+  "discoveredOn": "2026-07-13",
+  "ranAtUtc": "2026-07-12T17:50:53Z",
   "note": null,
-  "bugCount": 94
+  "bugCount": 95
 }
