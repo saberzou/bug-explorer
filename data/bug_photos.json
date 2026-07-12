@@ -2630,5 +2630,33 @@
       "height": 334,
       "localPath": "/bugs/photos/panda-ant/2.jpg"
     }
+  ],
+  "wax-tailed-planthopper": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pterodictya_reticularis_MHNT.jpg/1280px-Pterodictya_reticularis_MHNT.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Pterodictya_reticularis_MHNT.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Pterodictya_reticularis_MHNT.jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Dorsal side. Locality : Mt Singes, Kourou, French Guiana",
+      "fileTitle": "File:Pterodictya reticularis MHNT.jpg",
+      "width": 4974,
+      "height": 4095,
+      "localPath": "/bugs/photos/wax-tailed-planthopper/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Pterodictya_reticularis_TPopp.jpg/1280px-Pterodictya_reticularis_TPopp.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Pterodictya_reticularis_TPopp.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Pterodictya_reticularis_TPopp.jpg",
+      "credit": "Tanja Popp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Pterodictya reticularis (Olivier, 1791)",
+      "fileTitle": "File:Pterodictya reticularis TPopp.jpg",
+      "width": 1920,
+      "height": 1896,
+      "localPath": "/bugs/photos/wax-tailed-planthopper/2.jpg"
+    }
   ]
 }

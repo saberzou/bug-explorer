@@ -1784,5 +1784,24 @@
       "#f4f1ea",
       "#8a8f96"
     ]
+  },
+  {
+    "slug": "wax-tailed-planthopper",
+    "commonName": "Wax-tailed Planthopper",
+    "latinName": "Pterodictya reticularis",
+    "habitat": "Tropical Central and South American rainforests",
+    "sizeMm": 30,
+    "sizeKind": "body",
+    "weirdFact": "Its rear pumps out long curling threads of white wax that stream behind it like a bridal veil.",
+    "whyItsCool": "A sap-sipping bug that grows its own fiber-optic ballgown of wax to baffle predators. Fashion as defense.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-13",
+    "order": "Hemiptera",
+    "family": "Fulgoridae",
+    "colorPalette": [
+      "#c9a24b",
+      "#f4efe2",
+      "#5c6b3a"
+    ]
   }
 ]
