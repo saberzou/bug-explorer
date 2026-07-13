@@ -1803,5 +1803,24 @@
       "#f4efe2",
       "#5c6b3a"
     ]
+  },
+  {
+    "slug": "eastern-eyed-click-beetle",
+    "commonName": "Eastern Eyed Click Beetle",
+    "latinName": "Alaus oculatus",
+    "habitat": "Eastern North American deciduous woods with rotting hardwood logs",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "Flip it on its back and a spring-loaded latch in its thorax snaps it into the air with an audible CLICK to right itself.",
+    "whyItsCool": "It wears two giant fake eyes to bluff predators, then literally catapults itself skyward when grabbed — a beetle with a panic button.",
+    "rarity": "common",
+    "discoveredOn": "2026-07-14",
+    "order": "Coleoptera",
+    "family": "Elateridae",
+    "colorPalette": [
+      "#2b2b2b",
+      "#d8d2c4",
+      "#7a7268"
+    ]
   }
 ]

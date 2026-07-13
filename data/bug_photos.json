@@ -2658,5 +2658,33 @@
       "height": 1896,
       "localPath": "/bugs/photos/wax-tailed-planthopper/2.jpg"
     }
+  ],
+  "eastern-eyed-click-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Alaus_oculatus_at_Cypress_Creek_Preserve_FL.jpg/1280px-Alaus_oculatus_at_Cypress_Creek_Preserve_FL.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Alaus_oculatus_at_Cypress_Creek_Preserve_FL.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Alaus_oculatus_at_Cypress_Creek_Preserve_FL.jpg",
+      "credit": "RobertJBanach",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "PXL 20220815 170738793 FL Cypress Creek Preserve Alaus oculatus commonly called the Eastern Eyed Click Beetle or eyed elater",
+      "fileTitle": "File:Alaus oculatus at Cypress Creek Preserve FL.jpg",
+      "width": 4032,
+      "height": 3024,
+      "localPath": "/bugs/photos/eastern-eyed-click-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Alaus_oculatus_P1250458a.jpg/1280px-Alaus_oculatus_P1250458a.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alaus_oculatus_P1250458a.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Alaus_oculatus_P1250458a.jpg",
+      "credit": "xpda",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Alaus oculatus, eastern eyed click beetle, ID Confidence: 87",
+      "fileTitle": "File:Alaus oculatus P1250458a.jpg",
+      "width": 2329,
+      "height": 2343,
+      "localPath": "/bugs/photos/eastern-eyed-click-beetle/2.jpg"
+    }
   ]
 }
