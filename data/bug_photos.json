@@ -2686,5 +2686,33 @@
       "height": 2343,
       "localPath": "/bugs/photos/eastern-eyed-click-beetle/2.jpg"
     }
+  ],
+  "elephant-hawkmoth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/%22impossibly_Pink%22_Elephant_Hawkmoth._Deilephila_elpenor_%2842431618420%29.jpg/1280px-%22impossibly_Pink%22_Elephant_Hawkmoth._Deilephila_elpenor_%2842431618420%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/%22impossibly_Pink%22_Elephant_Hawkmoth._Deilephila_elpenor_%2842431618420%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:%22impossibly_Pink%22_Elephant_Hawkmoth._Deilephila_elpenor_(42431618420).jpg",
+      "credit": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Cradley, Malvern, Worcs. SO729470",
+      "fileTitle": "File:\"impossibly Pink\" Elephant Hawkmoth. Deilephila elpenor (42431618420).jpg",
+      "width": 1958,
+      "height": 1630,
+      "localPath": "/bugs/photos/elephant-hawkmoth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/%281991%29_Elephant_Hawk-moth_%28Deilephila_elpenor%29_%2828345855975%29.jpg/1280px-%281991%29_Elephant_Hawk-moth_%28Deilephila_elpenor%29_%2828345855975%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/%281991%29_Elephant_Hawk-moth_%28Deilephila_elpenor%29_%2828345855975%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:(1991)_Elephant_Hawk-moth_(Deilephila_elpenor)_(28345855975).jpg",
+      "credit": "Ben Sale from UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Garden moths last Sunday! Still a week behind... Mothing again in the garden, I tried 3 times, Sunday, Tuesday and Friday night with mixed results but plenty of new moths for the year and a couple of new records for the garden, namely the Common Lutestring which seemingly isn't t",
+      "fileTitle": "File:(1991) Elephant Hawk-moth (Deilephila elpenor) (28345855975).jpg",
+      "width": 1500,
+      "height": 1965,
+      "localPath": "/bugs/photos/elephant-hawkmoth/2.jpg"
+    }
   ]
 }

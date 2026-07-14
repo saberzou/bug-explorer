@@ -1822,5 +1822,24 @@
       "#d8d2c4",
       "#7a7268"
     ]
+  },
+  {
+    "slug": "elephant-hawkmoth",
+    "commonName": "Elephant Hawk-moth",
+    "latinName": "Deilephila elpenor",
+    "habitat": "Woodland edges, gardens, and grassy verges across Europe and temperate Asia",
+    "sizeMm": 60,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its grey caterpillar has fake eyespots and inflates its front end to mimic a snake when threatened.",
+    "whyItsCool": "A moth dressed in pink-and-olive velvet whose baby cosplays as a tiny serpent to scare off birds.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-15",
+    "order": "Lepidoptera",
+    "family": "Sphingidae",
+    "colorPalette": [
+      "#d94f8a",
+      "#6f7d3a",
+      "#2e2836"
+    ]
   }
 ]
