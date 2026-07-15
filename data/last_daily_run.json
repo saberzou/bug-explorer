@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-15",
-  "slug": "elephant-hawkmoth",
-  "commonName": "Elephant Hawk-moth",
-  "discoveredOn": "2026-07-15",
-  "ranAtUtc": "2026-07-14T17:50:54Z",
+  "date": "2026-07-16",
+  "slug": "orchid-bee",
+  "commonName": "Orchid Bee",
+  "discoveredOn": "2026-07-16",
+  "ranAtUtc": "2026-07-15T17:50:49Z",
   "note": null,
-  "bugCount": 97
+  "bugCount": 98
 }
