@@ -1841,5 +1841,24 @@
       "#6f7d3a",
       "#2e2836"
     ]
+  },
+  {
+    "slug": "orchid-bee",
+    "commonName": "Orchid Bee",
+    "latinName": "Euglossa dilemma",
+    "habitat": "Neotropical lowland rainforests of Central and South America",
+    "sizeMm": 13,
+    "sizeKind": "body",
+    "weirdFact": "Males collect scents from orchids and store them in hollow hind legs, brewing a custom perfume to woo mates.",
+    "whyItsCool": "A living gemstone that literally bottles fragrance in its legs — the only bee that curates its own cologne.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-16",
+    "order": "Hymenoptera",
+    "family": "Apidae",
+    "colorPalette": [
+      "#1f9e6b",
+      "#0e6e8c",
+      "#d9c66a"
+    ]
   }
 ]

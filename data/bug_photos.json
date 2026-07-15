@@ -2714,5 +2714,33 @@
       "height": 1965,
       "localPath": "/bugs/photos/elephant-hawkmoth/2.jpg"
     }
+  ],
+  "orchid-bee": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida_%2838090959715%29.jpg/1280px-Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida_%2838090959715%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida_%2838090959715%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dilemma_Orchid_Bee_-_Euglossa_dilemma,_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge,_Boynton_Beach,_Florida_(38090959715).jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Dilemma Orchid Bee - Euglossa dilemma, Arthur Marshall Loxahatchee National Wildlife Refuge, Boynton Beach, Florida",
+      "fileTitle": "File:Dilemma Orchid Bee - Euglossa dilemma, Arthur Marshall Loxahatchee National Wildlife Refuge, Boynton Beach, Florida (38090959715).jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/orchid-bee/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida.jpg/1280px-Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Dilemma_Orchid_Bee_-_Euglossa_dilemma%2C_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge%2C_Boynton_Beach%2C_Florida.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dilemma_Orchid_Bee_-_Euglossa_dilemma,_Arthur_Marshall_Loxahatchee_National_Wildlife_Refuge,_Boynton_Beach,_Florida.jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Dilemma Orchid Bee - Euglossa dilemma, Arthur Marshall Loxahatchee National Wildlife Refuge, Boynton Beach, Florida",
+      "fileTitle": "File:Dilemma Orchid Bee - Euglossa dilemma, Arthur Marshall Loxahatchee National Wildlife Refuge, Boynton Beach, Florida.jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/orchid-bee/2.jpg"
+    }
   ]
 }
