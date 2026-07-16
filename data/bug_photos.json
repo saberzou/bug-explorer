@@ -2742,5 +2742,33 @@
       "height": 3456,
       "localPath": "/bugs/photos/orchid-bee/2.jpg"
     }
+  ],
+  "happy-face-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Theridion_grallator_colonization_pattern_%28Hawaiian_volcano_populations%29.png/1280px-Theridion_grallator_colonization_pattern_%28Hawaiian_volcano_populations%29.png",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Theridion_grallator_colonization_pattern_%28Hawaiian_volcano_populations%29.png",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Theridion_grallator_colonization_pattern_(Hawaiian_volcano_populations).png",
+      "credit": "Andrew Z. Colvin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Map of the Hawaiian archipelago showing the migration/colonization routes of Theridion grallator over time. Samples were taken from seven volcano regions (in red). T. grallator is not present on Kauai or Niihau so colonization may have occurred from there, or the nearest continen",
+      "fileTitle": "File:Theridion grallator colonization pattern (Hawaiian volcano populations).png",
+      "width": 1944,
+      "height": 1249,
+      "localPath": "/bugs/photos/happy-face-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/Theridion_grallator_with_happy_face.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Theridion_grallator_with_happy_face.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Theridion_grallator_with_happy_face.jpg",
+      "credit": "Nate Yuen",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "caption": "Image of a Theridion grallator",
+      "fileTitle": "File:Theridion grallator with happy face.jpg",
+      "width": 1280,
+      "height": 720,
+      "localPath": "/bugs/photos/happy-face-spider/2.jpg"
+    }
   ]
 }

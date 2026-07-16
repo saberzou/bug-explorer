@@ -1860,5 +1860,24 @@
       "#0e6e8c",
       "#d9c66a"
     ]
+  },
+  {
+    "slug": "happy-face-spider",
+    "commonName": "Hawaiian Happy-Face Spider",
+    "latinName": "Theridion grallator",
+    "habitat": "Rainforest understory on Hawaiian islands, beneath native leaves",
+    "sizeMm": 5,
+    "sizeKind": "body",
+    "weirdFact": "Its pale abdomen carries a red-and-black smiley face, and no two spiders wear the same pattern.",
+    "whyItsCool": "A grinning ghost of a spider whose cartoon face is genetically painted, unique per bug — evolution doodling for fun.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-17",
+    "order": "Araneae",
+    "family": "Theridiidae",
+    "colorPalette": [
+      "#f2e7c9",
+      "#c0392b",
+      "#2b2b2b"
+    ]
   }
 ]
