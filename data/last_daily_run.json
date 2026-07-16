@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-16",
-  "slug": "orchid-bee",
-  "commonName": "Orchid Bee",
-  "discoveredOn": "2026-07-16",
-  "ranAtUtc": "2026-07-15T17:50:49Z",
+  "date": "2026-07-17",
+  "slug": "happy-face-spider",
+  "commonName": "Hawaiian Happy-Face Spider",
+  "discoveredOn": "2026-07-17",
+  "ranAtUtc": "2026-07-16T17:51:38Z",
   "note": null,
-  "bugCount": 98
+  "bugCount": 99
 }
