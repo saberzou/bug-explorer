@@ -2770,5 +2770,33 @@
       "height": 720,
       "localPath": "/bugs/photos/happy-face-spider/2.jpg"
     }
+  ],
+  "man-faced-stink-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Catacanthus_incarnatus_-_Man-faced_Stink_Bug_-_nymph_from_Kannavam_RF_%281%29.jpg/1280px-Catacanthus_incarnatus_-_Man-faced_Stink_Bug_-_nymph_from_Kannavam_RF_%281%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Catacanthus_incarnatus_-_Man-faced_Stink_Bug_-_nymph_from_Kannavam_RF_%281%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Catacanthus_incarnatus_-_Man-faced_Stink_Bug_-_nymph_from_Kannavam_RF_(1).jpg",
+      "credit": "Vinayaraj",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Photos from Peravoor and around 2019 - by Vinayaraj",
+      "fileTitle": "File:Catacanthus incarnatus - Man-faced Stink Bug - nymph from Kannavam RF (1).jpg",
+      "width": 4608,
+      "height": 3456,
+      "localPath": "/bugs/photos/man-faced-stink-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Catacanthus_incarnatus_%2815215112089%29.jpg/1280px-Catacanthus_incarnatus_%2815215112089%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Catacanthus_incarnatus_%2815215112089%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Catacanthus_incarnatus_(15215112089).jpg",
+      "credit": "Dinesh Valke from Thane, India",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Catacanthus incarnatus in Maharashtra, India",
+      "fileTitle": "File:Catacanthus incarnatus (15215112089).jpg",
+      "width": 4592,
+      "height": 3448,
+      "localPath": "/bugs/photos/man-faced-stink-bug/2.jpg"
+    }
   ]
 }
