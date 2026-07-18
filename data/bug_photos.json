@@ -2798,5 +2798,33 @@
       "height": 3448,
       "localPath": "/bugs/photos/man-faced-stink-bug/2.jpg"
     }
+  ],
+  "european-rhinoceros-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Nashornk%C3%A4fer_Oryctes_nasicornis.jpg/1280px-Nashornk%C3%A4fer_Oryctes_nasicornis.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Nashornk%C3%A4fer_Oryctes_nasicornis.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Nashornk%C3%A4fer_Oryctes_nasicornis.jpg",
+      "credit": "Holger Krisp",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "European rhinoceros beetle; Oryctes nasicornis; Location: Italy, Lisanza",
+      "fileTitle": "File:Nashornkäfer Oryctes nasicornis.jpg",
+      "width": 4000,
+      "height": 2667,
+      "localPath": "/bugs/photos/european-rhinoceros-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oryctes_nasicornis_.jpg/1280px-Oryctes_nasicornis_.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Oryctes_nasicornis_.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oryctes_nasicornis_.jpg",
+      "credit": "Youbadou",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Rhinocéros",
+      "fileTitle": "File:Oryctes nasicornis .jpg",
+      "width": 4032,
+      "height": 3024,
+      "localPath": "/bugs/photos/european-rhinoceros-beetle/2.jpg"
+    }
   ]
 }

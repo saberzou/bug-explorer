@@ -1898,5 +1898,24 @@
       "#2c2622",
       "#f0e3cf"
     ]
+  },
+  {
+    "slug": "european-rhinoceros-beetle",
+    "commonName": "European Rhinoceros Beetle",
+    "latinName": "Oryctes nasicornis",
+    "habitat": "Decaying wood and compost heaps across Europe, North Africa and western Asia",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "The male's curved horn is pure show-off armor: it never bites and can lift objects 850 times its own weight.",
+    "whyItsCool": "A glossy mahogany tank whose grubs quietly recycle rotting logs for years before the horned adult ever appears.",
+    "rarity": "common",
+    "discoveredOn": "2026-07-19",
+    "order": "Coleoptera",
+    "family": "Scarabaeidae",
+    "colorPalette": [
+      "#5a3220",
+      "#8a5a34",
+      "#e6d6b8"
+    ]
   }
 ]
