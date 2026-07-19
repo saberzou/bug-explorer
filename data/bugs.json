@@ -1917,5 +1917,24 @@
       "#8a5a34",
       "#e6d6b8"
     ]
+  },
+  {
+    "slug": "puss-moth",
+    "commonName": "Puss Moth",
+    "latinName": "Cerura vinula",
+    "habitat": "Willow and poplar woodlands across Europe and temperate Asia",
+    "sizeMm": 70,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its caterpillar rears up a red mask, waves two whip-like tails, and squirts formic acid at attackers.",
+    "whyItsCool": "The fluffy grey adult is disarmingly cute, but its larva is a punk-rock acid-spraying gargoyle with retractable tails.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-20",
+    "order": "Lepidoptera",
+    "family": "Notodontidae",
+    "colorPalette": [
+      "#b8b0a3",
+      "#5c6b4a",
+      "#a83b32"
+    ]
   }
 ]

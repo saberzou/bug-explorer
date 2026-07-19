@@ -2826,5 +2826,33 @@
       "height": 3024,
       "localPath": "/bugs/photos/european-rhinoceros-beetle/2.jpg"
     }
+  ],
+  "puss-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/71.003_BF1995_Puss_Moth%2C_Cerura_vinula%2C_egg_cases_%289192083717%29.jpg/1280px-71.003_BF1995_Puss_Moth%2C_Cerura_vinula%2C_egg_cases_%289192083717%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/71.003_BF1995_Puss_Moth%2C_Cerura_vinula%2C_egg_cases_%289192083717%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:71.003_BF1995_Puss_Moth,_Cerura_vinula,_egg_cases_(9192083717).jpg",
+      "credit": "Patrick Clement from West Midlands, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Treginnis, Pembrokeshire. Empty egg cases and early feeding signs of two Puss Moth larvae which were found just a few centimetres away.",
+      "fileTitle": "File:71.003 BF1995 Puss Moth, Cerura vinula, egg cases (9192083717).jpg",
+      "width": 4000,
+      "height": 3000,
+      "localPath": "/bugs/photos/puss-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cerura_vinula_%28ovi%29_-_Puss_moth_%28eggs%29_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%B3%D0%B0%D1%80%D0%BF%D0%B8%D1%8F_%28%D1%8F%D0%B9%D1%86%D0%B0%29_%2847996469773%29.jpg/1280px-Cerura_vinula_%28ovi%29_-_Puss_moth_%28eggs%29_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%B3%D0%B0%D1%80%D0%BF%D0%B8%D1%8F_%28%D1%8F%D0%B9%D1%86%D0%B0%29_%2847996469773%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Cerura_vinula_%28ovi%29_-_Puss_moth_%28eggs%29_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%B3%D0%B0%D1%80%D0%BF%D0%B8%D1%8F_%28%D1%8F%D0%B9%D1%86%D0%B0%29_%2847996469773%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cerura_vinula_(ovi)_-_Puss_moth_(eggs)_-_%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%B3%D0%B0%D1%80%D0%BF%D0%B8%D1%8F_(%D1%8F%D0%B9%D1%86%D0%B0)_(47996469773).jpg",
+      "credit": "Ilia Ustyantsev from Russia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Exemplar found: Russia, Moscow Oblast, Odintsovsky District, near village Pestovo, 09.05.2019 МО, Одинцовский р-н, окрестности деревни Пестово, 09.05.2019",
+      "fileTitle": "File:Cerura vinula (ovi) - Puss moth (eggs) - Большая гарпия (яйца) (47996469773).jpg",
+      "width": 1920,
+      "height": 1080,
+      "localPath": "/bugs/photos/puss-moth/2.jpg"
+    }
   ]
 }
