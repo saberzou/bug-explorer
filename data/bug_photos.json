@@ -2854,5 +2854,33 @@
       "height": 1080,
       "localPath": "/bugs/photos/puss-moth/2.jpg"
     }
+  ],
+  "violin-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Mormolyce_phyllodes%2C_Gunung_Mulu_National_Park.jpg/1280px-Mormolyce_phyllodes%2C_Gunung_Mulu_National_Park.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Mormolyce_phyllodes%2C_Gunung_Mulu_National_Park.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Mormolyce_phyllodes,_Gunung_Mulu_National_Park.jpg",
+      "credit": "Alan Cressler from Decatur, Georgia, USA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Mormolyce phyllodes, gunung mulu national park, sarawak, malaysia 1",
+      "fileTitle": "File:Mormolyce phyllodes, Gunung Mulu National Park.jpg",
+      "width": 3312,
+      "height": 4416,
+      "localPath": "/bugs/photos/violin-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Mormolyce_phyllodes_2.JPG/1280px-Mormolyce_phyllodes_2.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Mormolyce_phyllodes_2.JPG",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Mormolyce_phyllodes_2.JPG",
+      "credit": "Anaxibia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Mormolyce phyllodes",
+      "fileTitle": "File:Mormolyce phyllodes 2.JPG",
+      "width": 1752,
+      "height": 2444,
+      "localPath": "/bugs/photos/violin-beetle/2.jpg"
+    }
   ]
 }

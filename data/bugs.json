@@ -1936,5 +1936,24 @@
       "#5c6b4a",
       "#a83b32"
     ]
+  },
+  {
+    "slug": "violin-beetle",
+    "commonName": "Violin Beetle",
+    "latinName": "Mormolyce phyllodes",
+    "habitat": "Southeast Asian rainforest floors, wedged under the loose bark of dead trees",
+    "sizeMm": 100,
+    "sizeKind": "body",
+    "weirdFact": "Its body is squashed paper-flat so it can slide into bracket-fungus gills and bark cracks, and it sprays stinging acid if cornered.",
+    "whyItsCool": "A ground beetle ironed into the silhouette of a violin, then handed a chemical squirt gun. Peak insect over-engineering.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-21",
+    "order": "Coleoptera",
+    "family": "Carabidae",
+    "colorPalette": [
+      "#2b241c",
+      "#6b5334",
+      "#c8b48a"
+    ]
   }
 ]
