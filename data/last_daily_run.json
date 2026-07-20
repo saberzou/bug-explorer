@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-20",
-  "slug": "puss-moth",
-  "commonName": "Puss Moth",
-  "discoveredOn": "2026-07-20",
-  "ranAtUtc": "2026-07-19T17:51:56Z",
+  "date": "2026-07-21",
+  "slug": "violin-beetle",
+  "commonName": "Violin Beetle",
+  "discoveredOn": "2026-07-21",
+  "ranAtUtc": "2026-07-20T17:50:52Z",
   "note": null,
-  "bugCount": 102
+  "bugCount": 103
 }
