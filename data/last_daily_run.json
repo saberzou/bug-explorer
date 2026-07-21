@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-21",
-  "slug": "violin-beetle",
-  "commonName": "Violin Beetle",
-  "discoveredOn": "2026-07-21",
-  "ranAtUtc": "2026-07-20T17:50:52Z",
+  "date": "2026-07-22",
+  "slug": "wheel-bug",
+  "commonName": "Wheel Bug",
+  "discoveredOn": "2026-07-22",
+  "ranAtUtc": "2026-07-21T17:50:56Z",
   "note": null,
-  "bugCount": 103
+  "bugCount": 104
 }
