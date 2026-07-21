@@ -1955,5 +1955,24 @@
       "#6b5334",
       "#c8b48a"
     ]
+  },
+  {
+    "slug": "wheel-bug",
+    "commonName": "Wheel Bug",
+    "latinName": "Arilus cristatus",
+    "habitat": "Woodlands, gardens and fields across the eastern and southern United States",
+    "sizeMm": 30,
+    "sizeKind": "body",
+    "weirdFact": "It wears a spiky cogwheel on its back like a stegosaurus, and its stab hurts worse than a hornet sting.",
+    "whyItsCool": "A tank-shaped assassin that impales caterpillars and liquefies them — the buzzsaw crest is pure nightmare-fuel elegance.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-22",
+    "order": "Hemiptera",
+    "family": "Reduviidae",
+    "colorPalette": [
+      "#6b6258",
+      "#3a352f",
+      "#c9beac"
+    ]
   }
 ]

@@ -2882,5 +2882,33 @@
       "height": 2444,
       "localPath": "/bugs/photos/violin-beetle/2.jpg"
     }
+  ],
+  "wheel-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Arilus_cristatus_-_Wheel_Bug_-_Assassin_Bug_%2842674125980%29.jpg/1280px-Arilus_cristatus_-_Wheel_Bug_-_Assassin_Bug_%2842674125980%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Arilus_cristatus_-_Wheel_Bug_-_Assassin_Bug_%2842674125980%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Arilus_cristatus_-_Wheel_Bug_-_Assassin_Bug_(42674125980).jpg",
+      "credit": "Andy Reago & Chrissy McClarren",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Mothing in the backyard",
+      "fileTitle": "File:Arilus cristatus - Wheel Bug - Assassin Bug (42674125980).jpg",
+      "width": 5392,
+      "height": 3490,
+      "localPath": "/bugs/photos/wheel-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Arilus_cristatus_102313_AMB_Herndon%2C_VA_2015-01-08-08.37.10_ZS_PMax_%2816280638930%29.jpg/1280px-Arilus_cristatus_102313_AMB_Herndon%2C_VA_2015-01-08-08.37.10_ZS_PMax_%2816280638930%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Arilus_cristatus_102313_AMB_Herndon%2C_VA_2015-01-08-08.37.10_ZS_PMax_%2816280638930%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Arilus_cristatus_102313_AMB_Herndon,_VA_2015-01-08-08.37.10_ZS_PMax_(16280638930).jpg",
+      "credit": "USGS Bee Inventory and Monitoring Lab from Beltsville, Maryland, USA",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "The wheel bug...of death. A very large bug whose impales other insects, injects liquids that dissolve the insides f the insect, and then sucks it back up. I have wondered, what if we used these same chemicals as tenderizers for meat or perhaps, if one were to get more into eating",
+      "fileTitle": "File:Arilus cristatus 102313 AMB Herndon, VA 2015-01-08-08.37.10 ZS PMax (16280638930).jpg",
+      "width": 5616,
+      "height": 3744,
+      "localPath": "/bugs/photos/wheel-bug/2.jpg"
+    }
   ]
 }
