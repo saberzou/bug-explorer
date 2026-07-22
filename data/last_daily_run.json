@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-22",
-  "slug": "wheel-bug",
-  "commonName": "Wheel Bug",
-  "discoveredOn": "2026-07-22",
-  "ranAtUtc": "2026-07-21T17:50:56Z",
+  "date": "2026-07-23",
+  "slug": "velvet-worm",
+  "commonName": "Velvet Worm",
+  "discoveredOn": "2026-07-23",
+  "ranAtUtc": "2026-07-22T17:50:50Z",
   "note": null,
-  "bugCount": 104
+  "bugCount": 105
 }
