@@ -2910,5 +2910,33 @@
       "height": 3744,
       "localPath": "/bugs/photos/wheel-bug/2.jpg"
     }
+  ],
+  "velvet-worm": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Euperipatoides_rowelli_2.jpg/1280px-Euperipatoides_rowelli_2.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Euperipatoides_rowelli_2.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Euperipatoides_rowelli_2.jpg",
+      "credit": "Alan Couch",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Euperipatoides rowelli in the lab",
+      "fileTitle": "File:Euperipatoides rowelli 2.jpg",
+      "width": 3264,
+      "height": 2448,
+      "localPath": "/bugs/photos/velvet-worm/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Euperipatoides_rowelli_346339072.jpg/1280px-Euperipatoides_rowelli_346339072.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Euperipatoides_rowelli_346339072.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Euperipatoides_rowelli_346339072.jpg",
+      "credit": "James K. Douch",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Euperipatoides rowelli in Australia",
+      "fileTitle": "File:Euperipatoides rowelli 346339072.jpg",
+      "width": 2048,
+      "height": 2048,
+      "localPath": "/bugs/photos/velvet-worm/2.jpg"
+    }
   ]
 }

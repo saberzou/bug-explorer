@@ -1974,5 +1974,24 @@
       "#3a352f",
       "#c9beac"
     ]
+  },
+  {
+    "slug": "velvet-worm",
+    "commonName": "Velvet Worm",
+    "latinName": "Euperipatoides rowelli",
+    "habitat": "Cool, damp rotting logs of southeastern Australian temperate forests",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "It hunts by firing twin jets of quick-hardening glue slime that ensnare prey mid-stride in a sticky net.",
+    "whyItsCool": "A 500-million-year-old walking-worm oddity that lives in social packs and squirts glue guns from its face.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-23",
+    "order": "Euonychophora",
+    "family": "Peripatopsidae",
+    "colorPalette": [
+      "#2f3b6e",
+      "#6d7fb8",
+      "#e7e0cf"
+    ]
   }
 ]
