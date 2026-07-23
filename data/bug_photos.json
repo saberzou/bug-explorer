@@ -2938,5 +2938,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/velvet-worm/2.jpg"
     }
+  ],
+  "thistledown-velvet-ant": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Dasymutilla_gloriosa%2C_face2%2C_Cochise_Co.%2C_AZ_2016-09-02-17.02_%2828808009623%29.jpg/1280px-Dasymutilla_gloriosa%2C_face2%2C_Cochise_Co.%2C_AZ_2016-09-02-17.02_%2828808009623%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Dasymutilla_gloriosa%2C_face2%2C_Cochise_Co.%2C_AZ_2016-09-02-17.02_%2828808009623%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dasymutilla_gloriosa,_face2,_Cochise_Co.,_AZ_2016-09-02-17.02_(28808009623).jpg",
+      "credit": "USGS Bee Inventory and Monitoring Lab from Beltsville, Maryland, USA",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Dasymutilla gloriosa. Thistledown Velvet Ant. Elizabeth Garcia who took this picture claimed this one creeped her out. ... and she sees a lot of wasps and bees. Not an ant, but a wasp. This it the wingeless female collected by Tim McMahon in Cochise County in Arizona. Desert. Che",
+      "fileTitle": "File:Dasymutilla gloriosa, face2, Cochise Co., AZ 2016-09-02-17.02 (28808009623).jpg",
+      "width": 5104,
+      "height": 3624,
+      "localPath": "/bugs/photos/thistledown-velvet-ant/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/22_Ameise_Dasymutilla-gloriosa_MfN.jpg/1280px-22_Ameise_Dasymutilla-gloriosa_MfN.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/22_Ameise_Dasymutilla-gloriosa_MfN.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:22_Ameise_Dasymutilla-gloriosa_MfN.jpg",
+      "credit": "Bernhard Schurian, Museum für Naturkunde Berlin",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Detailaufnahme einer Ameisenwespe (Dasymutilla gloriosa) in der Sammlung des Museums für Naturkunde Berlin",
+      "fileTitle": "File:22 Ameise Dasymutilla-gloriosa MfN.jpg",
+      "width": 5000,
+      "height": 3333,
+      "localPath": "/bugs/photos/thistledown-velvet-ant/2.jpg"
+    }
   ]
 }

@@ -1993,5 +1993,24 @@
       "#6d7fb8",
       "#e7e0cf"
     ]
+  },
+  {
+    "slug": "thistledown-velvet-ant",
+    "commonName": "Thistledown Velvet Ant",
+    "latinName": "Dasymutilla gloriosa",
+    "habitat": "Sandy deserts of the American Southwest and northern Mexico",
+    "sizeMm": 10,
+    "sizeKind": "body",
+    "weirdFact": "Its coat of long white hairs mimics the fluffy seeds of creosote bushes, letting it blow across dunes unnoticed.",
+    "whyItsCool": "A wingless wasp cosplaying as plant fluff, it disguises one of nature's worst stings as harmless desert lint.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-24",
+    "order": "Hymenoptera",
+    "family": "Mutillidae",
+    "colorPalette": [
+      "#f2ede3",
+      "#c9a24b",
+      "#7a6033"
+    ]
   }
 ]
