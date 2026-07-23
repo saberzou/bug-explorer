@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-23",
-  "slug": "velvet-worm",
-  "commonName": "Velvet Worm",
-  "discoveredOn": "2026-07-23",
-  "ranAtUtc": "2026-07-22T17:50:50Z",
+  "date": "2026-07-24",
+  "slug": "thistledown-velvet-ant",
+  "commonName": "Thistledown Velvet Ant",
+  "discoveredOn": "2026-07-24",
+  "ranAtUtc": "2026-07-23T17:50:56Z",
   "note": null,
-  "bugCount": 105
+  "bugCount": 106
 }
