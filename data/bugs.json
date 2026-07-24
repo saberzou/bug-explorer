@@ -2012,5 +2012,24 @@
       "#c9a24b",
       "#7a6033"
     ]
+  },
+  {
+    "slug": "rainbow-scarab",
+    "commonName": "Rainbow Scarab",
+    "latinName": "Phanaeus vindex",
+    "habitat": "Pastures, woodlands and dung heaps across the eastern and central United States",
+    "sizeMm": 22,
+    "sizeKind": "body",
+    "weirdFact": "A dung beetle sheathed in metallic green, copper and gold, with males sporting a curved rhinoceros-like horn.",
+    "whyItsCool": "It buries manure to raise its young, recycling the prairie while dressed like a walking jewel — beauty doing dirty work.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-25",
+    "order": "Coleoptera",
+    "family": "Scarabaeidae",
+    "colorPalette": [
+      "#1f8a4c",
+      "#b5651d",
+      "#e8c547"
+    ]
   }
 ]

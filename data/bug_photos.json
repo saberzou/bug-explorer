@@ -2966,5 +2966,33 @@
       "height": 3333,
       "localPath": "/bugs/photos/thistledown-velvet-ant/2.jpg"
     }
+  ],
+  "rainbow-scarab": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rainbow_Scarab_%28Scarabaeidae%2C_Phanaeus_vindex%29_%2826077179531%29.jpg/1280px-Rainbow_Scarab_%28Scarabaeidae%2C_Phanaeus_vindex%29_%2826077179531%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Rainbow_Scarab_%28Scarabaeidae%2C_Phanaeus_vindex%29_%2826077179531%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rainbow_Scarab_(Scarabaeidae,_Phanaeus_vindex)_(26077179531).jpg",
+      "credit": "Insects Unlocked",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "caption": "USA, TX, Bastrop Co.: Red Rock 300 Lockwood Dr. 26-iii-2016 A. Santillana coll.",
+      "fileTitle": "File:Rainbow Scarab (Scarabaeidae, Phanaeus vindex) (26077179531).jpg",
+      "width": 4620,
+      "height": 3768,
+      "localPath": "/bugs/photos/rainbow-scarab/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Hough_Phanaeus_vindex.JPG/1280px-Hough_Phanaeus_vindex.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Hough_Phanaeus_vindex.JPG",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hough_Phanaeus_vindex.JPG",
+      "credit": "IvanTortuga",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "A Geotrupes in the Hough collection. Caught August 25th, 2007.",
+      "fileTitle": "File:Hough Phanaeus vindex.JPG",
+      "width": 3888,
+      "height": 2592,
+      "localPath": "/bugs/photos/rainbow-scarab/2.jpg"
+    }
   ]
 }
