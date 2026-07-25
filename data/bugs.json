@@ -2031,5 +2031,24 @@
       "#b5651d",
       "#e8c547"
     ]
+  },
+  {
+    "slug": "feather-legged-assassin-bug",
+    "commonName": "Feather-legged Assassin Bug",
+    "latinName": "Ptilocnemus lemur",
+    "habitat": "Australian bushland leaf litter and bark, near ant trails",
+    "sizeMm": 12,
+    "sizeKind": "body",
+    "weirdFact": "It offers ants a drug-laced gland tuft; the ant sips, gets sedated, then the bug spears it dead.",
+    "whyItsCool": "A dealer-and-assassin in one body — it literally drugs its prey with a hairy gland before the kill. Nature wrote a heist.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-26",
+    "order": "Hemiptera",
+    "family": "Reduviidae",
+    "colorPalette": [
+      "#3a2b22",
+      "#c9a24b",
+      "#6b5540"
+    ]
   }
 ]

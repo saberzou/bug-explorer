@@ -2994,5 +2994,33 @@
       "height": 2592,
       "localPath": "/bugs/photos/rainbow-scarab/2.jpg"
     }
+  ],
+  "feather-legged-assassin-bug": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/4/41/Ptilocnemus_lemur.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Ptilocnemus_lemur.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ptilocnemus_lemur.jpg",
+      "credit": "Jean and Fred",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Ptilocnemus lemur Feather Legged Assassin I have been wanting to see one of these assassin bugs for about three years now, so I was quite pleased to find one on the weekend. It was sitting on a tree trunk where there was no bark. Its camouflage was very good as its head and thora",
+      "fileTitle": "File:Ptilocnemus lemur.jpg",
+      "width": 1280,
+      "height": 838,
+      "localPath": "/bugs/photos/feather-legged-assassin-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/54/Ptilocnemus_lemur_2.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Ptilocnemus_lemur_2.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ptilocnemus_lemur_2.jpg",
+      "credit": "Jean and Fred",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Ptilocnemus lemur Feather Legged Assassin I have been wanting to see one of these assassin bugs for about three years now, so I was quite pleased to find one on the weekend. It was sitting on a tree trunk where there was no bark. Its camouflage was very good as its head and thora",
+      "fileTitle": "File:Ptilocnemus lemur 2.jpg",
+      "width": 648,
+      "height": 864,
+      "localPath": "/bugs/photos/feather-legged-assassin-bug/2.jpg"
+    }
   ]
 }
