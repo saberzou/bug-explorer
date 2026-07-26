@@ -2050,5 +2050,24 @@
       "#c9a24b",
       "#6b5540"
     ]
+  },
+  {
+    "slug": "giant-silkworm-moth-caterpillar",
+    "commonName": "Giant Silkworm Moth Caterpillar",
+    "latinName": "Lonomia obliqua",
+    "habitat": "Southern Brazilian and South American rainforest tree trunks",
+    "sizeMm": 55,
+    "sizeKind": "body",
+    "weirdFact": "Guinness names it the world's most venomous caterpillar; its spines trigger fatal internal bleeding.",
+    "whyItsCool": "A mossy little bristle-ball that looks like tree bark yet carries an anticoagulant venom that can kill a grown adult.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-27",
+    "order": "Lepidoptera",
+    "family": "Saturniidae",
+    "colorPalette": [
+      "#4a5d32",
+      "#8a6d4b",
+      "#c9bfa0"
+    ]
   }
 ]

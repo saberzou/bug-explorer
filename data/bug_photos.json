@@ -3022,5 +3022,33 @@
       "height": 864,
       "localPath": "/bugs/photos/feather-legged-assassin-bug/2.jpg"
     }
+  ],
+  "giant-silkworm-moth-caterpillar": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/IMG_lonomia_obliqua123.jpg/1280px-IMG_lonomia_obliqua123.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/IMG_lonomia_obliqua123.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:IMG_lonomia_obliqua123.jpg",
+      "credit": "নয়ন জ্যোতি নাথ",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "বিষাক্ত এবিধ বিচা জাতীয় পলু। চামচেৰুকা বা চামচেলুকা।",
+      "fileTitle": "File:IMG lonomia obliqua123.jpg",
+      "width": 3468,
+      "height": 2355,
+      "localPath": "/bugs/photos/giant-silkworm-moth-caterpillar/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Lonomia_obliqua_156047889.jpg/1280px-Lonomia_obliqua_156047889.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Lonomia_obliqua_156047889.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lonomia_obliqua_156047889.jpg",
+      "credit": "Jhonatan Santos",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Lonomia obliqua",
+      "fileTitle": "File:Lonomia obliqua 156047889.jpg",
+      "width": 1536,
+      "height": 2048,
+      "localPath": "/bugs/photos/giant-silkworm-moth-caterpillar/2.jpg"
+    }
   ]
 }
