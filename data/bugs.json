@@ -2069,5 +2069,24 @@
       "#8a6d4b",
       "#c9bfa0"
     ]
+  },
+  {
+    "slug": "cecropia-moth",
+    "commonName": "Cecropia Moth",
+    "latinName": "Hyalophora cecropia",
+    "habitat": "Deciduous forests and suburbs across eastern North America",
+    "sizeMm": 150,
+    "sizeKind": "wingspan",
+    "weirdFact": "The adult has no working mouthparts and never eats — it lives about two weeks purely to mate.",
+    "whyItsCool": "North America's largest native moth: a hand-sized flurry of rust, cream and crescent moons that starves gorgeously for love.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-28",
+    "order": "Lepidoptera",
+    "family": "Saturniidae",
+    "colorPalette": [
+      "#8a3324",
+      "#e8d8b8",
+      "#c96a4b"
+    ]
   }
 ]

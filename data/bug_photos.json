@@ -3050,5 +3050,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/giant-silkworm-moth-caterpillar/2.jpg"
     }
+  ],
+  "cecropia-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Cecropia_Moth_Ontario_Hyalophora_cecropia_4371.jpg/1280px-Cecropia_Moth_Ontario_Hyalophora_cecropia_4371.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Cecropia_Moth_Ontario_Hyalophora_cecropia_4371.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cecropia_Moth_Ontario_Hyalophora_cecropia_4371.jpg",
+      "credit": "Paul Harrison",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Two cecropia moths, apparently mating, taken in Ontario.",
+      "fileTitle": "File:Cecropia Moth Ontario Hyalophora cecropia 4371.jpg",
+      "width": 4000,
+      "height": 2667,
+      "localPath": "/bugs/photos/cecropia-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Hyalophora_cecropia_%28Cecropia_Silkmoth%29_-_43012063221.jpg/1280px-Hyalophora_cecropia_%28Cecropia_Silkmoth%29_-_43012063221.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Hyalophora_cecropia_%28Cecropia_Silkmoth%29_-_43012063221.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hyalophora_cecropia_(Cecropia_Silkmoth)_-_43012063221.jpg",
+      "credit": "Kristof Zyskowski & Yulia Bereshpolova",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "USA: Maryland, Anne Arundel County, Edgewater, Beverly Triton Beach Park",
+      "fileTitle": "File:Hyalophora cecropia (Cecropia Silkmoth) - 43012063221.jpg",
+      "width": 3510,
+      "height": 2340,
+      "localPath": "/bugs/photos/cecropia-moth/2.jpg"
+    }
   ]
 }
