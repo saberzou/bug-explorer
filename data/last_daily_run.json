@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-28",
-  "slug": "cecropia-moth",
-  "commonName": "Cecropia Moth",
-  "discoveredOn": "2026-07-28",
-  "ranAtUtc": "2026-07-27T17:51:48Z",
+  "date": "2026-07-29",
+  "slug": "schoenherrs-blue-weevil",
+  "commonName": "Schoenherr's Blue Weevil",
+  "discoveredOn": "2026-07-29",
+  "ranAtUtc": "2026-07-28T17:51:54Z",
   "note": null,
-  "bugCount": 110
+  "bugCount": 111
 }
