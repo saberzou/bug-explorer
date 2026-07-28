@@ -2088,5 +2088,24 @@
       "#e8d8b8",
       "#c96a4b"
     ]
+  },
+  {
+    "slug": "schoenherrs-blue-weevil",
+    "commonName": "Schoenherr's Blue Weevil",
+    "latinName": "Eupholus schoenherrii",
+    "habitat": "New Guinea rainforests, on Piper (pepper) vines",
+    "sizeMm": 30,
+    "sizeKind": "body",
+    "weirdFact": "Its electric turquoise bands aren't pigment at all — they're tiny photonic crystals bending light like an opal.",
+    "whyItsCool": "A living gemstone that fakes its color with nanoscale architecture, outshining any paint a beetle could brew.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-29",
+    "order": "Coleoptera",
+    "family": "Curculionidae",
+    "colorPalette": [
+      "#1fb6c4",
+      "#0a2f3a",
+      "#111214"
+    ]
   }
 ]

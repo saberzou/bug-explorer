@@ -3078,5 +3078,33 @@
       "height": 2340,
       "localPath": "/bugs/photos/cecropia-moth/2.jpg"
     }
+  ],
+  "schoenherrs-blue-weevil": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Eupholus_linnei_1.jpg/1280px-Eupholus_linnei_1.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Eupholus_linnei_1.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eupholus_linnei_1.jpg",
+      "credit": "Holger Krisp",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Eupholus linnei",
+      "fileTitle": "File:Eupholus linnei 1.jpg",
+      "width": 4000,
+      "height": 2667,
+      "localPath": "/bugs/photos/schoenherrs-blue-weevil/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Eupholus_Weevil.jpg/1280px-Eupholus_Weevil.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Eupholus_Weevil.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eupholus_Weevil.jpg",
+      "credit": "Emman Asuncion Foronda",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "The Eupholus weevils are a genus of vividly colored beetles in the family Curculionidae , renowned for their iridescent blue, green, and turquoise hues",
+      "fileTitle": "File:Eupholus Weevil.jpg",
+      "width": 4126,
+      "height": 2754,
+      "localPath": "/bugs/photos/schoenherrs-blue-weevil/2.jpg"
+    }
   ]
 }
