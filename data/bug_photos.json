@@ -3106,5 +3106,33 @@
       "height": 2754,
       "localPath": "/bugs/photos/schoenherrs-blue-weevil/2.jpg"
     }
+  ],
+  "two-striped-walkingstick": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Anisomorpha_buprestoides_%2843323743060%29.jpg/1280px-Anisomorpha_buprestoides_%2843323743060%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Anisomorpha_buprestoides_%2843323743060%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Anisomorpha_buprestoides_(43323743060).jpg",
+      "credit": "Donald Hobern from Copenhagen, Denmark",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Anisomorpha buprestoides (Stoll, 1813), Natural Area Teaching Laboratory, University of Florida, Gainesville, Florida, USA, 1 October 2018",
+      "fileTitle": "File:Anisomorpha buprestoides (43323743060).jpg",
+      "width": 8688,
+      "height": 5792,
+      "localPath": "/bugs/photos/two-striped-walkingstick/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Anisomorpha_buprestoides_P1010148a.jpg/1280px-Anisomorpha_buprestoides_P1010148a.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Anisomorpha_buprestoides_P1010148a.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Anisomorpha_buprestoides_P1010148a.jpg",
+      "credit": "xpda",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Anisomorpha buprestoides, southern two-striped walkingstick, ID Confidence: 98",
+      "fileTitle": "File:Anisomorpha buprestoides P1010148a.jpg",
+      "width": 3456,
+      "height": 4608,
+      "localPath": "/bugs/photos/two-striped-walkingstick/2.jpg"
+    }
   ]
 }

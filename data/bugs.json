@@ -2107,5 +2107,24 @@
       "#0a2f3a",
       "#111214"
     ]
+  },
+  {
+    "slug": "two-striped-walkingstick",
+    "commonName": "Two-Striped Walkingstick",
+    "latinName": "Anisomorpha buprestoides",
+    "habitat": "Southeastern US pine and oak woodlands and scrub",
+    "sizeMm": 80,
+    "sizeKind": "body",
+    "weirdFact": "It aims a terpene spray with pinpoint accuracy up to a foot, causing painful chemical conjunctivitis if it hits your eyes.",
+    "whyItsCool": "Nicknamed the devil rider because males ride piggyback for weeks, this stick insect is a chemical sniper that never misses.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-07-30",
+    "order": "Phasmatodea",
+    "family": "Pseudophasmatidae",
+    "colorPalette": [
+      "#3a2c1e",
+      "#c9a24b",
+      "#6b5236"
+    ]
   }
 ]
