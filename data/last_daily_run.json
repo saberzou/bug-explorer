@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-29",
-  "slug": "schoenherrs-blue-weevil",
-  "commonName": "Schoenherr's Blue Weevil",
-  "discoveredOn": "2026-07-29",
-  "ranAtUtc": "2026-07-28T17:51:54Z",
+  "date": "2026-07-30",
+  "slug": "two-striped-walkingstick",
+  "commonName": "Two-Striped Walkingstick",
+  "discoveredOn": "2026-07-30",
+  "ranAtUtc": "2026-07-29T17:50:51Z",
   "note": null,
-  "bugCount": 111
+  "bugCount": 112
 }
