@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-30",
-  "slug": "two-striped-walkingstick",
-  "commonName": "Two-Striped Walkingstick",
-  "discoveredOn": "2026-07-30",
-  "ranAtUtc": "2026-07-29T17:50:51Z",
+  "date": "2026-07-31",
+  "slug": "hieroglyphic-moth",
+  "commonName": "Hieroglyphic Moth",
+  "discoveredOn": "2026-07-31",
+  "ranAtUtc": "2026-07-30T17:51:44Z",
   "note": null,
-  "bugCount": 112
+  "bugCount": 113
 }
