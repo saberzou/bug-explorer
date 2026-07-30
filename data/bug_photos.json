@@ -3134,5 +3134,33 @@
       "height": 4608,
       "localPath": "/bugs/photos/two-striped-walkingstick/2.jpg"
     }
+  ],
+  "hieroglyphic-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Baorisa_hieroglyphica_%28Noctuidae-_Pantheinae%29_%285647868392%29.jpg/1280px-Baorisa_hieroglyphica_%28Noctuidae-_Pantheinae%29_%285647868392%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Baorisa_hieroglyphica_%28Noctuidae-_Pantheinae%29_%285647868392%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Baorisa_hieroglyphica_(Noctuidae-_Pantheinae)_(5647868392).jpg",
+      "credit": "yakovlev.alexey from Moscow, Russia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Baorisa hieroglyphica (Noctuidae: Pantheinae)",
+      "fileTitle": "File:Baorisa hieroglyphica (Noctuidae- Pantheinae) (5647868392).jpg",
+      "width": 3054,
+      "height": 2036,
+      "localPath": "/bugs/photos/hieroglyphic-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Baorisa_hieroglyphica_302203864.jpg/1280px-Baorisa_hieroglyphica_302203864.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Baorisa_hieroglyphica_302203864.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Baorisa_hieroglyphica_302203864.jpg",
+      "credit": "Ramnarayan K",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Picasso Moth (Baorisa hieroglyphica)",
+      "fileTitle": "File:Baorisa hieroglyphica 302203864.jpg",
+      "width": 2048,
+      "height": 2048,
+      "localPath": "/bugs/photos/hieroglyphic-moth/2.jpg"
+    }
   ]
 }

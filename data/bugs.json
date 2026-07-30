@@ -2126,5 +2126,24 @@
       "#c9a24b",
       "#6b5236"
     ]
+  },
+  {
+    "slug": "hieroglyphic-moth",
+    "commonName": "Hieroglyphic Moth",
+    "latinName": "Baorisa hieroglyphica",
+    "habitat": "Montane forests of northeast India, Nepal and Southeast Asia",
+    "sizeMm": 40,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its forewings look inked with red, black and white symbols, like a coded manuscript no one can read.",
+    "whyItsCool": "A living illuminated page: nature drew crisp geometric glyphs on a moth and left the meaning blank.",
+    "rarity": "rare",
+    "discoveredOn": "2026-07-31",
+    "order": "Lepidoptera",
+    "family": "Nolidae",
+    "colorPalette": [
+      "#f2efe6",
+      "#c0392b",
+      "#1c1c1c"
+    ]
   }
 ]
