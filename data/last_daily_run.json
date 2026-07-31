@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-07-31",
-  "slug": "hieroglyphic-moth",
-  "commonName": "Hieroglyphic Moth",
-  "discoveredOn": "2026-07-31",
-  "ranAtUtc": "2026-07-30T17:51:44Z",
+  "date": "2026-08-01",
+  "slug": "mirror-spider",
+  "commonName": "Sequined Mirror Spider",
+  "discoveredOn": "2026-08-01",
+  "ranAtUtc": "2026-07-31T17:50:48Z",
   "note": null,
-  "bugCount": 113
+  "bugCount": 114
 }
