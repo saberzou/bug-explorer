@@ -3162,5 +3162,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/hieroglyphic-moth/2.jpg"
     }
+  ],
+  "mirror-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Resting_position_of_Thwaitesia_sp._at_Chintamani_Kar_Bird_Sanctuary.jpg/1280px-Resting_position_of_Thwaitesia_sp._at_Chintamani_Kar_Bird_Sanctuary.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Resting_position_of_Thwaitesia_sp._at_Chintamani_Kar_Bird_Sanctuary.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Resting_position_of_Thwaitesia_sp._at_Chintamani_Kar_Bird_Sanctuary.jpg",
+      "credit": "ManaskaMukhopadhyay",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Resting position of Thwaitesia sp. at Chintamani Kar Bird Sanctuary",
+      "fileTitle": "File:Resting position of Thwaitesia sp. at Chintamani Kar Bird Sanctuary.jpg",
+      "width": 2508,
+      "height": 1672,
+      "localPath": "/bugs/photos/mirror-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Thwaitesia_bracteata.jpg/1280px-Thwaitesia_bracteata.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Thwaitesia_bracteata.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Thwaitesia_bracteata.jpg",
+      "credit": "Jean Martins",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Thwaitesia bracteata. Species of arachnid.",
+      "fileTitle": "File:Thwaitesia bracteata.jpg",
+      "width": 1739,
+      "height": 1159,
+      "localPath": "/bugs/photos/mirror-spider/2.jpg"
+    }
   ]
 }

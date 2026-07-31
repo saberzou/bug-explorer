@@ -2145,5 +2145,24 @@
       "#c0392b",
       "#1c1c1c"
     ]
+  },
+  {
+    "slug": "mirror-spider",
+    "commonName": "Sequined Mirror Spider",
+    "latinName": "Thwaitesia argentiolineata",
+    "habitat": "Rainforest foliage across Australia, India and Southeast Asia",
+    "sizeMm": 4,
+    "sizeKind": "body",
+    "weirdFact": "Its silver 'mirror' plates shrink and expand as it moves, so the reflective shards visibly resize like a shifting mosaic.",
+    "whyItsCool": "A 4mm spider wearing chrome sequins it can flex on command — proof nature builds disco balls no jeweler would dare.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-01",
+    "order": "Araneae",
+    "family": "Theridiidae",
+    "colorPalette": [
+      "#c8ccd0",
+      "#7a8a5f",
+      "#3a4a2e"
+    ]
   }
 ]
