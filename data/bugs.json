@@ -2164,5 +2164,24 @@
       "#7a8a5f",
       "#3a4a2e"
     ]
+  },
+  {
+    "slug": "rosalia-longicorn",
+    "commonName": "Rosalia Longicorn",
+    "latinName": "Rosalia alpina",
+    "habitat": "Old-growth European beech forests, mountainous 500-1500m",
+    "sizeMm": 38,
+    "sizeKind": "body",
+    "weirdFact": "Its powder-blue body and black velvet spots are dusted with fine hairs, and each antenna segment wears a tiny tuft like a paintbrush.",
+    "whyItsCool": "A living Wedgwood vase on legs: this ash-blue beetle needs ancient dead beech wood, so it's a badge that a forest is truly old.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-02",
+    "order": "Coleoptera",
+    "family": "Cerambycidae",
+    "colorPalette": [
+      "#8fb4c4",
+      "#1c1c1c",
+      "#d8dfe0"
+    ]
   }
 ]

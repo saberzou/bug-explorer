@@ -3190,5 +3190,33 @@
       "height": 1159,
       "localPath": "/bugs/photos/mirror-spider/2.jpg"
     }
+  ],
+  "rosalia-longicorn": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Alpenbock%2C_Rosalia_Alpina.jpg/1280px-Alpenbock%2C_Rosalia_Alpina.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Alpenbock%2C_Rosalia_Alpina.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Alpenbock,_Rosalia_Alpina.jpg",
+      "credit": "Peter Kurzke",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Ein unter Schutz stehender Käfer",
+      "fileTitle": "File:Alpenbock, Rosalia Alpina.jpg",
+      "width": 5184,
+      "height": 3456,
+      "localPath": "/bugs/photos/rosalia-longicorn/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Alpenboktor_-_rosalia_longicorn_-_Rosalia_alpina.jpg/1280px-Alpenboktor_-_rosalia_longicorn_-_Rosalia_alpina.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Alpenboktor_-_rosalia_longicorn_-_Rosalia_alpina.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Alpenboktor_-_rosalia_longicorn_-_Rosalia_alpina.jpg",
+      "credit": "Bouke ten Cate",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Rosalia longicorn (Rosalia alpina) on an ancient beech near Pescasseroli, Abruzzo - Italy",
+      "fileTitle": "File:Alpenboktor - rosalia longicorn - Rosalia alpina.jpg",
+      "width": 4829,
+      "height": 3283,
+      "localPath": "/bugs/photos/rosalia-longicorn/2.jpg"
+    }
   ]
 }
