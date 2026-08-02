@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-08-02",
-  "slug": "rosalia-longicorn",
-  "commonName": "Rosalia Longicorn",
-  "discoveredOn": "2026-08-02",
-  "ranAtUtc": "2026-08-01T17:51:14Z",
+  "date": "2026-08-03",
+  "slug": "elegant-grasshopper",
+  "commonName": "Elegant Grasshopper",
+  "discoveredOn": "2026-08-03",
+  "ranAtUtc": "2026-08-02T17:50:52Z",
   "note": null,
-  "bugCount": 115
+  "bugCount": 116
 }
