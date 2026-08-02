@@ -3218,5 +3218,33 @@
       "height": 3283,
       "localPath": "/bugs/photos/rosalia-longicorn/2.jpg"
     }
+  ],
+  "elegant-grasshopper": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Elegant_Grasshopper_%28Zonocerus_elegans%29_%2816374303639%29.jpg/1280px-Elegant_Grasshopper_%28Zonocerus_elegans%29_%2816374303639%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Elegant_Grasshopper_%28Zonocerus_elegans%29_%2816374303639%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Elegant_Grasshopper_(Zonocerus_elegans)_(16374303639).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Sunset Dam, Lower Sabie, Kruger NP, SOUTH AFRICA",
+      "fileTitle": "File:Elegant Grasshopper (Zonocerus elegans) (16374303639).jpg",
+      "width": 5434,
+      "height": 3600,
+      "localPath": "/bugs/photos/elegant-grasshopper/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Zonocerus_elegans_-_Elegant_grasshopper_p%C3%A5_Lessertia_benguellensis-2156_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg/1280px-Zonocerus_elegans_-_Elegant_grasshopper_p%C3%A5_Lessertia_benguellensis-2156_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Zonocerus_elegans_-_Elegant_grasshopper_p%C3%A5_Lessertia_benguellensis-2156_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Zonocerus_elegans_-_Elegant_grasshopper_p%C3%A5_Lessertia_benguellensis-2156_-_Flickr_-_Ragnhild_%26_Neil_Crawford.jpg",
+      "credit": "Ragnhild&Neil Crawford from Sweden",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Zonocerus elegans - Elegant grasshopper på Lessertia benguellensis-2156",
+      "fileTitle": "File:Zonocerus elegans - Elegant grasshopper på Lessertia benguellensis-2156 - Flickr - Ragnhild & Neil Crawford.jpg",
+      "width": 1400,
+      "height": 933,
+      "localPath": "/bugs/photos/elegant-grasshopper/2.jpg"
+    }
   ]
 }

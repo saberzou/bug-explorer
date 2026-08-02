@@ -2183,5 +2183,24 @@
       "#1c1c1c",
       "#d8dfe0"
     ]
+  },
+  {
+    "slug": "elegant-grasshopper",
+    "commonName": "Elegant Grasshopper",
+    "latinName": "Zonocerus elegans",
+    "habitat": "Grasslands and scrub across sub-Saharan and Southern Africa",
+    "sizeMm": 45,
+    "sizeKind": "body",
+    "weirdFact": "When threatened it froths a foul toxic fluid from a back gland, brewed from poisonous plant alkaloids it hoards on purpose.",
+    "whyItsCool": "It stole its own venom from the plants it eats, then painted itself in circus colors to brag about it.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-03",
+    "order": "Orthoptera",
+    "family": "Pyrgomorphidae",
+    "colorPalette": [
+      "#e2c11a",
+      "#2e8b3a",
+      "#c0392b"
+    ]
   }
 ]
