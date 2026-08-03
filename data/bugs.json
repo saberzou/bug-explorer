@@ -2202,5 +2202,24 @@
       "#2e8b3a",
       "#c0392b"
     ]
+  },
+  {
+    "slug": "thai-jewel-beetle",
+    "commonName": "Thai Jewel Beetle",
+    "latinName": "Sternocera aequisignata",
+    "habitat": "Dry deciduous forests of Thailand and mainland Southeast Asia",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "Its emerald elytra are so durable and iridescent they're harvested and sewn into royal Thai textiles as living-looking sequins.",
+    "whyItsCool": "A beetle whose wing-cases outshine cut gemstones and keep their glow for decades after the beetle is gone.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-04",
+    "order": "Coleoptera",
+    "family": "Buprestidae",
+    "colorPalette": [
+      "#0f7a4d",
+      "#1aa06a",
+      "#c9b26a"
+    ]
   }
 ]

@@ -3246,5 +3246,33 @@
       "height": 933,
       "localPath": "/bugs/photos/elegant-grasshopper/2.jpg"
     }
+  ],
+  "thai-jewel-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jewel_Beetle_%28Sternocera_aequisignata%29_%288226873357%29.jpg/1280px-Jewel_Beetle_%28Sternocera_aequisignata%29_%288226873357%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Jewel_Beetle_%28Sternocera_aequisignata%29_%288226873357%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Jewel_Beetle_(Sternocera_aequisignata)_(8226873357).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Chiang Mai, THAILAND",
+      "fileTitle": "File:Jewel Beetle (Sternocera aequisignata) (8226873357).jpg",
+      "width": 3403,
+      "height": 2278,
+      "localPath": "/bugs/photos/thai-jewel-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sternocera_aequisignata_%2817392196612%29.jpg/1280px-Sternocera_aequisignata_%2817392196612%29.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sternocera_aequisignata_%2817392196612%29.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Sternocera_aequisignata_(17392196612).jpg",
+      "credit": "Ben Sale from UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Saunders,1866 Sex: ? Data: None Size: 36mm",
+      "fileTitle": "File:Sternocera aequisignata (17392196612).jpg",
+      "width": 1500,
+      "height": 2544,
+      "localPath": "/bugs/photos/thai-jewel-beetle/2.jpg"
+    }
   ]
 }
