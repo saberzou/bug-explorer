@@ -2221,5 +2221,24 @@
       "#1aa06a",
       "#c9b26a"
     ]
+  },
+  {
+    "slug": "green-tiger-beetle",
+    "commonName": "Green Tiger Beetle",
+    "latinName": "Cicindela campestris",
+    "habitat": "Heathland, sandy grassland and open trails across Europe and Asia",
+    "sizeMm": 14,
+    "sizeKind": "body",
+    "weirdFact": "It sprints so fast it outruns its own eyesight, going briefly blind and stopping to relocate prey mid-chase.",
+    "whyItsCool": "A jewel-green heath assassin that runs 60cm a second on stilt legs — pure predatory swagger in a bug you can hold.",
+    "rarity": "common",
+    "discoveredOn": "2026-08-05",
+    "order": "Coleoptera",
+    "family": "Cicindelidae",
+    "colorPalette": [
+      "#2e8b57",
+      "#c9b458",
+      "#3a2a1a"
+    ]
   }
 ]

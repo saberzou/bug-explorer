@@ -3274,5 +3274,33 @@
       "height": 2544,
       "localPath": "/bugs/photos/thai-jewel-beetle/2.jpg"
     }
+  ],
+  "green-tiger-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cicindela_campestris_%2835069242916%29.jpg/1280px-Cicindela_campestris_%2835069242916%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cicindela_campestris_%2835069242916%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cicindela_campestris_(35069242916).jpg",
+      "credit": "Björn S...",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Green Tiger Beetle - Cicindela campestris",
+      "fileTitle": "File:Cicindela campestris (35069242916).jpg",
+      "width": 3456,
+      "height": 5184,
+      "localPath": "/bugs/photos/green-tiger-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/2010-04-16_%2865%29_Feld-Sandlaufk%C3%A4fer%2C_Tiger_beetle%2C_Cicindela_campestris.JPG/1280px-2010-04-16_%2865%29_Feld-Sandlaufk%C3%A4fer%2C_Tiger_beetle%2C_Cicindela_campestris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/2010-04-16_%2865%29_Feld-Sandlaufk%C3%A4fer%2C_Tiger_beetle%2C_Cicindela_campestris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:2010-04-16_(65)_Feld-Sandlaufk%C3%A4fer,_Tiger_beetle,_Cicindela_campestris.JPG",
+      "credit": "Vera Buhl",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Tiger beetle",
+      "fileTitle": "File:2010-04-16 (65) Feld-Sandlaufkäfer, Tiger beetle, Cicindela campestris.JPG",
+      "width": 3008,
+      "height": 2000,
+      "localPath": "/bugs/photos/green-tiger-beetle/2.jpg"
+    }
   ]
 }
