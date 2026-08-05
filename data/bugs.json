@@ -2240,5 +2240,24 @@
       "#c9b458",
       "#3a2a1a"
     ]
+  },
+  {
+    "slug": "sorting-hat-spider",
+    "commonName": "Sorting Hat Spider",
+    "latinName": "Eriovixia gryffindori",
+    "habitat": "Leaf litter in evergreen forests of the Western Ghats, India",
+    "sizeMm": 7,
+    "sizeKind": "body",
+    "weirdFact": "Its cone-shaped abdomen looks so much like Hogwarts' Sorting Hat that scientists named it after Godric Gryffindor.",
+    "whyItsCool": "A tiny orb-weaver that hides among dead leaves by looking like a magical crumpled hat, then tucks itself still by day.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-06",
+    "order": "Araneae",
+    "family": "Araneidae",
+    "colorPalette": [
+      "#8b5a2b",
+      "#d9b46f",
+      "#3f2a1d"
+    ]
   }
 ]

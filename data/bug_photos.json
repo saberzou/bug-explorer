@@ -3302,5 +3302,33 @@
       "height": 2000,
       "localPath": "/bugs/photos/green-tiger-beetle/2.jpg"
     }
+  ],
+  "sorting-hat-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Eriovixia_gryffindori_102311270.jpg/1280px-Eriovixia_gryffindori_102311270.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eriovixia_gryffindori_102311270.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriovixia_gryffindori_102311270.jpg",
+      "credit": "Prashantha Krishna M C",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Sorting Hat Spider (Eriovixia gryffindori) in India",
+      "fileTitle": "File:Eriovixia gryffindori 102311270.jpg",
+      "width": 2048,
+      "height": 1365,
+      "localPath": "/bugs/photos/sorting-hat-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Eriovixia_gryffindori_Sorting_Hat_Spider_%28Belgaum%29.jpg/1280px-Eriovixia_gryffindori_Sorting_Hat_Spider_%28Belgaum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eriovixia_gryffindori_Sorting_Hat_Spider_%28Belgaum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriovixia_gryffindori_Sorting_Hat_Spider_(Belgaum).jpg",
+      "credit": "Sarusscape",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "The Sorting Hat Spider (Eriovixia gryffindori) with a hoverfly prey. Taken in Vaccine Depot, Belgaum city, Karnataka, India",
+      "fileTitle": "File:Eriovixia gryffindori Sorting Hat Spider (Belgaum).jpg",
+      "width": 2000,
+      "height": 1309,
+      "localPath": "/bugs/photos/sorting-hat-spider/2.jpg"
+    }
   ]
 }
