@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-08-06",
-  "slug": "sorting-hat-spider",
-  "commonName": "Sorting Hat Spider",
-  "discoveredOn": "2026-08-06",
-  "ranAtUtc": "2026-08-05T18:25:50Z",
+  "date": "2026-08-10",
+  "slug": "moscardon-bumblebee",
+  "commonName": "Moscardon bumblebee",
+  "discoveredOn": "2026-08-10",
+  "ranAtUtc": "2026-08-09T18:25:42Z",
   "note": null,
-  "bugCount": 119
+  "bugCount": 120
 }
