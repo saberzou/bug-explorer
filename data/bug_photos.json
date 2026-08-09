@@ -3330,5 +3330,33 @@
       "height": 1309,
       "localPath": "/bugs/photos/sorting-hat-spider/2.jpg"
     }
+  ],
+  "moscardon-bumblebee": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bombus_dahlbomii%2C_back%2C_Chile_2018-05-16-17.52_%2843161518751%29.jpg/1280px-Bombus_dahlbomii%2C_back%2C_Chile_2018-05-16-17.52_%2843161518751%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Bombus_dahlbomii%2C_back%2C_Chile_2018-05-16-17.52_%2843161518751%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bombus_dahlbomii,_back,_Chile_2018-05-16-17.52_(43161518751).jpg",
+      "credit": "USGS Bee Inventory and Monitoring Lab from Beltsville, Maryland, USA",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "The giant bumblebee (Bombus dahlbomii). A denizen of the southern Andes and widely believed to be in decline due to competition and perhaps spread of pathogens with two introduced European bumblebees that have invaded the region. You notice this bee when it flies by. Dramatically",
+      "fileTitle": "File:Bombus dahlbomii, back, Chile 2018-05-16-17.52 (43161518751).jpg",
+      "width": 5760,
+      "height": 3840,
+      "localPath": "/bugs/photos/moscardon-bumblebee/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bombus_dahlbomii.jpg/1280px-Bombus_dahlbomii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Bombus_dahlbomii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bombus_dahlbomii.jpg",
+      "credit": "Pato Novoa",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Bombus dahlbomii en cardón (Cynara cardunculus). Quebrada El Canelo, 2 km al sur de Los Vilos, Chile.",
+      "fileTitle": "File:Bombus dahlbomii.jpg",
+      "width": 2048,
+      "height": 1361,
+      "localPath": "/bugs/photos/moscardon-bumblebee/2.jpg"
+    }
   ]
 }

@@ -2259,5 +2259,24 @@
       "#d9b46f",
       "#3f2a1d"
     ]
+  },
+  {
+    "slug": "moscardon-bumblebee",
+    "commonName": "Moscardon bumblebee",
+    "latinName": "Bombus dahlbomii",
+    "habitat": "Temperate forests, shrublands, and flower-rich Andean and Patagonian landscapes of southern Chile and Argentina.",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "This giant Patagonian bumblebee can see red flowers, a rare trick among bees, earning it nicknames like flying mouse and the panda of insects.",
+    "whyItsCool": "One of the world's largest bumblebees, it is a shaggy orange pollinator whose decline reveals how imported bees can reshape whole southern ecosystems.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-10",
+    "order": "Hymenoptera",
+    "family": "Apidae",
+    "colorPalette": [
+      "#C65A2E",
+      "#2F1F19",
+      "#F2B35D"
+    ]
   }
 ]
