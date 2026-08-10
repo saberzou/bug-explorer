@@ -3358,5 +3358,33 @@
       "height": 1361,
       "localPath": "/bugs/photos/moscardon-bumblebee/2.jpg"
     }
+  ],
+  "scorpion-tailed-spider": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Arachnura_higginsi_-_hntro_-_390309114.jpeg/1280px-Arachnura_higginsi_-_hntro_-_390309114.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Arachnura_higginsi_-_hntro_-_390309114.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Arachnura_higginsi_-_hntro_-_390309114.jpeg",
+      "credit": "hntro",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Arachnura higginsi, New South Wales, AU, 2024-06-04 (iNaturalist).",
+      "fileTitle": "File:Arachnura higginsi - hntro - 390309114.jpeg",
+      "width": 2048,
+      "height": 1536,
+      "localPath": "/bugs/photos/scorpion-tailed-spider/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Arachnura_higginsi_-_TJ_Jones_-_451494313.jpeg/1280px-Arachnura_higginsi_-_TJ_Jones_-_451494313.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Arachnura_higginsi_-_TJ_Jones_-_451494313.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Arachnura_higginsi_-_TJ_Jones_-_451494313.jpeg",
+      "credit": "TJ Jones",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Arachnura higginsi, New South Wales, AU, 2024-11-19 (iNaturalist).",
+      "fileTitle": "File:Arachnura higginsi - TJ Jones - 451494313.jpeg",
+      "width": 1536,
+      "height": 2048,
+      "localPath": "/bugs/photos/scorpion-tailed-spider/2.jpg"
+    }
   ]
 }

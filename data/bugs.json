@@ -2278,5 +2278,24 @@
       "#2F1F19",
       "#F2B35D"
     ]
+  },
+  {
+    "slug": "scorpion-tailed-spider",
+    "commonName": "Scorpion-tailed Spider",
+    "latinName": "Arachnura higginsi",
+    "habitat": "Eucalypt forests, shrubland, and gardens in eastern and southern Australia",
+    "sizeMm": 16,
+    "sizeKind": "body",
+    "weirdFact": "Females curl a narrow tail-like abdomen over the web, looking uncannily like a tiny scorpion.",
+    "whyItsCool": "It is a harmless orb-weaver with a body plan that turns spider camouflage into a convincing scorpion-shaped bluff.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-11",
+    "order": "Araneae",
+    "family": "Araneidae",
+    "colorPalette": [
+      "#6f4a2f",
+      "#c8955f",
+      "#f3dfb5"
+    ]
   }
 ]
