@@ -2297,5 +2297,24 @@
       "#c8955f",
       "#f3dfb5"
     ]
+  },
+  {
+    "slug": "barrel-amphipod",
+    "commonName": "Barrel Amphipod",
+    "latinName": "Phronima sedentaria",
+    "habitat": "Temperate to tropical open-ocean midwater worldwide",
+    "sizeMm": 42,
+    "sizeKind": "body",
+    "weirdFact": "Females carve a barrel from a salp's body and raise their young inside the drifting gelatinous nursery.",
+    "whyItsCool": "A transparent open-ocean amphipod that turns another animal into a tiny submarine crib.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-13",
+    "order": "Amphipoda",
+    "family": "Phronimidae",
+    "colorPalette": [
+      "#d8f2f0",
+      "#6f8ea0",
+      "#2f3f52"
+    ]
   }
 ]

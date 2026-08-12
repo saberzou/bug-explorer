@@ -3386,5 +3386,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/scorpion-tailed-spider/2.jpg"
     }
+  ],
+  "barrel-amphipod": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Phronima_sedentaria_17541085.jpg/1280px-Phronima_sedentaria_17541085.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Phronima_sedentaria_17541085.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phronima_sedentaria_17541085.jpg",
+      "credit": "Julien Renoult",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "parasitic hyperiid amphipod (Phronima sedentaria)",
+      "fileTitle": "File:Phronima sedentaria 17541085.jpg",
+      "width": 2048,
+      "height": 1536,
+      "localPath": "/bugs/photos/barrel-amphipod/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Phronima_sedentaria_3684592.jpg/1280px-Phronima_sedentaria_3684592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Phronima_sedentaria_3684592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phronima_sedentaria_3684592.jpg",
+      "credit": "Steve Kerr",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "parasitic hyperiid amphipod (Phronima sedentaria)",
+      "fileTitle": "File:Phronima sedentaria 3684592.jpg",
+      "width": 2048,
+      "height": 1762,
+      "localPath": "/bugs/photos/barrel-amphipod/2.jpg"
+    }
   ]
 }
