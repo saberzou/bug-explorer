@@ -1,10 +1,10 @@
 {
-  "status": "error",
-  "date": "2026-08-12",
-  "slug": null,
-  "commonName": null,
-  "discoveredOn": null,
-  "ranAtUtc": "2026-08-11T17:36:35Z",
-  "note": "baseline gate failed before prep: glasswing-butterfly thumbnail cropped by circle",
-  "bugCount": 121
+  "status": "ok",
+  "date": "2026-08-13",
+  "slug": "barrel-amphipod",
+  "commonName": "Barrel Amphipod",
+  "discoveredOn": "2026-08-13",
+  "ranAtUtc": "2026-08-12T18:25:49Z",
+  "note": null,
+  "bugCount": 122
 }
