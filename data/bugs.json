@@ -2316,5 +2316,24 @@
       "#6f8ea0",
       "#2f3f52"
     ]
+  },
+  {
+    "slug": "dead-leaf-mantis",
+    "commonName": "Dead Leaf Mantis",
+    "latinName": "Deroplatys desiccata",
+    "habitat": "Southeast Asian tropical forest understory",
+    "sizeMm": 90,
+    "sizeKind": "body",
+    "weirdFact": "Its thorax flares into a dry-leaf shield, complete with vein-like ridges and ragged edges.",
+    "whyItsCool": "It looks less like camouflage and more like a fallen leaf that learned to stare back.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-14",
+    "order": "Mantodea",
+    "family": "Deroplatyidae",
+    "colorPalette": [
+      "#8b5e34",
+      "#c6a16b",
+      "#2f3f2f"
+    ]
   }
 ]

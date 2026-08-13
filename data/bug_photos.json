@@ -3414,5 +3414,33 @@
       "height": 1762,
       "localPath": "/bugs/photos/barrel-amphipod/2.jpg"
     }
+  ],
+  "dead-leaf-mantis": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Deroplatys_desiccata_MHNT_CUT_2014_14_7.jpg/1280px-Deroplatys_desiccata_MHNT_CUT_2014_14_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Deroplatys_desiccata_MHNT_CUT_2014_14_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Deroplatys_desiccata_MHNT_CUT_2014_14_7.jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Giant Dead Leaf Mantis - prepared in the Beauchene technique.",
+      "fileTitle": "File:Deroplatys desiccata MHNT CUT 2014 14 7.jpg",
+      "width": 5334,
+      "height": 3891,
+      "localPath": "/bugs/photos/dead-leaf-mantis/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Dead_Leaf_Mantis_%28Deroplatys_desiccata%29_%288727839353%29.jpg/1280px-Dead_Leaf_Mantis_%28Deroplatys_desiccata%29_%288727839353%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Dead_Leaf_Mantis_%28Deroplatys_desiccata%29_%288727839353%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dead_Leaf_Mantis_(Deroplatys_desiccata)_(8727839353).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Taman Negara NP, Pahang, MALAYSIA",
+      "fileTitle": "File:Dead Leaf Mantis (Deroplatys desiccata) (8727839353).jpg",
+      "width": 3872,
+      "height": 2327,
+      "localPath": "/bugs/photos/dead-leaf-mantis/2.jpg"
+    }
   ]
 }
