@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-08-13",
-  "slug": "barrel-amphipod",
-  "commonName": "Barrel Amphipod",
-  "discoveredOn": "2026-08-13",
-  "ranAtUtc": "2026-08-12T18:25:49Z",
+  "date": "2026-08-14",
+  "slug": "dead-leaf-mantis",
+  "commonName": "Dead Leaf Mantis",
+  "discoveredOn": "2026-08-14",
+  "ranAtUtc": "2026-08-13T18:25:52Z",
   "note": null,
-  "bugCount": 122
+  "bugCount": 123
 }
