@@ -3442,5 +3442,33 @@
       "height": 2327,
       "localPath": "/bugs/photos/dead-leaf-mantis/2.jpg"
     }
+  ],
+  "peruvian-fire-stick": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Oreophoetes_peruana_%2814340156548%29.jpg/1280px-Oreophoetes_peruana_%2814340156548%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Oreophoetes_peruana_%2814340156548%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oreophoetes_peruana_(14340156548).jpg",
+      "credit": "Graham Wise from Brisbane, Australia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Peruvian fire stick",
+      "fileTitle": "File:Oreophoetes peruana (14340156548).jpg",
+      "width": 5184,
+      "height": 3026,
+      "localPath": "/bugs/photos/peruvian-fire-stick/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Oreophoetes_peruana_-_adult_female.jpg/1280px-Oreophoetes_peruana_-_adult_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Oreophoetes_peruana_-_adult_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oreophoetes_peruana_-_adult_female.jpg",
+      "credit": "Drägüs",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "adult female of Oreophoetes peruana",
+      "fileTitle": "File:Oreophoetes peruana - adult female.jpg",
+      "width": 2422,
+      "height": 3244,
+      "localPath": "/bugs/photos/peruvian-fire-stick/2.jpg"
+    }
   ]
 }

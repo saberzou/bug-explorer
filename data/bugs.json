@@ -2335,5 +2335,24 @@
       "#c6a16b",
       "#2f3f2f"
     ]
+  },
+  {
+    "slug": "peruvian-fire-stick",
+    "commonName": "Peruvian Fire Stick",
+    "latinName": "Oreophoetes peruana",
+    "habitat": "Cloud forests and humid montane forests of Peru and Ecuador",
+    "sizeMm": 80,
+    "sizeKind": "body",
+    "weirdFact": "When threatened, it sprays a milky defensive fluid from glands behind the head that can irritate eyes and skin.",
+    "whyItsCool": "A walking stick with warning colors instead of camouflage: velvet black limbs, red body, and a chemical defense to match the signal.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-15",
+    "order": "Phasmatodea",
+    "family": "Diapheromeridae",
+    "colorPalette": [
+      "#c9332f",
+      "#171717",
+      "#f2b35e"
+    ]
   }
 ]
