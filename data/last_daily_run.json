@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-08-14",
-  "slug": "dead-leaf-mantis",
-  "commonName": "Dead Leaf Mantis",
-  "discoveredOn": "2026-08-14",
-  "ranAtUtc": "2026-08-13T18:25:52Z",
+  "date": "2026-08-15",
+  "slug": "peruvian-fire-stick",
+  "commonName": "Peruvian Fire Stick",
+  "discoveredOn": "2026-08-15",
+  "ranAtUtc": "2026-08-14T18:25:45Z",
   "note": null,
-  "bugCount": 123
+  "bugCount": 124
 }
