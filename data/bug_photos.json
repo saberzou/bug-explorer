@@ -3470,5 +3470,33 @@
       "height": 3244,
       "localPath": "/bugs/photos/peruvian-fire-stick/2.jpg"
     }
+  ],
+  "sabre-wasp": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Holzwespen-Schlupfwespe_%E2%99%80_%28Rhyssa_persuasoria%29%2C_Hohes_Venn%2C_Ostbelgien_%2850722027848%29.jpg/1280px-Holzwespen-Schlupfwespe_%E2%99%80_%28Rhyssa_persuasoria%29%2C_Hohes_Venn%2C_Ostbelgien_%2850722027848%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Holzwespen-Schlupfwespe_%E2%99%80_%28Rhyssa_persuasoria%29%2C_Hohes_Venn%2C_Ostbelgien_%2850722027848%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Holzwespen-Schlupfwespe_%E2%99%80_(Rhyssa_persuasoria),_Hohes_Venn,_Ostbelgien_(50722027848).jpg",
+      "credit": "Frank Vassen from Brussels, Belgium",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "OLYMPUS DIGITAL CAMERA",
+      "fileTitle": "File:Holzwespen-Schlupfwespe ♀ (Rhyssa persuasoria), Hohes Venn, Ostbelgien (50722027848).jpg",
+      "width": 4233,
+      "height": 2919,
+      "localPath": "/bugs/photos/sabre-wasp/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Holzwespen-Schlupfwespe_%28Rhyssa_persuasoria%29_1.jpg/1280px-Holzwespen-Schlupfwespe_%28Rhyssa_persuasoria%29_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Holzwespen-Schlupfwespe_%28Rhyssa_persuasoria%29_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Holzwespen-Schlupfwespe_(Rhyssa_persuasoria)_1.jpg",
+      "credit": "Bernd Trommer",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Holzwespen-Schlupfwespe (Rhyssa persuasoria)",
+      "fileTitle": "File:Holzwespen-Schlupfwespe (Rhyssa persuasoria) 1.jpg",
+      "width": 4000,
+      "height": 3000,
+      "localPath": "/bugs/photos/sabre-wasp/2.jpg"
+    }
   ]
 }

@@ -2354,5 +2354,24 @@
       "#171717",
       "#f2b35e"
     ]
+  },
+  {
+    "slug": "sabre-wasp",
+    "commonName": "Sabre Wasp",
+    "latinName": "Rhyssa persuasoria",
+    "habitat": "Coniferous and mixed woodlands, especially around dead or dying timber",
+    "sizeMm": 40,
+    "sizeKind": "body",
+    "weirdFact": "Females drill a hair-thin ovipositor deep into wood to place eggs on horntail larvae hidden in tunnels.",
+    "whyItsCool": "The long black tail looks impossible, but it is a living drill bit for finding prey sealed inside timber.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-16",
+    "order": "Hymenoptera",
+    "family": "Ichneumonidae",
+    "colorPalette": [
+      "#1f1b18",
+      "#f1e7d2",
+      "#b86d32"
+    ]
   }
 ]
