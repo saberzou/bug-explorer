@@ -3498,5 +3498,33 @@
       "height": 3000,
       "localPath": "/bugs/photos/sabre-wasp/2.jpg"
     }
+  ],
+  "acorn-weevil": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Acorn_Weevil_%28Curculio_glandium%29_%2853171798847%29.jpg/1280px-Acorn_Weevil_%28Curculio_glandium%29_%2853171798847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Acorn_Weevil_%28Curculio_glandium%29_%2853171798847%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Acorn_Weevil_(Curculio_glandium)_(53171798847).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Cours, Rosis, Hérault, Languedoc-Roussillon, FRANCE",
+      "fileTitle": "File:Acorn Weevil (Curculio glandium) (53171798847).jpg",
+      "width": 4830,
+      "height": 3157,
+      "localPath": "/bugs/photos/acorn-weevil/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Charan%C3%A7on_du_ch%C3%AAne_%28Curculio_glandium%29_%E2%99%80%2C_Parc_de_Woluwe%2C_Bruxelles_%2852030196229%29.jpg/1280px-Charan%C3%A7on_du_ch%C3%AAne_%28Curculio_glandium%29_%E2%99%80%2C_Parc_de_Woluwe%2C_Bruxelles_%2852030196229%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Charan%C3%A7on_du_ch%C3%AAne_%28Curculio_glandium%29_%E2%99%80%2C_Parc_de_Woluwe%2C_Bruxelles_%2852030196229%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Charan%C3%A7on_du_ch%C3%AAne_(Curculio_glandium)_%E2%99%80,_Parc_de_Woluwe,_Bruxelles_(52030196229).jpg",
+      "credit": "Frank Vassen from Brussels, Belgium",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "OLYMPUS DIGITAL CAMERA",
+      "fileTitle": "File:Charançon du chêne (Curculio glandium) ♀, Parc de Woluwe, Bruxelles (52030196229).jpg",
+      "width": 3857,
+      "height": 2775,
+      "localPath": "/bugs/photos/acorn-weevil/2.jpg"
+    }
   ]
 }

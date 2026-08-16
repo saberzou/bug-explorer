@@ -2373,5 +2373,24 @@
       "#f1e7d2",
       "#b86d32"
     ]
+  },
+  {
+    "slug": "acorn-weevil",
+    "commonName": "Acorn Weevil",
+    "latinName": "Curculio glandium",
+    "habitat": "Oak woodlands, hedgerows, parks, and gardens where acorns develop",
+    "sizeMm": 8,
+    "sizeKind": "body",
+    "weirdFact": "Females use an extra-long snout to drill into green acorns, then turn around and place an egg in the hole.",
+    "whyItsCool": "Its curved rostrum works like a living auger, letting the larva grow sealed inside a single acorn.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-17",
+    "order": "Coleoptera",
+    "family": "Curculionidae",
+    "colorPalette": [
+      "#6b4a2f",
+      "#c99b5f",
+      "#f3ead7"
+    ]
   }
 ]
