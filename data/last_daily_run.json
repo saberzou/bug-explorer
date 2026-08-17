@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-08-17",
-  "slug": "acorn-weevil",
-  "commonName": "Acorn Weevil",
-  "discoveredOn": "2026-08-17",
-  "ranAtUtc": "2026-08-16T18:25:49Z",
+  "date": "2026-08-18",
+  "slug": "giant-vinegaroon",
+  "commonName": "Giant Vinegaroon",
+  "discoveredOn": "2026-08-18",
+  "ranAtUtc": "2026-08-17T18:25:52Z",
   "note": null,
-  "bugCount": 126
+  "bugCount": 127
 }
