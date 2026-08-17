@@ -3526,5 +3526,33 @@
       "height": 2775,
       "localPath": "/bugs/photos/acorn-weevil/2.jpg"
     }
+  ],
+  "giant-vinegaroon": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Giant_Vinegaroon_%28Thelyphonidae%2C_Mastigoproctus_giganteus%29_%2828981851674%29.jpg/1280px-Giant_Vinegaroon_%28Thelyphonidae%2C_Mastigoproctus_giganteus%29_%2828981851674%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Giant_Vinegaroon_%28Thelyphonidae%2C_Mastigoproctus_giganteus%29_%2828981851674%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Giant_Vinegaroon_(Thelyphonidae,_Mastigoproctus_giganteus)_(28981851674).jpg",
+      "credit": "Insects Unlocked",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "caption": "USA, TX, Jeff Davis Co.: Fort Davis Davis Mountains State Park 3-ix-2016",
+      "fileTitle": "File:Giant Vinegaroon (Thelyphonidae, Mastigoproctus giganteus) (28981851674).jpg",
+      "width": 5184,
+      "height": 3936,
+      "localPath": "/bugs/photos/giant-vinegaroon/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Giant_Vinegaroon_%28Mastigoproctus_giganteus%29_%2814560685062%29.jpg/1280px-Giant_Vinegaroon_%28Mastigoproctus_giganteus%29_%2814560685062%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Giant_Vinegaroon_%28Mastigoproctus_giganteus%29_%2814560685062%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Giant_Vinegaroon_(Mastigoproctus_giganteus)_(14560685062).jpg",
+      "credit": "Pavel Kirillov from St.Petersburg, Russia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Thanks to Manuel Nevarez for ID",
+      "fileTitle": "File:Giant Vinegaroon (Mastigoproctus giganteus) (14560685062).jpg",
+      "width": 4288,
+      "height": 2848,
+      "localPath": "/bugs/photos/giant-vinegaroon/2.jpg"
+    }
   ]
 }

@@ -2392,5 +2392,24 @@
       "#c99b5f",
       "#f3ead7"
     ]
+  },
+  {
+    "slug": "giant-vinegaroon",
+    "commonName": "Giant Vinegaroon",
+    "latinName": "Mastigoproctus giganteus",
+    "habitat": "Arid scrub, deserts, and subtropical woodlands of the southern United States and Mexico, sheltering under rocks and logs",
+    "sizeMm": 75,
+    "sizeKind": "body",
+    "weirdFact": "When threatened, it sprays a mist rich in acetic acid, smelling sharply like vinegar.",
+    "whyItsCool": "It looks like a scorpion with a whip tail, but its defense is a chemical vinegar fog instead of a sting.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-18",
+    "order": "Thelyphonida",
+    "family": "Thelyphonidae",
+    "colorPalette": [
+      "#1f1714",
+      "#7a4d32",
+      "#d7c1a3"
+    ]
   }
 ]
