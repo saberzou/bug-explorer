@@ -3554,5 +3554,33 @@
       "height": 2848,
       "localPath": "/bugs/photos/giant-vinegaroon/2.jpg"
     }
+  ],
+  "jungle-nymph": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Adult_female_of_Heteropteryx_dilatata.jpg/1280px-Adult_female_of_Heteropteryx_dilatata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Adult_female_of_Heteropteryx_dilatata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Adult_female_of_Heteropteryx_dilatata.jpg",
+      "credit": "Klaudia Pizoń",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "The boy is admiring one of the largest insects in the world",
+      "fileTitle": "File:Adult female of Heteropteryx dilatata.jpg",
+      "width": 3264,
+      "height": 2448,
+      "localPath": "/bugs/photos/jungle-nymph/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/20181007_Artis_Zoo_-_Heteropteryx_dilatata.jpg/1280px-20181007_Artis_Zoo_-_Heteropteryx_dilatata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/20181007_Artis_Zoo_-_Heteropteryx_dilatata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:20181007_Artis_Zoo_-_Heteropteryx_dilatata.jpg",
+      "credit": "Rudolphous",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Artis Zoo",
+      "fileTitle": "File:20181007 Artis Zoo - Heteropteryx dilatata.jpg",
+      "width": 3024,
+      "height": 4032,
+      "localPath": "/bugs/photos/jungle-nymph/2.jpg"
+    }
   ]
 }

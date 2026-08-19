@@ -2411,5 +2411,24 @@
       "#7a4d32",
       "#d7c1a3"
     ]
+  },
+  {
+    "slug": "jungle-nymph",
+    "commonName": "Jungle Nymph",
+    "latinName": "Heteropteryx dilatata",
+    "habitat": "Lowland rainforests of Malaysia",
+    "sizeMm": 150,
+    "sizeKind": "body",
+    "weirdFact": "When threatened, it flashes thorny hind legs and can clamp them shut like a spiked trap.",
+    "whyItsCool": "A leaf disguise with armor underneath: gentle green camouflage backed by one of the boldest threat poses in the cabinet.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-20",
+    "order": "Phasmatodea",
+    "family": "Heteropterygidae",
+    "colorPalette": [
+      "#6f8f3a",
+      "#c6b26a",
+      "#3f4b2b"
+    ]
   }
 ]
