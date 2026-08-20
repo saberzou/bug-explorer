@@ -3582,5 +3582,33 @@
       "height": 4032,
       "localPath": "/bugs/photos/jungle-nymph/2.jpg"
     }
+  ],
+  "long-horned-orb-weaver": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Macracantha_arcuata_-_Curved_Spiny_Spider_%288550192839%29_by_Rushen.jpg/1280px-Macracantha_arcuata_-_Curved_Spiny_Spider_%288550192839%29_by_Rushen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Macracantha_arcuata_-_Curved_Spiny_Spider_%288550192839%29_by_Rushen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Macracantha_arcuata_-_Curved_Spiny_Spider_(8550192839)_by_Rushen.jpg",
+      "credit": "Rushen",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Curved Spiny Spider (Macracantha arcuata). Kaeng Krachan National Park, Thailand",
+      "fileTitle": "File:Macracantha arcuata - Curved Spiny Spider (8550192839) by Rushen.jpg",
+      "width": 3766,
+      "height": 2501,
+      "localPath": "/bugs/photos/long-horned-orb-weaver/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Long-horned_orb-weaver_spider_scientifically_known_as_Macracantha_arcuata_spotted_at_Nambor_Wildlife_Sanctuary%2C_Assam.jpg/1280px-Long-horned_orb-weaver_spider_scientifically_known_as_Macracantha_arcuata_spotted_at_Nambor_Wildlife_Sanctuary%2C_Assam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Long-horned_orb-weaver_spider_scientifically_known_as_Macracantha_arcuata_spotted_at_Nambor_Wildlife_Sanctuary%2C_Assam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Long-horned_orb-weaver_spider_scientifically_known_as_Macracantha_arcuata_spotted_at_Nambor_Wildlife_Sanctuary,_Assam.jpg",
+      "credit": "JyotiPN",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Long-horned orb-weaver spider scientifically known as Macracantha arcuata spotted at Nambor Wildlife Sanctuary, Assam",
+      "fileTitle": "File:Long-horned orb-weaver spider scientifically known as Macracantha arcuata spotted at Nambor Wildlife Sanctuary, Assam.jpg",
+      "width": 2794,
+      "height": 3539,
+      "localPath": "/bugs/photos/long-horned-orb-weaver/2.jpg"
+    }
   ]
 }

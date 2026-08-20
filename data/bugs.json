@@ -2430,5 +2430,24 @@
       "#c6b26a",
       "#3f4b2b"
     ]
+  },
+  {
+    "slug": "long-horned-orb-weaver",
+    "commonName": "Long-Horned Orb-Weaver",
+    "latinName": "Macracantha arcuata",
+    "habitat": "Tropical forest edges and gardens across South and Southeast Asia",
+    "sizeMm": 9,
+    "sizeKind": "body",
+    "weirdFact": "The female grows two absurd rear spines that can stretch sideways longer than her whole body.",
+    "whyItsCool": "A tiny orb-weaver with a built-in crescent bow: delicate web builder up front, sci-fi antler silhouette from behind.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-21",
+    "order": "Araneae",
+    "family": "Araneidae",
+    "colorPalette": [
+      "#d94f2b",
+      "#f6c44f",
+      "#2f241e"
+    ]
   }
 ]
