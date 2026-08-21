@@ -1,10 +1,10 @@
 {
-  "status": "ok",
-  "date": "2026-08-21",
-  "slug": "long-horned-orb-weaver",
-  "commonName": "Long-Horned Orb-Weaver",
-  "discoveredOn": "2026-08-21",
-  "ranAtUtc": "2026-08-20T18:25:48Z",
-  "note": null,
-  "bugCount": 129
+  "status": "blocked",
+  "date": "2026-08-22",
+  "slug": null,
+  "commonName": null,
+  "discoveredOn": null,
+  "ranAtUtc": "2026-08-21T18:41:02Z",
+  "note": "image generation blocked: OpenAI fake-IP guard + Gemini location block; handoff preserved for retry",
+  "bugCount": 130
 }
