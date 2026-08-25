@@ -3610,5 +3610,33 @@
       "height": 3539,
       "localPath": "/bugs/photos/long-horned-orb-weaver/2.jpg"
     }
+  ],
+  "achrioptera-manga": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Achrioptera_manga_-_male.jpg/1280px-Achrioptera_manga_-_male.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Achrioptera_manga_-_male.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Achrioptera_manga_-_male.jpg",
+      "credit": "Drägüs",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "male of Achrioptera manga",
+      "fileTitle": "File:Achrioptera manga - male.jpg",
+      "width": 4272,
+      "height": 2848,
+      "localPath": "/bugs/photos/achrioptera-manga/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/20240630_Achrioptera_manga_3.jpg/1280px-20240630_Achrioptera_manga_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/20240630_Achrioptera_manga_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:20240630_Achrioptera_manga_3.jpg",
+      "credit": "J. Patrick Fischer",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Achrioptera Manga. Männchen (blau) auf dem viel größeren braunen Weibchen. Eine 2019 erstmals beschriebene Art von Stabschrecken auf den Münchner Wissenstagen.",
+      "fileTitle": "File:20240630 Achrioptera manga 3.jpg",
+      "width": 3468,
+      "height": 4624,
+      "localPath": "/bugs/photos/achrioptera-manga/2.jpg"
+    }
   ]
 }

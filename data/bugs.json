@@ -2449,5 +2449,24 @@
       "#f6c44f",
       "#2f241e"
     ]
+  },
+  {
+    "slug": "achrioptera-manga",
+    "commonName": "Blue Manga Stick Insect",
+    "latinName": "Achrioptera manga",
+    "habitat": "Dry forests of far northern Madagascar, especially Montagne des Francais and Foret d'Orangea",
+    "sizeMm": 240,
+    "sizeKind": "body",
+    "weirdFact": "Males mature into a vivid electric blue even though most stick insects survive by looking like twigs. The species hid in plain sight as a color form of another giant stick insect until DNA work separated it in 2019.",
+    "whyItsCool": "A giant stick insect that seems to break its own camouflage rule: branch-shaped body, tropical-sky color, and orange leg flashes on a living insect from Madagascar's dry forest.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-25",
+    "order": "Phasmatodea",
+    "family": "Achriopteridae",
+    "colorPalette": [
+      "#1AA7C8",
+      "#F07A22",
+      "#3B2A24"
+    ]
   }
 ]
