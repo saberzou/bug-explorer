@@ -2468,5 +2468,24 @@
       "#F07A22",
       "#3B2A24"
     ]
+  },
+  {
+    "slug": "tanzanian-tailless-whip-scorpion",
+    "commonName": "Tanzanian Tailless Whip Scorpion",
+    "latinName": "Damon diadema",
+    "habitat": "Caves, crevices, tree trunks, and fallen logs in East Africa",
+    "sizeMm": 30,
+    "sizeKind": "body",
+    "weirdFact": "It walks on six legs while the front pair sweep ahead as long tactile whips.",
+    "whyItsCool": "A flat, nonvenomous arachnid with spiny prey-grabbing pedipalps and a legspan far wider than its body.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-26",
+    "order": "Amblypygi",
+    "family": "Phrynichidae",
+    "colorPalette": [
+      "#2E241F",
+      "#8A6A4A",
+      "#D8C1A0"
+    ]
   }
 ]

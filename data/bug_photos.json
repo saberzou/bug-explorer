@@ -3638,5 +3638,33 @@
       "height": 4624,
       "localPath": "/bugs/photos/achrioptera-manga/2.jpg"
     }
+  ],
+  "tanzanian-tailless-whip-scorpion": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Damon_diadema_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Damon_diadema_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Damon_diadema_female.jpg",
+      "credit": "Annejones",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Female tailless whip scorpion (Damon diadema) carrying young. Cornell University Arachnology Laboratory.",
+      "fileTitle": "File:Damon diadema female.jpg",
+      "width": 1200,
+      "height": 1600,
+      "localPath": "/bugs/photos/tanzanian-tailless-whip-scorpion/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/8/81/Damon_diadema_001_L.D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Damon_diadema_001_L.D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Damon_diadema_001_L.D.jpg",
+      "credit": "Acrocynus",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Amblypygi, Damon diadema.",
+      "fileTitle": "File:Damon diadema 001 L.D.jpg",
+      "width": 1014,
+      "height": 674,
+      "localPath": "/bugs/photos/tanzanian-tailless-whip-scorpion/2.jpg"
+    }
   ]
 }
