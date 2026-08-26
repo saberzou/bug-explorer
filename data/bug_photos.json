@@ -3666,5 +3666,33 @@
       "height": 674,
       "localPath": "/bugs/photos/tanzanian-tailless-whip-scorpion/2.jpg"
     }
+  ],
+  "madagascar-hissing-cockroach": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Gromphadorhina_portentosa_%28outside%29.jpg/1280px-Gromphadorhina_portentosa_%28outside%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Gromphadorhina_portentosa_%28outside%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gromphadorhina_portentosa_(outside).jpg",
+      "credit": "Markbenecke",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Hissing roach, male, outside",
+      "fileTitle": "File:Gromphadorhina portentosa (outside).jpg",
+      "width": 4251,
+      "height": 2538,
+      "localPath": "/bugs/photos/madagascar-hissing-cockroach/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Gromphadorhina_portentosa_2.jpg/1280px-Gromphadorhina_portentosa_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Gromphadorhina_portentosa_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gromphadorhina_portentosa_2.jpg",
+      "credit": "TimVickers",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Madagascar hissing cockroach (Gromphadorhina portentosa) - male",
+      "fileTitle": "File:Gromphadorhina portentosa 2.jpg",
+      "width": 3853,
+      "height": 2376,
+      "localPath": "/bugs/photos/madagascar-hissing-cockroach/2.jpg"
+    }
   ]
 }

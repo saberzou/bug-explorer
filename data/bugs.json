@@ -2487,5 +2487,24 @@
       "#8A6A4A",
       "#D8C1A0"
     ]
+  },
+  {
+    "slug": "madagascar-hissing-cockroach",
+    "commonName": "Madagascar Hissing Cockroach",
+    "latinName": "Gromphadorhina portentosa",
+    "habitat": "Dry forest leaf litter and rotting logs in Madagascar",
+    "sizeMm": 75,
+    "sizeKind": "body",
+    "weirdFact": "It makes its loud hiss by forcing air through breathing pores instead of rubbing wings or legs.",
+    "whyItsCool": "A wingless armored cockroach famous for social hissing, horned males, and an unusually gentle cleanup-crew lifestyle.",
+    "rarity": "common",
+    "discoveredOn": "2026-08-27",
+    "order": "Blattodea",
+    "family": "Blaberidae",
+    "colorPalette": [
+      "#2B1A14",
+      "#8B4E2C",
+      "#D7B083"
+    ]
   }
 ]
