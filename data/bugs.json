@@ -2506,5 +2506,24 @@
       "#8B4E2C",
       "#D7B083"
     ]
+  },
+  {
+    "slug": "diabolical-ironclad-beetle",
+    "commonName": "Diabolical Ironclad Beetle",
+    "latinName": "Phloeodes diabolicus",
+    "habitat": "Oak woodland, chaparral, and dry forest under bark and on bracket fungi in western North America",
+    "sizeMm": 25,
+    "sizeKind": "body",
+    "weirdFact": "Its fused wing-cases and jigsaw-like internal seams let it survive crushing forces many times stronger than most beetles can tolerate.",
+    "whyItsCool": "A flightless desert-darkling beetle built like living armor, famous for an exoskeleton tough enough to inspire impact-resistant engineering.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-28",
+    "order": "Coleoptera",
+    "family": "Zopheridae",
+    "colorPalette": [
+      "#1F1B17",
+      "#5A5248",
+      "#C9B69A"
+    ]
   }
 ]

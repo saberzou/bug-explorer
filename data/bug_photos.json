@@ -3694,5 +3694,33 @@
       "height": 2376,
       "localPath": "/bugs/photos/madagascar-hissing-cockroach/2.jpg"
     }
+  ],
+  "diabolical-ironclad-beetle": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Phloeodes_diabolicus_275212764.jpg/1280px-Phloeodes_diabolicus_275212764.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Phloeodes_diabolicus_275212764.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phloeodes_diabolicus_275212764.jpg",
+      "credit": "jen",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "caption": "Diabolical Ironclad Beetle (Phloeodes diabolicus)",
+      "fileTitle": "File:Phloeodes diabolicus 275212764.jpg",
+      "width": 2048,
+      "height": 1536,
+      "localPath": "/bugs/photos/diabolical-ironclad-beetle/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Phloeodes_diabolicus_variation_sjh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Phloeodes_diabolicus_variation_sjh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phloeodes_diabolicus_variation_sjh.jpg",
+      "credit": "No machine-readable author provided. Kugamazog~commonswiki assumed (based on copyright claims).",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "caption": "Phloeodes diabolicus adult variation taken by Shawn Hanrahan at the Texas A&M University Insect Collection in College Station, Texas.",
+      "fileTitle": "File:Phloeodes diabolicus variation sjh.jpg",
+      "width": 1248,
+      "height": 1188,
+      "localPath": "/bugs/photos/diabolical-ironclad-beetle/2.jpg"
+    }
   ]
 }
