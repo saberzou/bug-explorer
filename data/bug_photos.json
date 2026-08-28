@@ -3722,5 +3722,33 @@
       "height": 1188,
       "localPath": "/bugs/photos/diabolical-ironclad-beetle/2.jpg"
     }
+  ],
+  "lobster-moth": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/71.009_BF1999_Lobster_Moth%2C_Stauropus_fagi_%283122313827%29.jpg/1280px-71.009_BF1999_Lobster_Moth%2C_Stauropus_fagi_%283122313827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/71.009_BF1999_Lobster_Moth%2C_Stauropus_fagi_%283122313827%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:71.009_BF1999_Lobster_Moth,_Stauropus_fagi_(3122313827).jpg",
+      "credit": "Patrick Clement from West Midlands, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "71.009 BF1999 Lobster Moth, Stauropus fagi",
+      "fileTitle": "File:71.009 BF1999 Lobster Moth, Stauropus fagi (3122313827).jpg",
+      "width": 2272,
+      "height": 1704,
+      "localPath": "/bugs/photos/lobster-moth/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/%281999%29_Lobster_Moth_%28Stauropus_fagi%29_%2827444692464%29.jpg/1280px-%281999%29_Lobster_Moth_%28Stauropus_fagi%29_%2827444692464%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%281999%29_Lobster_Moth_%28Stauropus_fagi%29_%2827444692464%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:(1999)_Lobster_Moth_(Stauropus_fagi)_(27444692464).jpg",
+      "credit": "Ben Sale from UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Stauropus fagi",
+      "fileTitle": "File:(1999) Lobster Moth (Stauropus fagi) (27444692464).jpg",
+      "width": 1500,
+      "height": 1002,
+      "localPath": "/bugs/photos/lobster-moth/2.jpg"
+    }
   ]
 }

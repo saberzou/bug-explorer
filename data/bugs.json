@@ -2525,5 +2525,24 @@
       "#5A5248",
       "#C9B69A"
     ]
+  },
+  {
+    "slug": "lobster-moth",
+    "commonName": "Lobster Moth",
+    "latinName": "Stauropus fagi",
+    "habitat": "Broadleaf woodland and hedgerows across the Palearctic",
+    "sizeMm": 70,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its caterpillar arches back and waves long legs, looking more like a tiny lobster than a moth larva.",
+    "whyItsCool": "A plain brown adult hides one of the strangest caterpillar bodies in the cabinet: all claws, humps, and theatrical threat pose.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-29",
+    "order": "Lepidoptera",
+    "family": "Notodontidae",
+    "colorPalette": [
+      "#6B4A36",
+      "#B88A5C",
+      "#2F241E"
+    ]
   }
 ]
