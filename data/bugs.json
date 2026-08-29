@@ -2544,5 +2544,24 @@
       "#B88A5C",
       "#2F241E"
     ]
+  },
+  {
+    "slug": "philippine-leaf-insect",
+    "commonName": "Philippine Leaf Insect",
+    "latinName": "Phyllium philippinicum",
+    "habitat": "Tropical forests of the Philippines, especially leafy understory vegetation",
+    "sizeMm": 70,
+    "sizeKind": "body",
+    "weirdFact": "Its flattened green body has fake leaf veins and ragged-looking edges that sell the disguise.",
+    "whyItsCool": "It looks less like an insect wearing camouflage and more like a leaf that decided to walk away.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-08-30",
+    "order": "Phasmatodea",
+    "family": "Phylliidae",
+    "colorPalette": [
+      "#79A85A",
+      "#D9C767",
+      "#6B4B2A"
+    ]
   }
 ]

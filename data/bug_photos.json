@@ -3750,5 +3750,33 @@
       "height": 1002,
       "localPath": "/bugs/photos/lobster-moth/2.jpg"
     }
+  ],
+  "philippine-leaf-insect": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Phyllium_Philippinicum_%28Male_and_Female%29.jpg/1280px-Phyllium_Philippinicum_%28Male_and_Female%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Phyllium_Philippinicum_%28Male_and_Female%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phyllium_Philippinicum_(Male_and_Female).jpg",
+      "credit": "Ebe.wiki",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Phyllium Philippinicum",
+      "fileTitle": "File:Phyllium Philippinicum (Male and Female).jpg",
+      "width": 5794,
+      "height": 3699,
+      "localPath": "/bugs/photos/philippine-leaf-insect/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/2013-03_Wandelndes_Blatt_Phyllium_philippinicum_anagoria.JPG/1280px-2013-03_Wandelndes_Blatt_Phyllium_philippinicum_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/2013-03_Wandelndes_Blatt_Phyllium_philippinicum_anagoria.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:2013-03_Wandelndes_Blatt_Phyllium_philippinicum_anagoria.JPG",
+      "credit": "Anagoria",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "caption": "Walking leaf (Phyllium philippinicum), Museum of Natural History Berlin",
+      "fileTitle": "File:2013-03 Wandelndes Blatt Phyllium philippinicum anagoria.JPG",
+      "width": 3378,
+      "height": 1530,
+      "localPath": "/bugs/photos/philippine-leaf-insect/2.jpg"
+    }
   ]
 }
