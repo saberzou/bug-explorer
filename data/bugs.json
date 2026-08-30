@@ -2563,5 +2563,24 @@
       "#D9C767",
       "#6B4B2A"
     ]
+  },
+  {
+    "slug": "iberian-spoonwing",
+    "commonName": "Iberian Spoonwing",
+    "latinName": "Nemoptera bipennis",
+    "habitat": "Sunny limestone scrub, dry grassland, and flower-rich open areas in Iberia and nearby southwestern Europe",
+    "sizeMm": 55,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its hindwings trail behind as two long spoon-tipped ribbons, so in flight it can look like one insect towing another.",
+    "whyItsCool": "A slow, daylight-flying lacewing that turns ordinary wings into elegant streamers while visiting flowers like a tiny kite.",
+    "rarity": "rare",
+    "discoveredOn": "2026-08-31",
+    "order": "Neuroptera",
+    "family": "Nemopteridae",
+    "colorPalette": [
+      "#EFE3C2",
+      "#7B5B3A",
+      "#D7A96C"
+    ]
   }
 ]

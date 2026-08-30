@@ -3778,5 +3778,33 @@
       "height": 1530,
       "localPath": "/bugs/photos/philippine-leaf-insect/2.jpg"
     }
+  ],
+  "iberian-spoonwing": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Nemoptera_bipennis_-_Los_Barruecos_-_Malpartida_de_Caceres_-_Caceres_-_Spain.jpg/1280px-Nemoptera_bipennis_-_Los_Barruecos_-_Malpartida_de_Caceres_-_Caceres_-_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Nemoptera_bipennis_-_Los_Barruecos_-_Malpartida_de_Caceres_-_Caceres_-_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Nemoptera_bipennis_-_Los_Barruecos_-_Malpartida_de_Caceres_-_Caceres_-_Spain.jpg",
+      "credit": "Jesús Montero",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Nemoptera bipennins (Español Duende)",
+      "fileTitle": "File:Nemoptera bipennis - Los Barruecos - Malpartida de Caceres - Caceres - Spain.jpg",
+      "width": 2922,
+      "height": 1948,
+      "localPath": "/bugs/photos/iberian-spoonwing/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nemoptera_bipennis_-_Diego_Gonz%C3%A1lez_Dopico_-_653731203.jpeg/1280px-Nemoptera_bipennis_-_Diego_Gonz%C3%A1lez_Dopico_-_653731203.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Nemoptera_bipennis_-_Diego_Gonz%C3%A1lez_Dopico_-_653731203.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Nemoptera_bipennis_-_Diego_Gonz%C3%A1lez_Dopico_-_653731203.jpeg",
+      "credit": "Diego González Dopico",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Nemoptera bipennis, Jaén, España, 2026-05-02 (iNaturalist).",
+      "fileTitle": "File:Nemoptera bipennis - Diego González Dopico - 653731203.jpeg",
+      "width": 2048,
+      "height": 2048,
+      "localPath": "/bugs/photos/iberian-spoonwing/2.jpg"
+    }
   ]
 }
