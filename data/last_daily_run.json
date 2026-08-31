@@ -1,10 +1,10 @@
 {
-  "status": "ok",
-  "date": "2026-08-31",
-  "slug": "iberian-spoonwing",
-  "commonName": "Iberian Spoonwing",
-  "discoveredOn": "2026-08-31",
-  "ranAtUtc": "2026-08-30T18:25:46Z",
-  "note": null,
+  "status": "error",
+  "date": "2026-09-01",
+  "slug": "ghost-mantis",
+  "commonName": "Ghost Mantis",
+  "discoveredOn": "2026-09-01",
+  "ranAtUtc": "2026-08-31T17:52:03Z",
+  "note": "corrupt handoff: missing preppedAtUtc, weirdFact, rarity",
   "bugCount": 136
 }
