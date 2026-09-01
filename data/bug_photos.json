@@ -3806,5 +3806,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/iberian-spoonwing/2.jpg"
     }
+  ],
+  "masked-hunter": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/%28MHNT%29_Reduvius_personatus_-_portrait.jpg/1280px-%28MHNT%29_Reduvius_personatus_-_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/%28MHNT%29_Reduvius_personatus_-_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Reduvius_personatus_-_portrait.jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Reduvius personatus - portrait",
+      "fileTitle": "File:(MHNT) Reduvius personatus - portrait.jpg",
+      "width": 5112,
+      "height": 3136,
+      "localPath": "/bugs/photos/masked-hunter/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Reduvius_personatus_%2818852681974%29.jpg/1280px-Reduvius_personatus_%2818852681974%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Reduvius_personatus_%2818852681974%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Reduvius_personatus_(18852681974).jpg",
+      "credit": "Donald Hobern from Copenhagen, Denmark",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Reduvius personatus (Linnaeus, 1758), to Robinson trap, Søborg, Denmark, 4/5 July 2015",
+      "fileTitle": "File:Reduvius personatus (18852681974).jpg",
+      "width": 4800,
+      "height": 3600,
+      "localPath": "/bugs/photos/masked-hunter/2.jpg"
+    }
   ]
 }

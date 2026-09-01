@@ -2582,5 +2582,24 @@
       "#7B5B3A",
       "#D7A96C"
     ]
+  },
+  {
+    "slug": "masked-hunter",
+    "commonName": "Masked Hunter",
+    "latinName": "Reduvius personatus",
+    "habitat": "Dry houses, barns, wall crevices and old buildings across Europe and introduced parts of North America",
+    "sizeMm": 20,
+    "sizeKind": "body",
+    "weirdFact": "Its nymphs glue dust, lint and dead insect bits onto sticky hairs, walking around disguised as moving debris.",
+    "whyItsCool": "A house-haunting assassin bug that turns grime into camouflage before growing into a sleek nocturnal predator.",
+    "rarity": "common",
+    "discoveredOn": "2026-09-02",
+    "order": "Hemiptera",
+    "family": "Reduviidae",
+    "colorPalette": [
+      "#2a211b",
+      "#8f7b65",
+      "#d8c6a8"
+    ]
   }
 ]
