@@ -3834,5 +3834,33 @@
       "height": 3600,
       "localPath": "/bugs/photos/masked-hunter/2.jpg"
     }
+  ],
+  "giant-leaf-insect": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Coxae_of_different_Phyllium_females.jpg/1280px-Coxae_of_different_Phyllium_females.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Coxae_of_different_Phyllium_females.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Coxae_of_different_Phyllium_females.jpg",
+      "credit": "für A & B: User:Drägü für C & D: Cumming RT, Bank S, Le Tirant S, Bradler S (2020) Notes on the leaf insects of the genus Phyllium of Sumatra and Java, Indonesia, including the description of two new species with purple coxae (Phasmatodea, Phylliidae). ZooKeys 913: 89-126. https://doi.org/10.3897/zookeys.913.49044 Gesamtbild: User:Drägü",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "meso and meta coxae of females of A Phyllium ericoriai, B Phyllium mabantai, C Phyllium gardabagusi, D Phyllium jacobsoni",
+      "fileTitle": "File:Coxae of different Phyllium females.jpg",
+      "width": 10240,
+      "height": 5760,
+      "localPath": "/bugs/photos/giant-leaf-insect/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Phyllium_nymphs.jpg/1280px-Phyllium_nymphs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Phyllium_nymphs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phyllium_nymphs.jpg",
+      "credit": "Drägü",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Freshly hatched nymphs of A Phyllium ericoriai, B Phyllium mabantai, C Phyllium hausleithneri, D Phyllium jacobsoni, E Phyllium gardabagusi, F Phyllium philippinicum",
+      "fileTitle": "File:Phyllium nymphs.jpg",
+      "width": 6368,
+      "height": 5760,
+      "localPath": "/bugs/photos/giant-leaf-insect/2.jpg"
+    }
   ]
 }

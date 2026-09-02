@@ -2601,5 +2601,24 @@
       "#8f7b65",
       "#d8c6a8"
     ]
+  },
+  {
+    "slug": "giant-leaf-insect",
+    "commonName": "Giant Leaf Insect",
+    "latinName": "Phyllium giganteum",
+    "habitat": "Tropical forests of Malaysia, where it lives among broad leaves in humid lowland vegetation.",
+    "sizeMm": 110,
+    "sizeKind": "body",
+    "weirdFact": "Females mimic broad green leaves and can hatch all-female young from unfertilized eggs when males are absent.",
+    "whyItsCool": "It turns its whole body into a swaying leaf disguise, complete with vein-like wings and ragged edges.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-03",
+    "order": "Phasmatodea",
+    "family": "Phylliidae",
+    "colorPalette": [
+      "#74A44B",
+      "#C7D66D",
+      "#3F5F2B"
+    ]
   }
 ]
