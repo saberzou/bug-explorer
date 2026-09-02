@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-02",
-  "slug": "masked-hunter",
-  "commonName": "Masked Hunter",
-  "discoveredOn": "2026-09-02",
-  "ranAtUtc": "2026-09-01T19:25:48Z",
+  "date": "2026-09-03",
+  "slug": "giant-leaf-insect",
+  "commonName": "Giant Leaf Insect",
+  "discoveredOn": "2026-09-03",
+  "ranAtUtc": "2026-09-02T18:25:49Z",
   "note": null,
-  "bugCount": 137
+  "bugCount": 138
 }
