@@ -2620,5 +2620,24 @@
       "#C7D66D",
       "#3F5F2B"
     ]
+  },
+  {
+    "slug": "hummingbird-clearwing",
+    "commonName": "Hummingbird Clearwing",
+    "latinName": "Hemaris thysbe",
+    "habitat": "Flower-rich meadows, gardens, forest edges and shrubby wetlands across much of North America.",
+    "sizeMm": 45,
+    "sizeKind": "wingspan",
+    "weirdFact": "This day-flying moth hovers at flowers like a tiny hummingbird, then sheds wing scales to become glass-winged.",
+    "whyItsCool": "A sphinx moth in hummingbird cosplay: furry body, rapid hover, curled drinking straw tongue, and clear wings flashing at flowers.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-04",
+    "order": "Lepidoptera",
+    "family": "Sphingidae",
+    "colorPalette": [
+      "#8f5a35",
+      "#d29a62",
+      "#5b4a3a"
+    ]
   }
 ]

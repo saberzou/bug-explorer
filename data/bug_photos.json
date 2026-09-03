@@ -3862,5 +3862,33 @@
       "height": 5760,
       "localPath": "/bugs/photos/giant-leaf-insect/2.jpg"
     }
+  ],
+  "hummingbird-clearwing": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/-_7853_%E2%80%93_Hemaris_thysbe_%E2%80%93_Hummingbird_Clearwing_Moth_-_19291853560.jpg/1280px--_7853_%E2%80%93_Hemaris_thysbe_%E2%80%93_Hummingbird_Clearwing_Moth_-_19291853560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/-_7853_%E2%80%93_Hemaris_thysbe_%E2%80%93_Hummingbird_Clearwing_Moth_-_19291853560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:-_7853_%E2%80%93_Hemaris_thysbe_%E2%80%93_Hummingbird_Clearwing_Moth_-_19291853560.jpg",
+      "credit": "Wildreturn",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Shaw Nature Reserve 20150703",
+      "fileTitle": "File:- 7853 – Hemaris thysbe – Hummingbird Clearwing Moth - 19291853560.jpg",
+      "width": 6000,
+      "height": 4000,
+      "localPath": "/bugs/photos/hummingbird-clearwing/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Hummingbird_Clearwing_-_Hemaris_thysbe%2C_Occoquan_Bay_National_Wildlife_Refuge%2C_Woodbridge%2C_Virginia%2C_September_3%2C_2019_%2853240099446%29.jpg/1280px-Hummingbird_Clearwing_-_Hemaris_thysbe%2C_Occoquan_Bay_National_Wildlife_Refuge%2C_Woodbridge%2C_Virginia%2C_September_3%2C_2019_%2853240099446%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hummingbird_Clearwing_-_Hemaris_thysbe%2C_Occoquan_Bay_National_Wildlife_Refuge%2C_Woodbridge%2C_Virginia%2C_September_3%2C_2019_%2853240099446%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hummingbird_Clearwing_-_Hemaris_thysbe,_Occoquan_Bay_National_Wildlife_Refuge,_Woodbridge,_Virginia,_September_3,_2019_(53240099446).jpg",
+      "credit": "Judy Gallagher",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Hummingbird Clearwing - Hemaris thysbe, Occoquan Bay National Wildlife Refuge, Woodbridge, Virginia, September 3, 2019",
+      "fileTitle": "File:Hummingbird Clearwing - Hemaris thysbe, Occoquan Bay National Wildlife Refuge, Woodbridge, Virginia, September 3, 2019 (53240099446).jpg",
+      "width": 6504,
+      "height": 4232,
+      "localPath": "/bugs/photos/hummingbird-clearwing/2.jpg"
+    }
   ]
 }
