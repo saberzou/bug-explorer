@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-04",
-  "slug": "hummingbird-clearwing",
-  "commonName": "Hummingbird Clearwing",
-  "discoveredOn": "2026-09-04",
-  "ranAtUtc": "2026-09-03T18:25:44Z",
+  "date": "2026-09-05",
+  "slug": "exploding-ant",
+  "commonName": "Exploding Ant",
+  "discoveredOn": "2026-09-05",
+  "ranAtUtc": "2026-09-04T17:57:15Z",
   "note": null,
-  "bugCount": 139
+  "bugCount": 140
 }
