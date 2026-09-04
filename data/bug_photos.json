@@ -3890,5 +3890,33 @@
       "height": 4232,
       "localPath": "/bugs/photos/hummingbird-clearwing/2.jpg"
     }
+  ],
+  "exploding-ant": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Colobopsis_explodens_pupa.jpg/1280px-Colobopsis_explodens_pupa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Colobopsis_explodens_pupa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Colobopsis_explodens_pupa.jpg",
+      "credit": "Laciny A, Zettel H, Kopchinskiy A, Pretzer C, Pal A, Salim KA, Rahimi MJ, Hoenigsberger M, Lim L, Jaitrong W, Druzhinina IS",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Pupa of Colobopsis explodens found inside natural nest Nest location: Brunei, Temburong, Kuala Belalong Field Studies Centre, 04°33'N, 115°09'E, 60 m a.s.l. Collection date: 10.XI.–5.XII.2015",
+      "fileTitle": "File:Colobopsis explodens pupa.jpg",
+      "width": 3012,
+      "height": 1349,
+      "localPath": "/bugs/photos/exploding-ant/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Colobopsis_explodens_%2810.3897-zookeys.751.22661%29_Figure_2.jpg/1280px-Colobopsis_explodens_%2810.3897-zookeys.751.22661%29_Figure_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Colobopsis_explodens_%2810.3897-zookeys.751.22661%29_Figure_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Colobopsis_explodens_(10.3897-zookeys.751.22661)_Figure_2.jpg",
+      "credit": "Laciny A, Zettel H, Kopchinskiy A, Pretzer C, Pal A, Salim KA, Rahimi MJ, Hoenigsberger M, Lim L, Jaitrong W, Druzhinina IS (2018) Colobopsis explodens sp. n., model species for studies on “exploding ants” (Hymenoptera, Formicidae), with biological notes and first illustrations of males of the Colobopsis cylindrica group. ZooKeys 751: 1-40. https://doi.org/10.3897/zookeys.751.22661",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Figure 2; Habitus of C. explodens sp. n., holotype, minor worker; a full-face b lateral, and c dorsal view.",
+      "fileTitle": "File:Colobopsis explodens (10.3897-zookeys.751.22661) Figure 2.jpg",
+      "width": 1512,
+      "height": 1723,
+      "localPath": "/bugs/photos/exploding-ant/2.jpg"
+    }
   ]
 }

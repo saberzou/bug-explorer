@@ -2639,5 +2639,24 @@
       "#d29a62",
       "#5b4a3a"
     ]
+  },
+  {
+    "slug": "exploding-ant",
+    "commonName": "Exploding Ant",
+    "latinName": "Colobopsis explodens",
+    "habitat": "Lowland dipterocarp rainforests of Borneo",
+    "sizeMm": 6,
+    "sizeKind": "body",
+    "weirdFact": "Cornered workers rupture their own bodies, coating enemies in a sticky, toxic yellow secretion and dying in the blast.",
+    "whyItsCool": "A tiny rainforest ant turned its own abdomen into a one-use chemical weapon—the colony's last line of defense walks around alive.",
+    "rarity": "rare",
+    "discoveredOn": "2026-09-05",
+    "order": "Hymenoptera",
+    "family": "Formicidae",
+    "colorPalette": [
+      "#9b3e2d",
+      "#d7a92f",
+      "#2d241d"
+    ]
   }
 ]
