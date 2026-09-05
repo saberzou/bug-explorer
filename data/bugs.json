@@ -2658,5 +2658,24 @@
       "#d7a92f",
       "#2d241d"
     ]
+  },
+  {
+    "slug": "forked-fungus-beetle",
+    "commonName": "Forked Fungus Beetle",
+    "latinName": "Bolitotherus cornutus",
+    "habitat": "Bracket fungi on decaying hardwood logs in eastern North American forests",
+    "sizeMm": 10,
+    "sizeKind": "body",
+    "weirdFact": "Males use their forked thoracic horns to wrestle rivals on the bracket fungi where they feed and court.",
+    "whyItsCool": "A soot-black miniature stag that turns a shelf fungus into both dining room and wrestling arena.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-06",
+    "order": "Coleoptera",
+    "family": "Tenebrionidae",
+    "colorPalette": [
+      "#2b241f",
+      "#665443",
+      "#c2a67f"
+    ]
   }
 ]

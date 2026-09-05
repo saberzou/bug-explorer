@@ -3918,5 +3918,33 @@
       "height": 1723,
       "localPath": "/bugs/photos/exploding-ant/2.jpg"
     }
+  ],
+  "forked-fungus-beetle": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/A_small_Bolitotherus_cornutus_male_exhibiting_the_use_of_the_grip_strength_in_the_wild_-_journal.pone.0042738.g001.png/1280px-A_small_Bolitotherus_cornutus_male_exhibiting_the_use_of_the_grip_strength_in_the_wild_-_journal.pone.0042738.g001.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/A_small_Bolitotherus_cornutus_male_exhibiting_the_use_of_the_grip_strength_in_the_wild_-_journal.pone.0042738.g001.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:A_small_Bolitotherus_cornutus_male_exhibiting_the_use_of_the_grip_strength_in_the_wild_-_journal.pone.0042738.g001.png",
+      "credit": "Benowitz, K. M.; Brodie, E. D.; Formica, V. A. Illustration by Ariel Kahrl, from the supplemental video.",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "caption": "A small Bolitotherus cornutus male exhibiting the use of the grip strength in the wild. The small male is courting the female while the large male attempts to use his clypeal horns to dislodge the courting male. While these images illustrate an attack from the front of the courti",
+      "fileTitle": "File:A small Bolitotherus cornutus male exhibiting the use of the grip strength in the wild - journal.pone.0042738.g001.png",
+      "width": 2177,
+      "height": 1219,
+      "localPath": "/bugs/photos/forked-fungus-beetle/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Bolitotherus_cornutus_horned_fungus_beetle.jpg/1280px-Bolitotherus_cornutus_horned_fungus_beetle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bolitotherus_cornutus_horned_fungus_beetle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bolitotherus_cornutus_horned_fungus_beetle.jpg",
+      "credit": "Ken-ichi Ueda",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "https://www.inaturalist.org/observations/4007237",
+      "fileTitle": "File:Bolitotherus cornutus horned fungus beetle.jpg",
+      "width": 1877,
+      "height": 1224,
+      "localPath": "/bugs/photos/forked-fungus-beetle/2.jpg"
+    }
   ]
 }
