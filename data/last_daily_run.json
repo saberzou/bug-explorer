@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-05",
-  "slug": "exploding-ant",
-  "commonName": "Exploding Ant",
-  "discoveredOn": "2026-09-05",
-  "ranAtUtc": "2026-09-04T17:57:15Z",
+  "date": "2026-09-06",
+  "slug": "forked-fungus-beetle",
+  "commonName": "Forked Fungus Beetle",
+  "discoveredOn": "2026-09-06",
+  "ranAtUtc": "2026-09-05T17:55:32Z",
   "note": null,
-  "bugCount": 140
+  "bugCount": 141
 }
