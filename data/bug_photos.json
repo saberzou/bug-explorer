@@ -3946,5 +3946,33 @@
       "height": 1224,
       "localPath": "/bugs/photos/forked-fungus-beetle/2.jpg"
     }
+  ],
+  "giant-chinese-dobsonfly": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/BMNHE_1253576-Acanthacorydalis_fruhstorferi-dorsal_habitus.jpg/1280px-BMNHE_1253576-Acanthacorydalis_fruhstorferi-dorsal_habitus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/BMNHE_1253576-Acanthacorydalis_fruhstorferi-dorsal_habitus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:BMNHE_1253576-Acanthacorydalis_fruhstorferi-dorsal_habitus.jpg",
+      "credit": "Robyn_Crowther",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Dorsal view of a female Acanthacorydalis fruhstorferi (Van der Weele, 1907)",
+      "fileTitle": "File:BMNHE 1253576-Acanthacorydalis fruhstorferi-dorsal habitus.jpg",
+      "width": 4186,
+      "height": 2717,
+      "localPath": "/bugs/photos/giant-chinese-dobsonfly/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Giant_Chinese_Dobsonfly_%28Acanthacorydalis_fruhstorferi%29_in_Qingyuan%2C_China.jpg/1280px-Giant_Chinese_Dobsonfly_%28Acanthacorydalis_fruhstorferi%29_in_Qingyuan%2C_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Giant_Chinese_Dobsonfly_%28Acanthacorydalis_fruhstorferi%29_in_Qingyuan%2C_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Giant_Chinese_Dobsonfly_(Acanthacorydalis_fruhstorferi)_in_Qingyuan,_China.jpg",
+      "credit": "Theo Busschau",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "Giant Chinese Dobsonfly (Acanthacorydalis fruhstorferi) in Qingyuan, China",
+      "fileTitle": "File:Giant Chinese Dobsonfly (Acanthacorydalis fruhstorferi) in Qingyuan, China.jpg",
+      "width": 1542,
+      "height": 2048,
+      "localPath": "/bugs/photos/giant-chinese-dobsonfly/2.jpg"
+    }
   ]
 }

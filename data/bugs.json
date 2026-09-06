@@ -2677,5 +2677,24 @@
       "#665443",
       "#c2a67f"
     ]
+  },
+  {
+    "slug": "giant-chinese-dobsonfly",
+    "commonName": "Giant Chinese Dobsonfly",
+    "latinName": "Acanthacorydalis fruhstorferi",
+    "habitat": "Clean mountain streams in southern China and northern Vietnam",
+    "sizeMm": 80,
+    "sizeKind": "body",
+    "weirdFact": "Its wings can span 21.6 cm, the Guinness-record wingspan for an aquatic insect—even though the adult lives on land.",
+    "whyItsCool": "It turns a stream-dwelling childhood into a dragon-sized adult with smoky lace wings and gloriously excessive jaws.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-07",
+    "order": "Megaloptera",
+    "family": "Corydalidae",
+    "colorPalette": [
+      "#6d5843",
+      "#b99d78",
+      "#ded2b8"
+    ]
   }
 ]
