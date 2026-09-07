@@ -2696,5 +2696,24 @@
       "#b99d78",
       "#ded2b8"
     ]
+  },
+  {
+    "slug": "green-dragontail",
+    "commonName": "Green Dragontail",
+    "latinName": "Lamproptera meges",
+    "habitat": "Shaded stream banks and forest edges across South and Southeast Asia",
+    "sizeMm": 45,
+    "sizeKind": "wingspan",
+    "weirdFact": "Its tiny wings beat so fast that it darts with a whirring flight, while two absurdly long tails stream behind it.",
+    "whyItsCool": "A pocket-sized swallowtail built like a living racing kite: black wings, neon-green flashes, and twin ribbon tails.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-08",
+    "order": "Lepidoptera",
+    "family": "Papilionidae",
+    "colorPalette": [
+      "#101713",
+      "#55b98a",
+      "#e8e2c9"
+    ]
   }
 ]

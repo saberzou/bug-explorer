@@ -3974,5 +3974,33 @@
       "height": 2048,
       "localPath": "/bugs/photos/giant-chinese-dobsonfly/2.jpg"
     }
+  ],
+  "green-dragontail": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Closed_wing_mud_puddling_activity_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_WLB_DSC_9018.jpg/1280px-Closed_wing_mud_puddling_activity_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_WLB_DSC_9018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Closed_wing_mud_puddling_activity_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_WLB_DSC_9018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Closed_wing_mud_puddling_activity_of_Lamproptera_meges_(Zincken,_1831)_-_Green_Dragontail_WLB_DSC_9018.jpg",
+      "credit": "Rijuroy89",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Closed wing mud puddling activity of Lamproptera meges (Zincken, 1831) - Green DragontailSubspecies: Lamproptera meges indistincta Tytler, 1912 – Indistinct Green Dragontail",
+      "fileTitle": "File:Closed wing mud puddling activity of Lamproptera meges (Zincken, 1831) - Green Dragontail WLB DSC 9018.jpg",
+      "width": 6000,
+      "height": 4500,
+      "localPath": "/bugs/photos/green-dragontail/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Closewing_position_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_1.jpg/1280px-Closewing_position_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Closewing_position_of_Lamproptera_meges_%28Zincken%2C_1831%29_-_Green_Dragontail_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Closewing_position_of_Lamproptera_meges_(Zincken,_1831)_-_Green_Dragontail_1.jpg",
+      "credit": "MaheshBaruahwildlife",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Closewing position of Lamproptera meges (Zincken, 1831) - Green Dragontail Subspecies: Lamproptera meges indistincta Tytler, 1912 – Indistinct Green Dragontail 1",
+      "fileTitle": "File:Closewing position of Lamproptera meges (Zincken, 1831) - Green Dragontail 1.jpg",
+      "width": 5408,
+      "height": 3600,
+      "localPath": "/bugs/photos/green-dragontail/2.jpg"
+    }
   ]
 }
