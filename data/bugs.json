@@ -2715,5 +2715,24 @@
       "#55b98a",
       "#e8e2c9"
     ]
+  },
+  {
+    "slug": "madagascan-flatid-leaf-bug",
+    "commonName": "Madagascan Flatid Leaf Bug",
+    "latinName": "Flatida rosea",
+    "habitat": "Tropical dry forests of Madagascar",
+    "sizeMm": 15,
+    "sizeKind": "body",
+    "weirdFact": "Adults cluster and align their rose-pink wings so the whole colony masquerades as a flower spike.",
+    "whyItsCool": "One tiny planthopper is a pink leaf; a whole gathering becomes a blossom assembled from living insects.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-09",
+    "order": "Hemiptera",
+    "family": "Flatidae",
+    "colorPalette": [
+      "#d96f83",
+      "#f2b5bd",
+      "#755447"
+    ]
   }
 ]

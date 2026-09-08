@@ -4002,5 +4002,33 @@
       "height": 3600,
       "localPath": "/bugs/photos/green-dragontail/2.jpg"
     }
+  ],
+  "madagascan-flatid-leaf-bug": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Flatid_leaf_bugs_and_nymphs_%28Phromnia_rosea%29.jpg/1280px-Flatid_leaf_bugs_and_nymphs_%28Phromnia_rosea%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flatid_leaf_bugs_and_nymphs_%28Phromnia_rosea%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Flatid_leaf_bugs_and_nymphs_(Phromnia_rosea).jpg",
+      "credit": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Flatid leaf bugs (Flatida rosea) and their nymphs, Ankarana Reserve, Madagascar. The nymphs (the white ones) produce waxy excretions. They help disguise the nymphs which are not harmed if a predator takes a bite.",
+      "fileTitle": "File:Flatid leaf bugs and nymphs (Phromnia rosea).jpg",
+      "width": 4543,
+      "height": 3029,
+      "localPath": "/bugs/photos/madagascan-flatid-leaf-bug/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Madagascan_Flatid_Leaf-Bugs_%28Phromnia_rosea%29_%2830417199017%29.jpg/1280px-Madagascan_Flatid_Leaf-Bugs_%28Phromnia_rosea%29_%2830417199017%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Madagascan_Flatid_Leaf-Bugs_%28Phromnia_rosea%29_%2830417199017%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Madagascan_Flatid_Leaf-Bugs_(Phromnia_rosea)_(30417199017).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Ankarafantsika National Park, MADAGASCAR Scanned Slide from November 1999",
+      "fileTitle": "File:Madagascan Flatid Leaf-Bugs (Phromnia rosea) (30417199017).jpg",
+      "width": 1893,
+      "height": 2324,
+      "localPath": "/bugs/photos/madagascan-flatid-leaf-bug/2.jpg"
+    }
   ]
 }
