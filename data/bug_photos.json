@@ -4030,5 +4030,33 @@
       "height": 2324,
       "localPath": "/bugs/photos/madagascan-flatid-leaf-bug/2.jpg"
     }
+  ],
+  "golden-egg-bug": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Phyllomorpha_laciniata_01_01.jpg/1280px-Phyllomorpha_laciniata_01_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Phyllomorpha_laciniata_01_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phyllomorpha_laciniata_01_01.jpg",
+      "credit": "Lies Van Rompaey",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Image of Phyllomorpha laciniata",
+      "fileTitle": "File:Phyllomorpha laciniata 01 01.jpg",
+      "width": 6000,
+      "height": 4000,
+      "localPath": "/bugs/photos/golden-egg-bug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Phyllomorpha_laciniata_%28Coreidae%29_%28Golden_Egg_Bug%29_-_%28imago%29%2C_R%C3%ADo_Guadaiza%2C_Spain_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Phyllomorpha_laciniata_%28Coreidae%29_%28Golden_Egg_Bug%29_-_%28imago%29%2C_R%C3%ADo_Guadaiza%2C_Spain_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phyllomorpha_laciniata_(Coreidae)_(Golden_Egg_Bug)_-_(imago),_R%C3%ADo_Guadaiza,_Spain_-_2.jpg",
+      "credit": "This image is created by user B. Schoenmakers at Observation.org, a global biodiversity recording project.",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "caption": "Phyllomorpha laciniata (Coreidae) (Golden Egg Bug) - (imago), Río Guadaiza, Spain",
+      "fileTitle": "File:Phyllomorpha laciniata (Coreidae) (Golden Egg Bug) - (imago), Río Guadaiza, Spain - 2.jpg",
+      "width": 800,
+      "height": 600,
+      "localPath": "/bugs/photos/golden-egg-bug/2.jpg"
+    }
   ]
 }

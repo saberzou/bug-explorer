@@ -2734,5 +2734,24 @@
       "#f2b5bd",
       "#755447"
     ]
+  },
+  {
+    "slug": "golden-egg-bug",
+    "commonName": "Golden Egg Bug",
+    "latinName": "Phyllomorpha laciniata",
+    "habitat": "Dry scrub and stony grasslands around the Mediterranean Basin",
+    "sizeMm": 10,
+    "sizeKind": "body",
+    "weirdFact": "Females glue eggs onto other adults—especially males—turning their backs into living nurseries.",
+    "whyItsCool": "A walking leaf-edge that outsources parenthood by making its neighbours carry a clutch of golden eggs.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-10",
+    "order": "Hemiptera",
+    "family": "Coreidae",
+    "colorPalette": [
+      "#a79a5d",
+      "#d9bd61",
+      "#715940"
+    ]
   }
 ]
