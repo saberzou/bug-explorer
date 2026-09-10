@@ -4058,5 +4058,33 @@
       "height": 600,
       "localPath": "/bugs/photos/golden-egg-bug/2.jpg"
     }
+  ],
+  "new-guinea-spiny-stick-insect": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Giant_spiny_stick_insect_%28Eurycantha_calcarata%29%2C_Entomica_1.jpg/1280px-Giant_spiny_stick_insect_%28Eurycantha_calcarata%29%2C_Entomica_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Giant_spiny_stick_insect_%28Eurycantha_calcarata%29%2C_Entomica_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Giant_spiny_stick_insect_(Eurycantha_calcarata),_Entomica_1.jpg",
+      "credit": "Fungus Guy",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Giant spiny stick insect (Eurycantha calcarata), Entomica",
+      "fileTitle": "File:Giant spiny stick insect (Eurycantha calcarata), Entomica 1.jpg",
+      "width": 4032,
+      "height": 3024,
+      "localPath": "/bugs/photos/new-guinea-spiny-stick-insect/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Eurycantha_calcarata_%28female%2C_fifth_instar%29.jpg/1280px-Eurycantha_calcarata_%28female%2C_fifth_instar%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Eurycantha_calcarata_%28female%2C_fifth_instar%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eurycantha_calcarata_(female,_fifth_instar).jpg",
+      "credit": "R.S.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Eurycantha Calcarata",
+      "fileTitle": "File:Eurycantha calcarata (female, fifth instar).jpg",
+      "width": 3072,
+      "height": 2304,
+      "localPath": "/bugs/photos/new-guinea-spiny-stick-insect/2.jpg"
+    }
   ]
 }

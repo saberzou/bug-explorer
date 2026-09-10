@@ -2753,5 +2753,24 @@
       "#d9bd61",
       "#715940"
     ]
+  },
+  {
+    "slug": "new-guinea-spiny-stick-insect",
+    "commonName": "New Guinea Spiny Stick Insect",
+    "latinName": "Eurycantha calcarata",
+    "habitat": "Lowland tropical forests of New Guinea and nearby islands",
+    "sizeMm": 150,
+    "sizeKind": "body",
+    "weirdFact": "Males carry huge curved spurs on their hind legs, locking rivals between them during wrestling matches.",
+    "whyItsCool": "It traded twig elegance for the build of an armored branch, complete with grappling hooks and a talent for vanishing under bark.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-11",
+    "order": "Phasmatodea",
+    "family": "Phasmatidae",
+    "colorPalette": [
+      "#382b24",
+      "#705742",
+      "#a28a68"
+    ]
   }
 ]
