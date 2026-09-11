@@ -2772,5 +2772,24 @@
       "#705742",
       "#a28a68"
     ]
+  },
+  {
+    "slug": "woolly-apple-aphid",
+    "commonName": "Woolly Apple Aphid",
+    "latinName": "Eriosoma lanigerum",
+    "habitat": "Apple orchards and hawthorn across temperate regions worldwide",
+    "sizeMm": 2.5,
+    "sizeKind": "body",
+    "weirdFact": "It hides beneath waxy white filaments spun from its own body, making whole colonies look like drifting cotton fluff.",
+    "whyItsCool": "A salmon-pink sap thief in a self-made wool coat—an orchard pest disguised as a tiny scrap of airborne lint.",
+    "rarity": "common",
+    "discoveredOn": "2026-09-12",
+    "order": "Hemiptera",
+    "family": "Aphididae",
+    "colorPalette": [
+      "#f1eee2",
+      "#d58b7f",
+      "#554941"
+    ]
   }
 ]

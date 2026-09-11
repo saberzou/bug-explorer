@@ -4086,5 +4086,33 @@
       "height": 2304,
       "localPath": "/bugs/photos/new-guinea-spiny-stick-insect/2.jpg"
     }
+  ],
+  "woolly-apple-aphid": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Eriosoma_lanigerum_1.JPG/1280px-Eriosoma_lanigerum_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Eriosoma_lanigerum_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriosoma_lanigerum_1.JPG",
+      "credit": "Stok",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Deformacja gałęzi po żerowaniu bawełnicy korówki",
+      "fileTitle": "File:Eriosoma lanigerum 1.JPG",
+      "width": 2924,
+      "height": 1744,
+      "localPath": "/bugs/photos/woolly-apple-aphid/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Eriosoma_lanigerum_winged.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Eriosoma_lanigerum_winged.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eriosoma_lanigerum_winged.jpg",
+      "credit": "Osborn, Herbert, 1856-1954",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "caption": "Eriosoma lanigerum",
+      "fileTitle": "File:Eriosoma lanigerum winged.jpg",
+      "width": 757,
+      "height": 503,
+      "localPath": "/bugs/photos/woolly-apple-aphid/2.jpg"
+    }
   ]
 }
