@@ -2791,5 +2791,24 @@
       "#d58b7f",
       "#554941"
     ]
+  },
+  {
+    "slug": "water-scorpion",
+    "commonName": "Water Scorpion",
+    "latinName": "Nepa cinerea",
+    "habitat": "Still and slow-moving freshwater across Europe and northern Africa",
+    "sizeMm": 22,
+    "sizeKind": "body",
+    "weirdFact": "Its rear 'tail' is a two-part breathing siphon that lets it hang head-down underwater while sipping air at the surface.",
+    "whyItsCool": "A leaf-flat ambush hunter with mantis-like forelegs and a built-in snorkel is peak pond-monster engineering.",
+    "rarity": "common",
+    "discoveredOn": "2026-09-13",
+    "order": "Hemiptera",
+    "family": "Nepidae",
+    "colorPalette": [
+      "#6b4b32",
+      "#9b7655",
+      "#c8b28d"
+    ]
   }
 ]

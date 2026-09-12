@@ -4114,5 +4114,33 @@
       "height": 503,
       "localPath": "/bugs/photos/woolly-apple-aphid/2.jpg"
     }
+  ],
+  "water-scorpion": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Nepa_cinerea_01_by-dpc.jpg/1280px-Nepa_cinerea_01_by-dpc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Nepa_cinerea_01_by-dpc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Nepa_cinerea_01_by-dpc.jpg",
+      "credit": "David Perez",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "caption": "Water scorpion (Nepa cinerea in river Yuso, León (Spain).",
+      "fileTitle": "File:Nepa cinerea 01 by-dpc.jpg",
+      "width": 2868,
+      "height": 1920,
+      "localPath": "/bugs/photos/water-scorpion/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Nepa_cinerea_MHNT_Dos.jpg/1280px-Nepa_cinerea_MHNT_Dos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Nepa_cinerea_MHNT_Dos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Nepa_cinerea_MHNT_Dos.jpg",
+      "credit": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Water scorpion. Dorsal side.",
+      "fileTitle": "File:Nepa cinerea MHNT Dos.jpg",
+      "width": 2359,
+      "height": 5110,
+      "localPath": "/bugs/photos/water-scorpion/2.jpg"
+    }
   ]
 }
