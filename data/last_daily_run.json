@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-12",
-  "slug": "woolly-apple-aphid",
-  "commonName": "Woolly Apple Aphid",
-  "discoveredOn": "2026-09-12",
-  "ranAtUtc": "2026-09-11T17:56:55Z",
+  "date": "2026-09-13",
+  "slug": "water-scorpion",
+  "commonName": "Water Scorpion",
+  "discoveredOn": "2026-09-13",
+  "ranAtUtc": "2026-09-12T17:56:49Z",
   "note": null,
-  "bugCount": 147
+  "bugCount": 148
 }
