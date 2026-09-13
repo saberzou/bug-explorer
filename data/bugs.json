@@ -2810,5 +2810,24 @@
       "#9b7655",
       "#c8b28d"
     ]
+  },
+  {
+    "slug": "horsehead-grasshopper",
+    "commonName": "Horsehead Grasshopper",
+    "latinName": "Pseudoproscopia scabra",
+    "habitat": "Tropical forests of northern South America",
+    "sizeMm": 150,
+    "sizeKind": "body",
+    "weirdFact": "Its stretched head and twig-thin body disguise a true grasshopper that can launch itself away on powerful hind legs.",
+    "whyItsCool": "It looks like a stick insect wearing a tiny horse mask, then reveals the jumping gear hidden in that impossible silhouette.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-14",
+    "order": "Orthoptera",
+    "family": "Proscopiidae",
+    "colorPalette": [
+      "#52643b",
+      "#8b744f",
+      "#d1bd8c"
+    ]
   }
 ]

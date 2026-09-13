@@ -4142,5 +4142,33 @@
       "height": 5110,
       "localPath": "/bugs/photos/water-scorpion/2.jpg"
     }
+  ],
+  "horsehead-grasshopper": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Horsehead_Grasshopper_%28Pseudoproscopia_scabra%29_female_eating_a_leaf_..._%2826819006508%29.jpg/1280px-Horsehead_Grasshopper_%28Pseudoproscopia_scabra%29_female_eating_a_leaf_..._%2826819006508%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Horsehead_Grasshopper_%28Pseudoproscopia_scabra%29_female_eating_a_leaf_..._%2826819006508%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Horsehead_Grasshopper_(Pseudoproscopia_scabra)_female_eating_a_leaf_..._(26819006508).jpg",
+      "credit": "Bernard DUPONT from FRANCE",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Piste de Fourgassié, Montagne de Kaw, Roura, French Guyana, FRANCE",
+      "fileTitle": "File:Horsehead Grasshopper (Pseudoproscopia scabra) female eating a leaf ... (26819006508).jpg",
+      "width": 5353,
+      "height": 3092,
+      "localPath": "/bugs/photos/horsehead-grasshopper/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Horsehead_Grasshopper_%28Pseudoproscopia_scabra%29%2C_Tambopata_Lodge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Horsehead_Grasshopper_%28Pseudoproscopia_scabra%29%2C_Tambopata_Lodge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Horsehead_Grasshopper_(Pseudoproscopia_scabra),_Tambopata_Lodge.jpg",
+      "credit": "D. Gordon E. Robertson",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Horsehead Grasshopper (Pseudoproscopia scabra), Tambopata National Reserve, Peru",
+      "fileTitle": "File:Horsehead Grasshopper (Pseudoproscopia scabra), Tambopata Lodge.jpg",
+      "width": 1000,
+      "height": 800,
+      "localPath": "/bugs/photos/horsehead-grasshopper/2.jpg"
+    }
   ]
 }
