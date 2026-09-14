@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-14",
-  "slug": "horsehead-grasshopper",
-  "commonName": "Horsehead Grasshopper",
-  "discoveredOn": "2026-09-14",
-  "ranAtUtc": "2026-09-13T17:55:26Z",
+  "date": "2026-09-15",
+  "slug": "fiddler-beetle",
+  "commonName": "Fiddler Beetle",
+  "discoveredOn": "2026-09-15",
+  "ranAtUtc": "2026-09-14T17:56:56Z",
   "note": null,
-  "bugCount": 149
+  "bugCount": 150
 }
