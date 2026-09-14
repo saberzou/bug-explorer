@@ -4170,5 +4170,33 @@
       "height": 800,
       "localPath": "/bugs/photos/horsehead-grasshopper/2.jpg"
     }
+  ],
+  "fiddler-beetle": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Eupoecila_australasiae.JPG/1280px-Eupoecila_australasiae.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Eupoecila_australasiae.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eupoecila_australasiae.JPG",
+      "credit": "Egbert69",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Eupoecila australasiae commonly known as the fiddler beetle green species",
+      "fileTitle": "File:Eupoecila australasiae.JPG",
+      "width": 4272,
+      "height": 2848,
+      "localPath": "/bugs/photos/fiddler-beetle/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Eupoecila_australasiae_%28Donovan%2C_1805%29_%2816492933178%29.png/1280px-Eupoecila_australasiae_%28Donovan%2C_1805%29_%2816492933178%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Eupoecila_australasiae_%28Donovan%2C_1805%29_%2816492933178%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Eupoecila_australasiae_(Donovan,_1805)_(16492933178).png",
+      "credit": "Udo Schmidt from Deutschland",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "caption": "Family: Scarabaeidae Size: 20,0 mm (18,0 to 20,1 mm) Location: Australia, NSW, 6220 Commission Rd, Yengo NP, Howes Valley leg. Vr.R.Bejsak-Colloredo-Mansfeld, 2.XII.2013; det. U.Schmidt, 2015 Photo: U.Schmidt, 2015",
+      "fileTitle": "File:Eupoecila australasiae (Donovan, 1805) (16492933178).png",
+      "width": 2354,
+      "height": 1517,
+      "localPath": "/bugs/photos/fiddler-beetle/2.jpg"
+    }
   ]
 }

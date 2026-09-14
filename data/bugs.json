@@ -2829,5 +2829,24 @@
       "#8b744f",
       "#d1bd8c"
     ]
+  },
+  {
+    "slug": "fiddler-beetle",
+    "commonName": "Fiddler Beetle",
+    "latinName": "Eupoecila australasiae",
+    "habitat": "Eastern Australian woodlands, heathlands, and flowering gardens",
+    "sizeMm": 18,
+    "sizeKind": "body",
+    "weirdFact": "Its yellow-green back is inked with a dark violin-shaped pattern, while the adult feeds on flower nectar and pollen.",
+    "whyItsCool": "A living enamel brooch with a tiny fiddle painted down its back—and it spends sunny days face-first in Australian flowers.",
+    "rarity": "common",
+    "discoveredOn": "2026-09-15",
+    "order": "Coleoptera",
+    "family": "Scarabaeidae",
+    "colorPalette": [
+      "#b7c94a",
+      "#2f3526",
+      "#d9a13b"
+    ]
   }
 ]
