@@ -2848,5 +2848,24 @@
       "#2f3526",
       "#d9a13b"
     ]
+  },
+  {
+    "slug": "monkey-slug",
+    "commonName": "Monkey Slug",
+    "latinName": "Phobetron pithecium",
+    "habitat": "Eastern North American deciduous forests and orchards",
+    "sizeMm": 25,
+    "sizeKind": "body",
+    "weirdFact": "Its nine pairs of furry, fleshy lobes can detach, helping this caterpillar masquerade as a scrap of hairy debris.",
+    "whyItsCool": "It looks like a lost toupee learned to crawl: a surreal slug-moth larva hiding beneath a coat of detachable arms.",
+    "rarity": "uncommon",
+    "discoveredOn": "2026-09-16",
+    "order": "Lepidoptera",
+    "family": "Limacodidae",
+    "colorPalette": [
+      "#8a5a3b",
+      "#c49a6c",
+      "#3f2b24"
+    ]
   }
 ]

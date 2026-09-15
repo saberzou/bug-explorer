@@ -4198,5 +4198,33 @@
       "height": 1517,
       "localPath": "/bugs/photos/fiddler-beetle/2.jpg"
     }
+  ],
+  "monkey-slug": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Phobetron_pithecium_%2831265443818%29.jpg/1280px-Phobetron_pithecium_%2831265443818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Phobetron_pithecium_%2831265443818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phobetron_pithecium_(31265443818).jpg",
+      "credit": "Donald Hobern from Copenhagen, Denmark",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "caption": "Phobetron pithecium (Smith, 1797), to actinic light and LepiLED, Natural Area Teaching Laboratory, University of Florida, Gainesville, Florida, USA, 1 October 2018",
+      "fileTitle": "File:Phobetron pithecium (31265443818).jpg",
+      "width": 5213,
+      "height": 3909,
+      "localPath": "/bugs/photos/monkey-slug/1.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Phobetron_pithecium_%28J.E.Smith%2C_1797%29_adult1a_-_iNaturalist.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Phobetron_pithecium_%28J.E.Smith%2C_1797%29_adult1a_-_iNaturalist.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phobetron_pithecium_(J.E.Smith,_1797)_adult1a_-_iNaturalist.jpg",
+      "credit": "jimeckert49",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "caption": "The North American moth Phobetron pithecium (J.E.Smith, 1797) (Lepidoptera: Limacodidae). Photograph taken in Berks County, Pennsylvania, USA (July 16, 2020).",
+      "fileTitle": "File:Phobetron pithecium (J.E.Smith, 1797) adult1a - iNaturalist.jpg",
+      "width": 703,
+      "height": 500,
+      "localPath": "/bugs/photos/monkey-slug/2.jpg"
+    }
   ]
 }
