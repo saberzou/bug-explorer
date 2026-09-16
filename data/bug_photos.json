@@ -4226,5 +4226,33 @@
       "height": 500,
       "localPath": "/bugs/photos/monkey-slug/2.jpg"
     }
+  ],
+  "cinnabar-flat-bark-beetle": [
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Cucujus_cinnaberinus_front.jpg/1280px-Cucujus_cinnaberinus_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Cucujus_cinnaberinus_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cucujus_cinnaberinus_front.jpg",
+      "credit": "Siga",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "caption": "Cucujus cinnaberinus from Hungary, front",
+      "fileTitle": "File:Cucujus cinnaberinus front.jpg",
+      "width": 2708,
+      "height": 1228,
+      "localPath": "/bugs/photos/cinnabar-flat-bark-beetle/1.jpg"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Cucujus_cinnaberinus_01.JPG/1280px-Cucujus_cinnaberinus_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Cucujus_cinnaberinus_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cucujus_cinnaberinus_01.JPG",
+      "credit": "AfroBrazilian",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "Cucujus cinnaberinus (Scopoli, 1763)",
+      "fileTitle": "File:Cucujus cinnaberinus 01.JPG",
+      "width": 2243,
+      "height": 1616,
+      "localPath": "/bugs/photos/cinnabar-flat-bark-beetle/2.jpg"
+    }
   ]
 }

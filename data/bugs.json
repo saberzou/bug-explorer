@@ -2867,5 +2867,24 @@
       "#c49a6c",
       "#3f2b24"
     ]
+  },
+  {
+    "slug": "cinnabar-flat-bark-beetle",
+    "commonName": "Cinnabar Flat Bark Beetle",
+    "latinName": "Cucujus cinnaberinus",
+    "habitat": "Old deciduous forests across Europe, beneath loose bark on dead and dying trees",
+    "sizeMm": 15,
+    "sizeKind": "body",
+    "weirdFact": "Its body is pressed almost paper-flat, letting it patrol the wafer-thin space between dead wood and loosened bark.",
+    "whyItsCool": "A scarlet beetle engineered like a living bookmark—bright, broad, and improbably thin enough to vanish beneath bark.",
+    "rarity": "rare",
+    "discoveredOn": "2026-09-17",
+    "order": "Coleoptera",
+    "family": "Cucujidae",
+    "colorPalette": [
+      "#d63c2f",
+      "#272321",
+      "#d8b98a"
+    ]
   }
 ]
