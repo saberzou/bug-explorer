@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "date": "2026-09-16",
-  "slug": "monkey-slug",
-  "commonName": "Monkey Slug",
-  "discoveredOn": "2026-09-16",
-  "ranAtUtc": "2026-09-15T17:56:56Z",
+  "date": "2026-09-17",
+  "slug": "cinnabar-flat-bark-beetle",
+  "commonName": "Cinnabar Flat Bark Beetle",
+  "discoveredOn": "2026-09-17",
+  "ranAtUtc": "2026-09-16T17:53:35Z",
   "note": null,
-  "bugCount": 151
+  "bugCount": 152
 }
